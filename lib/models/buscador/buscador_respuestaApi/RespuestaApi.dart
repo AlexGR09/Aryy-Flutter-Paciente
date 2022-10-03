@@ -1,6 +1,6 @@
-import './Datum.dart';
-import './Info.dart';
-import './Links.dart';
+import 'datum.dart';
+import 'info.dart';
+import 'links.dart';
 import 'dart:convert';
 
 // Parse JSON data
@@ -11,6 +11,24 @@ RespuestaApi respuestaApiFromJson(String str) =>
 String respuestaApiToJson(RespuestaApi data) => json.encode(data.toJson());
 
 class RespuestaApi {
+  int currentPage;
+  List<Datum> data;
+  String firstPageUrl;
+  int from;
+  int lastPage;
+  String lastPageUrl;
+  List<Link> links;
+  dynamic nextPageUrl;
+  String path;
+  int perPage;
+  dynamic prevPageUrl;
+  int to;
+  int total;
+  bool igor;
+  dynamic error;
+  dynamic warning;
+  Info info;
+
   RespuestaApi({
     required this.currentPage,
     required this.data,
@@ -30,24 +48,6 @@ class RespuestaApi {
     this.warning,
     required this.info,
   });
-
-  int currentPage;
-  List<Datum> data;
-  String firstPageUrl;
-  int from;
-  int lastPage;
-  String lastPageUrl;
-  List<Link> links;
-  dynamic nextPageUrl;
-  String path;
-  int perPage;
-  dynamic prevPageUrl;
-  int to;
-  int total;
-  bool igor;
-  dynamic error;
-  dynamic warning;
-  Info info;
 
   factory RespuestaApi.fromJson(Map<String, dynamic> json) => RespuestaApi(
         currentPage: json["current_page"],

@@ -1,4 +1,15 @@
 class Estado {
+  int id;
+  String nombre;
+  int paisId;
+  dynamic creadoporId;
+  dynamic actualizadoporId;
+  dynamic createdAt;
+  dynamic updatedAt;
+  dynamic deletedAt;
+  String short;
+  int phonecode;
+
   Estado({
     required this.id,
     required this.nombre,
@@ -11,17 +22,6 @@ class Estado {
     required this.short,
     required this.phonecode,
   });
-
-  int id;
-  String nombre;
-  int paisId;
-  dynamic creadoporId;
-  dynamic actualizadoporId;
-  dynamic createdAt;
-  dynamic updatedAt;
-  dynamic deletedAt;
-  String short;
-  int phonecode;
 
   factory Estado.fromJson(Map<String, dynamic> json) => Estado(
         id: json["id"],

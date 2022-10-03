@@ -1,13 +1,13 @@
 class Link {
+  String url;
+  String label;
+  bool active;
+
   Link({
     required this.url,
     required this.label,
     required this.active,
   });
-
-  String url;
-  String label;
-  bool active;
 
   factory Link.fromJson(Map<String, dynamic> json) => Link(
         url: json["url"] == null ? null : json["url"],

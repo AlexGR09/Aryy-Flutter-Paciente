@@ -1,6 +1,17 @@
-import './Consultorio.dart';
+import 'consultorio.dart';
 
 class Datum {
+  int id;
+  String drnombre;
+  int userId;
+  String aniosexperiencia;
+  dynamic creadoporId;
+  dynamic actualizadoporId;
+  dynamic createdAt;
+  dynamic updatedAt;
+  dynamic deletedAt;
+  List<Consultorio> consultorio;
+
   Datum({
     required this.id,
     required this.drnombre,
@@ -13,17 +24,6 @@ class Datum {
     this.deletedAt,
     required this.consultorio,
   });
-
-  int id;
-  String drnombre;
-  int userId;
-  String aniosexperiencia;
-  dynamic creadoporId;
-  dynamic actualizadoporId;
-  dynamic createdAt;
-  dynamic updatedAt;
-  dynamic deletedAt;
-  List<Consultorio> consultorio;
 
   factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json["id"],

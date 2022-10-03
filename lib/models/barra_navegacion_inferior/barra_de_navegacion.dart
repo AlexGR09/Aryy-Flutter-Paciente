@@ -1,16 +1,18 @@
+// ignore_for_file: unnecessary_late
+
+import '../transiciones/transiciones.dart';
+import '../../buscar_especialista/buscar_especialista_widget.dart';
+import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-
-import '../../buscar_especialista/buscar_especialista_widget.dart';
-import '../animations/deslizar_arriba.dart';
 
 class BotonBarraNavegacion {
   IconData iconData;
   BotonBarraNavegacion(this.iconData);
 }
 
-late List<BotonBarraNavegacion> barradeNavegacion = <BotonBarraNavegacion>[
+List<BotonBarraNavegacion> barradeNavegacion = <BotonBarraNavegacion>[
   BotonBarraNavegacion(Icons.calendar_month),
   BotonBarraNavegacion(Icons.medical_services),
   BotonBarraNavegacion(Icons.add_circle_outline),
@@ -34,7 +36,10 @@ CurvedNavigationBar GetBarradeNavegacion(BuildContext context) {
         if (currentIndex != deltaIndex) {
           switch (index) {
             case 2:
-              animacion_hacia_arriba(context, const BuscarEspecialistaWidget());
+              CargarWidgetConTransicion(
+                  context,
+                  const BuscarEspecialistaWidget(),
+                  PageTransitionType.bottomToTop);
               break;
           }
         }

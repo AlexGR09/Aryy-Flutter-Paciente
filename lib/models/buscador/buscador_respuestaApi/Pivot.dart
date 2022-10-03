@@ -1,11 +1,11 @@
 class Pivot {
+  int consultorioId;
+  int municipioId;
+
   Pivot({
     required this.consultorioId,
     required this.municipioId,
   });
-
-  int consultorioId;
-  int municipioId;
 
   factory Pivot.fromJson(Map<String, dynamic> json) => Pivot(
         consultorioId: json["consultorio_id"],

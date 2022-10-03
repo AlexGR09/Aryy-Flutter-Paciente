@@ -1,7 +1,20 @@
-import './Estado.dart';
-import './Pivot.dart';
+import 'estado.dart';
+import 'pivot.dart';
 
 class Municipio {
+  int id;
+  String nombre;
+  int estadoId;
+  int paisId;
+  dynamic creadoporId;
+  dynamic actualizadoporId;
+  dynamic createdAt;
+  dynamic updatedAt;
+  dynamic deletedAt;
+  Pivot pivot;
+  Estado estado;
+  Estado pais;
+
   Municipio({
     required this.id,
     required this.nombre,
@@ -16,19 +29,6 @@ class Municipio {
     required this.estado,
     required this.pais,
   });
-
-  int id;
-  String nombre;
-  int estadoId;
-  int paisId;
-  dynamic creadoporId;
-  dynamic actualizadoporId;
-  dynamic createdAt;
-  dynamic updatedAt;
-  dynamic deletedAt;
-  Pivot pivot;
-  Estado estado;
-  Estado pais;
 
   factory Municipio.fromJson(Map<String, dynamic> json) => Municipio(
         id: json["id"],
