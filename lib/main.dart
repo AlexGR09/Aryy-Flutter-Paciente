@@ -26,6 +26,7 @@ class MyApp extends StatelessWidget {
           "sesion_huella_dactilar": (_) => SesionHuellaDactilarWidget(),
           "codigo_verificacion": (_) => CodigoVerificacionWidget(),
           "restablecer_contrasena": (_) => RestablerContrasenaWidget(),
+          "verificar_identidad": (_) => VerificarIdentidadWidget(),
 
           //OPCIONES DE BARRA LATERAL
           "barra_perfil": (_) => BarraLateralPerfilWidget(),
