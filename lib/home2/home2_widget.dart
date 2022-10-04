@@ -30,82 +30,16 @@ class _Home2WidgetState extends State<Home2Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: const NavigationDrawer(),
         key: scaffoldKey,
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(100),
-          child: AppBar(
-            backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-            automaticallyImplyLeading: false,
-            leading: Container(
-              padding: EdgeInsets.all(5),
-              child: SvgPicture.asset(
-                ISOTIPO,
-                width: 50,
-                height: 50,
-              ),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 6, 0, 6),
-                child: Container(
-                  width: 80,
-                  height: 20,
-                  decoration: const BoxDecoration(
-                    color: Color(0xFF7900FF),
-                    borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(25),
-                      bottomRight: Radius.circular(0),
-                      topLeft: Radius.circular(25),
-                      topRight: Radius.circular(0),
-                    ),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            '96 pts',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
-                                      fontWeight: FontWeight.normal,
-                                      fontSize: 12,
-                                    ),
-                          ),
-                        ],
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Icon(
-                            Icons.person_outline,
-                            color: FlutterFlowTheme.of(context).primaryBtnText,
-                            size: 15,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ],
-            elevation: 0,
-            centerTitle: false,
-          ),
+        appBar: AppBar(
+          backgroundColor: Colors.red,
         ),
         backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- Barra Lateral -------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        endDrawer: DrawSideBar(context, scaffoldKey),
+//        endDrawer: DrawSideBar(context, scaffoldKey),
         body: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
