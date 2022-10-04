@@ -1,18 +1,15 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class BarraLateralPromocionesWidget extends StatefulWidget {
-  const BarraLateralPromocionesWidget({Key? key}) : super(key: key);
+class BarraLateralAyudaWidget extends StatefulWidget {
+  const BarraLateralAyudaWidget({Key? key}) : super(key: key);
 
   @override
-  _BarraLateralPromocionesWidgetState createState() =>
-      _BarraLateralPromocionesWidgetState();
+  _BarraLateralAyudaWidgetState createState() =>
+      _BarraLateralAyudaWidgetState();
 }
 
-class _BarraLateralPromocionesWidgetState
-    extends State<BarraLateralPromocionesWidget> {
+class _BarraLateralAyudaWidgetState extends State<BarraLateralAyudaWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

@@ -1,7 +1,7 @@
-import 'datum.dart';
-import 'info.dart';
-import 'links.dart';
 import 'dart:convert';
+import './datum.dart';
+import './info.dart';
+import './links.dart';
 
 // Parse JSON data
 //     final respuestaApi = respuestaApiFromJson(jsonString);

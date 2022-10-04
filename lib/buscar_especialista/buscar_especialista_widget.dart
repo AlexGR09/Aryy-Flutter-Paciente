@@ -1,8 +1,8 @@
-import 'package:aryy_front/models/barra_navegacion_inferior/barra_de_navegacion.dart';
+import 'package:aryy_front/barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../backend/api_requests/api_calls.dart';
 import '../home2/home2_widget.dart';
-import '../models/buscador/buscador_llamarApi/buscador_resultados.dart';
-import '../models/buscador/buscador_respuestaApi/respuestaApi.dart';
+import 'tipo_respuesta_api.dart';
+import 'respuestaApi/respuestaApi.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';

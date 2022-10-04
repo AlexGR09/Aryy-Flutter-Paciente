@@ -1,62 +1,51 @@
-import 'estado.dart';
-import 'pivot.dart';
-
-class Municipio {
+class Estado {
   int id;
   String nombre;
-  int estadoId;
   int paisId;
   dynamic creadoporId;
   dynamic actualizadoporId;
   dynamic createdAt;
   dynamic updatedAt;
   dynamic deletedAt;
-  Pivot pivot;
-  Estado estado;
-  Estado pais;
+  String short;
+  int phonecode;
 
-  Municipio({
+  Estado({
     required this.id,
     required this.nombre,
-    required this.estadoId,
     required this.paisId,
     this.creadoporId,
     this.actualizadoporId,
     this.createdAt,
     this.updatedAt,
     this.deletedAt,
-    required this.pivot,
-    required this.estado,
-    required this.pais,
+    required this.short,
+    required this.phonecode,
   });
 
-  factory Municipio.fromJson(Map<String, dynamic> json) => Municipio(
+  factory Estado.fromJson(Map<String, dynamic> json) => Estado(
         id: json["id"],
         nombre: json["nombre"],
-        estadoId: json["estado_id"],
         paisId: json["pais_id"],
         creadoporId: json["creadopor_id"],
         actualizadoporId: json["actualizadopor_id"],
         createdAt: json["created_at"],
         updatedAt: json["updated_at"],
         deletedAt: json["deleted_at"],
-        pivot: Pivot.fromJson(json["pivot"]),
-        estado: Estado.fromJson(json["estado"]),
-        pais: Estado.fromJson(json["pais"]),
+        short: json["short"],
+        phonecode: json["phonecode"],
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
         "nombre": nombre,
-        "estado_id": estadoId,
         "pais_id": paisId,
         "creadopor_id": creadoporId,
         "actualizadopor_id": actualizadoporId,
         "created_at": createdAt,
         "updated_at": updatedAt,
         "deleted_at": deletedAt,
-        "pivot": pivot.toJson(),
-        "estado": estado.toJson(),
-        "pais": pais.toJson(),
+        "short": short,
+        "phonecode": phonecode,
       };
 }

@@ -1,4 +1,4 @@
-import 'municipio.dart';
+import './municipio.dart';
 
 class Consultorio {
   Consultorio({

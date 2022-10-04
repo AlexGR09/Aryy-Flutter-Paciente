@@ -1,51 +1,54 @@
-class Estado {
+import './consultorio.dart';
+
+class Datum {
   int id;
-  String nombre;
-  int paisId;
+  String drnombre;
+  int userId;
+  String aniosexperiencia;
   dynamic creadoporId;
   dynamic actualizadoporId;
   dynamic createdAt;
   dynamic updatedAt;
   dynamic deletedAt;
-  String short;
-  int phonecode;
+  List<Consultorio> consultorio;
 
-  Estado({
+  Datum({
     required this.id,
-    required this.nombre,
-    required this.paisId,
+    required this.drnombre,
+    required this.userId,
+    required this.aniosexperiencia,
     this.creadoporId,
     this.actualizadoporId,
     this.createdAt,
     this.updatedAt,
     this.deletedAt,
-    required this.short,
-    required this.phonecode,
+    required this.consultorio,
   });
 
-  factory Estado.fromJson(Map<String, dynamic> json) => Estado(
+  factory Datum.fromJson(Map<String, dynamic> json) => Datum(
         id: json["id"],
-        nombre: json["nombre"],
-        paisId: json["pais_id"] == null ? null : json["pais_id"],
+        drnombre: json["drnombre"],
+        userId: json["user_id"],
+        aniosexperiencia: json["aniosexperiencia"],
         creadoporId: json["creadopor_id"],
         actualizadoporId: json["actualizadopor_id"],
         createdAt: json["created_at"],
         updatedAt: json["updated_at"],
         deletedAt: json["deleted_at"],
-        short: json["short"] == null ? null : json["short"],
-        phonecode: json["phonecode"] == null ? null : json["phonecode"],
+        consultorio: List<Consultorio>.from(
+            json["consultorio"].map((x) => Consultorio.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "id": id,
-        "nombre": nombre,
-        "pais_id": paisId == null ? null : paisId,
+        "drnombre": drnombre,
+        "user_id": userId,
+        "aniosexperiencia": aniosexperiencia,
         "creadopor_id": creadoporId,
         "actualizadopor_id": actualizadoporId,
         "created_at": createdAt,
         "updated_at": updatedAt,
         "deleted_at": deletedAt,
-        "short": short == null ? null : short,
-        "phonecode": phonecode == null ? null : phonecode,
+        "consultorio": List<dynamic>.from(consultorio.map((x) => x.toJson())),
       };
 }

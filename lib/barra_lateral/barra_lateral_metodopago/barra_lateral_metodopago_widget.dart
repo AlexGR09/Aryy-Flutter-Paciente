@@ -1,18 +1,16 @@
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-class BarraLateralPrivacidadWidget extends StatefulWidget {
-  const BarraLateralPrivacidadWidget({Key? key}) : super(key: key);
+class BarraLateralMetodopagoWidget extends StatefulWidget {
+  const BarraLateralMetodopagoWidget({Key? key}) : super(key: key);
 
   @override
-  _BarraLateralPrivacidadWidgetState createState() =>
-      _BarraLateralPrivacidadWidgetState();
+  _BarraLateralMetodopagoWidgetState createState() =>
+      _BarraLateralMetodopagoWidgetState();
 }
 
-class _BarraLateralPrivacidadWidgetState
-    extends State<BarraLateralPrivacidadWidget> {
+class _BarraLateralMetodopagoWidgetState
+    extends State<BarraLateralMetodopagoWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
