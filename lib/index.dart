@@ -34,5 +34,8 @@ export 'nueva_ubicacion/nueva_ubicacion_widget.dart' show NuevaUbicacionWidget;
 export 'buscar_especialista/buscar_especialista_widget.dart'
     show BuscarEspecialistaWidget;
 export 'home2/home2_widget.dart' show Home2Widget;
+<<<<<<< HEAD
 export 'restablecer_contrasena.dart' show RestablerContrasenaWidget;
 export 'verificar_identidad.dart' show VerificarIdentidadWidget;
+=======
+>>>>>>> 47b101d6d29fb6c7fdb326a9e7a33eb792145118
