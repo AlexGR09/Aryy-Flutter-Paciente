@@ -1,4 +1,4 @@
-import 'dart:ffi';
+//import 'dart:ffi';
 
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -53,7 +53,7 @@ class _RegistrarseFormularioWidgetState
 
   @override
   Widget build(BuildContext context) {
-    final Size = MediaQuery.of(context).size;
+    //final Size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
