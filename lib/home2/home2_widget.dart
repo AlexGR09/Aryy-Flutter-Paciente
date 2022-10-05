@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import '../barra_lateral/barra_lateral.dart';
-=======
-import '../barra_lateral/barra_lateral_widget.dart';
->>>>>>> 47b101d6d29fb6c7fdb326a9e7a33eb792145118
 import '../buscar_especialista/buscar_especialista_widget.dart';
 import '../next_page_tmp/transiciones.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
@@ -34,7 +30,6 @@ class _Home2WidgetState extends State<Home2Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-<<<<<<< HEAD
         endDrawer: const NavigationDrawer(),
         key: scaffoldKey,
         appBar: AppBar(
@@ -45,99 +40,6 @@ class _Home2WidgetState extends State<Home2Widget> {
 //------------------------------------- Barra Lateral -------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //        endDrawer: DrawSideBar(context, scaffoldKey),
-=======
-        key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------- App Bar -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        appBar: PreferredSize(
-          preferredSize: const Size(100, 100),
-          child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
-            child: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
-              leadingWidth: 60,
-              toolbarHeight: 100,
-              elevation: 0,
-              centerTitle: false,
-              title: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Builder(
-                    builder: (context) => InkWell(
-                      onTap: () => Scaffold.of(context).openEndDrawer(),
-                      child: Container(
-                        width: 120,
-                        height: 50,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF7900FF),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(25),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(0),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '96 pts',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 12,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.person_outline,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  size: 15,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-              leading: SvgPicture.asset(
-                ISOTIPO,
-                width: 50,
-                height: 50,
-              ),
-            ),
-          ),
-        ),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------- Barra Lateral Izquierda -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        endDrawer: const NavigationDrawer(),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------- Menu principal  -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
->>>>>>> 47b101d6d29fb6c7fdb326a9e7a33eb792145118
         body: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -146,12 +48,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-<<<<<<< HEAD
                     padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
-=======
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
->>>>>>> 47b101d6d29fb6c7fdb326a9e7a33eb792145118
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -161,13 +58,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-<<<<<<< HEAD
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
-=======
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  22, 0, 0, 0),
->>>>>>> 47b101d6d29fb6c7fdb326a9e7a33eb792145118
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
