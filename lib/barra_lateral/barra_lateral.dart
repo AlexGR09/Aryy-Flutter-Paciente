@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 List<OpcionBarraLateral> barraLateral = <OpcionBarraLateral>[
   OpcionBarraLateral(
-      Icons.person_outline_sharp, "Perfil", const BarraLateralPerfilWidget()),
+      Icons.person_outline_sharp, "Perfil", const BarraLateralPerfil1Widget()),
   OpcionBarraLateral(
       Icons.favorite_border, "Favoritos", const BarraLateralFavoritosWidget()),
   OpcionBarraLateral(Icons.emoji_events_outlined, "Recompensas",

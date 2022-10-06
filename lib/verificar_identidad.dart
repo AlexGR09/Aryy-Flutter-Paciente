@@ -3,7 +3,7 @@ import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 class VerificarIdentidadWidget extends StatefulWidget {
   const VerificarIdentidadWidget({Key? key}) : super(key: key);
@@ -36,7 +36,9 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      //backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -44,7 +46,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 130, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 130, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +69,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                       'Necesitamos verificar tu\nidentidad, por favor ingresa tu\ncorreo o núm. teléfono',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Montserrat',
                             color: Color(0xFF5101CC),
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -111,7 +113,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         color: Color(0xFF999999),
                                         fontWeight: FontWeight.w300,
                                       ),
@@ -159,7 +161,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -195,7 +197,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Montserrat',
                                           color: Color(0xFF999999),
                                           fontWeight: FontWeight.w300,
                                         ),
@@ -243,7 +245,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         fontWeight: FontWeight.normal,
                                       ),
                                 ),
@@ -263,33 +265,8 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     FFButtonWidget(
-                      onPressed: () async {
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('¿Desea guardar los cambios?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('No'),
-                                    ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Si'),
-                                    ),
-                                  ],
-                                );
-                              },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          context.pushNamed('iniciarsesion');
-                        } else {
-                          Navigator.pop(context);
-                        }
+                      onPressed: () {
+                        Navigator.pushNamed(context, "eres_tu");
                       },
                       text: 'Verificar',
                       options: FFButtonOptions(
@@ -299,7 +276,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                         textStyle: FlutterFlowTheme.of(context)
                             .subtitle2
                             .override(
-                              fontFamily: 'Poppins',
+                              fontFamily: 'Montserrat',
                               color:
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 16,

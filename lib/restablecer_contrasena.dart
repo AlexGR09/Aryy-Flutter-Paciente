@@ -1,9 +1,11 @@
+import 'package:aryy_front/flutter_flow/flutter_flow_util.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+//import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 class RestablerContrasenaWidget extends StatefulWidget {
   const RestablerContrasenaWidget({Key? key}) : super(key: key);
@@ -36,7 +38,8 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      //backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -58,7 +61,8 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 60, 20, 0),
+                //padding: EdgeInsetsDirectional.fromSTEB(20, 60, 20, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 60, 20, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -67,7 +71,7 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                       'Ingresa una contraseña nueva \npara acceder a tu cuenta',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Montserrat',
                             color: Color(0xFF5101CC),
                             fontSize: 16,
                             fontWeight: FontWeight.normal,
@@ -77,7 +81,7 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -111,8 +115,9 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(
-                                        fontFamily: 'Poppins',
-                                        color: Color(0xFF999999),
+                                        fontFamily: 'Montserrat',
+                                        fontSize: 14,
+                                        color: const Color(0xFF999999),
                                         fontWeight: FontWeight.w300,
                                       ),
                                   enabledBorder: UnderlineInputBorder(
@@ -159,7 +164,7 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Montserrat',
                                       fontWeight: FontWeight.normal,
                                     ),
                               ),
@@ -167,7 +172,8 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                          padding:
+                              const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 2,
@@ -194,8 +200,8 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
-                                          color: Color(0xFF999999),
+                                          fontFamily: 'Montserrat',
+                                          color: const Color(0xFF999999),
                                           fontWeight: FontWeight.w300,
                                         ),
                                     enabledBorder: UnderlineInputBorder(
@@ -242,7 +248,7 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         fontWeight: FontWeight.normal,
                                       ),
                                 ),
@@ -256,7 +262,7 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(20, 50, 20, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -294,11 +300,11 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                       options: FFButtonOptions(
                         width: 300,
                         height: 45,
-                        color: Color(0xFF7900FF),
+                        color: const Color(0xFF7900FF),
                         textStyle: FlutterFlowTheme.of(context)
                             .subtitle2
                             .override(
-                              fontFamily: 'Poppins',
+                              fontFamily: 'Montserrat',
                               color:
                                   FlutterFlowTheme.of(context).primaryBtnText,
                               fontSize: 16,

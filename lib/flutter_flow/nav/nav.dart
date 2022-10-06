@@ -29,6 +29,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/',
           builder: (context, _) => HomePageWidget(),
           routes: [
+            //-----------------------------------------------------------------------------------------------
+            //--------------------------------- INICIO, REGISTRO Y VERIFICACION ----------------------------
+            //----------------------------------------------------------------------------------------------
+
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
@@ -45,9 +49,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => IniciarsesionWidget(),
             ),
             FFRoute(
-              name: 'olvidaste_contrasena',
-              path: 'olvidasteContrasena',
-              builder: (context, params) => OlvidasteContrasenaWidget(),
+              name: 'restablecer_contrasena',
+              path: 'restablecercontrasena',
+              builder: (context, params) => RestablerContrasenaWidget(),
             ),
             FFRoute(
               name: 'configurar_pin_datosbiometricos',
@@ -70,6 +74,20 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'codigoVerificacion',
               builder: (context, params) => CodigoVerificacionWidget(),
             ),
+            FFRoute(
+              name: 'verificar_identidad',
+              path: 'verificaridentidad',
+              builder: (context, params) => VerificarIdentidadWidget(),
+            ),
+            FFRoute(
+              name: 'eres_tu',
+              path: 'erestu',
+              builder: (context, params) => EresTuWidget(),
+            ),
+
+            //---------------------------------------------------------------------------------------------------------------
+            //------------------------ BARRA LATERAL ------------------------------------------------------------------------
+            //---------------------------------------------------------------------------------------------------------------
             FFRoute(
               name: 'Barra_lateral_perfil',
               path: 'barraLateralPerfil',
@@ -125,6 +143,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'buscarEspecialista',
               builder: (context, params) => BuscarEspecialistaWidget(),
             ),
+
+            //-----------------------------------------------------------------------------------------------------
+            //--------------------------- PAGINA PRINCIPAL---------------------------------------------------------
+            //----------------------------------------------------------------------------------------------------
             FFRoute(
               name: 'Home2',
               path: 'home2',

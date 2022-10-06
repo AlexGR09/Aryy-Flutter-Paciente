@@ -308,8 +308,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     children: [
                       InkWell(
                         onTap: () {
-                          Navigator.pushNamed(
-                              context, "restablecer_contrasena");
+                          Navigator.pushNamed(context, "verificar_identidad");
                         },
                         child: Text(
                           '¿Olvidaste tu contraseña?',

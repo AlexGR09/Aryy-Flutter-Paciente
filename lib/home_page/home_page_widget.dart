@@ -349,7 +349,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           Navigator.pushNamed(context, "Registrarse");
                           //context.pushNamed('Registrarse');
                         },
-                        text: 'Resgistrarme',
+                        text: 'Registrarme',
                         options: FFButtonOptions(
                           width: 200,
                           height: 50,

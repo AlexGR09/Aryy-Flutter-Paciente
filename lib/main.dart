@@ -13,8 +13,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Prueba',
-        initialRoute: "splash",
+        initialRoute: "Perfil_inicio",
+        /*4F565F*/
         //initialRoute: "registrarse_iniciosesion",
+        //initialRoute: "iniciarsesion",
         routes: {
           "splash": (_) => SplashScreen(),
           "bienvenida": (_) => HomePageWidget(),
@@ -27,8 +29,10 @@ class MyApp extends StatelessWidget {
           "codigo_verificacion": (_) => CodigoVerificacionWidget(),
           "restablecer_contrasena": (_) => RestablerContrasenaWidget(),
           "verificar_identidad": (_) => VerificarIdentidadWidget(),
+          "eres_tu": (_) => EresTuWidget(),
 
           //OPCIONES DE BARRA LATERAL
+          "Perfil_inicio": (_) => BarraLateralPerfil1Widget(),
           "barra_perfil": (_) => BarraLateralPerfilWidget(),
           "barra_ayuda": (_) => BarraLateralAyudaWidget(),
           "barra_configuraciones": (_) => BarraLateralConfiguracionesWidget(),
@@ -40,7 +44,6 @@ class MyApp extends StatelessWidget {
           "barra_ubicaciones": (_) => BarraLateralUbicacionesWidget(),
           "configurar_pin_datos": (_) => ConfigurarPinDatosbiometricosWidget(),
           "nueva_ubicacion": (_) => NuevaUbicacionWidget(),
-          "olvidaste_contraseña": (_) => OlvidasteContrasenaWidget(),
           "registrarse_iniciosesion": (_) =>
               MenuFrame(), //VISTA CON VIDEO DE FONDO
         },

@@ -9,6 +9,9 @@ const RECOMPENSAS = 'assets/icons/barra_lateral/ICON_RECOMP.svg';
 const CERRAR_SESION = 'assets/icons/barra_lateral/ICON_SALIR.svg';
 const UBICACIONES = 'assets/icons/barra_lateral/ICON_UBIC.svg';
 const PERFIL = 'assets/icons/barra_lateral/ICON_PERFIL.svg';
+const FILTRO_ESPECIALISTA = 'assets/icons/mi_perfil/FILTRO_MEDICAMENTOS.svg';
+const FILTRO_MEDICAMENTOS = 'assets/icons/mi_perfil/FILTRO_MEDICAMENTOS.svg';
+const WP_PERFIL = 'assets/images/perfil/WP_Perfil.jpg';
 
 //ICONOS BARRA NAVEGACION
 const AGREGAR = 'assets/icons/barra_navegacion/ICON_AGREGAR.svg';
@@ -32,10 +35,10 @@ const HUELLA_BLANCO = 'assets/icons/inicio_app/ICON_HUELLA.svg';
 const LLAVE = 'assets/icons/inicio_app/ICON_LLAVE.svg';
 const MENSAJE = 'assets/icons/inicio_app/ICON_SMS.svg';
 const WHATSAPP = 'assets/icons/inicio_app/ICON_WSP.svg';
-//ICONOS INICIO DE LA APLICACION
 const ARYY_LOGO_MORADO = 'assets/logotipos/aryy_logo_morado.svg';
 const ARYY_LOGO_BLANCO = 'assets/logotipos/aryy_logo_blanco.svg';
 const MECAHSOFT_LOGO = 'assets/logotipos/mecahsoft_logo.svg';
+const AVATAR = 'assets/icons/Avatar.png';
 
 //ICONOS MI PERFIL
 const DIRECCION = 'assets/icons/mi_perfil/ICON_DIRECCON.svg';
