@@ -1,12 +1,15 @@
 import 'package:aryy_front/styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// Para las pruebas responsivas y modo oscuro
+import 'package:provider/provider.dart';
+import '../sharedPreferences/dartThemeProvider.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
-
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
 }
@@ -15,16 +18,53 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   PageController? pageViewController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  late String modoOscuroText = 'off';
+
   @override
   Widget build(BuildContext context) {
+    final themeChange = Provider.of<DarkThemeProvider>(context);
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: true,
+        centerTitle: true,
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+        title: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            FFButtonWidget(
+              onPressed: () async {
+                if (Theme.of(context).brightness == Brightness.dark) {
+                  themeChange.darkTheme = true;
+                  modoOscuroText = 'off';
+                } else {
+                  themeChange.darkTheme = false;
+                  modoOscuroText = 'on';
+                }
+              },
+              text: 'DarkMode $modoOscuroText',
+              options: FFButtonOptions(
+                width: 130,
+                height: 40,
+                color: FlutterFlowTheme.of(context).primaryColor,
+                textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                      fontFamily: 'Poppins',
+                      color: Colors.white,
+                    ),
+                borderSide: const BorderSide(
+                  color: Colors.transparent,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+          ],
+        ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 10, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
             child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "registrarse_iniciosesion");
@@ -33,13 +73,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 'Omitir',
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Montserrat',
-                      color: Color(0xC5B4B4B4),
+                      color: const Color(0xC5B4B4B4),
                     ),
               ),
             ),
           ),
         ],
-        centerTitle: true,
         elevation: 0,
       ),
 

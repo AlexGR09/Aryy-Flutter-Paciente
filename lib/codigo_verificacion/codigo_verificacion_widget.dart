@@ -1,8 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CodigoVerificacionWidget extends StatefulWidget {
   const CodigoVerificacionWidget({Key? key}) : super(key: key);
@@ -49,7 +47,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -63,7 +61,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +71,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Montserrat',
-                            color: Color(0xFFB380FF),
+                            color: const Color(0xFFB380FF),
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
                           ),
@@ -82,7 +80,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +92,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                         borderRadius: BorderRadius.circular(10),
                         border: Border.all(
-                          color: Color(0xC5B4B4B4),
+                          color: const Color(0xC5B4B4B4),
                         ),
                       ),
                       child: TextFormField(
@@ -109,42 +107,42 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                                   fontSize: 12,
                                   fontWeight: FontWeight.normal,
                                   color: Color(0xFFCCCCCC)),
-                          enabledBorder: UnderlineInputBorder(
+                          enabledBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedBorder: UnderlineInputBorder(
+                          focusedBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          errorBorder: UnderlineInputBorder(
+                          errorBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
                           ),
-                          focusedErrorBorder: UnderlineInputBorder(
+                          focusedErrorBorder: const UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
                               width: 1,
                             ),
-                            borderRadius: const BorderRadius.only(
+                            borderRadius: BorderRadius.only(
                               topLeft: Radius.circular(4.0),
                               topRight: Radius.circular(4.0),
                             ),
