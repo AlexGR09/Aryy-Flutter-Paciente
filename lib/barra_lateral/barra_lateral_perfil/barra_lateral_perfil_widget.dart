@@ -65,7 +65,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisSize: MainAxisSize.max,
@@ -101,7 +101,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -252,7 +252,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBtnText,
+                                                        .secondaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
@@ -300,8 +300,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
+                                                            //color: Color(0x00000000),
                                                             color: Color(
-                                                                0x00000000),
+                                                                0xFFCCCCCC),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
@@ -1596,7 +1597,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                             ),
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//----------------------------------- TAB UBICACION ---------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------- TAB IDENTIDAD---------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                             SingleChildScrollView(
                               child: Column(
@@ -1727,7 +1728,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
@@ -1911,7 +1912,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
