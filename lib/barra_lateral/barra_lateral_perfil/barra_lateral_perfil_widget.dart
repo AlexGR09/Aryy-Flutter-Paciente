@@ -407,9 +407,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     width: 300,
                                                     height: 40,
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 50,
@@ -569,9 +570,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     width: 300,
                                                     height: 40,
                                                     decoration: BoxDecoration(
-                                                      color: FlutterFlowTheme
-                                                              .of(context)
-                                                          .secondaryBackground,
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryBtnText,
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4,
@@ -857,7 +859,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBtnText,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(20),
@@ -1160,9 +1162,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       width: 210,
                                                       height: 40,
                                                       decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryBtnText,
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4,
@@ -1362,7 +1365,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .secondaryBackground,
+                                                              .primaryBtnText,
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 4,
