@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Prueba',
-        initialRoute: "Perfil_inicio",
+        initialRoute: "splash",
         /*4F565F*/
         //initialRoute: "registrarse_iniciosesion",
         //initialRoute: "iniciarsesion",
