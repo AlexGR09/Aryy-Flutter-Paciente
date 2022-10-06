@@ -1,11 +1,8 @@
 import 'package:aryy_front/styles/my_icons.dart';
-
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class RegistrarseWidget extends StatefulWidget {
   const RegistrarseWidget({Key? key}) : super(key: key);
@@ -44,7 +41,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
@@ -81,7 +78,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -124,10 +121,10 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                boxShadow: [
+                                boxShadow: const [
                                   BoxShadow(
                                     blurRadius: 4,
-                                    color: Color(0xFFD0B3FF),
+                                    color: Color(0x199966FF),
                                     offset: Offset(0, 0),
                                   )
                                 ],
@@ -145,10 +142,10 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                            fontFamily: 'Montserrat',
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.normal,
+                                            color: Color(0xFFCCCCCC)),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: Color(0x00000000),
@@ -220,7 +217,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                   boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0xFFD0B3FF),
+                                      color: Color(0x199966FF),
                                       offset: Offset(0, 0),
                                     )
                                   ],
@@ -238,10 +235,10 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                              fontFamily: 'Montserrat',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                              color: Color(0xFFCCCCCC)),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
@@ -313,7 +310,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                   boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0xFFD0B3FF),
+                                      color: Color(0x199966FF),
                                       offset: Offset(0, 0),
                                     )
                                   ],
@@ -331,10 +328,10 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                              fontFamily: 'Montserrat',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                              color: Color(0xFFCCCCCC)),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
@@ -407,7 +404,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                   boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0xFFD0B3FF),
+                                      color: Color(0x199966FF),
                                       offset: Offset(0, 0),
                                     )
                                   ],
@@ -425,10 +422,10 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                              fontFamily: 'Montserrat',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                              color: Color(0xFFCCCCCC)),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
@@ -557,7 +554,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Montserrat',
-                                      color: Color(0xC5B4B4B4),
+                                      color: Color(0xFFCCCCCC),
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),

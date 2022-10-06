@@ -56,7 +56,7 @@ class _RegistrarseFormularioWidgetState
     //final Size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -150,18 +150,18 @@ class _RegistrarseFormularioWidgetState
                                 height: 40,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  boxShadow: [
+                                      .secondaryBackground,
+                                  boxShadow: const [
                                     BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0xFF7900FF),
+                                      color: Color(0x199966FF),
                                       offset: Offset(0, 0),
                                     )
                                   ],
                                   borderRadius: BorderRadius.circular(20),
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBtnText,
+                                    color:
+                                        FlutterFlowTheme.of(context).lineColor,
                                   ),
                                 ),
                                 child: Padding(
@@ -251,17 +251,17 @@ class _RegistrarseFormularioWidgetState
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
-                                        blurRadius: 50,
-                                        color: Color(0xFF7900FF),
-                                        spreadRadius: 2,
+                                        blurRadius: 4,
+                                        color: Color(0x199966FF),
+                                        offset: Offset(0, 0),
                                       )
                                     ],
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
+                                          .lineColor,
                                     ),
                                   ),
                                   child: Padding(
@@ -353,22 +353,23 @@ class _RegistrarseFormularioWidgetState
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: [
+                                    boxShadow: const [
                                       BoxShadow(
                                         blurRadius: 4,
-                                        color: Color(0xFFD0B3FF),
+                                        color: Color(0x199966FF),
                                         offset: Offset(0, 0),
                                       )
                                     ],
                                     borderRadius: BorderRadius.circular(20),
                                     border: Border.all(
                                       color: FlutterFlowTheme.of(context)
-                                          .primaryBtnText,
+                                          .lineColor,
                                     ),
                                   ),
                                   child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10, 0, 0, 5),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 5),
                                     child: TextFormField(
                                       controller: apellidoMaternoController,
                                       autofocus: true,
@@ -382,27 +383,29 @@ class _RegistrarseFormularioWidgetState
                                               fontSize: 12,
                                               fontWeight: FontWeight.w200,
                                             ),
-                                        enabledBorder: UnderlineInputBorder(
+                                        enabledBorder:
+                                            const UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
-                                        focusedBorder: UnderlineInputBorder(
+                                        focusedBorder:
+                                            const UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: const BorderRadius.only(
+                                          borderRadius: BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
-                                        errorBorder: UnderlineInputBorder(
+                                        errorBorder: const UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
@@ -413,7 +416,7 @@ class _RegistrarseFormularioWidgetState
                                           ),
                                         ),
                                         focusedErrorBorder:
-                                            UnderlineInputBorder(
+                                            const UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
@@ -444,13 +447,14 @@ class _RegistrarseFormularioWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 10, 22, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(22, 10, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -460,7 +464,7 @@ class _RegistrarseFormularioWidgetState
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       5, 0, 0, 0),
                                   child: FlutterFlowDropDown(
                                     options: ['Option 1'],
@@ -478,19 +482,20 @@ class _RegistrarseFormularioWidgetState
                                         ),
                                     hintText: 'Género',
                                     fillColor: FlutterFlowTheme.of(context)
-                                        .primaryBtnText,
+                                        .secondaryBackground,
                                     elevation: 2,
                                     borderColor:
                                         FlutterFlowTheme.of(context).lineColor,
                                     borderWidth: 0,
                                     borderRadius: 20,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        12, 0, 0, 0),
+                                    margin:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            12, 0, 0, 0),
                                     hidesUnderline: true,
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       20, 0, 0, 0),
                                   child: FlutterFlowDropDown(
                                     options: ['Option 1'],
@@ -507,7 +512,8 @@ class _RegistrarseFormularioWidgetState
                                           fontWeight: FontWeight.w300,
                                         ),
                                     hintText: 'Fecha de nacimiento',
-                                    fillColor: Colors.white,
+                                    fillColor: FlutterFlowTheme.of(context)
+                                        .secondaryBackground,
                                     elevation: 2,
                                     borderColor:
                                         FlutterFlowTheme.of(context).lineColor,
@@ -648,7 +654,8 @@ class _RegistrarseFormularioWidgetState
                                       fontWeight: FontWeight.w300,
                                     ),
                             hintText: 'Pais',
-                            fillColor: Colors.white,
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
                             elevation: 2,
                             borderColor: FlutterFlowTheme.of(context).lineColor,
                             borderWidth: 0,
@@ -675,7 +682,8 @@ class _RegistrarseFormularioWidgetState
                                     fontWeight: FontWeight.w300,
                                   ),
                               hintText: 'Estado',
-                              fillColor: Colors.white,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               elevation: 2,
                               borderColor:
                                   FlutterFlowTheme.of(context).lineColor,
@@ -704,7 +712,8 @@ class _RegistrarseFormularioWidgetState
                                     fontWeight: FontWeight.w300,
                                   ),
                               hintText: 'Ciudad o municipio',
-                              fillColor: Colors.white,
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
                               elevation: 2,
                               borderColor:
                                   FlutterFlowTheme.of(context).lineColor,
@@ -747,7 +756,8 @@ class _RegistrarseFormularioWidgetState
                                       fontWeight: FontWeight.w300,
                                     ),
                                 hintText: '+52',
-                                fillColor: Colors.white,
+                                fillColor: FlutterFlowTheme.of(context)
+                                    .secondaryBackground,
                                 elevation: 2,
                                 borderColor:
                                     FlutterFlowTheme.of(context).lineColor,
@@ -772,11 +782,11 @@ class _RegistrarseFormularioWidgetState
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
-                                      boxShadow: [
+                                      boxShadow: const [
                                         BoxShadow(
                                           blurRadius: 4,
-                                          color: Color(0xFFD0B3FF),
-                                          offset: Offset(0, 2),
+                                          color: Color(0x199966FF),
+                                          offset: Offset(0, 0),
                                         )
                                       ],
                                       borderRadius: BorderRadius.circular(20),

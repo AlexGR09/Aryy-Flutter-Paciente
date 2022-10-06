@@ -1,4 +1,4 @@
-import '../barra_lateral/barra_lateral.dart';
+import '../barra_lateral/barra_lateral_widget.dart';
 import '../buscar_especialista/buscar_especialista_widget.dart';
 import '../next_page_tmp/transiciones.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
@@ -30,16 +30,97 @@ class _Home2WidgetState extends State<Home2Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        endDrawer: const NavigationDrawer(),
         key: scaffoldKey,
-        appBar: AppBar(
-          backgroundColor: Colors.red,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------- App Bar -------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        appBar: PreferredSize(
+          preferredSize: const Size(100, 100),
+          child: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
+            child: AppBar(
+              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+              leadingWidth: 60,
+              toolbarHeight: 100,
+              elevation: 0,
+              centerTitle: false,
+              title: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Builder(
+                    builder: (context) => InkWell(
+                      onTap: () => Scaffold.of(context).openEndDrawer(),
+                      child: Container(
+                        width: 120,
+                        height: 50,
+                        decoration: const BoxDecoration(
+                          color: Color(0xFF7900FF),
+                          borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(25),
+                            bottomRight: Radius.circular(0),
+                            topLeft: Radius.circular(25),
+                            topRight: Radius.circular(0),
+                          ),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '96 pts',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBtnText,
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 12,
+                                      ),
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Icon(
+                                  Icons.person_outline,
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBtnText,
+                                  size: 15,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              leading: SvgPicture.asset(
+                ISOTIPO,
+                width: 50,
+                height: 50,
+              ),
+            ),
+          ),
         ),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//------------------------------------- Barra Lateral -------------------------------------------------------------------------------------------------------------------------
+//------------------------------------- Barra Lateral Izquierda -------------------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//        endDrawer: DrawSideBar(context, scaffoldKey),
+        endDrawer: const NavigationDrawer(),
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//------------------------------------- Menu principal  -------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         body: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -48,7 +129,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -58,8 +140,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  22, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -122,10 +204,16 @@ class _Home2WidgetState extends State<Home2Widget> {
                               width: 320,
                               height: 40,
                               decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(10),
-                              ),
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      blurRadius: 4,
+                                      color: Color(0x199966FF),
+                                      offset: Offset(0, 0),
+                                    )
+                                  ]),
                               child: Padding(
                                 padding:
                                     EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
@@ -149,68 +237,82 @@ class _Home2WidgetState extends State<Home2Widget> {
                                         padding: const EdgeInsetsDirectional
                                             .fromSTEB(5, 0, 0, 0),
                                         child: TextFormField(
-                                          onTap: () {
-                                            CargarWidgetConTransicion(
-                                                context,
-                                                const BuscarEspecialistaWidget(),
-                                                PageTransitionType.bottomToTop);
-                                          },
-                                          controller: textController,
-                                          autofocus: false,
-                                          obscureText: false,
-                                          decoration: const InputDecoration(
-                                            hintText:
-                                                'Doctores, medicamentos, estudios y mas...',
-                                            enabledBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
+                                            onTap: () {
+                                              CargarWidgetConTransicion(
+                                                  context,
+                                                  const BuscarEspecialistaWidget(),
+                                                  PageTransitionType
+                                                      .bottomToTop);
+                                            },
+                                            controller: textController,
+                                            autofocus: false,
+                                            obscureText: false,
+                                            decoration: const InputDecoration(
+                                              hintText:
+                                                  'Doctores, medicamentos, estudios y mas...',
+                                              hintStyle: TextStyle(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.normal,
+                                                  color: Color(0xFFCCCCCC)),
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
                                               ),
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              errorBorder: UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
+                                              ),
+                                              focusedErrorBorder:
+                                                  UnderlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius: BorderRadius.only(
+                                                  topLeft: Radius.circular(4.0),
+                                                  topRight:
+                                                      Radius.circular(4.0),
+                                                ),
                                               ),
                                             ),
-                                            focusedBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                            errorBorder: UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                            focusedErrorBorder:
-                                                UnderlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color: Color(0x00000000),
-                                                width: 1,
-                                              ),
-                                              borderRadius: BorderRadius.only(
-                                                topLeft: Radius.circular(4.0),
-                                                topRight: Radius.circular(4.0),
-                                              ),
-                                            ),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyText2
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.normal,
-                                              ),
-                                        ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyText1
+                                                .override(
+                                                    fontFamily: 'Montserrat',
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryText)),
                                       ),
                                     ),
                                   ],

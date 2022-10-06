@@ -1,10 +1,8 @@
 import 'package:aryy_front/home_page/home_page_widget.dart';
-import 'package:aryy_front/styles/my_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'dart:async';
-
 import 'flutter_flow/flutter_flow_theme.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -19,9 +17,9 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => HomePageWidget())));
+            MaterialPageRoute(builder: (context) => const HomePageWidget())));
   }
 
   @override
@@ -29,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         actions: [],
         centerTitle: false,
@@ -37,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
       ),
 
 //------------------------- LOGO ARYY--------------------------------------------
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),
@@ -46,13 +44,14 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 100),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 100),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 100, 0, 0),
                         child: SvgPicture.network(
                           'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/tf0gio9xuw5u/UI_Aryy_LOGOTIPO_SF.svg',
                           width: 200,
@@ -65,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
 //-------------------------- CIRCULO DE PROGRESO -----------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 50),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -80,7 +79,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
 //--------------------- TEXTO -------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 150, 0, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 150, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +98,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
 //-------------------------- LOGO MECAHSOFT -------------------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 1),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,

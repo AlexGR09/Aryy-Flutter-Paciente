@@ -41,7 +41,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -102,7 +102,13 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
-                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          hintStyle: FlutterFlowTheme.of(context)
+                              .bodyText2
+                              .override(
+                                  fontFamily: 'Montserrat',
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.normal,
+                                  color: Color(0xFFCCCCCC)),
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
                               color: Color(0x00000000),
@@ -145,9 +151,9 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                              fontFamily: 'Poppins',
-                              fontWeight: FontWeight.normal,
-                            ),
+                            fontFamily: 'Poppins',
+                            fontWeight: FontWeight.normal,
+                            color: FlutterFlowTheme.of(context).secondaryText),
                       ),
                     ),
                     Padding(

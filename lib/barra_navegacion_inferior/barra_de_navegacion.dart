@@ -1,3 +1,4 @@
+import '../flutter_flow/flutter_flow_theme.dart';
 import '../next_page_tmp/transiciones.dart';
 import '../buscar_especialista/buscar_especialista_widget.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -23,7 +24,7 @@ late int deltaIndex = 0, currentIndex = -1;
 CurvedNavigationBar GetBarradeNavegacion(BuildContext context) {
   return CurvedNavigationBar(
       color: HexColor("#7900ff"),
-      backgroundColor: Colors.white,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       buttonBackgroundColor: HexColor("b380ff"),
       height: 50,
       animationDuration: const Duration(milliseconds: 200),

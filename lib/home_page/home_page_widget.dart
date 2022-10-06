@@ -1,10 +1,7 @@
 import 'package:aryy_front/styles/my_icons.dart';
-
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomePageWidget extends StatefulWidget {
@@ -23,7 +20,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: true,
         actions: [
           Padding(
@@ -50,7 +47,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 //--------------------------- PRIMER PAGE VIEW -----------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -316,11 +313,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 onDotClicked: (i) {
                                   pageViewController!.animateToPage(
                                     i,
-                                    duration: Duration(milliseconds: 500),
+                                    duration: const Duration(milliseconds: 500),
                                     curve: Curves.ease,
                                   );
                                 },
-                                effect: ExpandingDotsEffect(
+                                effect: const ExpandingDotsEffect(
                                   expansionFactor: 2,
                                   spacing: 8,
                                   radius: 16,
