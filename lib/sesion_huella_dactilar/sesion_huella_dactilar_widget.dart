@@ -31,12 +31,17 @@ class _SesionHuellaDactilarWidgetState
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgPicture.asset(
-                REGRESAR,
-                width: 30,
-                height: 30,
-                fit: BoxFit.cover,
-              ),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, "Registrarse");
+                },
+                child: SvgPicture.asset(
+                  REGRESAR,
+                  width: 30,
+                  height: 30,
+                  fit: BoxFit.cover,
+                ),
+              )
             ],
           ),
         ),
@@ -58,7 +63,7 @@ class _SesionHuellaDactilarWidgetState
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      HUELLA_BLANCO,
+                      ARYY_LOGO_BLANCO,
                       width: 150,
                       fit: BoxFit.cover,
                     ),
@@ -93,7 +98,7 @@ class _SesionHuellaDactilarWidgetState
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         SvgPicture.asset(
-                          HUELLA_MORADO,
+                          HUELLA_BLANCO,
                           width: 80,
                           height: 80,
                           fit: BoxFit.cover,
