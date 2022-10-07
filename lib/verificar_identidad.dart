@@ -1,3 +1,5 @@
+import 'package:aryy_front/styles/my_icons.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -52,7 +54,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(
-                      'assets/images/UI_Aryy_LOGOTIPO_SF.svg',
+                      ARYY_LOGO_MORADO,
                       height: 50,
                       fit: BoxFit.cover,
                     ),

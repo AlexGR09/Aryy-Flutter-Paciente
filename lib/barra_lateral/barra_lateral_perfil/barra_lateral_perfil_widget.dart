@@ -2281,9 +2281,13 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                         width: 300,
                                         height: 35,
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                            border: Border.all(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryBtnText,
+                                            )),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
