@@ -1,51 +1,27 @@
-import 'package:provider/provider.dart';
-
 import './index.dart';
 import './splash_screen.dart';
 import './vista_video/registrase_iniciarsesion.dart';
 import 'package:flutter/material.dart';
-// para las pruebas de responsive y modo oscuro
-import './sharedPreferences/dartThemeProvider.dart';
 
-class MyApp extends StatefulWidget {
-  @override
-  _MyAppState createState() => _MyAppState();
-}
+void main() => runApp(MyApp());
 
-class _MyAppState extends State<MyApp> {
-  DarkThemeProvider themeChangeProvider = new DarkThemeProvider();
+class MyApp extends StatelessWidget {
+  MyApp({Key? key}) : super(key: key);
 
-  @override
-  void initState() {
-    super.initState();
-    // Obten el balor de flutter.preferences para guardarlo en nuestro custom provider
-    getCurrentAppTheme();
-  }
-
-  void getCurrentAppTheme() async {
-    themeChangeProvider.darkTheme =
-        await themeChangeProvider.darkThemePreference.getTheme();
-  }
+  // Using "static" so that we can easily access it later
+  static final ValueNotifier<ThemeMode> themeNotifier =
+      ValueNotifier(ThemeMode.light);
 
   @override
   Widget build(BuildContext context) {
-    // Si se cambia a modo oscuro el ChangeNotifierProvider avisará a todos los descendientes del widget
-    return ChangeNotifierProvider(
-      create: (_) {
-        return themeChangeProvider;
-      },
-      child: Consumer<DarkThemeProvider>(
-        builder: (BuildContext context, value, Widget? child) {
+    return ValueListenableBuilder(
+        valueListenable: themeNotifier,
+        builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
-              theme: ThemeData.light(),
-              darkTheme: ThemeData.dark(),
               debugShowCheckedModeBanner: false,
-              themeMode: ThemeMode.light,
               title: 'Prueba',
-              initialRoute: "Perfil_inicio",
               /*4F565F*/
-              //initialRoute: "registrarse_iniciosesion",
-              //initialRoute: "iniciarsesion",
+              initialRoute: "iniciarsesion",
               routes: {
                 "splash": (_) => SplashScreen(),
                 "bienvenida": (_) => HomePageWidget(),
@@ -79,9 +55,7 @@ class _MyAppState extends State<MyApp> {
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
               home: SplashScreen());
-        },
-      ),
-    );
+        });
     //home: MenuFrame());
   }
 
