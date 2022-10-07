@@ -3,10 +3,11 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// Responsive y modo oscuro
+import '../next_page_tmp/switch_modo_oscuro.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
-
   @override
   _HomePageWidgetState createState() => _HomePageWidgetState();
 }
@@ -22,9 +23,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: true,
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+        title: DarModeSwitch(context),
+        centerTitle: true,
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 4, 10, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
             child: InkWell(
               onTap: () {
                 Navigator.pushNamed(context, "registrarse_iniciosesion");
@@ -33,13 +37,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                 'Omitir',
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Montserrat',
-                      color: Color(0xC5B4B4B4),
+                      color: const Color(0xC5B4B4B4),
                     ),
               ),
             ),
           ),
         ],
-        centerTitle: true,
         elevation: 0,
       ),
 

@@ -1,8 +1,6 @@
 // ignore_for_file: overridden_fields, annotate_overrides
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:shared_preferences/shared_preferences.dart';
 
 const kThemeModeKey = '__theme_mode__';
@@ -37,7 +35,6 @@ abstract class FlutterFlowTheme {
   late Color secondaryBackground;
   late Color primaryText;
   late Color secondaryText;
-
   late Color primaryBtnText;
   late Color lineColor;
 
@@ -55,7 +52,6 @@ abstract class FlutterFlowTheme {
   TextStyle get bodyText1 => typography.bodyText1;
   String get bodyText2Family => typography.bodyText2Family;
   TextStyle get bodyText2 => typography.bodyText2;
-
   Typography get typography => ThemeTypography(this);
 }
 
@@ -65,10 +61,7 @@ class LightModeTheme extends FlutterFlowTheme {
   late Color tertiaryColor = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFFF5963);
   late Color primaryBackground = const Color(0xFFF1F4F8);
-  //late Color secondaryBackground = const Color(0xFF101213); //propuesta de Erik
-  //late Color secondaryBackground = const Color(0xFF4F565F); //propuesta de David
-  late Color secondaryBackground = const Color(0xFF363940); //mi propuesta
-  //late Color secondaryBackground = const Color(0xFFFFFFFF);
+  late Color secondaryBackground = const Color(0xFFFFFFFF);
   late Color primaryText = const Color(0xFF101213);
   late Color secondaryText = const Color(0xFF57636C);
   late Color primaryBtnText = Color(0xFFFFFFFF);
@@ -154,10 +147,12 @@ class DarkModeTheme extends FlutterFlowTheme {
   late Color tertiaryColor = const Color(0xFFEE8B60);
   late Color alternate = const Color(0xFFFF5963);
   late Color primaryBackground = const Color(0xFF1A1F24);
-  late Color secondaryBackground = const Color(0xFF101213);
+//  late Color secondaryBackground = const Color(0xFF101213); //propuesta de Erik
+//  late Color secondaryBackground = const Color(0xFF4F565F); //propuesta de David
+  late Color secondaryBackground = const Color(0xFF363940); //mi propuesta
+//  late Color secondaryBackground = const Color(0xFF101213);
   late Color primaryText = const Color(0xFFFFFFFF);
   late Color secondaryText = const Color(0xFF95A1AC);
-
   late Color primaryBtnText = Color(0xFFFFFFFF);
   late Color lineColor = Color(0xFF22282F);
 }
