@@ -53,12 +53,12 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+          padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                 child: InkWell(
                   onTap: () async {
                     context.pop();
@@ -76,7 +76,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                 child: Text(
                   'Perfil',
                   style: FlutterFlowTheme.of(context).title2.override(
-                        fontFamily: 'Poppins',
+                        fontFamily: 'Montserrat',
                         fontSize: 18,
                       ),
                 ),
@@ -172,7 +172,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Montserrat',
                                           color: Color(0xFF999999),
                                           fontSize: 12,
                                           fontWeight: FontWeight.w300,
@@ -221,7 +221,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         fontSize: 16,
                                         fontWeight: FontWeight.normal,
                                       ),
@@ -265,7 +265,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Montserrat',
                                             color: Color(0xFF999999),
                                             fontSize: 12,
                                             fontWeight: FontWeight.w300,
@@ -314,7 +314,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Montserrat',
                                           fontSize: 16,
                                           fontWeight: FontWeight.normal,
                                         ),
@@ -332,7 +332,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(22, 10, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Material(
                         color: Colors.transparent,
@@ -366,7 +366,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyText2
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Montserrat',
                                       color: Color(0xFF999999),
                                       fontSize: 12,
                                       fontWeight: FontWeight.w300,
@@ -415,7 +415,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                               style: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Montserrat',
                                     fontSize: 16,
                                     fontWeight: FontWeight.normal,
                                   ),
@@ -458,7 +458,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .bodyText2
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         color: Color(0xFF999999),
                                         fontSize: 12,
                                         fontWeight: FontWeight.w300,
@@ -507,7 +507,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                 style: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
-                                      fontFamily: 'Poppins',
+                                      fontFamily: 'Montserrat',
                                       fontSize: 16,
                                       fontWeight: FontWeight.normal,
                                     ),
@@ -561,7 +561,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Montserrat',
                                           color: Color(0xFF999999),
                                           fontSize: 12,
                                           fontWeight: FontWeight.w300,
@@ -610,7 +610,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Poppins',
+                                        fontFamily: 'Montserrat',
                                         fontSize: 16,
                                         fontWeight: FontWeight.normal,
                                       ),
@@ -654,7 +654,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
-                                            fontFamily: 'Poppins',
+                                            fontFamily: 'Montserrat',
                                             color: Color(0xFF999999),
                                             fontSize: 12,
                                             fontWeight: FontWeight.w300,
@@ -703,7 +703,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                          fontFamily: 'Poppins',
+                                          fontFamily: 'Montserrat',
                                           fontSize: 16,
                                         ),
                                   ),
@@ -733,7 +733,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                           color: Color(0xFF7900FF),
                           textStyle:
                               FlutterFlowTheme.of(context).subtitle2.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Montserrat',
                                     color: Colors.white,
                                     fontSize: 14,
                                     fontWeight: FontWeight.normal,
