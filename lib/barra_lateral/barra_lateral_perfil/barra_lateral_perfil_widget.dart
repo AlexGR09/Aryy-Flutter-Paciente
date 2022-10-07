@@ -1722,21 +1722,21 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   () => dropDownValue8 = val),
                                               width: 300,
                                               height: 40,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.black,
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color:
+                                                        const Color(0xFF999999),
+                                                    fontSize: 12,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
                                               hintText: 'Documento',
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
-                                                      .primaryBtnText,
+                                                      .secondaryBackground,
                                               elevation: 2,
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
@@ -1906,21 +1906,22 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     () => dropDownValue9 = val),
                                                 width: 300,
                                                 height: 40,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.normal,
-                                                    ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: const Color(
+                                                              0xFF999999),
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.normal,
+                                                        ),
                                                 hintText: 'Aseguradora',
-                                                fillColor: Colors.white,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 elevation: 2,
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
