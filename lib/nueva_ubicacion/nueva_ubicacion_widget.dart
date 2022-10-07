@@ -108,14 +108,14 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                   ],
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(35, 130, 22, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(22, 130, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Column(
                         mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        //crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             '*Calle 1735 N Story Road',

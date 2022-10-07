@@ -2266,7 +2266,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                         }
                                         context.pushNamed(
                                           'nueva_ubicacion',
-                                          /* extra: <String, dynamic>{
+                                          extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
@@ -2274,7 +2274,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               duration:
                                                   Duration(milliseconds: 5),
                                             ),
-                                          },*/
+                                          },
                                         );
                                       },
                                       child: Container(
