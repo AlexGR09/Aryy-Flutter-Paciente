@@ -1,4 +1,5 @@
-import 'package:aryy_front/styles/my_icons.dart';
+import '../styles/my_icons.dart';
+import '../iniciarsesion/switch_modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
+        centerTitle: false,
         title: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0, 25, 20, 0),
           child: Row(
@@ -54,6 +56,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                   fit: BoxFit.cover,
                 ),
               ),
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+              Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: InkWell(
@@ -74,7 +81,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
           ),
         ),
         actions: [],
-        centerTitle: false,
         elevation: 0,
       ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,

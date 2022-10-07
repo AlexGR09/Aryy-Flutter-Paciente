@@ -1,6 +1,7 @@
 import 'package:aryy_front/styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
+import '../iniciarsesion/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -55,6 +56,11 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 height: 30,
                 fit: BoxFit.cover,
               ),
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+              Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: InkWell(

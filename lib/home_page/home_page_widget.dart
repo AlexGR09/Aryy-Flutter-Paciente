@@ -3,7 +3,8 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import '../main.dart';
+// Responsive y modo oscuro
+import '../iniciarsesion/switch_modo_oscuro.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -22,28 +23,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: true,
-        centerTitle: true,
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-                icon: Icon(MyApp.themeNotifier.value == ThemeMode.light
-                    ? Icons.dark_mode
-                    : Icons.light_mode),
-                color: MyApp.themeNotifier.value == ThemeMode.light
-                    ? FlutterFlowTheme.of(context).secondaryText
-                    : FlutterFlowTheme.of(context).primaryText,
-                onPressed: () {
-                  MyApp.themeNotifier.value =
-                      MyApp.themeNotifier.value == ThemeMode.light
-                          ? ThemeMode.dark
-                          : ThemeMode.light;
-                })
-          ],
-        ),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+        title: DarModeSwitch(context),
+        centerTitle: true,
         actions: [
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
