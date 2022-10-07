@@ -65,16 +65,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
               child: InkWell(
                 onTap: () async {
-                  context.pushNamed('HomePage');
+                  context.pushNamed('home2_inicio');
                 },
                 child: SvgPicture.network(
                   REGRESAR,
@@ -85,7 +85,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
               child: Text(
                 'Perfil',
                 style: FlutterFlowTheme.of(context).bodyText1.override(
@@ -101,7 +101,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -150,8 +150,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 30, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 30, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -197,8 +198,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 5, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 5, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -224,8 +226,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 20, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 20, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -252,7 +255,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .secondaryBackground,
+                                                        .primaryBtnText,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
@@ -273,9 +276,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   ),
                                                   child: Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10, 0, 0, 5),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            10, 0, 0, 5),
                                                     child: TextFormField(
                                                       controller:
                                                           nombreController,
@@ -297,12 +300,11 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                           .w200,
                                                                 ),
                                                         enabledBorder:
-                                                            UnderlineInputBorder(
+                                                            const UnderlineInputBorder(
                                                           borderSide:
                                                               BorderSide(
-                                                            //color: Color(0x00000000),
                                                             color: Color(
-                                                                0xFFCCCCCC),
+                                                                0x00000000),
                                                             width: 1,
                                                           ),
                                                           borderRadius:
@@ -392,8 +394,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 15, 0, 0),
                                               child: Material(
                                                 color: Colors.transparent,
                                                 elevation: 2,
@@ -408,10 +411,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     width: 300,
                                                     height: 40,
                                                     decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 50,
@@ -432,9 +434,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10, 0, 0, 5),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              10, 0, 0, 5),
                                                       child: TextFormField(
                                                         controller:
                                                             apellidoPaternoController,
@@ -458,7 +460,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                             .w200,
                                                                   ),
                                                           enabledBorder:
-                                                              UnderlineInputBorder(
+                                                              const UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
                                                               color: Color(
@@ -555,8 +557,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 15, 0, 0),
                                               child: Material(
                                                 color: Colors.transparent,
                                                 elevation: 2,
@@ -571,10 +574,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     width: 300,
                                                     height: 40,
                                                     decoration: BoxDecoration(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText,
+                                                      color: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       boxShadow: [
                                                         BoxShadow(
                                                           blurRadius: 4,
@@ -595,9 +597,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10, 0, 0, 5),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              10, 0, 0, 5),
                                                       child: TextFormField(
                                                         controller:
                                                             apellidoMaternoController,
@@ -624,7 +626,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               UnderlineInputBorder(
                                                             borderSide:
                                                                 BorderSide(
-                                                              color: Color(
+                                                              color: const Color(
                                                                   0x00000000),
                                                               width: 1,
                                                             ),
@@ -723,17 +725,17 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 10, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 10, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: [
                                         Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 15, 0, 0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0, 15, 0, 0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -747,9 +749,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            5, 0, 0, 0),
                                                     child: FlutterFlowDropDown(
                                                       options: ['Option 1'],
                                                       onChanged: (val) =>
@@ -765,7 +767,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'Montserrat',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF4F565F),
                                                                 fontSize: 12,
                                                                 fontWeight:
@@ -793,9 +795,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                20, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            20, 0, 0, 0),
                                                     child: FlutterFlowDropDown(
                                                       options: ['Option 1'],
                                                       onChanged: (val) =>
@@ -811,7 +813,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'Montserrat',
-                                                                color: Color(
+                                                                color: const Color(
                                                                     0xFF4F565F),
                                                                 fontSize: 12,
                                                                 fontWeight:
@@ -838,8 +840,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 15, 0, 0),
+                                                padding:
+                                                    const EdgeInsetsDirectional
+                                                        .fromSTEB(0, 15, 0, 0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -860,16 +863,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryBtnText,
+                                                              .secondaryBackground,
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(20),
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(10,
-                                                                      0, 0, 5),
+                                                              const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                  10, 0, 0, 5),
                                                           child: TextFormField(
                                                             controller:
                                                                 textController4,
@@ -892,7 +895,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                             FontWeight.w300,
                                                                       ),
                                                               enabledBorder:
-                                                                  UnderlineInputBorder(
+                                                                  const UnderlineInputBorder(
                                                                 borderSide:
                                                                     BorderSide(
                                                                   color: Color(
@@ -974,7 +977,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Montserrat',
-                                                                  color: Color(
+                                                                  color: const Color(
                                                                       0xFF4F565F),
                                                                   fontSize: 16,
                                                                   fontWeight:
@@ -995,8 +998,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 15, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 15, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1016,7 +1020,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   .bodyText1
                                                   .override(
                                                     fontFamily: 'Montserrat',
-                                                    color: Color(0xFF4F565F),
+                                                    color:
+                                                        const Color(0xFF4F565F),
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w300,
                                                   ),
@@ -1033,24 +1038,27 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               hidesUnderline: true,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 15, 0, 0),
                                               child: FlutterFlowDropDown(
                                                 options: ['Option 1'],
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue4 = val),
                                                 width: 300,
                                                 height: 40,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color: Color(0xFF4F565F),
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: const Color(
+                                                              0xFF4F565F),
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                        ),
                                                 hintText: 'Estado',
                                                 fillColor: Colors.white,
                                                 elevation: 2,
@@ -1065,24 +1073,27 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 15, 0, 0),
                                               child: FlutterFlowDropDown(
                                                 options: ['Option 1'],
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue5 = val),
                                                 width: 300,
                                                 height: 40,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .bodyText1
-                                                    .override(
-                                                      fontFamily: 'Montserrat',
-                                                      color: Color(0xFF4F565F),
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w300,
-                                                    ),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: const Color(
+                                                              0xFF4F565F),
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                        ),
                                                 hintText: 'Ciudad o municipio',
                                                 fillColor: Colors.white,
                                                 elevation: 2,
@@ -1102,8 +1113,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 15, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 15, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1148,8 +1160,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   hidesUnderline: true,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(5, 0, 0, 0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(5, 0, 0, 0),
                                                   child: Material(
                                                     color: Colors.transparent,
                                                     elevation: 2,
@@ -1163,10 +1176,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       width: 210,
                                                       height: 40,
                                                       decoration: BoxDecoration(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .primaryBtnText,
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
                                                         boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4,
@@ -1182,9 +1194,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(12, 0,
-                                                                    0, 5),
+                                                            const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                12, 0, 0, 5),
                                                         child: TextFormField(
                                                           controller:
                                                               textController5,
@@ -1208,7 +1220,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                               .w300,
                                                                     ),
                                                             enabledBorder:
-                                                                UnderlineInputBorder(
+                                                                const UnderlineInputBorder(
                                                               borderSide:
                                                                   BorderSide(
                                                                 color: Color(
@@ -1306,8 +1318,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 15, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 15, 0, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -1347,9 +1360,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                5, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            5, 0, 0, 0),
                                                     child: Material(
                                                       color: Colors.transparent,
                                                       elevation: 2,
@@ -1366,7 +1379,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
                                                                   .of(context)
-                                                              .primaryBtnText,
+                                                              .secondaryBackground,
                                                           boxShadow: [
                                                             BoxShadow(
                                                               blurRadius: 4,
@@ -1382,9 +1395,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(12,
-                                                                      0, 0, 5),
+                                                              const EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                  12, 0, 0, 5),
                                                           child: TextFormField(
                                                             controller:
                                                                 textController6,
@@ -1508,8 +1521,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
 
 //---------------------------------------- BOTON --------------------------------------------------------------------------------
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 20, 0, 20),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 20, 0, 20),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -1517,9 +1531,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 children: [
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                200, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            200, 0, 0, 0),
                                                     child: FFButtonWidget(
                                                       onPressed: () async {
                                                         var confirmDialogResponse =
@@ -1597,15 +1611,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                             ),
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//----------------------------------- TAB IDENTIDAD---------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------- TAB UBICACION ---------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                             SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 30, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 30, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1626,8 +1641,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   fit: BoxFit.cover,
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10, 0, 0, 0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                          10, 0, 0, 0),
                                                   child: Text(
                                                     'Identidad y seguro médico',
                                                     style: FlutterFlowTheme.of(
@@ -1647,8 +1664,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(0, 5, 0, 0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0, 5, 0, 0),
                                                   child: Text(
                                                     'Agrega detalles de tu identificación oficial  y seguro \nmédicon para tenerlos siemprea mano.',
                                                     style: FlutterFlowTheme.of(
@@ -1671,8 +1689,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 20, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 20, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
@@ -1713,8 +1732,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               hidesUnderline: true,
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 10, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 10, 0, 0),
                                               child: Material(
                                                 color: Colors.transparent,
                                                 elevation: 2,
@@ -1728,7 +1748,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBackground,
+                                                        .secondaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
@@ -1912,7 +1932,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBackground,
+                                                        .secondaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
