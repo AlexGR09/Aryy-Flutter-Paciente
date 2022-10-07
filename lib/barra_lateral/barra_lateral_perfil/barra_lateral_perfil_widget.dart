@@ -410,7 +410,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       BorderRadius.circular(20),
                                                   child: Container(
                                                     width: 300,
-                                                    height: 40,
+                                                    height: 45,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -573,7 +573,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       BorderRadius.circular(20),
                                                   child: Container(
                                                     width: 300,
-                                                    height: 40,
+                                                    height: 45,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -2266,7 +2266,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                         }
                                         context.pushNamed(
                                           'nueva_ubicacion',
-                                          extra: <String, dynamic>{
+                                          /* extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,
                                               transitionType: PageTransitionType
@@ -2274,7 +2274,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               duration:
                                                   Duration(milliseconds: 5),
                                             ),
-                                          },
+                                          },*/
                                         );
                                       },
                                       child: Container(

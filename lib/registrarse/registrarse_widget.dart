@@ -65,7 +65,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.pushNamed(context, "registrarse_iniciosesion");
+                    Navigator.pushNamed(context, "iniciarsesion");
                   },
                   child: Text(
                     'Inicar sesión',

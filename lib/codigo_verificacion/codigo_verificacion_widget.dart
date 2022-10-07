@@ -1,3 +1,5 @@
+import 'package:aryy_front/styles/my_icons.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -52,8 +54,8 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.network(
-                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/tf0gio9xuw5u/UI_Aryy_LOGOTIPO_SF.svg',
+                    SvgPicture.asset(
+                      ARYY_LOGO_MORADO,
                       width: 180,
                       fit: BoxFit.cover,
                     ),
@@ -67,7 +69,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Para continuar, es necesario\nverificar tu cuenta con un \ncodigo de usi único',
+                      'Para continuar, es necesario\nverificar tu cuenta con un \ncodigo de uso único',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyText1.override(
                             fontFamily: 'Montserrat',
@@ -149,7 +151,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           ),
                         ),
                         style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Poppins',
+                            fontFamily: 'Montserrat',
                             fontWeight: FontWeight.normal,
                             color: FlutterFlowTheme.of(context).secondaryText),
                       ),
@@ -216,7 +218,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.normal,
                                   ),
                         ),
@@ -284,7 +286,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.normal,
                                   ),
                         ),
@@ -352,7 +354,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
+                                    fontFamily: 'Montserrat',
                                     fontWeight: FontWeight.normal,
                                   ),
                         ),
@@ -372,38 +374,44 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            SvgPicture.network(
-                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/huty3jf4d6fn/ICON_CORREO.svg',
-                              width: 40,
-                              height: 40,
-                              fit: BoxFit.cover,
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-                              child: Text(
-                                'Enviar código vía correo',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      color: Color(0xFF5101CC),
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, "configurar_pin_datos");
+                          },
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              SvgPicture.asset(
+                                CORREO,
+                                width: 40,
+                                height: 40,
+                                fit: BoxFit.cover,
                               ),
-                            ),
-                          ],
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                                child: Text(
+                                  'Enviar código vía correo',
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyText1
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: Color(0xFF5101CC),
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              SvgPicture.network(
-                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/4y1n9x2i4ugw/ICON_SMS.svg',
+                              SvgPicture.asset(
+                                MENSAJE,
                                 width: 40,
                                 height: 40,
                                 fit: BoxFit.cover,
@@ -430,8 +438,8 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              SvgPicture.network(
-                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/9mxid9pimeb7/ICON_WSP.svg',
+                              SvgPicture.asset(
+                                WHATSAPP,
                                 width: 40,
                                 height: 40,
                                 fit: BoxFit.cover,
