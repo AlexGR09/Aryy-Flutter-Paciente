@@ -6,22 +6,23 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
-
-  // Using "static" so that we can easily access it later
   static final ValueNotifier<ThemeMode> themeNotifier =
       ValueNotifier(ThemeMode.light);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return ValueListenableBuilder(
+    return ValueListenableBuilder<ThemeMode>(
         valueListenable: themeNotifier,
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Prueba',
-              /*4F565F*/
-              initialRoute: "iniciarsesion",
+              initialRoute: "bienvenida",
+              // Pruebas responsivas y modo oscuro
+              theme: ThemeData.light(),
+              darkTheme: ThemeData.dark(),
+              themeMode: currentMode,
               routes: {
                 "splash": (_) => SplashScreen(),
                 "bienvenida": (_) => HomePageWidget(),
@@ -56,8 +57,5 @@ class MyApp extends StatelessWidget {
               },
               home: SplashScreen());
         });
-    //home: MenuFrame());
   }
-
-  static of(BuildContext context) {}
 }
