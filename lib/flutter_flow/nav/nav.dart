@@ -135,7 +135,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'nueva_ubicacion',
-              path: 'nuevaUbicacion',
+              path: 'nueva_ubicacion',
               builder: (context, params) => NuevaUbicacionWidget(),
             ),
             FFRoute(

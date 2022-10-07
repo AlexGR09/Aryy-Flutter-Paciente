@@ -60,7 +60,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                 child: InkWell(
-                  onTap: () async {
+                  onTap: () {
                     context.pop();
                   },
                   child: SvgPicture.network(
