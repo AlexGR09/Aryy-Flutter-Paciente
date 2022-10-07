@@ -65,7 +65,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisSize: MainAxisSize.max,
@@ -73,8 +73,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
             Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
               child: InkWell(
-                onTap: () async {
-                  context.pushNamed('home2_inicio');
+                onTap: () {
+                  Navigator.pushNamed(context, "home2_inicio");
                 },
                 child: SvgPicture.network(
                   REGRESAR,
@@ -90,8 +90,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                 'Perfil',
                 style: FlutterFlowTheme.of(context).bodyText1.override(
                       fontFamily: 'Montserrat',
-                      color: Color(0xFF4F565F),
+                      color: Color(0xC586898C),
                       fontSize: 20,
+                      fontWeight: FontWeight.normal,
                     ),
               ),
             ),
@@ -101,7 +102,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -251,11 +252,11 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     BorderRadius.circular(20),
                                                 child: Container(
                                                   width: 300,
-                                                  height: 40,
+                                                  height: 45,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
-                                                        .primaryBtnText,
+                                                        .secondaryBackground,
                                                     boxShadow: [
                                                       BoxShadow(
                                                         blurRadius: 4,
@@ -267,12 +268,12 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             20),
-                                                    border: Border.all(
+                                                    /*border: Border.all(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryBtnText,
-                                                    ),
+                                                    ),*/
                                                   ),
                                                   child: Padding(
                                                     padding:
@@ -425,12 +426,12 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               20),
-                                                      border: Border.all(
+                                                      /*border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryBtnText,
-                                                      ),
+                                                      ),*/
                                                     ),
                                                     child: Padding(
                                                       padding:
@@ -588,12 +589,12 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               20),
-                                                      border: Border.all(
+                                                      /*border: Border.all(
                                                         color:
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryBtnText,
-                                                      ),
+                                                      ),*/
                                                     ),
                                                     child: Padding(
                                                       padding:
@@ -768,17 +769,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                 fontFamily:
                                                                     'Montserrat',
                                                                 color: const Color(
-                                                                    0xFF4F565F),
+                                                                    0xFF999999),
                                                                 fontSize: 12,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w300,
                                                               ),
                                                       hintText: 'Género',
-                                                      fillColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryBtnText,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       elevation: 2,
                                                       borderColor:
                                                           FlutterFlowTheme.of(
@@ -814,7 +814,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                 fontFamily:
                                                                     'Montserrat',
                                                                 color: const Color(
-                                                                    0xFF4F565F),
+                                                                    0xFF999999),
                                                                 fontSize: 12,
                                                                 fontWeight:
                                                                     FontWeight
@@ -822,7 +822,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               ),
                                                       hintText:
                                                           'Fecha de nacimiento',
-                                                      fillColor: Colors.white,
+                                                      //fillColor: Colors.white,
+                                                      fillColor: FlutterFlowTheme
+                                                              .of(context)
+                                                          .secondaryBackground,
                                                       elevation: 2,
                                                       borderColor:
                                                           FlutterFlowTheme.of(
@@ -1021,12 +1024,14 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   .override(
                                                     fontFamily: 'Montserrat',
                                                     color:
-                                                        const Color(0xFF4F565F),
+                                                        const Color(0xFF999999),
                                                     fontSize: 12,
                                                     fontWeight: FontWeight.w300,
                                                   ),
                                               hintText: 'Pais',
-                                              fillColor: Colors.white,
+                                              fillColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryBackground,
                                               elevation: 2,
                                               borderColor:
                                                   FlutterFlowTheme.of(context)
@@ -1054,13 +1059,15 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                           fontFamily:
                                                               'Montserrat',
                                                           color: const Color(
-                                                              0xFF4F565F),
+                                                              0xFF999999),
                                                           fontSize: 12,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
                                                 hintText: 'Estado',
-                                                fillColor: Colors.white,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 elevation: 2,
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
@@ -1089,13 +1096,15 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                           fontFamily:
                                                               'Montserrat',
                                                           color: const Color(
-                                                              0xFF4F565F),
+                                                              0xFF999999),
                                                           fontSize: 12,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
                                                 hintText: 'Ciudad o municipio',
-                                                fillColor: Colors.white,
+                                                fillColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
                                                 elevation: 2,
                                                 borderColor:
                                                     FlutterFlowTheme.of(context)
@@ -1141,13 +1150,17 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Montserrat',
-                                                            color: Colors.black,
+                                                            color: const Color(
+                                                                0xFF999999),
                                                             fontSize: 14,
                                                             fontWeight:
                                                                 FontWeight.w300,
                                                           ),
                                                   hintText: '+52',
-                                                  fillColor: Colors.white,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondaryBackground,
                                                   elevation: 2,
                                                   borderColor:
                                                       FlutterFlowTheme.of(
@@ -1338,13 +1351,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
-                                                          color: Colors.black,
+                                                          color: const Color(
+                                                              0xFF999999),
                                                           fontSize: 14,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
                                                     hintText: '+52',
-                                                    fillColor: Colors.white,
+                                                    fillColor: FlutterFlowTheme
+                                                            .of(context)
+                                                        .secondaryBackground,
                                                     elevation: 2,
                                                     borderColor:
                                                         FlutterFlowTheme.of(
@@ -2265,7 +2281,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                         height: 35,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
-                                              .lineColor,
+                                              .secondaryBackground,
                                         ),
                                         child: Padding(
                                           padding:
