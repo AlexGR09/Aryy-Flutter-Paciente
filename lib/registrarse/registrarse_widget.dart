@@ -1,7 +1,7 @@
 import 'package:aryy_front/styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../iniciarsesion/switch_modo_oscuro.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

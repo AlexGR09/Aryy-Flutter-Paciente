@@ -4,7 +4,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 // Responsive y modo oscuro
-import '../iniciarsesion/switch_modo_oscuro.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
