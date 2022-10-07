@@ -1,5 +1,5 @@
 import '../styles/my_icons.dart';
-import '../iniciarsesion/switch_modo_oscuro.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';

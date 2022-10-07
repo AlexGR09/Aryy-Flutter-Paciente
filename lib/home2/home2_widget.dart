@@ -1,5 +1,6 @@
 import '../barra_lateral/barra_lateral_widget.dart';
 import '../buscar_especialista/buscar_especialista_widget.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../next_page_tmp/transiciones.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../styles/my_icons.dart';
@@ -49,6 +50,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
+                  DarkModeIcon(context),
                   Builder(
                     builder: (context) => InkWell(
                       onTap: () => Scaffold.of(context).openEndDrawer(),
@@ -103,7 +105,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                         ),
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
               leading: SvgPicture.asset(
