@@ -99,10 +99,13 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                     ),
               ),
             ),
-            DarkModeIcon(context),
           ],
         ),
-        actions: [],
+        actions: [
+          Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+              child: DarkModeIcon(context))
+        ],
         toolbarHeight: 80,
       ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -2328,10 +2331,6 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   10, 0, 0, 0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
                                             children: [
                                               Icon(
                                                 Icons.location_on_outlined,
