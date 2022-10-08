@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
                 "registrarse_iniciosesion": (_) =>
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
-              home: RestablerContrasenaWidget()); // SplashScreen());
+              home: SesionHuellaDactilarWidget()); // SplashScreen());
         });
   }
 }

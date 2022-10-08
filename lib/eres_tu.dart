@@ -150,7 +150,7 @@ class _EresTuWidgetState extends State<EresTuWidget> {
                       options: FFButtonOptions(
                         width: 130,
                         height: 45,
-                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                        color: FlutterFlowTheme.of(context).primaryBtnText,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
                                   fontFamily: 'Montserrat',
