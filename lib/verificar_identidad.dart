@@ -39,8 +39,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor:
-            Colors.red, // FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         centerTitle: true,
         title: Padding(
