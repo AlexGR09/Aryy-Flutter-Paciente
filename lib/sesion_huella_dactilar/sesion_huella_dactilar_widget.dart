@@ -21,7 +21,7 @@ class _SesionHuellaDactilarWidgetState
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: Colors.red, // Color(0xFF7900FF),
+        backgroundColor: Color(0xFF7900FF),
         toolbarHeight: 80,
         automaticallyImplyLeading: false,
         centerTitle: true,

@@ -18,7 +18,8 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Prueba',
-              initialRoute: "iniciarsesion",
+              initialRoute: "splash",
+
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
                 "registrarse_iniciosesion": (_) =>
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
-              home: SesionHuellaDactilarWidget()); // SplashScreen());
+              home: SplashScreen());
         });
   }
 }
