@@ -1,4 +1,4 @@
-import 'package:aryy_front/styles/my_icons.dart';
+import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../next_page_tmp/switch_modo_oscuro.dart';
@@ -45,7 +45,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         title: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+          padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,6 +82,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
         ),
         actions: [],
         centerTitle: false,
+        toolbarHeight: 80,
         elevation: 0,
       ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
