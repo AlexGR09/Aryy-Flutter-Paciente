@@ -41,6 +41,7 @@ class _EresTuWidgetState extends State<EresTuWidget> {
         elevation: 0,
         toolbarHeight: 80,
       ),
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -80,12 +81,14 @@ class _EresTuWidgetState extends State<EresTuWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Text(
                             'Usuario 01',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Montserrat',
-                                      color: Color(0xFF5101CC),
-                                      fontWeight: FontWeight.w300,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontWeight: FontWeight.w300,
+                                ),
                           ),
                         ),
                       ],
@@ -147,7 +150,7 @@ class _EresTuWidgetState extends State<EresTuWidget> {
                       options: FFButtonOptions(
                         width: 130,
                         height: 45,
-                        color: FlutterFlowTheme.of(context).primaryBtnText,
+                        color: FlutterFlowTheme.of(context).secondaryBackground,
                         textStyle:
                             FlutterFlowTheme.of(context).subtitle2.override(
                                   fontFamily: 'Montserrat',
