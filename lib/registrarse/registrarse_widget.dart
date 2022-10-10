@@ -17,6 +17,8 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   TextEditingController? textController2;
   TextEditingController? textController3;
   TextEditingController? textController4;
+  late bool passwordVisibility1;
+  late bool passwordVisibility2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,6 +28,8 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     textController2 = TextEditingController();
     textController3 = TextEditingController();
     textController4 = TextEditingController();
+    passwordVisibility1 = false;
+    passwordVisibility2 = false;
   }
 
   @override
@@ -329,7 +333,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                   child: TextFormField(
                                     controller: textController3,
                                     autofocus: true,
-                                    obscureText: false,
+                                    obscureText: !passwordVisibility1,
                                     decoration: InputDecoration(
                                       hintText: 'Ingrese una contraseña',
                                       hintStyle: FlutterFlowTheme.of(context)
@@ -379,6 +383,21 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
+                                      suffixIcon: InkWell(
+                                        onTap: () => setState(
+                                          () => passwordVisibility1 =
+                                              !passwordVisibility1,
+                                        ),
+                                        focusNode:
+                                            FocusNode(skipTraversal: true),
+                                        child: Icon(
+                                          passwordVisibility1
+                                              ? Icons.visibility_outlined
+                                              : Icons.visibility_off_outlined,
+                                          color: Color(0xFF757575),
+                                          size: 22,
+                                        ),
+                                      ),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -423,7 +442,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                   child: TextFormField(
                                     controller: textController4,
                                     autofocus: true,
-                                    obscureText: false,
+                                    obscureText: !passwordVisibility2,
                                     decoration: InputDecoration(
                                       hintText: 'Confirme su contraseña',
                                       hintStyle: FlutterFlowTheme.of(context)
@@ -471,6 +490,21 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
+                                        ),
+                                      ),
+                                      suffixIcon: InkWell(
+                                        onTap: () => setState(
+                                          () => passwordVisibility2 =
+                                              !passwordVisibility2,
+                                        ),
+                                        focusNode:
+                                            FocusNode(skipTraversal: true),
+                                        child: Icon(
+                                          passwordVisibility2
+                                              ? Icons.visibility_outlined
+                                              : Icons.visibility_off_outlined,
+                                          color: Color(0xFF757575),
+                                          size: 22,
                                         ),
                                       ),
                                     ),
