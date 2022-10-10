@@ -1,5 +1,7 @@
 //import 'dart:ffi';
 
+import 'dart:math';
+import '../flutter_flow/random_data_util.dart' as random_data;
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -229,6 +231,7 @@ class _RegistrarseFormularioWidgetState
                                           fontWeight: FontWeight.w300,
                                         ),
                                     textAlign: TextAlign.start,
+                                    keyboardType: TextInputType.name,
                                   ),
                                 ),
                               ),
@@ -330,6 +333,7 @@ class _RegistrarseFormularioWidgetState
                                             fontWeight: FontWeight.w300,
                                           ),
                                       textAlign: TextAlign.start,
+                                      keyboardType: TextInputType.name,
                                     ),
                                   ),
                                 ),
@@ -435,6 +439,7 @@ class _RegistrarseFormularioWidgetState
                                             fontWeight: FontWeight.w300,
                                           ),
                                       textAlign: TextAlign.start,
+                                      keyboardType: TextInputType.name,
                                     ),
                                   ),
                                 ),
@@ -498,6 +503,9 @@ class _RegistrarseFormularioWidgetState
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       20, 0, 0, 0),
                                   child: FlutterFlowDropDown(
+                                    initialOption: dropDownValue2 ??=
+                                        dateTimeFormat(
+                                            'd/M/y', random_data.randomDate()),
                                     options: ['Option 1'],
                                     onChanged: (val) =>
                                         setState(() => dropDownValue2 = val),
