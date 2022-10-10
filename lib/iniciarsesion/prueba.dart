@@ -1,9 +1,9 @@
-import '../styles/my_icons.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class IniciarsesionWidget extends StatefulWidget {
   const IniciarsesionWidget({Key? key}) : super(key: key);
@@ -15,9 +15,9 @@ class IniciarsesionWidget extends StatefulWidget {
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   TextEditingController? textController1;
   TextEditingController? textController2;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   late bool passwordVisibility;
+  final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
@@ -38,43 +38,33 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
         automaticallyImplyLeading: false,
-        centerTitle: false,
         title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0, 25, 20, 0),
+          padding: EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "registrarse_iniciosesion");
-                },
-                child: SvgPicture.asset(
-                  REGRESAR,
-                  width: 30,
-                  height: 30,
-                  fit: BoxFit.cover,
-                ),
+              SvgPicture.network(
+                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/cnxroa6lehu0/UI_MOVIL_REGRESAR.svg',
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,
               ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
               Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                  child: DarkModeIcon(context)),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, "Registrarse");
+                  onTap: () async {
+                    context.pushNamed('Registrarse');
                   },
                   child: Text(
                     'Registrarme',
                     style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Montserrat',
-                          color: const Color(0xC586898C),
+                          fontFamily: 'Poppins',
+                          color: Color(0xC586898C),
                           fontWeight: FontWeight.normal,
                         ),
                   ),
@@ -84,29 +74,27 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
           ),
         ),
         actions: [],
+        centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(
-                0, 60, 0, 0), //ELEMENTOS MÁS CENTRADOS DENTRO DE LA COLUMNA
+            padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                //mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset(
-                          ARYY_LOGO_MORADO,
+                        SvgPicture.network(
+                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/tf0gio9xuw5u/UI_Aryy_LOGOTIPO_SF.svg',
                           width: 180,
                           fit: BoxFit.cover,
                         ),
@@ -114,15 +102,13 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.max,
-                          //mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Material(
                               color: Colors.transparent,
@@ -136,10 +122,10 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
-                                  boxShadow: const [
+                                  boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4,
-                                      color: Color(0x199966FF),
+                                      color: Color(0xFFD0B3FF),
                                       offset: Offset(0, 0),
                                     )
                                   ],
@@ -160,7 +146,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                             fontFamily: 'Montserrat',
                                             fontSize: 12,
                                             fontWeight: FontWeight.normal,
-                                            color: Color(0xFFCCCCCC),
                                           ),
                                       enabledBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
@@ -206,11 +191,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.normal,
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText),
+                                          fontFamily: 'Montserrat',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.normal,
+                                        ),
+                                    keyboardType: TextInputType.emailAddress,
                                   ),
                                 ),
                               ),
@@ -230,82 +215,72 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
-                                    boxShadow: const [
+                                    boxShadow: [
                                       BoxShadow(
                                         blurRadius: 4,
-                                        color: Color(0x199966FF),
+                                        color: Color(0xFFD0B3FF),
                                         offset: Offset(0, 0),
                                       )
                                     ],
                                     borderRadius: BorderRadius.circular(20),
                                   ),
                                   child: Padding(
-                                    padding:
-                                        const EdgeInsetsDirectional.fromSTEB(
-                                            15, 0, 0, 0),
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        15, 0, 0, 0),
                                     child: TextFormField(
                                       controller: textController2,
                                       autofocus: true,
-                                      //obscureText: false,
-
-                                      //------- CONTRASEÑA INVISIBLE --------------//
                                       obscureText: !passwordVisibility,
                                       decoration: InputDecoration(
                                         hintText: 'Contraseña',
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodyText2
                                             .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.normal,
-                                                color: Color(0xFFCCCCCC)),
-                                        enabledBorder:
-                                            const UnderlineInputBorder(
+                                              fontFamily: 'Montserrat',
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                            ),
+                                        enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
-                                        focusedBorder:
-                                            const UnderlineInputBorder(
+                                        focusedBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
-                                        errorBorder: const UnderlineInputBorder(
+                                        errorBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
                                         focusedErrorBorder:
-                                            const UnderlineInputBorder(
+                                            UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
                                             width: 1,
                                           ),
-                                          borderRadius: BorderRadius.only(
+                                          borderRadius: const BorderRadius.only(
                                             topLeft: Radius.circular(4.0),
                                             topRight: Radius.circular(4.0),
                                           ),
                                         ),
-
-                                        //----------------------------------------------------------------------------------
-                                        //------------------------ICONO DE VISIBILIDAD PARA CONTRASEÑA ---------------------
-                                        //----------------------------------------------------------------------------------
                                         suffixIcon: InkWell(
                                           onTap: () => setState(
                                             () => passwordVisibility =
@@ -322,30 +297,13 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                           ),
                                         ),
                                       ),
-                                      //-----------------------------------------------------------------------------------------
-
                                       style: FlutterFlowTheme.of(context)
                                           .bodyText1
                                           .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.normal,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText),
-
-                                      //keyboardType: TextInputType.visiblePassword, //YA NO ME SIRVE
-
-                                      //---------------------------------------------------------------------------
-                                      //--------------------- TIPO DE CONTRASEÑA ----------------------------------
-                                      //--------------------------------------------------------------------------
-
-                                      //----------------------------para contraseña numerica ----------------------
-                                      /*keyboardType:
-                                        const TextInputType.numberWithOptions(
-                                            signed: true, decimal: true),*/
-
-                                      //----------------- contraseña alfanumerica ----------------------------------
+                                            fontFamily: 'Montserrat',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                          ),
                                       keyboardType:
                                           TextInputType.visiblePassword,
                                     ),
@@ -359,22 +317,21 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
                     child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, "verificar_identidad");
+                          onTap: () async {
+                            context.pushNamed('olvidaste_contrasena');
                           },
                           child: Text(
                             '¿Olvidaste tu contraseña?',
                             style:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Montserrat',
-                                      color: const Color(0xFF7900FF),
+                                      color: Color(0xFF7900FF),
                                       fontWeight: FontWeight.w500,
                                     ),
                           ),
@@ -383,15 +340,14 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     ),
                   ),
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         FFButtonWidget(
-                          onPressed: () {
-                            Navigator.pushNamed(context, "home2_inicio");
+                          onPressed: () async {
+                            context.pushNamed('Home2');
                           },
                           text: 'Iniciar sesión',
                           options: FFButtonOptions(
@@ -400,11 +356,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                             color: Color(0xFF7900FF),
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Montserrat',
+                                      fontFamily: 'Poppins',
                                       color: Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
-                            borderSide: const BorderSide(
+                            borderSide: BorderSide(
                               color: Colors.transparent,
                               width: 1,
                             ),
@@ -415,7 +371,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -432,15 +388,15 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
                                       .override(
-                                        fontFamily: 'Montserrat',
+                                        fontFamily: 'Poppins',
                                         fontWeight: FontWeight.w300,
                                       ),
                                 ),
                               ],
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 20, 0, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -452,7 +408,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       border: Border.all(
-                                        color: const Color(0xC5B4B4B4),
+                                        color: Color(0xC5B4B4B4),
                                         width: 1,
                                       ),
                                     ),
@@ -462,10 +418,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(0, 1, 0, 1),
-                                          child: SvgPicture.asset(
-                                            GOOGLE,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 1, 0, 1),
+                                          child: SvgPicture.network(
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/hnqh4foxfcb8/ICON_GOOGLE.svg',
                                             width: 35,
                                             height: 35,
                                             fit: BoxFit.cover,
@@ -477,9 +434,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                               .bodyText1
                                               .override(
                                                 fontFamily: 'Montserrat',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                color: Color(0xC586898C),
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                               ),
@@ -491,8 +446,8 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  0, 20, 0, 0),
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -504,7 +459,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       border: Border.all(
-                                        color: const Color(0xC5B4B4B4),
+                                        color: Color(0xC5B4B4B4),
                                         width: 1,
                                       ),
                                     ),
@@ -514,10 +469,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                           MainAxisAlignment.spaceAround,
                                       children: [
                                         Padding(
-                                          padding: const EdgeInsetsDirectional
-                                              .fromSTEB(0, 1, 0, 1),
-                                          child: SvgPicture.asset(
-                                            FACEBOOK,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 1, 0, 1),
+                                          child: SvgPicture.network(
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/kssa2hn9cvye/ICON_FB.svg',
                                             width: 35,
                                             height: 35,
                                             fit: BoxFit.cover,
@@ -529,9 +485,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                               .bodyText1
                                               .override(
                                                 fontFamily: 'Montserrat',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
+                                                color: Color(0xC586898C),
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w500,
                                               ),
