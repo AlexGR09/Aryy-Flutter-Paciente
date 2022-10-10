@@ -39,7 +39,7 @@ class _Home2WidgetState extends State<Home2Widget> {
         appBar: PreferredSize(
           preferredSize: const Size(100, 100),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(50, 0, 50, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               leadingWidth: 60,
@@ -56,7 +56,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                       onTap: () => Scaffold.of(context).openEndDrawer(),
                       child: Container(
                         width: 120,
-                        height: 50,
+                        height: 40,
                         decoration: const BoxDecoration(
                           color: Color(0xFF7900FF),
                           borderRadius: BorderRadius.only(
@@ -108,11 +108,20 @@ class _Home2WidgetState extends State<Home2Widget> {
                   ),
                 ],
               ),
-              leading: SvgPicture.asset(
-                ISOTIPO,
-                width: 50,
-                height: 50,
+              leading: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10, 6, 0, 6),
+                child: SvgPicture.asset(
+                  ISOTIPO,
+                  width: 20,
+                  height: 20,
+                  //fit: BoxFit.cover,
+                ),
               ),
+              /*leading: SvgPicture.asset(
+                ISOTIPO,
+                width: 20,
+                height: 20,
+              ),*/
             ),
           ),
         ),
