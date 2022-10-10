@@ -17,11 +17,14 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   TextEditingController? textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
+  late bool passwordVisibility;
+
   @override
   void initState() {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    passwordVisibility = false;
   }
 
   @override
@@ -235,7 +238,10 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                   child: TextFormField(
                                     controller: textController2,
                                     autofocus: true,
-                                    obscureText: false,
+                                    //obscureText: false,
+
+                                    //------- CONTRASEÑA INVISIBLE --------------//
+                                    obscureText: !passwordVisibility,
                                     decoration: InputDecoration(
                                       hintText: 'Contraseña',
                                       hintStyle: FlutterFlowTheme.of(context)
@@ -295,7 +301,12 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                             fontWeight: FontWeight.normal,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText),
-                                    keyboardType: TextInputType.visiblePassword,
+                                    //keyboardType: TextInputType.visiblePassword,
+
+                                    //------------ TIPO DE CONTRASEÑA -----------//
+                                    keyboardType:
+                                        const TextInputType.numberWithOptions(
+                                            signed: true, decimal: true),
                                   ),
                                 ),
                               ),
