@@ -293,6 +293,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                           fontSize: 16,
                                           fontWeight: FontWeight.normal,
                                         ),
+                                    keyboardType: TextInputType.emailAddress,
                                   ),
                                 ),
                               ),
