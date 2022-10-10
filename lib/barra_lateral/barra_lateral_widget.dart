@@ -24,7 +24,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
 
   Widget buildHeader(BuildContext context) => Container(
         color: Colors.white12,
-        padding: const EdgeInsetsDirectional.fromSTEB(25, 30, 10, 20),
+        padding: const EdgeInsetsDirectional.fromSTEB(25, 60, 10, 20),
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -37,7 +37,7 @@ class _NavigationDrawerState extends State<NavigationDrawer> {
                 shape: BoxShape.circle,
               ),
               child: Image.asset(
-                PERFIL_RELLENO,
+                AVATAR,
                 fit: BoxFit.cover,
               ),
             ),
