@@ -292,7 +292,28 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
+
+                                      //----------------------------------------------------------------------------------
+                                      //------------------------ICONO DE VISIBILIDAD PARA CONTRASEÑA ---------------------
+                                      //----------------------------------------------------------------------------------
+                                      suffixIcon: InkWell(
+                                        onTap: () => setState(
+                                          () => passwordVisibility =
+                                              !passwordVisibility,
+                                        ),
+                                        focusNode:
+                                            FocusNode(skipTraversal: true),
+                                        child: Icon(
+                                          passwordVisibility
+                                              ? Icons.visibility_outlined
+                                              : Icons.visibility_off_outlined,
+                                          color: Color(0xFF757575),
+                                          size: 22,
+                                        ),
+                                      ),
                                     ),
+                                    //-----------------------------------------------------------------------------------------
+
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
@@ -301,12 +322,20 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                             fontWeight: FontWeight.normal,
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryText),
-                                    //keyboardType: TextInputType.visiblePassword,
 
-                                    //------------ TIPO DE CONTRASEÑA -----------//
-                                    keyboardType:
+                                    //keyboardType: TextInputType.visiblePassword, //YA NO ME SIRVE
+
+                                    //---------------------------------------------------------------------------
+                                    //--------------------- TIPO DE CONTRASEÑA ----------------------------------
+                                    //--------------------------------------------------------------------------
+
+                                    //----------------------------para contraseña numerica ----------------------
+                                    /*keyboardType:
                                         const TextInputType.numberWithOptions(
-                                            signed: true, decimal: true),
+                                            signed: true, decimal: true),*/
+
+                                    //----------------- contraseña alfanumerica ----------------------------------
+                                    keyboardType: TextInputType.visiblePassword,
                                   ),
                                 ),
                               ),
