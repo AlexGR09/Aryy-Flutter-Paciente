@@ -1,10 +1,6 @@
 import 'package:aryy_front/flutter_flow/flutter_flow_theme.dart';
 import 'package:aryy_front/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aryy_front/vista_video/video_widget.dart';
-//import 'package:connexionvideo/create_login.dart';
-//import 'package:connexionvideo/home_signin_widget.dart';
-//import 'package:connexionvideo/sign_in.dart';
-//import 'package:connexionvideo/video_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -31,7 +27,7 @@ class MenuFrame extends StatelessWidget {
             onTap: () => FocusScope.of(context).unfocus(),
             child: SingleChildScrollView(
               child: Column(
-                mainAxisSize: MainAxisSize.max,
+                //mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(

@@ -36,7 +36,8 @@ class _VideoWidgetState extends State<VideoWidget> {
                     child: SizedBox(
                       width:
                           constraints.maxWidth * _controller.value.aspectRatio,
-                      height: constraints.maxHeight,
+                      //height: constraints.maxHeight,
+                      height: 400,
                       child: VideoPlayer(_controller),
                     ),
                   ),
