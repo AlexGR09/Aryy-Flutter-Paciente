@@ -987,6 +987,9 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                       FontWeight
                                                                           .normal,
                                                                 ),
+                                                            keyboardType:
+                                                                TextInputType
+                                                                    .text,
                                                           ),
                                                         ),
                                                       ),
@@ -1320,9 +1323,17 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                     FontWeight
                                                                         .w300,
                                                               ),
+                                                          //keyboardType:TextInputType.phone,
                                                           keyboardType:
                                                               TextInputType
-                                                                  .phone,
+                                                                  .number,
+                                                          validator: (value) {
+                                                            if (value!
+                                                                .isEmpty) {
+                                                              return "Escribe un numero de telefono";
+                                                            }
+                                                            return null;
+                                                          },
                                                         ),
                                                       ),
                                                     ),
@@ -1523,9 +1534,17 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                       FontWeight
                                                                           .w300,
                                                                 ),
+                                                            //keyboardType:TextInputType.phone,
                                                             keyboardType:
                                                                 TextInputType
-                                                                    .phone,
+                                                                    .number,
+                                                            validator: (value) {
+                                                              if (value!
+                                                                  .isEmpty) {
+                                                                return 'Escribe un numero de telefono+';
+                                                              }
+                                                              return null;
+                                                            },
                                                           ),
                                                         ),
                                                       ),
