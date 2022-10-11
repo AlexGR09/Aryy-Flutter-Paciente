@@ -155,6 +155,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                             fontWeight: FontWeight.normal,
                             color: FlutterFlowTheme.of(context).secondaryText),
                         textAlign: TextAlign.center,
+                        keyboardType: TextInputType.number, //SOLO NUMEROS
                       ),
                     ),
                     Padding(
@@ -223,6 +224,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                                     fontWeight: FontWeight.normal,
                                   ),
                           textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
                         ),
                       ),
                     ),
@@ -292,6 +294,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                                     fontWeight: FontWeight.normal,
                                   ),
                           textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
                         ),
                       ),
                     ),
@@ -361,6 +364,7 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
                                     fontWeight: FontWeight.normal,
                                   ),
                           textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
                         ),
                       ),
                     ),
