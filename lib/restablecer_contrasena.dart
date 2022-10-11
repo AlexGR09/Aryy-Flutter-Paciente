@@ -19,6 +19,8 @@ class RestablerContrasenaWidget extends StatefulWidget {
 class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
   TextEditingController? textController1;
   TextEditingController? textController2;
+  late bool passwordVisibility1;
+  late bool passwordVisibility2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -26,6 +28,8 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
     super.initState();
     textController1 = TextEditingController();
     textController2 = TextEditingController();
+    passwordVisibility1 = false;
+    passwordVisibility2 = false;
   }
 
   @override
@@ -162,6 +166,20 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                         topRight: Radius.circular(4.0),
                                       ),
                                     ),
+                                    suffixIcon: InkWell(
+                                      onTap: () => setState(
+                                        () => passwordVisibility1 =
+                                            !passwordVisibility1,
+                                      ),
+                                      focusNode: FocusNode(skipTraversal: true),
+                                      child: Icon(
+                                        passwordVisibility1
+                                            ? Icons.visibility_outlined
+                                            : Icons.visibility_off_outlined,
+                                        color: Color(0xFF757575),
+                                        size: 22,
+                                      ),
+                                    ),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
@@ -244,6 +262,21 @@ class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
                                         borderRadius: const BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
+                                        ),
+                                      ),
+                                      suffixIcon: InkWell(
+                                        onTap: () => setState(
+                                          () => passwordVisibility2 =
+                                              !passwordVisibility2,
+                                        ),
+                                        focusNode:
+                                            FocusNode(skipTraversal: true),
+                                        child: Icon(
+                                          passwordVisibility2
+                                              ? Icons.visibility_outlined
+                                              : Icons.visibility_off_outlined,
+                                          color: Color(0xFF757575),
+                                          size: 22,
                                         ),
                                       ),
                                     ),

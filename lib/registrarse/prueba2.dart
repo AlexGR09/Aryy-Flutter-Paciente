@@ -5,24 +5,30 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class VerificarIdentidadWidget extends StatefulWidget {
-  const VerificarIdentidadWidget({Key? key}) : super(key: key);
+class RestablerContrasenaWidget extends StatefulWidget {
+  const RestablerContrasenaWidget({Key? key}) : super(key: key);
 
   @override
-  _VerificarIdentidadWidgetState createState() =>
-      _VerificarIdentidadWidgetState();
+  _RestablerContrasenaWidgetState createState() =>
+      _RestablerContrasenaWidgetState();
 }
 
-class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
+class _RestablerContrasenaWidgetState extends State<RestablerContrasenaWidget> {
   TextEditingController? textController1;
+
+  late bool passwordVisibility1;
   TextEditingController? textController2;
+
+  late bool passwordVisibility2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
     textController1 = TextEditingController();
+    passwordVisibility1 = false;
     textController2 = TextEditingController();
+    passwordVisibility2 = false;
   }
 
   @override
@@ -65,7 +71,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Necesitamos verificar tu\nidentidad, por favor ingresa tu\ncorreo o núm. teléfono',
+                        'Ingresa una contraseña nueva \npara acceder a tu cuenta',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).bodyText1.override(
                               fontFamily: 'Poppins',
@@ -106,9 +112,9 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                 child: TextFormField(
                                   controller: textController1,
                                   autofocus: true,
-                                  obscureText: false,
+                                  obscureText: !passwordVisibility1,
                                   decoration: InputDecoration(
-                                    hintText: 'Correo o núm. de teléfono',
+                                    hintText: 'Ingresa una contraseña',
                                     hintStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
@@ -156,6 +162,20 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                         topRight: Radius.circular(4.0),
                                       ),
                                     ),
+                                    suffixIcon: InkWell(
+                                      onTap: () => setState(
+                                        () => passwordVisibility1 =
+                                            !passwordVisibility1,
+                                      ),
+                                      focusNode: FocusNode(skipTraversal: true),
+                                      child: Icon(
+                                        passwordVisibility1
+                                            ? Icons.visibility_outlined
+                                            : Icons.visibility_off_outlined,
+                                        color: Color(0xFF757575),
+                                        size: 22,
+                                      ),
+                                    ),
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyText1
@@ -163,6 +183,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                         fontFamily: 'Poppins',
                                         fontWeight: FontWeight.normal,
                                       ),
+                                  keyboardType: TextInputType.visiblePassword,
                                 ),
                               ),
                             ),
@@ -190,10 +211,9 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                   child: TextFormField(
                                     controller: textController2,
                                     autofocus: true,
-                                    obscureText: false,
+                                    obscureText: !passwordVisibility2,
                                     decoration: InputDecoration(
-                                      hintText:
-                                          'Confirmar correo o núm. de telefono',
+                                      hintText: 'Confirmar contraseña',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .bodyText2
                                           .override(
@@ -241,6 +261,21 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
+                                      suffixIcon: InkWell(
+                                        onTap: () => setState(
+                                          () => passwordVisibility2 =
+                                              !passwordVisibility2,
+                                        ),
+                                        focusNode:
+                                            FocusNode(skipTraversal: true),
+                                        child: Icon(
+                                          passwordVisibility2
+                                              ? Icons.visibility_outlined
+                                              : Icons.visibility_off_outlined,
+                                          color: Color(0xFF757575),
+                                          size: 22,
+                                        ),
+                                      ),
                                     ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodyText1
@@ -248,6 +283,7 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                                           fontFamily: 'Poppins',
                                           fontWeight: FontWeight.normal,
                                         ),
+                                    keyboardType: TextInputType.visiblePassword,
                                   ),
                                 ),
                               ),
@@ -266,13 +302,38 @@ class _VerificarIdentidadWidgetState extends State<VerificarIdentidadWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () async {
-                          context.pushNamed('eres_tu');
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('¿Desea guardar los cambios?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('No'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Si'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            context.pushNamed('iniciarsesion');
+                          } else {
+                            Navigator.pop(context);
+                          }
                         },
-                        text: 'Verificar',
+                        text: 'Guardar y continuar',
                         options: FFButtonOptions(
                           width: 300,
                           height: 45,
-                          color: Color(0xFF363940),
+                          color: Color(0xFF7900FF),
                           textStyle: FlutterFlowTheme.of(context)
                               .subtitle2
                               .override(
