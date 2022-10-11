@@ -1,9 +1,9 @@
-import 'package:aryy_front/barra_navegacion_inferior/barra_de_navegacion.dart';
-import 'package:aryy_front/next_page_tmp/transiciones.dart';
 import '../backend/api_requests/api_calls.dart';
+import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../home2/home2_widget.dart';
-import 'tipo_respuesta_api.dart';
-import 'respuestaApi/respuestaApi.dart';
+import '../next_page_tmp/transiciones.dart';
+import './tipo_respuesta_api.dart';
+import './respuestaApi/respuestaApi.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -29,9 +29,6 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
     super.initState();
     busquedaInputController = TextEditingController();
     ubicacionInputController = TextEditingController();
-//    if (arguments.isNotEmpty) {
-//      busquedaInputController!.text = arguments['emotion'];
-//    }
   }
 
   @override
@@ -43,46 +40,43 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- API -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-  // Convierte el json de la api a su equivalente en clases
   late RespuestaApi respuestaApi;
   // Los datos extraidos de la respuesta de la api
   List<dynamic> listaDeDatos = [];
+  late String modelo = "";
 
-  // Llama a la api pasandole el valor del texto a buscar
-  void LlamaAPIBuscador(TextEditingController? textEditingController) async {
+  void ConsumirAPIBuscador(TextEditingController? textEditingController) async {
     var shouldSetState = false;
     apiResult = await GetBarraBusquedaCall.call(
       search: textEditingController!.text,
       mod: 'searchmed',
     );
     shouldSetState = true;
+    // Conexión exitosa?
     if ((apiResult?.succeeded ?? true)) {
-      final resultSearch =
-          getJsonField(apiResult?.jsonBody, r'''$[*]''').toList();
-      listaDeDatos = resultSearch[1];
-      // Que tipo de datos vienen? de servicio? médico?
-      switch (resultSearch[16]["Modelo"]) {
-        case "Servicio":
-          keyName = "nombre";
-          break;
-        default:
-          keyName = "drnombre";
-          break;
+      final resultado = getJsonField(apiResult?.jsonBody, r'''$[*]''').toList();
+      listaDeDatos = resultado[1];
+      if (resultado[10] > 0) {
+        modelo = resultado[16]["Modelo"][0].toString();
+        // Los datos del médico vienen con un campo "drNombre" en vez de "nombre"
+        switch (modelo) {
+          case "Médico":
+            keyName = "drnombre";
+            break;
+          default:
+            keyName = "nombre";
+            break;
+        }
       }
-//      var especialidad = listaDeDatos[0]["medico"];
-//    Convert api response into proper response class
-//    respuestaApi = respuestaApiFromJson(getJsonField(apiResult?.jsonBody,r'''$[*]''').toString());
     }
     if (shouldSetState) setState(() {});
     return;
+//    respuestaApi = respuestaApiFromJson(getJsonField(apiResult?.jsonBody,r'''$[*]''').toString());
   }
 
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- Estilos -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-// Icons.medical_services_outlined
   int _selectedIndex = 0;
   String keyName = "";
 
@@ -173,9 +167,9 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
                                         controller: busquedaInputController,
                                         onChanged: (_) => EasyDebounce.debounce(
                                           'busquedaInputController',
-                                          const Duration(milliseconds: 500),
+                                          const Duration(milliseconds: 400),
                                           () async {
-                                            LlamaAPIBuscador(
+                                            ConsumirAPIBuscador(
                                                 busquedaInputController);
                                           },
                                         ),
@@ -460,8 +454,7 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
                                           ),
                                           title: Text(
                                               '${listaDeDatos[index][keyName].toString()}'),
-                                          subtitle:
-                                              Text('${tipoDeLista[0].nombre}'),
+                                          subtitle: Text('${modelo}'),
 //                                        selected: index == _selectedIndex,
                                         )),
                                   );

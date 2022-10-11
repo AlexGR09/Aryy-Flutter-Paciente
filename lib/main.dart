@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Prueba',
-              initialRoute: "splash",
+              initialRoute: "buscar_especialista",
 
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
                 "registrarse_iniciosesion": (_) =>
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
-              home: SplashScreen());
+              home: BuscarEspecialistaWidget());
         });
   }
 }
