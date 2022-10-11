@@ -7,6 +7,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/services.dart';
 
 class RegistrarseFormularioWidget extends StatefulWidget {
   const RegistrarseFormularioWidget({Key? key}) : super(key: key);
@@ -795,6 +796,23 @@ class _RegistrarseFormularioWidgetState
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12, 0, 0, 5),
                                       child: TextFormField(
+                                        //------- RESTRINGIR RANGO ESPECIFICO DE DATOS -----------
+                                        keyboardType: TextInputType.number,
+                                        validator: (value) {
+                                          final intNumber =
+                                              int.tryParse(value!);
+                                          if (intNumber != null &&
+                                              intNumber <= 10) {
+                                            return null;
+                                          }
+                                          TextInputFormatters:
+                                          <TextInputFormatter>[
+                                            FilteringTextInputFormatter
+                                                .digitsOnly
+                                          ];
+                                        },
+                                        //------------------ FIN------------------------
+
                                         controller: textController5,
                                         autofocus: true,
                                         obscureText: false,
@@ -861,7 +879,7 @@ class _RegistrarseFormularioWidgetState
                                               fontSize: 16,
                                               fontWeight: FontWeight.w300,
                                             ),
-                                        keyboardType: TextInputType.phone,
+                                        //keyboardType: TextInputType.phone,
                                       ),
                                     ),
                                   ),
