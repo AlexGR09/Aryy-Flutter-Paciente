@@ -17,7 +17,29 @@ class ConfigurarPinDatosbiometricosWidget extends StatefulWidget {
 
 class _ConfigurarPinDatosbiometricosWidgetState
     extends State<ConfigurarPinDatosbiometricosWidget> {
+  TextEditingController? textController1;
+  TextEditingController? textController2;
+  TextEditingController? textController3;
+  TextEditingController? textController4;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  @override
+  void initState() {
+    super.initState();
+    textController1 = TextEditingController();
+    textController2 = TextEditingController();
+    textController3 = TextEditingController();
+    textController4 = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    textController1?.dispose();
+    textController2?.dispose();
+    textController3?.dispose();
+    textController4?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +144,63 @@ class _ConfigurarPinDatosbiometricosWidgetState
                           color: Color(0xC5B4B4B4),
                         ),
                       ),
+                      child: TextFormField(
+                        controller: textController1,
+                        autofocus: true,
+                        obscureText: false,
+                        decoration: InputDecoration(
+                          hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          errorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                          focusedErrorBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(
+                              color: Color(0x00000000),
+                              width: 1,
+                            ),
+                            borderRadius: const BorderRadius.only(
+                              topLeft: Radius.circular(4.0),
+                              topRight: Radius.circular(4.0),
+                            ),
+                          ),
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyText1.override(
+                              fontFamily: 'Montserrat',
+                              fontWeight: FontWeight.normal,
+                            ),
+                        textAlign: TextAlign.center,
+                        keyboardType: TextInputType.number, //SOLO NUMEROS
+                      ),
                     ),
+
+                    //------------
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Container(
@@ -136,8 +214,65 @@ class _ConfigurarPinDatosbiometricosWidgetState
                             color: Color(0xC5B4B4B4),
                           ),
                         ),
+                        child: TextFormField(
+                          controller: textController2,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
+                        ),
                       ),
                     ),
+
+                    //--------------------
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Container(
@@ -151,8 +286,65 @@ class _ConfigurarPinDatosbiometricosWidgetState
                             color: Color(0xC5B4B4B4),
                           ),
                         ),
+                        child: TextFormField(
+                          controller: textController3,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
+                        ),
                       ),
                     ),
+
+                    //----------------------------------------
                     Padding(
                       padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                       child: Container(
@@ -165,12 +357,69 @@ class _ConfigurarPinDatosbiometricosWidgetState
                           border: Border.all(
                             color: Color(0xC5B4B4B4),
                           ),
+                        ),
+                        child: TextFormField(
+                          controller: textController4,
+                          autofocus: true,
+                          obscureText: false,
+                          decoration: InputDecoration(
+                            hintStyle: FlutterFlowTheme.of(context).bodyText2,
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            errorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                            focusedErrorBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Color(0x00000000),
+                                width: 1,
+                              ),
+                              borderRadius: const BorderRadius.only(
+                                topLeft: Radius.circular(4.0),
+                                topRight: Radius.circular(4.0),
+                              ),
+                            ),
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Montserrat',
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.number, //SOLO NUMEROS
                         ),
                       ),
                     ),
                   ],
                 ),
               ),
+
+              //------------------------------------------
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
                 child: Row(
