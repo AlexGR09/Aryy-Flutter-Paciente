@@ -2078,6 +2078,14 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                     FontWeight
                                                                         .normal,
                                                               ),
+                                                      keyboardType:
+                                                          TextInputType.number,
+                                                      validator: (value) {
+                                                        if (value!.isEmpty) {
+                                                          return 'Escribe tu numero de telefono';
+                                                        }
+                                                        return null;
+                                                      },
                                                     ),
                                                   ),
                                                 ),
