@@ -100,7 +100,7 @@ class _EresTuWidgetState extends State<EresTuWidget> {
                   children: [
                     FFButtonWidget(
                       onPressed: () {
-                        Navigator.pushNamed(context, "home2_inicio");
+                        Navigator.pushNamed(context, "restablecer_contrasena");
                       },
                       text: 'Si, soy yo',
                       options: FFButtonOptions(

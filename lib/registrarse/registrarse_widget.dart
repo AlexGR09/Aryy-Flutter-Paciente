@@ -72,7 +72,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     Navigator.pushNamed(context, "iniciarsesion");
                   },
                   child: Text(
-                    'Inicar sesión',
+                    'Iniciar sesión',
                     style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Montserrat',
                           color: Color(0xC586898C),
@@ -97,7 +97,8 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(
+                      0, 60, 0, 0), //TENIA 22 COMO MARGEN
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
