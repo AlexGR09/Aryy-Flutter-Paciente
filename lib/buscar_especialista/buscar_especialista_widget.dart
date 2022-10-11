@@ -57,7 +57,7 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
     if ((apiResult?.succeeded ?? true)) {
       final resultado = getJsonField(apiResult?.jsonBody, r'''$[*]''').toList();
       listaDeDatos = resultado[1];
-      if (resultado[12] > 0) {
+      if (resultado["total"] > 0) {
         modelo = resultado[16]["Modelo"][0].toString();
         // Los datos del médico vienen con un campo "drNombre" en vez de "nombre"
         switch (modelo) {
