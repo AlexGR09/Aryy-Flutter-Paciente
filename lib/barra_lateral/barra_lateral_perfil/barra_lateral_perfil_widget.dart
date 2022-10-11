@@ -1892,6 +1892,14 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                     FontWeight
                                                                         .normal,
                                                               ),
+                                                      keyboardType:
+                                                          TextInputType.number,
+                                                      validator: (value) {
+                                                        if (value!.isEmpty) {
+                                                          return 'Numero de documento';
+                                                        }
+                                                        return null;
+                                                      },
                                                     ),
                                                   ),
                                                 ),
@@ -2078,11 +2086,13 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                     FontWeight
                                                                         .normal,
                                                               ),
+
+                                                      //se supone no deje dejar guardar hastq ue ingreses datos al campoS
                                                       keyboardType:
                                                           TextInputType.number,
                                                       validator: (value) {
                                                         if (value!.isEmpty) {
-                                                          return 'Escribe tu numero de telefono';
+                                                          return 'Escribe tu numero de tarjeta';
                                                         }
                                                         return null;
                                                       },
