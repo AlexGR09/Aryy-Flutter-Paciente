@@ -389,6 +389,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                           ),
                                                       textAlign:
                                                           TextAlign.start,
+                                                      keyboardType:
+                                                          TextInputType.text,
                                                     ),
                                                   ),
                                                 ),
@@ -549,6 +551,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                       FontWeight
                                                                           .w300,
                                                                 ),
+                                                        keyboardType:
+                                                            TextInputType.text,
                                                         textAlign:
                                                             TextAlign.start,
                                                       ),
@@ -712,6 +716,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                       FontWeight
                                                                           .w300,
                                                                 ),
+                                                        keyboardType:
+                                                            TextInputType.text,
                                                         textAlign:
                                                             TextAlign.start,
                                                       ),
@@ -799,6 +805,12 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                                 .fromSTEB(
                                                             20, 0, 0, 0),
                                                     child: FlutterFlowDropDown(
+                                                      //--------- TIPO DE ENTRADA DE DATOS (TIMESTAMP)----------------------------------
+                                                      initialOption:
+                                                          dropDownValue2 ??=
+                                                              dateTimeFormat(
+                                                                  'd/M/y',
+                                                                  getCurrentTimestamp),
                                                       options: ['Option 1'],
                                                       onChanged: (val) =>
                                                           setState(() =>
