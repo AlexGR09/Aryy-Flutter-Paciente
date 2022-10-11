@@ -805,16 +805,16 @@ class _RegistrarseFormularioWidgetState
                                           12, 0, 0, 5),
                                       child: TextFormField(
                                         //-------------- ENTRADA NUMERICA----------------------
-                                        keyboardType: TextInputType.number,
+                                        /*keyboardType: TextInputType.number,
                                         validator: (value) {
                                           if (value!.isEmpty) {
                                             return 'Escribe tu numero de telefono';
                                           }
                                           return null;
-                                        },
+                                        },*/
 
                                         //------- RESTRINGIR RANGO ESPECIFICO DE DATOS -----------
-                                        /*keyboardType: TextInputType.number,
+                                        keyboardType: TextInputType.number,
                                         validator: (value) {
                                           final intNumber =
                                               int.tryParse(value!);
@@ -827,7 +827,7 @@ class _RegistrarseFormularioWidgetState
                                             FilteringTextInputFormatter
                                                 .digitsOnly
                                           ];
-                                        },*/
+                                        },
                                         //------------------ FIN------------------------
 
                                         controller: textController5,
