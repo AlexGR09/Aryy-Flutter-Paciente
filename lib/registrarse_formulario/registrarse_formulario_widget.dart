@@ -627,6 +627,7 @@ class _RegistrarseFormularioWidgetState
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.normal,
                                               ),
+                                          keyboardType: TextInputType.text,
                                         ),
                                       ),
                                     ),
@@ -804,17 +805,8 @@ class _RegistrarseFormularioWidgetState
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12, 0, 0, 5),
                                       child: TextFormField(
-                                        //-------------- ENTRADA NUMERICA----------------------
-                                        /*keyboardType: TextInputType.number,
-                                        validator: (value) {
-                                          if (value!.isEmpty) {
-                                            return 'Escribe tu numero de telefono';
-                                          }
-                                          return null;
-                                        },*/
-
                                         //------- RESTRINGIR RANGO ESPECIFICO DE DATOS -----------
-                                        keyboardType: TextInputType.number,
+                                        /*keyboardType: TextInputType.number,
                                         validator: (value) {
                                           final intNumber =
                                               int.tryParse(value!);
@@ -827,7 +819,7 @@ class _RegistrarseFormularioWidgetState
                                             FilteringTextInputFormatter
                                                 .digitsOnly
                                           ];
-                                        },
+                                        },*/
                                         //------------------ FIN------------------------
 
                                         controller: textController5,
@@ -835,7 +827,7 @@ class _RegistrarseFormularioWidgetState
                                         obscureText: false,
                                         decoration: InputDecoration(
                                           hintText: 'Telefono (10 digitos)',
-                                          labelText: "Precio de compra",
+                                          //labelText:"Ingresa tu numero de telefono",
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
                                                   .bodyText2
@@ -898,6 +890,13 @@ class _RegistrarseFormularioWidgetState
                                               fontWeight: FontWeight.w300,
                                             ),
                                         //keyboardType: TextInputType.phone,
+                                        keyboardType: TextInputType.number,
+                                        validator: (value) {
+                                          if (value!.isEmpty) {
+                                            return 'Escribe tu numero de telefono';
+                                          }
+                                          return null;
+                                        },
                                       ),
                                     ),
                                   ),
