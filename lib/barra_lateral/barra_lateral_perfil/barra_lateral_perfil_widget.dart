@@ -766,7 +766,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               dropDownValue1 =
                                                                   val),
                                                       width: 100,
-                                                      height: 40,
+                                                      height: 45,
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -817,7 +817,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                               dropDownValue2 =
                                                                   val),
                                                       width: 180,
-                                                      height: 40,
+                                                      height: 45,
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -873,7 +873,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       ),
                                                       child: Container(
                                                         width: 300,
-                                                        height: 40,
+                                                        height: 45,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -1032,7 +1032,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               onChanged: (val) => setState(
                                                   () => dropDownValue3 = val),
                                               width: 300,
-                                              height: 40,
+                                              height: 45,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -1066,7 +1066,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue4 = val),
                                                 width: 300,
-                                                height: 40,
+                                                height: 45,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
@@ -1103,7 +1103,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue5 = val),
                                                 width: 300,
-                                                height: 40,
+                                                height: 45,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
@@ -1157,7 +1157,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       () =>
                                                           dropDownValue6 = val),
                                                   width: 80,
-                                                  height: 40,
+                                                  height: 45,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1202,7 +1202,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                     ),
                                                     child: Container(
                                                       width: 210,
-                                                      height: 40,
+                                                      height: 45,
                                                       decoration: BoxDecoration(
                                                         color: FlutterFlowTheme
                                                                 .of(context)
@@ -1367,7 +1367,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             dropDownValue7 =
                                                                 val),
                                                     width: 80,
-                                                    height: 40,
+                                                    height: 45,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyText1
@@ -1413,7 +1413,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                       ),
                                                       child: Container(
                                                         width: 210,
-                                                        height: 40,
+                                                        height: 45,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme
@@ -1752,7 +1752,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               onChanged: (val) => setState(
                                                   () => dropDownValue8 = val),
                                               width: 300,
-                                              height: 40,
+                                              height: 45,
                                               textStyle: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -1791,7 +1791,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 ),
                                                 child: Container(
                                                   width: 300,
-                                                  height: 40,
+                                                  height: 45,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1944,7 +1944,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue9 = val),
                                                 width: 300,
-                                                height: 40,
+                                                height: 45,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyText1
@@ -1984,7 +1984,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 ),
                                                 child: Container(
                                                   width: 300,
-                                                  height: 40,
+                                                  height: 45,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -2142,7 +2142,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 text: 'Guardar',
                                                 options: FFButtonOptions(
                                                   width: 100,
-                                                  height: 35,
+                                                  height: 45,
                                                   color: Color(0xFF7900FF),
                                                   textStyle:
                                                       FlutterFlowTheme.of(
@@ -2328,7 +2328,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                       },
                                       child: Container(
                                         width: 300,
-                                        height: 35,
+                                        height: 45,
                                         decoration: BoxDecoration(
                                             color: FlutterFlowTheme.of(context)
                                                 .secondaryBackground,

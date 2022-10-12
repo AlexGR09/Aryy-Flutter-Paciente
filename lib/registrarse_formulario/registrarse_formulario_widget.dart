@@ -70,7 +70,7 @@ class _RegistrarseFormularioWidgetState
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
+                  padding: EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -150,7 +150,7 @@ class _RegistrarseFormularioWidgetState
                               borderRadius: BorderRadius.circular(20),
                               child: Container(
                                 width: 300,
-                                height: 40,
+                                height: 45,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -251,7 +251,7 @@ class _RegistrarseFormularioWidgetState
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
                                   width: 300,
-                                  height: 40,
+                                  height: 45,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -354,7 +354,7 @@ class _RegistrarseFormularioWidgetState
                                 borderRadius: BorderRadius.circular(20),
                                 child: Container(
                                   width: 300,
-                                  height: 40,
+                                  height: 45,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
@@ -477,7 +477,7 @@ class _RegistrarseFormularioWidgetState
                                     onChanged: (val) =>
                                         setState(() => dropDownValue1 = val),
                                     width: 100,
-                                    height: 40,
+                                    height: 45,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyText2
                                         .override(
@@ -511,7 +511,7 @@ class _RegistrarseFormularioWidgetState
                                     onChanged: (val) =>
                                         setState(() => dropDownValue2 = val),
                                     width: 180,
-                                    height: 40,
+                                    height: 45,
                                     textStyle: FlutterFlowTheme.of(context)
                                         .bodyText1
                                         .override(
@@ -549,7 +549,7 @@ class _RegistrarseFormularioWidgetState
                                     ),
                                     child: Container(
                                       width: 300,
-                                      height: 40,
+                                      height: 45,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -655,7 +655,7 @@ class _RegistrarseFormularioWidgetState
                             onChanged: (val) =>
                                 setState(() => dropDownValue3 = val),
                             width: 300,
-                            height: 40,
+                            height: 45,
                             textStyle:
                                 FlutterFlowTheme.of(context).bodyText1.override(
                                       fontFamily: 'Poppins',
@@ -682,7 +682,7 @@ class _RegistrarseFormularioWidgetState
                               onChanged: (val) =>
                                   setState(() => dropDownValue4 = val),
                               width: 300,
-                              height: 40,
+                              height: 45,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -712,7 +712,7 @@ class _RegistrarseFormularioWidgetState
                               onChanged: (val) =>
                                   setState(() => dropDownValue5 = val),
                               width: 300,
-                              height: 40,
+                              height: 45,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyText1
                                   .override(
@@ -756,7 +756,7 @@ class _RegistrarseFormularioWidgetState
                                 onChanged: (val) =>
                                     setState(() => dropDownValue6 = val),
                                 width: 80,
-                                height: 40,
+                                height: 45,
                                 textStyle: FlutterFlowTheme.of(context)
                                     .bodyText1
                                     .override(
@@ -788,7 +788,7 @@ class _RegistrarseFormularioWidgetState
                                   ),
                                   child: Container(
                                     width: 210,
-                                    height: 40,
+                                    height: 45,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,

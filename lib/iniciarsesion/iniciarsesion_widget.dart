@@ -396,7 +396,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                           text: 'Iniciar sesión',
                           options: FFButtonOptions(
                             width: 300,
-                            height: 40,
+                            height: 45,
                             color: Color(0xFF7900FF),
                             textStyle:
                                 FlutterFlowTheme.of(context).subtitle2.override(
