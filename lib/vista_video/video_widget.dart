@@ -25,26 +25,23 @@ class _VideoWidgetState extends State<VideoWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: _controller.value.isInitialized
-          ? LayoutBuilder(
-              builder: (context, constraints) {
-                return SizedBox.expand(
-                  //expand
-                  child: FittedBox(
-                    fit: BoxFit.cover,
-                    child: SizedBox(
-                      width:
-                          constraints.maxWidth * _controller.value.aspectRatio,
-                      //height: constraints.maxHeight,
-                      height: 400,
-                      child: VideoPlayer(_controller),
-                    ),
-                  ),
-                );
-              },
-            )
-          : Container(),
+    final size = MediaQuery.of(context).size;
+    return FittedBox(
+      // Se agrega cover para cubrir la pantalla
+      fit: BoxFit.cover,
+      // Se centra el video (puedes cambiar por TopCenter, etc)
+      alignment: Alignment.center,
+      // al SizedBox se agregan las dimensiones del video (no de las dimensiones de la pantalla: constraints.maxWidth)
+      child: SizedBox(
+        width: _controller.value.size.width,
+        height: _controller.value.size.height,
+        // El video se pone dentro de un AspectRatio,
+        child: AspectRatio(
+          // _controller representa el video, aspectRatio es del video
+          aspectRatio: _controller.value.aspectRatio,
+          child: VideoPlayer(_controller),
+        ),
+      ),
     );
   }
 
