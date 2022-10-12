@@ -42,6 +42,7 @@ class _Home2WidgetState extends State<Home2Widget> {
             padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+              //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
               leadingWidth: 60,
               toolbarHeight: 100,
               elevation: 0,
@@ -54,6 +55,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                   Builder(
                     builder: (context) => InkWell(
                       onTap: () => Scaffold.of(context).openEndDrawer(),
+                      //iconTheme: IconThemeData(color: Colors.black),
                       child: Container(
                         width: 120,
                         height: 40,
