@@ -39,7 +39,7 @@ class _Home2WidgetState extends State<Home2Widget> {
         appBar: PreferredSize(
           preferredSize: const Size(100, 100),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(30, 10, 30, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 30, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -142,8 +142,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 60, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -154,7 +153,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                           children: [
                             Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  22, 0, 0, 0),
+                                  16, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -175,7 +174,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -200,13 +199,13 @@ class _Home2WidgetState extends State<Home2Widget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(20, 40, 20, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 0),
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                           child: Material(
                             color: Colors.transparent,
                             elevation: 6,
@@ -214,7 +213,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Container(
-                              width: 320,
+                              width: 350,
                               height: 40,
                               decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
@@ -338,192 +337,290 @@ class _Home2WidgetState extends State<Home2Widget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Container(
-                                  width: 150,
-                                  height: 90,
-                                  decoration: BoxDecoration(
-                                    gradient: LinearGradient(
-                                      colors: [
-                                        FlutterFlowTheme.of(context)
-                                            .primaryColor,
-                                        Color(0xFF7900FF)
-                                      ],
-                                      stops: [0, 1],
-                                      begin: const AlignmentDirectional(0, -1),
-                                      end: const AlignmentDirectional(0, 1),
-                                    ),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding:
+                                    EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            RECETAS,
-                                            width: 40,
-                                            height: 40,
-                                            fit: BoxFit.cover,
-                                          ),
+                                  child: Container(
+                                    width: 170,
+                                    height: 90,
+                                    decoration: BoxDecoration(
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          Color(0xFF7900FF)
                                         ],
+                                        stops: [0, 1],
+                                        begin:
+                                            const AlignmentDirectional(0, -1),
+                                        end: const AlignmentDirectional(0, 1),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'Surtir',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.normal,
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                ),
-                                          ),
-                                          Text(
-                                            'receta',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              RECETAS,
+                                              width: 40,
+                                              height: 40,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Surtir',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                            Text(
+                                              'receta',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
-                                  10, 0, 0, 0),
-                              child: Material(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Container(
-                                  width: 150,
-                                  height: 90,
-                                  decoration: BoxDecoration(
-                                    gradient: const LinearGradient(
-                                      colors: [
-                                        Color(0xFFB380FF),
-                                        Color(0xFFD0B3FF)
-                                      ],
-                                      stops: [0, 1],
-                                      begin: AlignmentDirectional(0, -1),
-                                      end: AlignmentDirectional(0, 1),
-                                    ),
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0, 0, 16, 0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(20),
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            ESTUDIOS,
-                                            width: 40,
-                                            height: 40,
-                                            fit: BoxFit.cover,
-                                          ),
+                                  child: Container(
+                                    width: 170,
+                                    height: 90,
+                                    decoration: BoxDecoration(
+                                      gradient: const LinearGradient(
+                                        colors: [
+                                          Color(0xFFB380FF),
+                                          Color(0xFFD0B3FF)
                                         ],
+                                        stops: [0, 1],
+                                        begin: AlignmentDirectional(0, -1),
+                                        end: AlignmentDirectional(0, 1),
                                       ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(
-                                            'Análisis',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.normal,
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                ),
-                                          ),
-                                          Text(
-                                            'clínicos',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              ESTUDIOS,
+                                              width: 40,
+                                              height: 40,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Análisis',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                            Text(
+                                              'clínicos',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    0, 0, 16, 0),
+                                child: Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(20),
+                                  ),
+                                  child: Container(
+                                    width: 170,
+                                    height: 90,
+                                    decoration: BoxDecoration(
+                                      gradient: const LinearGradient(
+                                        colors: [
+                                          Color(0xFFB380FF),
+                                          Color(0xFFD0B3FF)
+                                        ],
+                                        stops: [0, 1],
+                                        begin: AlignmentDirectional(0, -1),
+                                        end: AlignmentDirectional(0, 1),
+                                      ),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceAround,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              ESTUDIOS,
+                                              width: 40,
+                                              height: 40,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Text(
+                                              'Análisis',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                            Text(
+                                              'clínicos',
+                                              style: FlutterFlowTheme.of(
+                                                      context)
+                                                  .bodyText1
+                                                  .override(
+                                                    fontSize: 20,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontFamily: 'Montserrat',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryBtnText,
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(0, 0, 90, 0),
