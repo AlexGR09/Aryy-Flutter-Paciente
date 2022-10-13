@@ -39,11 +39,11 @@ class _Home2WidgetState extends State<Home2Widget> {
         appBar: PreferredSize(
           preferredSize: const Size(100, 100),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 30, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 10, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              leadingWidth: 60,
+              leadingWidth: 50,
               toolbarHeight: 100,
               elevation: 0,
               centerTitle: false,
@@ -111,7 +111,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 ],
               ),
               leading: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 6, 0, 6),
+                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 6),
                 child: SvgPicture.asset(
                   ISOTIPO,
                   width: 20,
@@ -214,7 +214,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                             ),
                             child: Container(
                               width: 350,
-                              height: 40,
+                              height: 50,
                               decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -336,8 +336,37 @@ class _Home2WidgetState extends State<Home2Widget> {
                       ],
                     ),
                   ),
+
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Text(
+                                'Acciones',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Poppins',
+                                      color: Color(0xFF999999),
+                                      fontSize: 18,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
