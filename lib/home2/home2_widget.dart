@@ -337,7 +337,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                     child: SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: Row(
@@ -348,8 +348,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(0, 0, 16, 0),
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16, 0, 16, 0),
                                 child: Material(
                                   color: Colors.transparent,
                                   elevation: 4,
@@ -542,7 +542,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                                     decoration: BoxDecoration(
                                       gradient: const LinearGradient(
                                         colors: [
-                                          Color(0xFFB380FF),
+                                          Color(0xFF7900FF),
                                           Color(0xFFD0B3FF)
                                         ],
                                         stops: [0, 1],
@@ -575,7 +575,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Text(
-                                              'Análisis',
+                                              'Estudios de',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
@@ -590,7 +590,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                                                   ),
                                             ),
                                             Text(
-                                              'clínicos',
+                                              'gabinete',
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyText1
