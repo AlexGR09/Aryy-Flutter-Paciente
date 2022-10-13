@@ -39,7 +39,7 @@ class _Home2WidgetState extends State<Home2Widget> {
         appBar: PreferredSize(
           preferredSize: const Size(100, 100),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(30, 0, 30, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(30, 10, 30, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -143,7 +143,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 children: [
                   Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                        const EdgeInsetsDirectional.fromSTEB(22, 60, 22, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -569,456 +569,480 @@ class _Home2WidgetState extends State<Home2Widget> {
 //--------------------------------------------------------------------------------------
 //----------------------------- CITAS PROGRAMADAS --------------------------------------
 //--------------------------------------------------------------------------------------
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20, 30, 20, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Material(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Container(
-                                  width: 330,
-                                  height: 150,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFF4EDFF),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 30, 0, 0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                20, 0, 10, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
-                                    shape: BoxShape.rectangle,
                                   ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            RECORDATORIO,
-                                            width: 80,
-                                            height: 80,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Dra. Imperia Aguilar',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1
-                                                        .override(
-                                                          fontSize: 20,
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color:
-                                                              Color(0xFF7900FF),
-                                                        ),
-                                                  ),
-                                                  Text(
-                                                    'Neurologa',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle2,
-                                                  ),
-                                                ],
-                                              ),
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0, 5, 0, 0),
-                                            child: Row(
+                                  child: Container(
+                                    width: 330,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFF4EDFF),
+                                      borderRadius: BorderRadius.circular(12),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              RECORDATORIO,
+                                              width: 80,
+                                              height: 80,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: const [
-                                                    Icon(
-                                                      Icons.notifications_none,
-                                                      color: Color(0xFF7900FF),
-                                                      size: 24,
+                                                  children: [
+                                                    Text(
+                                                      'Dra. Imperia Aguilar',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle1
+                                                              .override(
+                                                                fontSize: 20,
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
+                                                    ),
+                                                    Text(
+                                                      'Neurologa',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
                                                     ),
                                                   ],
                                                 ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(5, 0, 0, 0),
-                                                  child: Column(
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 5, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
-                                                    children: [
-                                                      Text(
-                                                        'Cita programada',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF7900FF),
-                                                                ),
-                                                      ),
-                                                      Text(
-                                                        '12/Diciembre/2022 12:21 pm',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF4F565F),
-                                                                ),
+                                                    children: const [
+                                                      Icon(
+                                                        Icons
+                                                            .notifications_none,
+                                                        color:
+                                                            Color(0xFF7900FF),
+                                                        size: 24,
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20, 30, 20, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Material(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Container(
-                                  width: 330,
-                                  height: 150,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFF4EDFF),
-                                    borderRadius: BorderRadius.circular(12),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            RECORDATORIO,
-                                            width: 80,
-                                            height: 80,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Dr. Erik Aquino',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1
-                                                        .override(
-                                                          fontSize: 20,
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color:
-                                                              Color(0xFF7900FF),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            5, 0, 0, 0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          'Cita programada',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
                                                         ),
-                                                  ),
-                                                  Text(
-                                                    'Psicologo',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle2,
+                                                        Text(
+                                                          '12/Diciembre/2022 12:21 pm',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF4F565F),
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ],
                                               ),
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0, 5, 0, 0),
-                                            child: Row(
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10, 0, 10, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Container(
+                                    width: 330,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFF4EDFF),
+                                      borderRadius: BorderRadius.circular(12),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              RECORDATORIO,
+                                              width: 80,
+                                              height: 80,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: const [
-                                                    Icon(
-                                                      Icons.notifications_none,
-                                                      color: Color(0xFF7900FF),
-                                                      size: 24,
+                                                  children: [
+                                                    Text(
+                                                      'Dr. Erik Aquino',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle1
+                                                              .override(
+                                                                fontSize: 20,
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
+                                                    ),
+                                                    Text(
+                                                      'Psicologo',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
                                                     ),
                                                   ],
                                                 ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(5, 0, 0, 0),
-                                                  child: Column(
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 5, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
-                                                    children: [
-                                                      Text(
-                                                        'Cita programada',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF7900FF),
-                                                                ),
-                                                      ),
-                                                      Text(
-                                                        '12/Diciembre/2022 12:21 pm',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF4F565F),
-                                                                ),
+                                                    children: const [
+                                                      Icon(
+                                                        Icons
+                                                            .notifications_none,
+                                                        color:
+                                                            Color(0xFF7900FF),
+                                                        size: 24,
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
-                              20, 30, 20, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Material(
-                                color: Colors.transparent,
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Container(
-                                  width: 330,
-                                  height: 150,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFF4EDFF),
-                                    borderRadius: BorderRadius.circular(12),
-                                    shape: BoxShape.rectangle,
-                                  ),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          SvgPicture.asset(
-                                            RECORDATORIO,
-                                            width: 80,
-                                            height: 80,
-                                            fit: BoxFit.cover,
-                                          ),
-                                        ],
-                                      ),
-                                      Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: [
-                                              Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Text(
-                                                    'Dr. David',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle1
-                                                        .override(
-                                                          fontSize: 20,
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color:
-                                                              Color(0xFF7900FF),
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            5, 0, 0, 0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          'Cita programada',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
                                                         ),
-                                                  ),
-                                                  Text(
-                                                    'Cardiologo',
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .subtitle2,
+                                                        Text(
+                                                          '12/Diciembre/2022 12:21 pm',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF4F565F),
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
                                                   ),
                                                 ],
                                               ),
-                                            ],
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsetsDirectional
-                                                .fromSTEB(0, 5, 0, 0),
-                                            child: Row(
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                10, 0, 10, 0),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Material(
+                                  color: Colors.transparent,
+                                  elevation: 4,
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(12),
+                                  ),
+                                  child: Container(
+                                    width: 330,
+                                    height: 150,
+                                    decoration: BoxDecoration(
+                                      color: const Color(0xFFF4EDFF),
+                                      borderRadius: BorderRadius.circular(12),
+                                      shape: BoxShape.rectangle,
+                                    ),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            SvgPicture.asset(
+                                              RECORDATORIO,
+                                              width: 80,
+                                              height: 80,
+                                              fit: BoxFit.cover,
+                                            ),
+                                          ],
+                                        ),
+                                        Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: [
+                                            Row(
                                               mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceEvenly,
                                               children: [
                                                 Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
-                                                  children: const [
-                                                    Icon(
-                                                      Icons.notifications_none,
-                                                      color: Color(0xFF7900FF),
-                                                      size: 24,
+                                                  children: [
+                                                    Text(
+                                                      'Dr. David',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle1
+                                                              .override(
+                                                                fontSize: 20,
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
+                                                    ),
+                                                    Text(
+                                                      'Cardiologo',
+                                                      style:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .subtitle2,
                                                     ),
                                                   ],
                                                 ),
-                                                Padding(
-                                                  padding:
-                                                      const EdgeInsetsDirectional
-                                                          .fromSTEB(5, 0, 0, 0),
-                                                  child: Column(
+                                              ],
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 5, 0, 0),
+                                              child: Row(
+                                                mainAxisSize: MainAxisSize.max,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceEvenly,
+                                                children: [
+                                                  Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     crossAxisAlignment:
                                                         CrossAxisAlignment
                                                             .start,
-                                                    children: [
-                                                      Text(
-                                                        'Cita programada',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF7900FF),
-                                                                ),
-                                                      ),
-                                                      Text(
-                                                        '12/Diciembre/2022 12:21 pm',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyText1
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  color: Color(
-                                                                      0xFF4F565F),
-                                                                ),
+                                                    children: const [
+                                                      Icon(
+                                                        Icons
+                                                            .notifications_none,
+                                                        color:
+                                                            Color(0xFF7900FF),
+                                                        size: 24,
                                                       ),
                                                     ],
                                                   ),
-                                                ),
-                                              ],
+                                                  Padding(
+                                                    padding:
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            5, 0, 0, 0),
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      crossAxisAlignment:
+                                                          CrossAxisAlignment
+                                                              .start,
+                                                      children: [
+                                                        Text(
+                                                          'Cita programada',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF7900FF),
+                                                              ),
+                                                        ),
+                                                        Text(
+                                                          '12/Diciembre/2022 12:21 pm',
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyText1
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                color: Color(
+                                                                    0xFF4F565F),
+                                                              ),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
