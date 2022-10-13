@@ -39,7 +39,7 @@ class _Home2WidgetState extends State<Home2Widget> {
         appBar: PreferredSize(
           preferredSize: const Size(100, 100),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 10, 30, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 30, 0),
             child: AppBar(
               backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
               //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -142,7 +142,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0, 60, 16, 0),
+                    padding: const EdgeInsetsDirectional.fromSTEB(20, 60, 0, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -174,7 +174,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                             ),
                             Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                                  EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -349,7 +349,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 0, 16, 0),
+                                    20, 0, 20, 0),
                                 child: Material(
                                   color: Colors.transparent,
                                   elevation: 4,
@@ -617,7 +617,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(20, 30, 20, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -675,7 +675,7 @@ class _Home2WidgetState extends State<Home2Widget> {
                         children: [
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                20, 0, 10, 0),
+                                25, 0, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
