@@ -483,7 +483,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        25, 0, 20, 0),
+                                        30, 0, 20, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -519,7 +519,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional
@@ -609,7 +609,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        25, 0, 20, 0),
+                                        30, 0, 20, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -733,7 +733,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        25, 0, 20, 0),
+                                        30, 0, 20, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -882,7 +882,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        25, 0, 20, 0),
+                                        30, 0, 20, 0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
