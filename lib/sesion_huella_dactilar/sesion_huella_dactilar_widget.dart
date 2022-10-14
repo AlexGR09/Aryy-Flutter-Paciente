@@ -55,9 +55,10 @@ class _SesionHuellaDactilarWidgetState
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -99,8 +100,8 @@ class _SesionHuellaDactilarWidgetState
                       children: [
                         SvgPicture.asset(
                           HUELLA_BLANCO,
-                          width: 80,
-                          height: 80,
+                          width: 50,
+                          height: 50,
                           fit: BoxFit.cover,
                         ),
                         Padding(
