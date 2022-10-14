@@ -37,3 +37,5 @@ export './restablecer_contrasena.dart' show RestablerContrasenaWidget;
 export './verificar_identidad.dart' show VerificarIdentidadWidget;
 export './eres_tu.dart' show EresTuWidget;
 export './barra_lateral/perfil_inicio.dart' show BarraLateralPerfil1Widget;
+export './resultados_busqueda/resultados_busqueda_widget.dart'
+    show ResultadosBusqueda;

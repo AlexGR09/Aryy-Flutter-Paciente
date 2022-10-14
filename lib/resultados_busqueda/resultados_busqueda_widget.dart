@@ -6,14 +6,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({Key? key}) : super(key: key);
+class ResultadosBusqueda extends StatefulWidget {
+  const ResultadosBusqueda({Key? key}) : super(key: key);
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _ResultadosBusquedaState createState() => _ResultadosBusquedaState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _ResultadosBusquedaState extends State<ResultadosBusqueda> {
   TextEditingController? inputTextController;
   final scaffoldKey = GlobalKey<ScaffoldState>();
   double? ratingBarValue1;
