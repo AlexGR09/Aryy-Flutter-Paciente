@@ -58,6 +58,7 @@ dependencies:
   # Required for Dark mode
   shared_preferences: ^2.0.15
   provider: any
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
