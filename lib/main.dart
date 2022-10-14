@@ -1,5 +1,5 @@
 import './index.dart';
-import './splash_screen.dart';
+import 'launch_inicioapp/splash_screen.dart';
 import './vista_video/registrase_iniciarsesion.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Prueba',
-              initialRoute: "home2_inicio",
+              initialRoute: "splash",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),

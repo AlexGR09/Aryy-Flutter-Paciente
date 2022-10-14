@@ -1,11 +1,11 @@
 // Export pages
 
-export 'home_page/home_page_widget.dart' show HomePageWidget;
+export 'launch_inicioapp/home_page_widget.dart' show HomePageWidget;
 export 'registrarse/registrarse_widget.dart' show RegistrarseWidget;
 export 'iniciarsesion/iniciarsesion_widget.dart' show IniciarsesionWidget;
 export 'configurar_pin_datosbiometricos/configurar_pin_datosbiometricos_widget.dart'
     show ConfigurarPinDatosbiometricosWidget;
-export 'registrarse_formulario/registrarse_formulario_widget.dart'
+export 'registrarse/registrarse_formulario_widget.dart'
     show RegistrarseFormularioWidget;
 export 'sesion_huella_dactilar/sesion_huella_dactilar_widget.dart'
     show SesionHuellaDactilarWidget;
@@ -32,8 +32,10 @@ export './barra_lateral/barra_lateral_configuraciones/barra_lateral_configuracio
 export 'nueva_ubicacion/nueva_ubicacion_widget.dart' show NuevaUbicacionWidget;
 export 'buscar_especialista/buscar_especialista_widget.dart'
     show BuscarEspecialistaWidget;
-export './home2/home2_widget.dart' show Home2Widget;
-export './restablecer_contrasena.dart' show RestablerContrasenaWidget;
-export './verificar_identidad.dart' show VerificarIdentidadWidget;
-export './eres_tu.dart' show EresTuWidget;
+export 'home2/home2_widget.dart' show Home2Widget;
+export 'restablecer_contraseña/restablecer_contrasena.dart'
+    show RestablerContrasenaWidget;
+export 'restablecer_contraseña/verificar_identidad.dart'
+    show VerificarIdentidadWidget;
+export 'restablecer_contraseña/eres_tu.dart' show EresTuWidget;
 export './barra_lateral/perfil_inicio.dart' show BarraLateralPerfil1Widget;
