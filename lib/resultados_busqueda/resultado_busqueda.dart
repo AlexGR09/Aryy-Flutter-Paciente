@@ -1,3 +1,5 @@
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
