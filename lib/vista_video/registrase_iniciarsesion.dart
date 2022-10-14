@@ -51,38 +51,6 @@ class MenuFrame extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(22, 70, 22, 0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            FFButtonWidget(
-                              onPressed: () {
-                                Navigator.pushNamed(context, "iniciarsesion");
-                              },
-                              text: 'Iniciar sesión',
-                              options: FFButtonOptions(
-                                width: 300,
-                                height: 40,
-                                color: Color(0xFF7900FF),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .subtitle2
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1,
-                                ),
-                                borderRadius: BorderRadius.circular(8),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -104,6 +72,39 @@ class MenuFrame extends StatelessWidget {
                                       fontFamily: 'Montserrat',
                                       //color: Colors.white,
                                       color: Color(0xFF7900FF),
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                borderSide: BorderSide(
+                                  color: Colors.transparent,
+                                  width: 1,
+                                ),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(22, 70, 22, 0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            FFButtonWidget(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, "sesion_huella_dactilar");
+                              },
+                              text: 'Iniciar sesión',
+                              options: FFButtonOptions(
+                                width: 300,
+                                height: 40,
+                                color: Color(0xFF7900FF),
+                                textStyle: FlutterFlowTheme.of(context)
+                                    .subtitle2
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      color: Colors.white,
                                       fontWeight: FontWeight.w500,
                                     ),
                                 borderSide: BorderSide(
