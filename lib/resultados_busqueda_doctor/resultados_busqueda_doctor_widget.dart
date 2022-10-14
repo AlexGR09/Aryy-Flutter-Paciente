@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({
+class ResultadoBusquedaDoctor extends StatefulWidget {
+  const ResultadoBusquedaDoctor({
     Key? key,
     this.toggleVariableTemp,
   }) : super(key: key);
@@ -16,10 +16,11 @@ class HomePageWidget extends StatefulWidget {
   final bool? toggleVariableTemp;
 
   @override
-  _HomePageWidgetState createState() => _HomePageWidgetState();
+  _ResultadoBusquedaDoctorState createState() =>
+      _ResultadoBusquedaDoctorState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
+class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
   double? ratingBarValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 

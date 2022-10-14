@@ -39,3 +39,5 @@ export './eres_tu.dart' show EresTuWidget;
 export './barra_lateral/perfil_inicio.dart' show BarraLateralPerfil1Widget;
 export './resultados_busqueda/resultados_busqueda_widget.dart'
     show ResultadosBusqueda;
+export './resultados_busqueda_doctor/resultados_busqueda_doctor_widget.dart'
+    show ResultadoBusquedaDoctor;
