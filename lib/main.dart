@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Prueba',
-              initialRoute: "resultado_busqueda",
+              initialRoute: "informacion_doctor",
 
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
                 "home2_inicio": (_) => Home2Widget(),
                 "buscar_especialista": (_) => BuscarEspecialistaWidget(),
                 "resultado_busqueda": (_) => ResultadosBusqueda(),
+                "informacion_doctor": (_) => ResultadoBusquedaDoctor(),
                 "sesion_huella_dactilar": (_) => SesionHuellaDactilarWidget(),
                 "codigo_verificacion": (_) => CodigoVerificacionWidget(),
                 "restablecer_contrasena": (_) => RestablerContrasenaWidget(),
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
                 "registrarse_iniciosesion": (_) =>
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
-              home: ResultadosBusqueda());
+              home: ResultadoBusquedaDoctor());
         });
   }
 }
