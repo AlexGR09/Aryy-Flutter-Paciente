@@ -69,7 +69,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
             child: TextFormField(
               controller: inputTextController,
               onChanged: (_) => EasyDebounce.debounce(
@@ -81,42 +81,42 @@ class _HomePageWidgetState extends State<HomePageWidget> {
               obscureText: false,
               decoration: InputDecoration(
                 hintText: 'Traumatólogo - Cerca de mí',
-                enabledBorder: UnderlineInputBorder(
+                enabledBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
                     width: 1,
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4.0),
                     topRight: Radius.circular(4.0),
                   ),
                 ),
-                focusedBorder: UnderlineInputBorder(
+                focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
                     width: 1,
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4.0),
                     topRight: Radius.circular(4.0),
                   ),
                 ),
-                errorBorder: UnderlineInputBorder(
+                errorBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
                     width: 1,
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4.0),
                     topRight: Radius.circular(4.0),
                   ),
                 ),
-                focusedErrorBorder: UnderlineInputBorder(
+                focusedErrorBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(
                     color: Color(0x00000000),
                     width: 1,
                   ),
-                  borderRadius: const BorderRadius.only(
+                  borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(4.0),
                     topRight: Radius.circular(4.0),
                   ),
@@ -127,7 +127,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           inputTextController?.clear();
                           setState(() {});
                         },
-                        child: Icon(
+                        child: const Icon(
                           Icons.clear,
                           color: Color(0xFF757575),
                           size: 22,
@@ -266,7 +266,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               print('Filtros pressed ...');
                             },
                             text: 'Filtros',
-                            icon: Icon(
+                            icon: const Icon(
                               Icons.filter_list,
                               size: 15,
                             ),
@@ -371,8 +371,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(10, 0, 0, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(10, 0, 0, 0),
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -402,9 +403,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(10, 0,
-                                                                    0, 0),
+                                                            const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                10, 0, 0, 0),
                                                         child: Icon(
                                                           Icons
                                                               .check_circle_sharp,
@@ -453,7 +454,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                     newValue),
                                                         itemBuilder:
                                                             (context, index) =>
-                                                                Icon(
+                                                                const Icon(
                                                           Icons.star_rounded,
                                                           color:
                                                               Color(0xFFFFDC64),
@@ -472,9 +473,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                       ),
                                                       Padding(
                                                         padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    8, 0, 0, 0),
+                                                            const EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                8, 0, 0, 0),
                                                         child: Text(
                                                           '123 opiniones',
                                                           style: FlutterFlowTheme
@@ -531,8 +532,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 0, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(5, 0, 0, 0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -589,8 +590,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 0, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(5, 0, 0, 0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -647,8 +648,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            5, 0, 0, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(5, 0, 0, 0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           crossAxisAlignment:
@@ -712,7 +713,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           color: Colors.white,
                                           fontWeight: FontWeight.normal,
                                         ),
-                                    borderSide: BorderSide(
+                                    borderSide: const BorderSide(
                                       color: Colors.transparent,
                                       width: 1,
                                     ),
@@ -756,7 +757,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                5, 0, 5, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -811,9 +813,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             ],
                                           ),
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(10, 0, 0, 0),
                                             child: Column(
                                               mainAxisSize: MainAxisSize.max,
                                               crossAxisAlignment:
@@ -843,9 +844,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10, 0, 0, 0),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              10, 0, 0, 0),
                                                       child: Icon(
                                                         Icons
                                                             .check_circle_sharp,
@@ -895,7 +896,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                   newValue),
                                                       itemBuilder:
                                                           (context, index) =>
-                                                              Icon(
+                                                              const Icon(
                                                         Icons.star_rounded,
                                                         color:
                                                             Color(0xFFFFDC64),
@@ -913,9 +914,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                     ),
                                                     Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8, 0, 0, 0),
+                                                          const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                              8, 0, 0, 0),
                                                       child: Text(
                                                         '123 opiniones',
                                                         style:
@@ -971,8 +972,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              5, 0, 0, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1025,8 +1027,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              5, 0, 0, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1079,8 +1082,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          5, 0, 0, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              5, 0, 0, 0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         crossAxisAlignment:
@@ -1141,7 +1145,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         color: Colors.white,
                                         fontWeight: FontWeight.normal,
                                       ),
-                                  borderSide: BorderSide(
+                                  borderSide: const BorderSide(
                                     color: Colors.transparent,
                                     width: 1,
                                   ),
