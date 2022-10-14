@@ -32,8 +32,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor:
-            Colors.red, // FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: true,
         toolbarHeight: 80,
         leading: FlutterFlowIconButton(
@@ -121,7 +120,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+            padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
@@ -186,8 +185,8 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                         ],
                                       ),
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(10, 0, 0, 0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:
