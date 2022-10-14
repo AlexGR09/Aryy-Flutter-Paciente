@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../next_page_tmp/switch_modo_oscuro.dart';
+
 class ResultadoBusquedaDoctor extends StatefulWidget {
   const ResultadoBusquedaDoctor({
     Key? key,
@@ -30,8 +32,10 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor:
+            Colors.red, // FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: true,
+        toolbarHeight: 80,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
           borderRadius: 30,
@@ -51,17 +55,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Text(
-              'Dr. Nombre Apellido',
-              textAlign: TextAlign.start,
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Montserrat',
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300,
-                  ),
-            ),
-            Text(
-              'Dr. Nombre Apellido',
+              'Dr. Nombre Apellido Apellido',
               textAlign: TextAlign.start,
               style: FlutterFlowTheme.of(context).bodyText1.override(
                     fontFamily: 'Montserrat',
@@ -74,7 +68,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
         ),
         actions: [
           Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -100,7 +94,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                         () => FFAppState().toggleVar = !FFAppState().toggleVar);
                   },
                   value: FFAppState().toggleVar,
-                  onIcon: Icon(
+                  onIcon: const Icon(
                     Icons.favorite_sharp,
                     color: Colors.black,
                     size: 28,
@@ -111,6 +105,11 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                     size: 28,
                   ),
                 ),
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+                Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                    child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
               ],
             ),
           ),
@@ -217,8 +216,9 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                                       ),
                                                 ),
                                                 Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(7, 0, 0, 0),
+                                                  padding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(7, 0, 0, 0),
                                                   child: Icon(
                                                     Icons.check_circle_sharp,
                                                     color: FlutterFlowTheme.of(
@@ -254,8 +254,9 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 5, 0, 5),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 5, 0, 5),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -267,7 +268,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                                                     newValue),
                                                     itemBuilder:
                                                         (context, index) =>
-                                                            Icon(
+                                                            const Icon(
                                                       Icons.star_rounded,
                                                       color: Color(0xFFFFDC64),
                                                     ),
@@ -283,9 +284,9 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                8, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            8, 0, 0, 0),
                                                     child: Text(
                                                       '123 opiniones',
                                                       style:
@@ -309,8 +310,9 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                               ),
                                             ),
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 45, 0),
+                                              padding:
+                                                  const EdgeInsetsDirectional
+                                                      .fromSTEB(0, 0, 45, 0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 mainAxisAlignment:
@@ -335,9 +337,9 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                                   ),
                                                   Padding(
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                15, 0, 0, 0),
+                                                        const EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                            15, 0, 0, 0),
                                                     child: Text(
                                                       'Ced. Esp. 1234567',
                                                       style:
@@ -372,7 +374,8 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
+                        padding:
+                            const EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -382,7 +385,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 0, 15),
                                   child: FFButtonWidget(
                                     onPressed: () {
@@ -401,7 +404,7 @@ class _ResultadoBusquedaDoctorState extends State<ResultadoBusquedaDoctor> {
                                             color: Colors.white,
                                             fontWeight: FontWeight.normal,
                                           ),
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         color: Colors.transparent,
                                         width: 1,
                                       ),
