@@ -6,6 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../next_page_tmp/switch_modo_oscuro.dart';
+import 'resultado_busqueda.dart';
+
 class ResultadosBusqueda extends StatefulWidget {
   const ResultadosBusqueda({Key? key}) : super(key: key);
 
@@ -39,20 +42,22 @@ class _ResultadosBusquedaState extends State<ResultadosBusqueda> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: true,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_outlined,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
+        leading: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+            child: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30,
+              borderWidth: 1,
+              buttonSize: 60,
+              icon: Icon(
+                Icons.arrow_back_outlined,
+                color: FlutterFlowTheme.of(context).primaryText,
+                size: 30,
+              ),
+              onPressed: () {
+                print('IconButton pressed ...');
+              },
+            )),
         title: Container(
           width: MediaQuery.of(context).size.width,
           height: 50,
@@ -144,7 +149,13 @@ class _ResultadosBusquedaState extends State<ResultadosBusqueda> {
             ),
           ),
         ),
-        actions: [],
+        actions: [
+          //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+          Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+              child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
+        ],
         centerTitle: false,
         elevation: 0,
       ),
@@ -152,148 +163,18 @@ class _ResultadosBusquedaState extends State<ResultadosBusqueda> {
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 30),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 30),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(20, 0, 10, 0),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('Mapa pressed ...');
-                            },
-                            text: 'Mapa',
-                            icon: Icon(
-                              Icons.location_on_outlined,
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              size: 25,
-                            ),
-                            options: FFButtonOptions(
-                              width: 130,
-                              height: 60,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              borderSide: BorderSide(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('Cercademi pressed ...');
-                            },
-                            text: 'Cerca de mí',
-                            options: FFButtonOptions(
-                              width: 130,
-                              height: 60,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              borderSide: BorderSide(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('FechasDisponibles pressed ...');
-                            },
-                            text: 'Fechas disponibles',
-                            options: FFButtonOptions(
-                              width: 190,
-                              height: 60,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              borderSide: BorderSide(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('Filtros pressed ...');
-                            },
-                            text: 'Filtros',
-                            icon: const Icon(
-                              Icons.filter_list,
-                              size: 15,
-                            ),
-                            options: FFButtonOptions(
-                              width: 130,
-                              height: 60,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
-                                    fontSize: 17,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              borderSide: BorderSide(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryText,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
-                        ),
-                      ],
+                      children: botonesFiltroBusqueda(context),
                     ),
                   ),
                 ),
