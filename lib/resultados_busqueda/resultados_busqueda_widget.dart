@@ -1,13 +1,12 @@
+import './resultado_busqueda.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import 'package:easy_debounce/easy_debounce.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../next_page_tmp/switch_modo_oscuro.dart';
-import 'resultado_busqueda.dart';
 
 class ResultadosBusqueda extends StatefulWidget {
   const ResultadosBusqueda({Key? key}) : super(key: key);
