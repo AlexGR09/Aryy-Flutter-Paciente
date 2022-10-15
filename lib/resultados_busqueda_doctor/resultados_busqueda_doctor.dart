@@ -14,7 +14,25 @@ List<SimulacionAPI> data = <SimulacionAPI>[
       Icons.location_on_outlined,
       "6391A Elgin St. Celina, Delaware 10299",
       ["Delaware, EEUU"],
-      "Ver en Maps")
+      "Ver en Maps"),
+  SimulacionAPI(Icons.accessibility_new_outlined, "Medidas de accesibilidad",
+      ["Estacionamiento", "Rampa"], null),
+  SimulacionAPI(
+      Icons.payment_outlined,
+      "Formas de pago",
+      ["Efectivo", "Tarjeta de crédito", "Tarjeta de débito", "Aseguradora"],
+      "Ver si acepta mi aseguradora"),
+  SimulacionAPI(
+      Icons.child_care,
+      "Atiende pacientes",
+      [
+        "Reciuén nacidos",
+        "Niños",
+        "Adultos jóvenes",
+        "Adultos mediana edad",
+        "Adultos tercera edad"
+      ],
+      null)
 ];
 
 List<Padding> InformacionConsultorios(BuildContext context) {
