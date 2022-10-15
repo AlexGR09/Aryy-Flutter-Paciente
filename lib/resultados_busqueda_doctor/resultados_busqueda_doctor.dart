@@ -1,5 +1,6 @@
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SimulacionAPI {
   final IconData icono;
@@ -15,10 +16,10 @@ List<SimulacionAPI> data = <SimulacionAPI>[
       "6391A Elgin St. Celina, Delaware 10299",
       ["Delaware, EEUU"],
       "Ver en Maps"),
-  SimulacionAPI(Icons.accessibility_new_outlined, "Medidas de accesibilidad",
+  SimulacionAPI(FontAwesomeIcons.universalAccess, "Medidas de accesibilidad",
       ["Estacionamiento", "Rampa"], null),
   SimulacionAPI(
-      Icons.payment_outlined,
+      FontAwesomeIcons.applePay,
       "Formas de pago",
       ["Efectivo", "Tarjeta de crédito", "Tarjeta de débito", "Aseguradora"],
       "Ver si acepta mi aseguradora"),
@@ -53,7 +54,6 @@ List<Padding> InformacionConsultorios(BuildContext context) {
         ],
       ),
     ),
-//---------------------------   Caracteristicas de cada consultorio  -----------------------------------------------------------------------------------------------------------------
     for (var i = 0; i < data.length; i++) ...[
       Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
@@ -69,11 +69,10 @@ List<Padding> InformacionConsultorios(BuildContext context) {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-//---------------------------   Icono  -----------------------------------------------------------------------------------------------------------------
                   Icon(
                     data[i].icono,
                     color: FlutterFlowTheme.of(context).primaryColor,
-                    size: 24,
+                    size: 28,
                   ),
                 ],
               ),
@@ -81,7 +80,6 @@ List<Padding> InformacionConsultorios(BuildContext context) {
             Column(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
-//---------------------------   Texto principal (negritas)  -----------------------------------------------------------------------------------------------------------------
               children: [
                 Text(
                   data[i].textTitle,
@@ -91,7 +89,6 @@ List<Padding> InformacionConsultorios(BuildContext context) {
                         fontWeight: FontWeight.normal,
                       ),
                 ),
-//---------------------------   Texto secundario (columna de texto gris)  -----------------------------------------------------------------------------------------------------------------
                 for (int j = 0; j < data[i].textSecondary.length; j++) ...[
                   Text(
                     data[i].textSecondary[j],
@@ -102,7 +99,6 @@ List<Padding> InformacionConsultorios(BuildContext context) {
                         ),
                   )
                 ],
-//---------------------------   Navegacion (texto morado)  -----------------------------------------------------------------------------------------------------------------
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
                   child: data[i].textLink != null
