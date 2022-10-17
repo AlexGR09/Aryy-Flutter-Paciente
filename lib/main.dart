@@ -1,3 +1,5 @@
+import 'package:aryy_front/agendar/loading.dart';
+
 import './index.dart';
 import 'launch_inicioapp/splash_screen.dart';
 import './vista_video/registrase_iniciarsesion.dart';
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
                 "registrarse_iniciosesion": (_) =>
                     MenuFrame(), //VISTA CON VIDEO DE FONDO
               },
-              home: SplashScreen());
+              home: Loading());
         });
   }
 }
