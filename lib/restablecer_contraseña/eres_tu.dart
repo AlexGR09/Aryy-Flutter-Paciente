@@ -6,6 +6,8 @@ import '../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../next_page_tmp/switch_modo_oscuro.dart';
+
 class EresTuWidget extends StatefulWidget {
   const EresTuWidget({Key? key}) : super(key: key);
 

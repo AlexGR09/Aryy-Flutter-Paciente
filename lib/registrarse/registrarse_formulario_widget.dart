@@ -11,6 +11,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
 
+import '../next_page_tmp/switch_modo_oscuro.dart';
+
 class RegistrarseFormularioWidget extends StatefulWidget {
   const RegistrarseFormularioWidget({Key? key}) : super(key: key);
 
