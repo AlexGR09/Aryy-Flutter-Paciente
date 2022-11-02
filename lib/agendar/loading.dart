@@ -33,8 +33,6 @@ class _LoadingState extends State<Loading> {
         centerTitle: false,
         elevation: 0,
       ),
-
-//------------------------- LOGO ARYY--------------------------------------------
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
@@ -51,6 +49,7 @@ class _LoadingState extends State<Loading> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircularProgressIndicator(
+                      
                         valueColor:
                             AlwaysStoppedAnimation<Color>(HexColor("#7900ff")),
                       ),
