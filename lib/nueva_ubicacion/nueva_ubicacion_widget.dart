@@ -1,11 +1,10 @@
-import 'package:aryy_front/styles/my_icons.dart';
-
+import '../next_page_tmp/switch_modo_oscuro.dart';
+import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class NuevaUbicacionWidget extends StatefulWidget {
   const NuevaUbicacionWidget({Key? key}) : super(key: key);
@@ -51,6 +50,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
         title: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
@@ -84,11 +84,17 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
             ],
           ),
         ),
-        actions: [],
+        actions: [
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+            child: DarkModeIcon(context),
+          )
+        ],
         centerTitle: false,
         elevation: 0,
       ),
-      backgroundColor: FlutterFlowTheme.of(context).primaryBtnText,
+      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -103,7 +109,10 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                   children: [
                     Text(
                       'Aqui ira el mapa',
-                      style: FlutterFlowTheme.of(context).bodyText1,
+                      style: FlutterFlowTheme.of(context).title2.override(
+                            fontFamily: 'Montserrat',
+                            fontSize: 18,
+                          ),
                     ),
                   ],
                 ),
@@ -115,7 +124,7 @@ class _NuevaUbicacionWidgetState extends State<NuevaUbicacionWidget> {
                     children: [
                       Column(
                         mainAxisSize: MainAxisSize.max,
-                        //crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
                             '*Calle 1735 N Story Road',

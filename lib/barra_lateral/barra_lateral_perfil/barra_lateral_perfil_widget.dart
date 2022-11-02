@@ -1,3 +1,4 @@
+import '../../next_page_tmp/switch_modo_oscuro.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
@@ -66,6 +67,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        centerTitle: false,
+        elevation: 0,
         automaticallyImplyLeading: false,
         title: Row(
           mainAxisSize: MainAxisSize.max,
@@ -98,9 +101,12 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
             ),
           ],
         ),
-        actions: [],
-        centerTitle: false,
-        elevation: 0,
+        actions: [
+          Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+              child: DarkModeIcon(context))
+        ],
+        toolbarHeight: 80,
       ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
@@ -1658,11 +1664,13 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                             ),
 
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//----------------------------------- TAB UBICACION ---------------------------------------------------------------------------------------------------------------------------------
+//----------------------------------- TAB IDENTIDAD ---------------------------------------------------------------------------------------------------------------------------------
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                             SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
                                     padding:
@@ -1672,14 +1680,22 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
                                               children: [
                                                 SvgPicture.asset(
                                                   IDENTIFICACION,
@@ -2177,20 +2193,33 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                             SingleChildScrollView(
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        22, 30, 22, 0),
+                                    padding:
+                                        const EdgeInsetsDirectional.fromSTEB(
+                                            22, 30, 22, 0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.center,
                                           children: [
                                             Row(
                                               mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.end,
                                               children: [
                                                 SvgPicture.asset(
                                                   UBICACION,
@@ -2249,10 +2278,16 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
-                                          MainAxisAlignment.start,
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             SvgPicture.asset(
                                               'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/aryy-version1-2ra5ai/assets/jbvs2tw1kgoh/ICON_UBICACION.svg',
@@ -2268,8 +2303,10 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   10, 0, 0, 0),
                                           child: Column(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
                                             crossAxisAlignment:
-                                                CrossAxisAlignment.start,
+                                                CrossAxisAlignment.center,
                                             children: [
                                               Padding(
                                                 padding: EdgeInsetsDirectional

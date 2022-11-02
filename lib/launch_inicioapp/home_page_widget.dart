@@ -22,6 +22,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        toolbarHeight: 80,
         automaticallyImplyLeading: true,
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
         title: DarModeSwitch(context),

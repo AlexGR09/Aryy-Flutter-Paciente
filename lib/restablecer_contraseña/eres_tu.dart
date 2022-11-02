@@ -5,7 +5,6 @@ import '../../flutter_flow/flutter_flow_util.dart';
 import '../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class EresTuWidget extends StatefulWidget {
   const EresTuWidget({Key? key}) : super(key: key);
@@ -21,6 +20,28 @@ class _EresTuWidgetState extends State<EresTuWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+              Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
+            ],
+          ),
+        ),
+        actions: [],
+        elevation: 0,
+        toolbarHeight: 80,
+      ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
@@ -61,12 +82,14 @@ class _EresTuWidgetState extends State<EresTuWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                           child: Text(
                             'Usuario 01',
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Montserrat',
-                                      color: Color(0xFF5101CC),
-                                      fontWeight: FontWeight.w300,
-                                    ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                  fontWeight: FontWeight.w300,
+                                ),
                           ),
                         ),
                       ],

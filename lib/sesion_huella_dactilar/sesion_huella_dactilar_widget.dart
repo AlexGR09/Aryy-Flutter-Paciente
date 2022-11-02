@@ -1,10 +1,8 @@
-import 'package:aryy_front/styles/my_icons.dart';
-
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
+import '../next_page_tmp/switch_modo_oscuro.dart';
+import '../styles/my_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class SesionHuellaDactilarWidget extends StatefulWidget {
   const SesionHuellaDactilarWidget({Key? key}) : super(key: key);
@@ -24,7 +22,10 @@ class _SesionHuellaDactilarWidgetState
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Color(0xFF7900FF),
+        toolbarHeight: 80,
         automaticallyImplyLeading: false,
+        centerTitle: true,
+        elevation: 0,
         title: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
           child: Row(
@@ -45,9 +46,13 @@ class _SesionHuellaDactilarWidgetState
             ],
           ),
         ),
-        actions: [],
-        centerTitle: false,
-        elevation: 0,
+        actions: [
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+          Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+              child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
+        ],
       ),
       backgroundColor: Color(0xFF7900FF),
       body: SafeArea(

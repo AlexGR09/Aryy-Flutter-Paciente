@@ -1,5 +1,5 @@
-import 'package:aryy_front/styles/my_icons.dart';
-
+import '../next_page_tmp/switch_modo_oscuro.dart';
+import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -42,6 +42,28 @@ class _CodigoVerificacionWidgetState extends State<CodigoVerificacionWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+              Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
+            ],
+          ),
+        ),
+        actions: [],
+        elevation: 0,
+        toolbarHeight: 80,
+      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

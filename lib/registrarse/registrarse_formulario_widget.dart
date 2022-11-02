@@ -59,6 +59,28 @@ class _RegistrarseFormularioWidgetState
     //final Size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
+      appBar: AppBar(
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+        automaticallyImplyLeading: false,
+        title: Padding(
+          padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+          child: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+              Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                  child: DarkModeIcon(context)),
+//--------------------------------------------------------------------------------------------------------------------------------------------
+            ],
+          ),
+        ),
+        actions: [],
+        centerTitle: true,
+        toolbarHeight: 80,
+        elevation: 0,
+      ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(

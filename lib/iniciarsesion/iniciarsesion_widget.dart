@@ -43,7 +43,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
         automaticallyImplyLeading: false,
         centerTitle: false,
         title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0, 25, 20, 0),
+          padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
           child: Row(
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -85,6 +85,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
         ),
         actions: [],
         elevation: 0,
+        toolbarHeight: 80,
       ),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
