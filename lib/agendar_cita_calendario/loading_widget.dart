@@ -1,9 +1,11 @@
-import 'package:aryy_front/launch_inicioapp/home_page_widget.dart';
+//import 'package:aryy_version8/index.dart';
+//import 'package:aryy_version8/launch_inicioapp/home_page_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'dart:async';
 import '../flutter_flow/flutter_flow_theme.dart';
+import 'confirmacion_de_cita_widget.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -18,8 +20,10 @@ class _LoadingState extends State<Loading> {
     super.initState();
     Timer(
         const Duration(seconds: 3),
-        () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => HomePageWidget())));
+        () => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) => ConfirmacionDeCitaWidget())));
   }
 
   @override
@@ -49,7 +53,6 @@ class _LoadingState extends State<Loading> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CircularProgressIndicator(
-                      
                         valueColor:
                             AlwaysStoppedAnimation<Color>(HexColor("#7900ff")),
                       ),

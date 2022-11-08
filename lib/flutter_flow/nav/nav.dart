@@ -1,9 +1,20 @@
 import 'dart:async';
+import 'package:aryy_front/barra_lateral/barra_lateral_favoritos/barra_lateral_favoritos_widget.dart';
+
+import '../../agendar_cita_calendario/agendar_cita_calendario_widget.dart';
+import '../../agendar_cita_calendario/agregar_tarjeta_widget.dart';
+import '../../agendar_cita_calendario/loading_widget.dart';
+import '../../agendar_cita_calendario/nuevo_metodo_pago_widget.dart';
+import '../../agendar_cita_calendario/para_mi.dart';
+import '../../agendar_cita_calendario/para_otra_persona.dart';
+import '../../agendar_cita_calendario/reservar_cita.dart';
 import '../../index.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:go_router/go_router.dart';
 export 'package:go_router/go_router.dart';
+import '../../metodos_de_pago/metodos_de_pago_widget.dart';
+import '../../registrarse_formulario/registrarse_formulario_widget.dart';
 import 'serialization_util.dart';
 export 'serialization_util.dart';
 
@@ -93,11 +104,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'barraLateralPerfil',
               builder: (context, params) => BarraLateralPerfilWidget(),
             ),
-            FFRoute(
+            /*FFRoute(
               name: 'Barra_lateral_favoritos',
               path: 'barraLateralFavoritos',
-              builder: (context, params) => BarraLateralFavoritosWidget(),
-            ),
+              builder: (context, params) => MisFavoritosWidget(),
+            ),*/
             FFRoute(
               name: 'Barra_lateral_recompensas',
               path: 'barraLateralRecompensas',
@@ -142,6 +153,49 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'buscar_especialista',
               path: 'buscarEspecialista',
               builder: (context, params) => BuscarEspecialistaWidget(),
+            ),
+            //-----------------------------------------------------------------------------------
+            //------------------------------AGENDARCITA ------------------------------------------
+            //------------------------------------------------------------------------------------
+            FFRoute(
+              name: 'agendar_cita',
+              path: 'agendar_cita_calendario',
+              builder: (context, params) => AgendarCita(),
+            ),
+            FFRoute(
+              name: 'metodo_pago',
+              path: 'metodos_de_pago',
+              builder: (context, params) => MetodosDePago(),
+            ),
+            FFRoute(
+              name: 'reservar_cita',
+              path: 'reservar_cita',
+              builder: (context, params) => ReservarCitaWidget(),
+            ),
+            FFRoute(
+              name: 'para_mi',
+              path: 'para_mi',
+              builder: (context, params) => ParaMiWidget(),
+            ),
+            FFRoute(
+              name: 'para_otra_persona',
+              path: 'para_otra_persona',
+              builder: (context, params) => ParaOtraPersonaWidget(),
+            ),
+            FFRoute(
+              name: 'loading_confirmacion_cita',
+              path: 'loading_widget',
+              builder: (context, params) => Loading(),
+            ),
+            FFRoute(
+              name: 'agregar_tarjeta',
+              path: 'agregar_tarjeta',
+              builder: (context, params) => AgregarTarjetaWidget(),
+            ),
+            FFRoute(
+              name: 'nuevo_metodo_pago',
+              path: 'nuevo_metodo_pago',
+              builder: (context, params) => NuevoMetodoPagoWidget(),
             ),
 
             //-----------------------------------------------------------------------------------------------------

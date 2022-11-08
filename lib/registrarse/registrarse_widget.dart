@@ -1,9 +1,14 @@
+import './componentes/input_password_widget.dart';
+import './componentes/input_text_widget.dart';
+import 'componentes/button_registrarse_con.dart';
 import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import '../aryy_common_components/formulario/button_widget.dart';
 
 class RegistrarseWidget extends StatefulWidget {
   const RegistrarseWidget({Key? key}) : super(key: key);
@@ -13,38 +18,23 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  TextEditingController? textController1;
-  TextEditingController? textController2;
-  TextEditingController? textController3;
-  TextEditingController? textController4;
-  late bool passwordVisibility1;
-  late bool passwordVisibility2;
-  final scaffoldKey = GlobalKey<ScaffoldState>();
+  TextEditingController textController1 = TextEditingController();
+  TextEditingController textController2 = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
-    textController3 = TextEditingController();
-    textController4 = TextEditingController();
-    passwordVisibility1 = false;
-    passwordVisibility2 = false;
-  }
+  bool isPasswordLongEnough = true;
 
-  @override
-  void dispose() {
-    textController1?.dispose();
-    textController2?.dispose();
-    textController3?.dispose();
-    textController4?.dispose();
-    super.dispose();
+  onPasswordChange(String password) {
+    if (password.length < 8) return WarningType.passwordLength;
+    if (textController1.text != textController2.text) {
+      return WarningType.passwordMatch;
+    }
+    return WarningType.none;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: scaffoldKey,
+      key: GlobalKey<ScaffoldState>(),
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
@@ -66,13 +56,13 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                   child: DarkModeIcon(context)),
 //--------------------------------------------------------------------------------------------------------------------------------------------
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, "iniciarsesion");
                   },
                   child: Text(
-                    'Iniciar sesión',
+                    'Inicar sesión',
                     style: FlutterFlowTheme.of(context).bodyText1.override(
                           fontFamily: 'Montserrat',
                           color: Color(0xC586898C),
@@ -98,8 +88,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(
-                      0, 60, 0, 0), //TENIA 22 COMO MARGEN
+                  padding: const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -112,8 +101,9 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     ],
                   ),
                 ),
+//---------------------------  Input text: usuario, correo, contraseña  -----------------------------------------------------------------------------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -121,421 +111,33 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                       Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Material(
-                            color: Colors.transparent,
-                            elevation: 2,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: Container(
-                              width: 300,
-                              height: 45,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                boxShadow: const [
-                                  BoxShadow(
-                                    blurRadius: 4,
-                                    color: Color(0x199966FF),
-                                    offset: Offset(0, 0),
-                                  )
-                                ],
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding:
-                                    EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
-                                child: TextFormField(
-                                  controller: textController1,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    hintText: 'Ingrese un usuario',
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .bodyText2
-                                        .override(
-                                            fontFamily: 'Montserrat',
-                                            fontSize: 12,
-                                            fontWeight: FontWeight.normal,
-                                            color: Color(0xFFCCCCCC)),
-                                    enabledBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                    focusedBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                    errorBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                    focusedErrorBorder: UnderlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1,
-                                      ),
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(4.0),
-                                        topRight: Radius.circular(4.0),
-                                      ),
-                                    ),
-                                  ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                  keyboardType: TextInputType.name,
-                                ),
-                              ),
-                            ),
+                          const InputTextWidget(hintText: 'Ingrese un usuario'),
+                          const InputTextWidget(hintText: 'Ingrese un correo'),
+                          InputPasswordWidget(
+                            textController: textController1,
+                            hintText: 'Ingrese una contraseña',
+                            onChangeFunction: onPasswordChange,
                           ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 2,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Container(
-                                width: 300,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4,
-                                      color: Color(0x199966FF),
-                                      offset: Offset(0, 0),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: TextFormField(
-                                    controller: textController2,
-                                    autofocus: true,
-                                    obscureText: false,
-                                    decoration: InputDecoration(
-                                      hintText: 'Ingrese un correo',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyText2
-                                          .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.normal,
-                                              color: Color(0xFFCCCCCC)),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    keyboardType: TextInputType.emailAddress,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 2,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Container(
-                                width: 300,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4,
-                                      color: Color(0x199966FF),
-                                      offset: Offset(0, 0),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: TextFormField(
-                                    controller: textController3,
-                                    autofocus: true,
-                                    obscureText: !passwordVisibility1,
-                                    decoration: InputDecoration(
-                                      hintText: 'Ingrese una contraseña',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyText2
-                                          .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.normal,
-                                              color: Color(0xFFCCCCCC)),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      suffixIcon: InkWell(
-                                        onTap: () => setState(
-                                          () => passwordVisibility1 =
-                                              !passwordVisibility1,
-                                        ),
-                                        focusNode:
-                                            FocusNode(skipTraversal: true),
-                                        child: Icon(
-                                          passwordVisibility1
-                                              ? Icons.visibility_outlined
-                                              : Icons.visibility_off_outlined,
-                                          color: Color(0xFF757575),
-                                          size: 22,
-                                        ),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    keyboardType: TextInputType.visiblePassword,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
-                            child: Material(
-                              color: Colors.transparent,
-                              elevation: 2,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Container(
-                                width: 300,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 4,
-                                      color: Color(0x199966FF),
-                                      offset: Offset(0, 0),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      15, 0, 0, 0),
-                                  child: TextFormField(
-                                    controller: textController4,
-                                    autofocus: true,
-                                    obscureText: !passwordVisibility2,
-                                    decoration: InputDecoration(
-                                      hintText: 'Confirme su contraseña',
-                                      hintStyle: FlutterFlowTheme.of(context)
-                                          .bodyText2
-                                          .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 12,
-                                              fontWeight: FontWeight.normal,
-                                              color: Color(0xFFCCCCCC)),
-                                      enabledBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      errorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      focusedErrorBorder: UnderlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Color(0x00000000),
-                                          width: 1,
-                                        ),
-                                        borderRadius: const BorderRadius.only(
-                                          topLeft: Radius.circular(4.0),
-                                          topRight: Radius.circular(4.0),
-                                        ),
-                                      ),
-                                      suffixIcon: InkWell(
-                                        onTap: () => setState(
-                                          () => passwordVisibility2 =
-                                              !passwordVisibility2,
-                                        ),
-                                        focusNode:
-                                            FocusNode(skipTraversal: true),
-                                        child: Icon(
-                                          passwordVisibility2
-                                              ? Icons.visibility_outlined
-                                              : Icons.visibility_off_outlined,
-                                          color: Color(0xFF757575),
-                                          size: 22,
-                                        ),
-                                      ),
-                                    ),
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    keyboardType: TextInputType.visiblePassword,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ),
+                          InputPasswordWidget(
+                            textController: textController2,
+                            hintText: 'Confirme su contraseña',
+                            onChangeFunction: onPasswordChange,
+                          )
                         ],
                       ),
                     ],
                   ),
                 ),
+//---------------------------  Registrase btn  -----------------------------------------------------------------------------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 20, 22, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      FFButtonWidget(
-                        onPressed: () async {
+                      BotonFormulario(
+                        text: 'Registrarme',
+                        onPressedFunction: () async {
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {
@@ -551,34 +153,17 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                               );
                             },
                           );
-
                           //context.pushNamed('Registrarse_formulario'); //NO ME SIRVE POR EL MOMENTO
                           Navigator.pushNamed(
                               context, "registrarse_formulario");
                         },
-                        text: 'Registrarme',
-                        options: FFButtonOptions(
-                          width: 300,
-                          height: 40,
-                          color: Color(0xFF7900FF),
-                          textStyle:
-                              FlutterFlowTheme.of(context).subtitle2.override(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
                       ),
                     ],
                   ),
                 ),
+//---------------------------  Registrase con redes sociales btn  -----------------------------------------------------------------------------------------------------------------
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
                   child: Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -597,69 +182,27 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                                     .bodyText1
                                     .override(
                                       fontFamily: 'Montserrat',
-                                      color: Color(0xFFCCCCCC),
+                                      color: const Color(0xFFCCCCCC),
                                       fontWeight: FontWeight.w500,
                                     ),
                               ),
                             ],
                           ),
                           Padding(
-                            padding:
-                                EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                0, 20, 0, 0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: [
+                              children: const [
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0, 0, 40, 0),
-                                  child: Container(
-                                    width: 70,
-                                    height: 70,
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryBackground,
-                                      borderRadius: BorderRadius.circular(10),
-                                      border: Border.all(
-                                        color: Color(0xC5D9D9D9),
-                                        width: 1,
-                                      ),
-                                    ),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20, 20, 20, 20),
-                                      child: SvgPicture.asset(
-                                        GOOGLE,
-                                        width: 40,
-                                        height: 40,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
+                                  child: RegistarseConButton(
+                                    iconName: GOOGLE,
                                   ),
                                 ),
-                                Container(
-                                  width: 70,
-                                  height: 70,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    borderRadius: BorderRadius.circular(10),
-                                    border: Border.all(
-                                      color: Color(0xC5D9D9D9),
-                                      width: 1,
-                                    ),
-                                  ),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20, 20, 20, 20),
-                                    child: SvgPicture.asset(
-                                      FACEBOOK,
-                                      width: 40,
-                                      height: 40,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                ),
+                                RegistarseConButton(iconName: FACEBOOK),
                               ],
                             ),
                           ),

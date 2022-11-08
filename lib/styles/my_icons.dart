@@ -47,6 +47,9 @@ const MI_UBICACION = 'assets/icons/mi_perfil/ICON_MI-UBIC.svg';
 const PERFIL_RELLENO = 'assets/icons/mi_perfil/ICON_PERFIL_MOVIL.svg';
 const PIN = 'assets/icons/mi_perfil/ICON_PIN.svg';
 const UBICACION = 'assets/icons/mi_perfil/ICON_UBICACION.svg';
+const FONDO = 'assets/images/perfil/WP_Perfil.jpg';
+const FILTRO_ANALISIS = 'assets/icons/mi_perfil/FILTRO-ANALISIS.svg';
+const EXITOSO = 'assets/icons/agendar/iconos_EXITOSO.svg';
 
 //ICONOS REGISTRO E INICIAR SESION
 const FACEBOOK = 'assets/icons/registro_sesion/ICON_FB.svg';
@@ -61,6 +64,15 @@ const LAUNCH_LABORATORIOS =
 const LAUNCH_MEDICINA = 'assets/images/inicio_app/LAUNCH_IMG_MEDICINA.png';
 const LAUNCH_PASTILLERO = 'assets/images/inicio_app/LAUNCH_IMG_PASTILLERO.png';
 const LAUNCH_REVIEWS = 'assets/images/inicio_app/LAUNCH_IMG_REVIEWS.png';
+
+//AVATARES
+const AVATAR_DR1 = 'assets/avatar/AVATARES_DR1.png';
+const AVATAR_DR2 = 'assets/avatar/AVATARES_DR2.png';
+const AVATAR_DR3 = 'assets/avatar/AVATARES_DR3.png';
+const AVATAR_DRA1 = 'assets/avatar/AVATARES_DRA1.png';
+const AVATAR_DRA2 = 'assets/avatar/AVATARES_DRA2.png';
+const AVATAR_USER1 = 'assets/avatar/AVATARES_USER1.png';
+const AVATAR_USER2 = 'assets/avatar/AVATARES_USER2.png';
 
 //ICONOS GENERALES
 const REGRESAR = 'assets/icons/ICON_REGRESAR.svg';
