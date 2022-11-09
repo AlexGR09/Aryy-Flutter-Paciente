@@ -48,7 +48,7 @@ class _AgregarTarjetaWidgetState extends State<AgregarTarjetaWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
         leading: InkWell(
-          onTap: () async {
+          onTap: () {
             Navigator.pushNamed(context, 'nuevo_metodo_pago');
           },
           child: Icon(
@@ -481,8 +481,8 @@ class _AgregarTarjetaWidgetState extends State<AgregarTarjetaWidget> {
                   children: [
                     Expanded(
                       child: FFButtonWidget(
-                        onPressed: () async {
-                          context.pushNamed('para_mi');
+                        onPressed: () {
+                          Navigator.pushNamed(context, 'para_mi');
                         },
                         text: 'Guardar tarjeta',
                         options: FFButtonOptions(

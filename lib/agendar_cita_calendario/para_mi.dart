@@ -346,7 +346,7 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                                           child: FFButtonWidget(
                                             onPressed: () {
                                               Navigator.pushNamed(
-                                                  context, 'agregar_tarjeta');
+                                                  context, 'Nuevo_metodo_pago');
                                             },
                                             text: 'Pago anticipado \$600',
                                             options: FFButtonOptions(
@@ -377,7 +377,8 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () {
-                                            print('Button pressed ...');
+                                            Navigator.pushNamed(context,
+                                                'loading_confirmacion_cita');
                                           },
                                           text: 'En consultorio \$800',
                                           options: FFButtonOptions(

@@ -52,8 +52,8 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         leading: InkWell(
-          onTap: () async {
-            context.pushNamed('reservar_cita');
+          onTap: () {
+            Navigator.pushNamed(context, 'reservar_cita');
           },
           child: Icon(
             Icons.arrow_back,
@@ -682,7 +682,8 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
                                                   0, 0, 0, 20),
                                           child: FFButtonWidget(
                                             onPressed: () {
-                                              print('Button pressed ...');
+                                              Navigator.pushNamed(
+                                                  context, 'nuevo_metodo_pago');
                                             },
                                             text: 'Pago anticipado \$600',
                                             options: FFButtonOptions(
@@ -713,7 +714,8 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () {
-                                            print('Button pressed ...');
+                                            Navigator.pushNamed(context,
+                                                'loading_confirmacion_cita');
                                           },
                                           text: 'En consultorio \$800',
                                           options: FFButtonOptions(
@@ -781,7 +783,7 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 40),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
