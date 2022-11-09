@@ -100,8 +100,7 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
                 size: 30,
               ),
               onPressed: () async {
-                CargarWidgetConTransicion(
-                    context, Home2Widget(), PageTransitionType.topToBottom);
+                Navigator.pushNamed(context, "home2_inicio");
               },
             ),
           ),
@@ -471,6 +470,7 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
             ),
           ),
         ),
-        bottomNavigationBar: GetBarradeNavegacion(context));
+        //------------------------------------- BARRA DE NAVEGACION -------------------------------------------------------------------------------------------------------------------------
+        bottomNavigationBar: const BarraDeNavegacion());
   }
 }

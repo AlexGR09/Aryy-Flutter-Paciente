@@ -22,8 +22,6 @@ class Home2Widget extends StatefulWidget {
 class _Home2WidgetState extends State<Home2Widget> {
   TextEditingController? textController;
 
-  final scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   void initState() {
     super.initState();
@@ -33,7 +31,7 @@ class _Home2WidgetState extends State<Home2Widget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        key: scaffoldKey,
+        key: GlobalKey<ScaffoldState>(),
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
 //------------------------------------- App Bar -------------------------------------------------------------------------------------------------------------------------
         appBar: PreferredSize(
@@ -168,11 +166,8 @@ class _Home2WidgetState extends State<Home2Widget> {
                                             .fromSTEB(5, 0, 0, 0),
                                         child: TextFormField(
                                             onTap: () {
-                                              CargarWidgetConTransicion(
-                                                  context,
-                                                  const BuscarEspecialistaWidget(),
-                                                  PageTransitionType
-                                                      .bottomToTop);
+                                              Navigator.pushNamed(context,
+                                                  "buscar_especialista");
                                             },
                                             controller: textController,
                                             autofocus: false,
@@ -1108,11 +1103,7 @@ class _Home2WidgetState extends State<Home2Widget> {
             //onTap: () => FocusScope.of(context).unfocus(),
           ),
         ),
-
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- BARRA DE NAVEGACION -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-        bottomNavigationBar: GetBarradeNavegacion(context));
+        bottomNavigationBar: const BarraDeNavegacion());
   }
 }
