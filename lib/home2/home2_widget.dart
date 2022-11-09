@@ -1,6 +1,8 @@
+import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../aryy_common_components/appbar/puntaje_paciente.dart';
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import '../barra_lateral/barra_lateral_widget.dart';
 import '../buscar_especialista/buscar_especialista_widget.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../next_page_tmp/transiciones.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../styles/my_icons.dart';
@@ -33,107 +35,23 @@ class _Home2WidgetState extends State<Home2Widget> {
     return Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- App Bar -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         appBar: PreferredSize(
-          preferredSize: const Size(100, 100),
+          preferredSize: const Size(100, 120),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20, 10, 10, 0),
-            child: AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-              //backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              leadingWidth: 50,
-              toolbarHeight: 100,
-              elevation: 0,
-              centerTitle: false,
-              title: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  DarkModeIcon(context),
-                  Builder(
-                    builder: (context) => InkWell(
-                      onTap: () => Scaffold.of(context).openEndDrawer(),
-                      //iconTheme: IconThemeData(color: Colors.black),
-                      child: Container(
-                        width: 120,
-                        height: 40,
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF7900FF),
-                          borderRadius: BorderRadius.only(
-                            bottomLeft: Radius.circular(25),
-                            bottomRight: Radius.circular(0),
-                            topLeft: Radius.circular(25),
-                            topRight: Radius.circular(0),
-                          ),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(
-                                  '96 pts',
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBtnText,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 12,
-                                      ),
-                                ),
-                              ],
-                            ),
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.end,
-                              children: [
-                                Icon(
-                                  Icons.person_outline,
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBtnText,
-                                  size: 15,
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              leading: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 6),
-                child: SvgPicture.asset(
-                  ISOTIPO,
-                  width: 20,
-                  height: 20,
-                  //fit: BoxFit.cover,
-                ),
-              ),
-              /*leading: SvgPicture.asset(
+            padding: const EdgeInsetsDirectional.fromSTEB(50, 40, 20, 0),
+            child: AryyAppBar(
+              leading: SvgPicture.asset(
                 ISOTIPO,
-                width: 20,
-                height: 20,
-              ),*/
+              ),
+              title: const DarkModeIcon(),
+              actions: const PuntajePaciente(),
             ),
           ),
         ),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- Barra Lateral Izquierda -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         endDrawer: const NavigationDrawer(),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //------------------------------------- Menu principal  -------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         body: SafeArea(
           child: GestureDetector(
             onTap: () => FocusScope.of(context).unfocus(),

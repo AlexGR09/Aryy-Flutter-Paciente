@@ -1,5 +1,5 @@
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../styles/my_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,11 +46,11 @@ class _SesionHuellaDactilarWidgetState
             ],
           ),
         ),
-        actions: [
+        actions: const [
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
           Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-              child: DarkModeIcon(context)),
+              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
+              child: DarkModeIcon()),
 //--------------------------------------------------------------------------------------------------------------------------------------------
         ],
       ),

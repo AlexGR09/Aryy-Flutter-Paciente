@@ -1,5 +1,5 @@
+import '../aryy_common_components/appbar/appbar_widget.dart';
 import 'componentes/boton_metodo_de_pago.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'componentes/opciones_de_pago.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
@@ -24,92 +24,81 @@ class _MetodosDePagoState extends State<MetodosDePago> {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        automaticallyImplyLeading: true,
-        toolbarHeight: 80,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_outlined,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'Dr. Nombre ',
-              textAlign: TextAlign.start,
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Montserrat',
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300,
-                  ),
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+            leading: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30,
+              borderWidth: 1,
+              buttonSize: 60,
+              icon: Icon(
+                Icons.arrow_back_outlined,
+                color: FlutterFlowTheme.of(context).primaryText,
+                size: 30,
+              ),
+              onPressed: () {
+                print('IconButton pressed ...');
+              },
             ),
-          ],
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
-            child: Row(
+            title: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                FlutterFlowIconButton(
-                  borderColor: Colors.transparent,
-                  borderRadius: 30,
-                  borderWidth: 1,
-                  buttonSize: 60,
-                  icon: Icon(
-                    Icons.share_sharp,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 30,
-                  ),
-                  onPressed: () {
-                    print('Share_button pressed ...');
-                  },
-                ),
-                ToggleIcon(
-                  onPressed: () async {
-                    setState(
-                        () => FFAppState().toggleVar = !FFAppState().toggleVar);
-                  },
-                  value: FFAppState().toggleVar,
-                  onIcon: const Icon(
-                    Icons.favorite_sharp,
-                    color: Colors.black,
-                    size: 28,
-                  ),
-                  offIcon: Icon(
-                    Icons.favorite_border,
-                    color: FlutterFlowTheme.of(context).primaryText,
-                    size: 28,
-                  ),
+                Text(
+                  'Dr. Nombre ',
+                  textAlign: TextAlign.start,
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Montserrat',
+                        color: FlutterFlowTheme.of(context).secondaryText,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w300,
+                      ),
                 ),
               ],
             ),
-          ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(
-                0, 0, 6, 0), /*child: DarkModeIcon()*/
-          ),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-        ],
-        centerTitle: false,
-        elevation: 0,
-      ),
+            actions: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30,
+                    borderWidth: 1,
+                    buttonSize: 60,
+                    icon: Icon(
+                      Icons.share_sharp,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 30,
+                    ),
+                    onPressed: () {
+                      print('Share_button pressed ...');
+                    },
+                  ),
+                  ToggleIcon(
+                    onPressed: () async {
+                      setState(() =>
+                          FFAppState().toggleVar = !FFAppState().toggleVar);
+                    },
+                    value: FFAppState().toggleVar,
+                    onIcon: const Icon(
+                      Icons.favorite_sharp,
+                      color: Colors.black,
+                      size: 28,
+                    ),
+                    offIcon: Icon(
+                      Icons.favorite_border,
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      size: 28,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          )),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),

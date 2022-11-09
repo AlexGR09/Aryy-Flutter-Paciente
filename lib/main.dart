@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'Prueba',
-              initialRoute: "agendar_cita",
+              title: 'Aryy - Prueba',
+              initialRoute: "verificar_identidad",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
               },
-              home: Loading());
+              home: VerificarIdentidadWidget());
         });
   }
 }

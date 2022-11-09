@@ -1,10 +1,10 @@
+import 'package:aryy_front/aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import 'package:aryy_front/styles/my_icons.dart';
+import '../aryy_common_components/appbar/appbar_widget.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-// Responsive y modo oscuro
-import '../next_page_tmp/switch_modo_oscuro.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -20,33 +20,26 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        toolbarHeight: 80,
-        automaticallyImplyLeading: true,
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-        title: DarModeSwitch(context),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
-            child: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, "registrarse_iniciosesion");
-              },
-              child: Text(
-                'Omitir',
-                style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Montserrat',
-                      color: const Color(0xC5B4B4B4),
-                    ),
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+            title: const DarkModeSwitch(),
+            actions: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
+              child: InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, "registrarse_iniciosesion");
+                },
+                child: Text(
+                  'Omitir',
+                  style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Montserrat',
+                        color: const Color(0xC5B4B4B4),
+                      ),
+                ),
               ),
             ),
-          ),
-        ],
-        elevation: 0,
-      ),
-
+          )),
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------
 //--------------------------- PRIMER PAGE VIEW -----------------------------------------------------------------------------------------------------------------
 //--------------------------------------------------------------------------------------------------------------------------------------------------------------

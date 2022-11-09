@@ -1,4 +1,5 @@
-import '../../next_page_tmp/switch_modo_oscuro.dart';
+import '../../aryy_common_components/appbar/appbar_widget.dart';
+import '../../aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
@@ -65,49 +66,43 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        centerTitle: false,
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "home2_inicio");
-                },
-                child: SvgPicture.network(
-                  REGRESAR,
-                  width: 30,
-                  height: 30,
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
-              child: Text(
-                'Perfil',
-                style: FlutterFlowTheme.of(context).bodyText1.override(
-                      fontFamily: 'Montserrat',
-                      color: Color(0xC586898C),
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+              title: Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.pushNamed(context, "home2_inicio");
+                      },
+                      child: SvgPicture.network(
+                        REGRESAR,
+                        width: 30,
+                        height: 30,
+                        fit: BoxFit.cover,
+                      ),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(20, 0, 0, 0),
+                    child: Text(
+                      'Perfil',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Montserrat',
+                            color: Color(0xC586898C),
+                            fontSize: 20,
+                            fontWeight: FontWeight.normal,
+                          ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
-        ),
-        actions: [
-          Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
-              child: DarkModeIcon(context))
-        ],
-        toolbarHeight: 80,
-      ),
+              actions: const Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 0, 40, 0),
+                  child: DarkModeIcon()))),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
