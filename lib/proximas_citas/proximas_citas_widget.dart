@@ -86,22 +86,33 @@ class _ProximasCitasState extends State<ProximasCitas> {
                       Expanded(
                         child: TabBarView(
                           children: [
-//---------------------------  Cada tarjeta  -----------------------------------------------------------------------------------------------------------------
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: const [
-                                TarjetaProximaCita(),
-                                TarjetaProximaCita(),
-                              ],
-                            ),
+                            ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: const [
+                                      TarjetaProximaCita(),
+                                      TarjetaProximaCita(),
+                                      TarjetaProximaCita(),
+                                    ],
+                                  ),
+                                ]),
 //---------------------------  Body Tab [1]: Anteriores  -----------------------------------------------------------------------------------------------------------------
-                            Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: const [
-                                TarjetaProximaCita(),
-                                TarjetaProximaCita(),
-                              ],
-                            ),
+                            ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: const [
+                                      TarjetaProximaCita(),
+                                      TarjetaProximaCita(),
+                                      TarjetaProximaCita(),
+                                    ],
+                                  ),
+                                ]),
                           ],
                         ),
                       ),
