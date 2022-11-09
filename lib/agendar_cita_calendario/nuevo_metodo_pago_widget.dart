@@ -20,7 +20,7 @@ class _NuevoMetodoPagoWidgetState extends State<NuevoMetodoPagoWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () {

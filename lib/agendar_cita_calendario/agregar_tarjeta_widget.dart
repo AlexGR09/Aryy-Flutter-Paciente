@@ -45,7 +45,7 @@ class _AgregarTarjetaWidgetState extends State<AgregarTarjetaWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () {
@@ -61,14 +61,14 @@ class _AgregarTarjetaWidgetState extends State<AgregarTarjetaWidget> {
           'Agregar tarjeta',
           style: FlutterFlowTheme.of(context).title2.override(
                 fontFamily: 'Montserrat',
-                color: FlutterFlowTheme.of(context).primaryText,
+                //color: FlutterFlowTheme.of(context).primaryText,
                 fontSize: 20,
                 fontWeight: FontWeight.normal,
               ),
         ),
         actions: [],
         centerTitle: false,
-        elevation: 2,
+        elevation: 0,
       ),
       body: SafeArea(
         child: GestureDetector(
