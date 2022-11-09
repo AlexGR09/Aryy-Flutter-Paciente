@@ -389,7 +389,7 @@ class _ConfirmacionDeCitaWidgetState extends State<ConfirmacionDeCitaWidget> {
                     children: [
                       FFButtonWidget(
                         onPressed: () {
-                          Navigator.pushNamed(context, 'home2_inicio');
+                          Navigator.pushNamed(context, 'proximas_citas');
                         },
                         text: 'Aceptar',
                         options: FFButtonOptions(

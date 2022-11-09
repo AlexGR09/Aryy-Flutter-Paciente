@@ -346,7 +346,7 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                                           child: FFButtonWidget(
                                             onPressed: () {
                                               Navigator.pushNamed(
-                                                  context, 'agregar_tarjeta');
+                                                  context, 'Nuevo_metodo_pago');
                                             },
                                             text: 'Pago anticipado \$600',
                                             options: FFButtonOptions(
@@ -377,7 +377,8 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                                         ),
                                         FFButtonWidget(
                                           onPressed: () {
-                                            print('Button pressed ...');
+                                            Navigator.pushNamed(context,
+                                                'loading_confirmacion_cita');
                                           },
                                           text: 'En consultorio \$800',
                                           options: FFButtonOptions(
@@ -444,41 +445,62 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 30, 16, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Expanded(
-                                      child: FFButtonWidget(
-                                        onPressed: () {
-                                          print('Button pressed ...');
-                                        },
-                                        text: 'Confirmar cita',
-                                        options: FFButtonOptions(
-                                          width: 300,
-                                          height: 40,
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryColor,
-                                          textStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .subtitle2
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: Colors.white,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                  ),
-                                          borderSide: BorderSide(
-                                            color: Colors.transparent,
-                                            width: 1,
-                                          ),
-                                          borderRadius:
-                                              BorderRadius.circular(8),
+                                    16, 30, 16, 40),
+                                child: FFButtonWidget(
+                                  onPressed: () async {
+                                    var confirmDialogResponse =
+                                        await showDialog<bool>(
+                                              context: context,
+                                              builder: (alertDialogContext) {
+                                                return AlertDialog(
+                                                  title: Text('Confirmar cita'),
+                                                  content: Text(
+                                                      '¿Esta seguro que desea seleccionar ésta fecha para su cita?'),
+                                                  actions: [
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              false),
+                                                      child: Text('Cancelar'),
+                                                    ),
+                                                    TextButton(
+                                                      onPressed: () =>
+                                                          Navigator.pop(
+                                                              alertDialogContext,
+                                                              true),
+                                                      child: Text('Aceptar'),
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            ) ??
+                                            false;
+                                    if (confirmDialogResponse) {
+                                      context.pushNamed('confirmacion_de_cita');
+                                    } else {
+                                      Navigator.pop(context);
+                                    }
+                                  },
+                                  text: 'Confirmar',
+                                  options: FFButtonOptions(
+                                    width: 350,
+                                    height: 40,
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .subtitle2
+                                        .override(
+                                          fontFamily: 'Montserrat',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.normal,
                                         ),
-                                      ),
+                                    borderSide: BorderSide(
+                                      color: Colors.transparent,
+                                      width: 1,
                                     ),
-                                  ],
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
                                 ),
                               ),
                             ],
