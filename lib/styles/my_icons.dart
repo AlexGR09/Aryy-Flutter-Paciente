@@ -50,7 +50,6 @@ const UBICACION = 'assets/icons/mi_perfil/ICON_UBICACION.svg';
 const FONDO = 'assets/images/perfil/WP_Perfil.jpg';
 const FILTRO_ANALISIS = 'assets/icons/mi_perfil/FILTRO-ANALISIS.svg';
 const EXITOSO = 'assets/icons/agendar/EXITOSO.svg';
-
 //ICONOS REGISTRO E INICIAR SESION
 const FACEBOOK = 'assets/icons/registro_sesion/ICON_FB.svg';
 const GOOGLE = 'assets/icons/registro_sesion/ICON_GOOGLE.svg';
