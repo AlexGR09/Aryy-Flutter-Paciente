@@ -29,8 +29,8 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         automaticallyImplyLeading: false,
         leading: InkWell(
-          onTap: () async {
-            context.pushNamed('reservar_cita');
+          onTap: () {
+            Navigator.pushNamed(context, 'reservar_cita');
           },
           child: Icon(
             Icons.arrow_back,
