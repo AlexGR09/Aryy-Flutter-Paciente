@@ -307,9 +307,13 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
                                   children: [
                                     FlutterFlowDropDown(
                                       options: [
-                                        'Abuela/abuelo',
-                                        'madre/padre',
-                                        'hermana/hermano'
+                                        'Abuela/Abuelo',
+                                        'Madre/padre',
+                                        'Hermana/hermano'
+                                            'Esposa/Esposo'
+                                            'Hija/Hijo'
+                                            'Amiga/Amigo'
+                                            'Otro'
                                       ],
                                       onChanged: (val) =>
                                           setState(() => dropDownValue = val),
@@ -784,36 +788,54 @@ class _ParaOtraPersonaWidgetState extends State<ParaOtraPersonaWidget> {
                   ),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 40),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
-                            },
-                            text: 'Confirmar cita',
-                            options: FFButtonOptions(
-                              width: 300,
-                              height: 40,
-                              color: FlutterFlowTheme.of(context).primaryColor,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1,
-                              ),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                          ),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        var confirmDialogResponse = await showDialog<bool>(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Confirmar cita'),
+                                  content: Text(
+                                      '¿Esta seguro que desea seleccionar ésta fecha para su cita?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, false),
+                                      child: Text('Cancelar'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, true),
+                                      child: Text('Aceptar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ) ??
+                            false;
+                        if (confirmDialogResponse) {
+                          context.pushNamed('confirmacion_de_cita');
+                        } else {
+                          Navigator.pop(context);
+                        }
+                      },
+                      text: 'Confirmar',
+                      options: FFButtonOptions(
+                        width: 350,
+                        height: 40,
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                        textStyle:
+                            FlutterFlowTheme.of(context).subtitle2.override(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1,
                         ),
-                      ],
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
                   ),
                 ],

@@ -448,8 +448,35 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                     child: FFButtonWidget(
-                      onPressed: () {
-                        print('Button pressed ...');
+                      onPressed: () async {
+                        var confirmDialogResponse = await showDialog<bool>(
+                              context: context,
+                              builder: (alertDialogContext) {
+                                return AlertDialog(
+                                  title: Text('Confirmar cita'),
+                                  content: Text(
+                                      '¿Esta seguro que desea seleccionar ésta fecha para su cita?'),
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, false),
+                                      child: Text('Cancelar'),
+                                    ),
+                                    TextButton(
+                                      onPressed: () => Navigator.pop(
+                                          alertDialogContext, true),
+                                      child: Text('Aceptar'),
+                                    ),
+                                  ],
+                                );
+                              },
+                            ) ??
+                            false;
+                        if (confirmDialogResponse) {
+                          context.pushNamed('confirmacion_de_cita');
+                        } else {
+                          Navigator.pop(context);
+                        }
                       },
                       text: 'Confirmar',
                       options: FFButtonOptions(
@@ -478,4 +505,45 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
       ),
     );
   }
+
+  /*Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16, 30, 16, 40),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: FFButtonWidget(
+                                        onPressed: () {
+                                          Navigator.pushNamed(context,
+                                              'loading_confirmacion_cita"');
+                                        },
+                                        text: 'Confirmar cita',
+                                        options: FFButtonOptions(
+                                          width: 300,
+                                          height: 40,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color: Colors.white,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),*/
 }
