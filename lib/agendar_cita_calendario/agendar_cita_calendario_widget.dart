@@ -1,8 +1,6 @@
-import 'dart:js';
-
+import '../aryy_common_components/appbar/appbar_widget.dart';
 import 'componentes/vista_calendario.dart';
 import 'componentes/miniatura_doctor.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -32,42 +30,40 @@ class _AgendarCitaState extends State<AgendarCita> {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        automaticallyImplyLeading: true,
-        toolbarHeight: 80,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_outlined,
-            color: FlutterFlowTheme.of(context).primaryText,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
-        title: Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(
-              'Dr. Nombre Apellido',
-              textAlign: TextAlign.start,
-              style: FlutterFlowTheme.of(context).bodyText1.override(
-                    fontFamily: 'Montserrat',
-                    color: FlutterFlowTheme.of(context).secondaryText,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w300,
-                  ),
+      appBar: PreferredSize(
+        preferredSize: const Size(100, 80),
+        child: AryyAppBar(
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30,
+            borderWidth: 1,
+            buttonSize: 60,
+            icon: Icon(
+              Icons.arrow_back_outlined,
+              color: FlutterFlowTheme.of(context).primaryText,
+              size: 30,
             ),
-          ],
-        ),
-        actions: [
-          Padding(
+            onPressed: () {
+              print('IconButton pressed ...');
+            },
+          ),
+          title: Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Text(
+                'Dr. Nombre Apellido',
+                textAlign: TextAlign.start,
+                style: FlutterFlowTheme.of(context).bodyText1.override(
+                      fontFamily: 'Montserrat',
+                      color: FlutterFlowTheme.of(context).secondaryText,
+                      fontSize: 17,
+                      fontWeight: FontWeight.w300,
+                    ),
+              ),
+            ],
+          ),
+          actions: Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 15, 0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
@@ -109,15 +105,7 @@ class _AgendarCitaState extends State<AgendarCita> {
               ],
             ),
           ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(
-                0, 0, 6, 0), /*child: const DarkModeIcon(context)*/
-          ),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-        ],
-        centerTitle: false,
-        elevation: 0,
+        ),
       ),
       body: SafeArea(
         child: GestureDetector(

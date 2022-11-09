@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeMode currentMode, __) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              title: 'Prueba',
-              initialRoute: "agendar_cita",
+              title: 'Aryy - Prueba',
+              initialRoute: "proximas_citas",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -82,8 +82,9 @@ class MyApp extends StatelessWidget {
                 "loading_confirmacion_cita": (_) => Loading(),
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
+                "proximas_citas": (_) => ProximasCitas(),
               },
-              home: Loading());
+              home: ProximasCitas());
         });
   }
 }

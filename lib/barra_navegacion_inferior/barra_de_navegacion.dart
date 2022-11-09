@@ -19,7 +19,7 @@ List<BotonBarraNavegacion> barradeNavegacion = <BotonBarraNavegacion>[
   BotonBarraNavegacion(Icons.person)
 ];
 
-late int deltaIndex = 0, currentIndex = -1;
+late int deltaIndex = 2, currentIndex = -1;
 
 CurvedNavigationBar GetBarradeNavegacion(BuildContext context) {
   return CurvedNavigationBar(

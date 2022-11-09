@@ -1,14 +1,13 @@
+import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../aryy_common_components/formulario/button_widget.dart';
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import './componentes/button_registrarse_con.dart';
 import './componentes/input_password_widget.dart';
 import './componentes/input_text_widget.dart';
-import 'componentes/button_registrarse_con.dart';
 import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../aryy_common_components/formulario/button_widget.dart';
 
 class RegistrarseWidget extends StatefulWidget {
   const RegistrarseWidget({Key? key}) : super(key: key);
@@ -35,50 +34,47 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        automaticallyImplyLeading: false,
-        title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SvgPicture.asset(
-                REGRESAR,
-                width: 30,
-                height: 30,
-                fit: BoxFit.cover,
-              ),
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+              title: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SvgPicture.asset(
+                      REGRESAR,
+                      width: 30,
+                      height: 30,
+                      fit: BoxFit.cover,
+                    ),
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-              Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                  child: DarkModeIcon(context)),
+                    const Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                        child: DarkModeIcon()),
 //--------------------------------------------------------------------------------------------------------------------------------------------
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, "iniciarsesion");
-                  },
-                  child: Text(
-                    'Inicar sesión',
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                          fontFamily: 'Montserrat',
-                          color: Color(0xC586898C),
-                          fontWeight: FontWeight.normal,
+                    Padding(
+                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                      child: InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(context, "iniciarsesion");
+                        },
+                        child: Text(
+                          'Inicar sesión',
+                          style:
+                              FlutterFlowTheme.of(context).bodyText1.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Color(0xC586898C),
+                                    fontWeight: FontWeight.normal,
+                                  ),
                         ),
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
-        ),
-        actions: [],
-        centerTitle: false,
-        toolbarHeight: 80,
-        elevation: 0,
-      ),
+              actions: const Text(''))),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(

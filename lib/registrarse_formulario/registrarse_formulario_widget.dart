@@ -1,15 +1,11 @@
-//import 'dart:ffi';
-
+import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_drop_down.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/services.dart';
-
-import '../next_page_tmp/switch_modo_oscuro.dart';
 
 class RegistrarseFormularioWidget extends StatefulWidget {
   const RegistrarseFormularioWidget({Key? key}) : super(key: key);
@@ -59,28 +55,25 @@ class _RegistrarseFormularioWidgetState
     //final Size = MediaQuery.of(context).size;
     return Scaffold(
       key: scaffoldKey,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-        automaticallyImplyLeading: false,
-        title: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+            title: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+              child: Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-              Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                  child: DarkModeIcon(context)),
+                  Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                      child: DarkModeIcon()),
 //--------------------------------------------------------------------------------------------------------------------------------------------
-            ],
-          ),
-        ),
-        actions: [],
-        centerTitle: true,
-        toolbarHeight: 80,
-        elevation: 0,
-      ),
+                ],
+              ),
+            ),
+            actions: const Text(''),
+          )),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(

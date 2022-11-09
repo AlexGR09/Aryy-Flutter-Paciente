@@ -1,10 +1,11 @@
-import 'componentes/barra_busqueda.dart';
-import 'componentes/botones_filtro_busqueda_widget.dart';
-import 'componentes/miniatura_doctor.dart';
+import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import './componentes/barra_busqueda.dart';
+import './componentes/botones_filtro_busqueda_widget.dart';
+import './componentes/miniatura_doctor.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
 
 class ResultadosBusqueda extends StatefulWidget {
@@ -22,37 +23,33 @@ class _ResultadosBusquedaState extends State<ResultadosBusqueda> {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-        automaticallyImplyLeading: true,
-        toolbarHeight: 80,
-        leading: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-            child: FlutterFlowIconButton(
-              borderColor: Colors.transparent,
-              borderRadius: 30,
-              borderWidth: 1,
-              buttonSize: 60,
-              icon: Icon(
-                Icons.arrow_back_outlined,
-                color: FlutterFlowTheme.of(context).primaryText,
-                size: 30,
-              ),
-              onPressed: () {
-                print('IconButton pressed ...');
-              },
-            )),
-        title: BarraBusqueda(inputTextController: inputTextController),
-        actions: [
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+            leading: Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                child: FlutterFlowIconButton(
+                  borderColor: Colors.transparent,
+                  borderRadius: 30,
+                  borderWidth: 1,
+                  buttonSize: 60,
+                  icon: Icon(
+                    Icons.arrow_back_outlined,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                    size: 30,
+                  ),
+                  onPressed: () {
+                    print('IconButton pressed ...');
+                  },
+                )),
+            title: BarraBusqueda(inputTextController: inputTextController),
+            actions:
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-          Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-              child: DarkModeIcon(context)),
+                const Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                    child: DarkModeIcon()),
 //--------------------------------------------------------------------------------------------------------------------------------------------
-        ],
-        centerTitle: false,
-        elevation: 0,
-      ),
+          )),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
