@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 
 class InformacionCitaDoctor extends StatefulWidget {
-  const InformacionCitaDoctor({super.key});
+  const InformacionCitaDoctor({super.key, required this.esProximaCita});
+
+  final bool esProximaCita;
 
   @override
   State<InformacionCitaDoctor> createState() => _InformacionCitaDoctorState();
@@ -86,30 +88,32 @@ class _InformacionCitaDoctorState extends State<InformacionCitaDoctor> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Container(
-                          width: 100,
-                          height: 24,
-                          decoration: BoxDecoration(
-                            color: const Color(0xFFE9F9F6),
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color:
-                                  FlutterFlowTheme.of(context).secondaryColor,
-                              width: 2,
+                        if (!widget.esProximaCita)
+                          Container(
+                            width: 100,
+                            height: 24,
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFE9F9F6),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryColor,
+                                width: 2,
+                              ),
+                            ),
+                            child: Text(
+                              'Atentdida',
+                              textAlign: TextAlign.center,
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryColor,
+                                    fontWeight: FontWeight.normal,
+                                  ),
                             ),
                           ),
-                          child: Text(
-                            'Atentdida',
-                            textAlign: TextAlign.center,
-                            style:
-                                FlutterFlowTheme.of(context).bodyText1.override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryColor,
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                          ),
-                        ),
                       ],
                     ),
                   ],

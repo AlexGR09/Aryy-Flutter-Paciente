@@ -1,22 +1,18 @@
 import '../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/widgets.dart';
 
-// Las animaciones de navegación entre vistas se guardarán aqui.
-
-void CargarWidgetConTransicion(BuildContext context,
-    StatefulWidget siguienteWidget, PageTransitionType pageTransitionType) {
+void cargarWidgetConTransicion(BuildContext context, StatefulWidget vistaWidget,
+    PageTransitionType pageTransitionType) {
   Navigator.push(
       context,
       PageTransition(
           curve: Curves.decelerate,
           duration: const Duration(milliseconds: 400),
-          child: siguienteWidget,
+          child: vistaWidget,
           type: pageTransitionType));
 }
 
 // Animaciones mas detalladas
-
-//
 Route noestaterminado_(StatefulWidget siguienteVistaWidget) {
   return PageRouteBuilder(
     pageBuilder: (context, animation, secondaryAnimation) =>
