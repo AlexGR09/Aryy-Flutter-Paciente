@@ -1,5 +1,6 @@
 import 'package:aryy_front/styles/my_icons.dart';
 
+import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_radio_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
@@ -26,6 +27,7 @@ class _ReservarCitaWidgetState extends State<ReservarCitaWidget> {
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        title: const DarkModeIcon(),
         automaticallyImplyLeading: false,
         leading: InkWell(
           onTap: () {
@@ -37,13 +39,13 @@ class _ReservarCitaWidgetState extends State<ReservarCitaWidget> {
             size: 25,
           ),
         ),
-        title: Text(
+        /*title: Text(
           'Reservar cita',
           style: FlutterFlowTheme.of(context).subtitle1.override(
                 fontFamily: 'Montserrat',
                 fontWeight: FontWeight.normal,
               ),
-        ),
+        ),*/
         actions: [],
         centerTitle: false,
         elevation: 0,

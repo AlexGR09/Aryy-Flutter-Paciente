@@ -102,62 +102,66 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                     padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Container(
-                              width: 400,
-                              height: 45,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    10, 15, 0, 0),
-                                child: AutoSizeText(
-                                  'Nombre',
-                                  textAlign: TextAlign.start,
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyText1
-                                      .override(
-                                        fontFamily: 'Montserrat',
-                                        fontWeight: FontWeight.normal,
-                                      ),
-                                ),
-                              ),
+                        Expanded(
+                          child: Container(
+                            width: 340,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                            Padding(
+                            child: Padding(
                               padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                              child: Container(
-                                width: 400,
-                                height: 45,
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 15, 0, 0),
-                                  child: AutoSizeText(
-                                    'Apellidos',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                  ),
-                                ),
+                                  EdgeInsetsDirectional.fromSTEB(10, 15, 0, 0),
+                              child: AutoSizeText(
+                                'Nombres',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.normal,
+                                    ),
                               ),
                             ),
-                          ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Container(
+                            width: 340,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              color: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(10, 15, 0, 0),
+                              child: AutoSizeText(
+                                'Apellidos',
+                                textAlign: TextAlign.start,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                     ),
@@ -259,45 +263,50 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 18, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
-                        Text(
-                          '¿Esta es tu primer visita con este \nespecialista?',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Montserrat',
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.normal,
-                                  ),
+                        Expanded(
+                          child: Text(
+                            '¿Esta es tu primer visita con este \nespecialista?',
+                            style:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                          ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0, 18, 0, 0),
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 15, 16, 0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        FlutterFlowRadioButton(
-                          options: ['Si', 'No'].toList(),
-                          onChanged: (val) =>
-                              setState(() => radioButtonValue = val),
-                          optionHeight: 25,
-                          textStyle:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Poppins',
-                                    color: Colors.black,
-                                  ),
-                          buttonPosition: RadioButtonPosition.left,
-                          direction: Axis.horizontal,
-                          radioButtonColor: Color(0xFF7900FF),
-                          inactiveRadioButtonColor:
-                              FlutterFlowTheme.of(context).secondaryText,
-                          toggleable: false,
-                          horizontalAlignment: WrapAlignment.start,
-                          verticalAlignment: WrapCrossAlignment.start,
+                        Expanded(
+                          child: FlutterFlowRadioButton(
+                            options: ['Si', 'No'].toList(),
+                            onChanged: (val) =>
+                                setState(() => radioButtonValue = val),
+                            optionHeight: 25,
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Poppins',
+                                      color: Colors.black,
+                                    ),
+                            buttonPosition: RadioButtonPosition.left,
+                            direction: Axis.horizontal,
+                            radioButtonColor: Color(0xFF7900FF),
+                            inactiveRadioButtonColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            toggleable: false,
+                            horizontalAlignment: WrapAlignment.start,
+                            verticalAlignment: WrapCrossAlignment.start,
+                          ),
                         ),
                       ],
                     ),
@@ -315,15 +324,17 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                               Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Text(
-                                    'Métodos de pago*',
-                                    style: FlutterFlowTheme.of(context)
-                                        .bodyText1
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.normal,
-                                        ),
+                                  Expanded(
+                                    child: Text(
+                                      'Métodos de pago*',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.normal,
+                                          ),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -334,176 +345,170 @@ class _ParaMiWidgetState extends State<ParaMiWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0, 0, 0, 20),
-                                          child: FFButtonWidget(
-                                            onPressed: () {
-                                              Navigator.pushNamed(
-                                                  context, 'Nuevo_metodo_pago');
-                                            },
-                                            text: 'Pago anticipado \$600',
-                                            options: FFButtonOptions(
-                                              width: 350,
-                                              height: 45,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primaryColor,
-                                              textStyle:
-                                                  FlutterFlowTheme.of(context)
-                                                      .subtitle2
-                                                      .override(
-                                                        fontFamily:
-                                                            'Montserrat',
-                                                        color: Colors.white,
-                                                        fontSize: 14,
-                                                        fontWeight:
-                                                            FontWeight.normal,
-                                                      ),
-                                              borderSide: BorderSide(
-                                                color: Colors.transparent,
-                                                width: 1,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(8),
-                                            ),
-                                          ),
-                                        ),
-                                        FFButtonWidget(
-                                          onPressed: () {
-                                            Navigator.pushNamed(context,
-                                                'loading_confirmacion_cita');
-                                          },
-                                          text: 'En consultorio \$800',
-                                          options: FFButtonOptions(
-                                            width: 350,
-                                            height: 45,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBackground,
-                                            textStyle: FlutterFlowTheme.of(
-                                                    context)
-                                                .subtitle2
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryText,
-                                                  fontSize: 14,
-                                                  fontWeight: FontWeight.normal,
-                                                ),
-                                            borderSide: BorderSide(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                              width: 1,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 30, 16, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
                                     Expanded(
-                                      child: FlutterFlowCheckboxGroup(
-                                        options: [
-                                          'Acepto los Términos y Condiciones, la politica\nde Privacidad y el uso de mis datos.'
-                                        ],
-                                        onChanged: (val) => setState(
-                                            () => checkboxGroupValues = val),
-                                        activeColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primaryColor,
-                                        checkColor: Colors.white,
-                                        checkboxBorderColor: Color(0xFF95A1AC),
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontWeight: FontWeight.w300,
-                                            ),
-                                        initialized:
-                                            checkboxGroupValues != null,
+                                      child: FFButtonWidget(
+                                        onPressed: () {
+                                          Navigator.pushNamed(
+                                              context, 'nuevo_metodo_pago');
+                                        },
+                                        text: 'Pago anticipado \$600',
+                                        options: FFButtonOptions(
+                                          width: 350,
+                                          height: 45,
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryColor,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .subtitle2
+                                                  .override(
+                                                    fontFamily: 'Montserrat',
+                                                    color: Colors.white,
+                                                    fontSize: 14,
+                                                    fontWeight:
+                                                        FontWeight.normal,
+                                                  ),
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8),
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    16, 30, 16, 40),
-                                child: FFButtonWidget(
-                                  onPressed: () async {
-                                    var confirmDialogResponse =
-                                        await showDialog<bool>(
-                                              context: context,
-                                              builder: (alertDialogContext) {
-                                                return AlertDialog(
-                                                  title: Text('Confirmar cita'),
-                                                  content: Text(
-                                                      '¿Esta seguro que desea seleccionar ésta fecha para su cita?'),
-                                                  actions: [
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              false),
-                                                      child: Text('Cancelar'),
-                                                    ),
-                                                    TextButton(
-                                                      onPressed: () =>
-                                                          Navigator.pop(
-                                                              alertDialogContext,
-                                                              true),
-                                                      child: Text('Aceptar'),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ) ??
-                                            false;
-                                    if (confirmDialogResponse) {
-                                      context.pushNamed('confirmacion_de_cita');
-                                    } else {
-                                      Navigator.pop(context);
-                                    }
-                                  },
-                                  text: 'Confirmar',
-                                  options: FFButtonOptions(
-                                    width: 350,
-                                    height: 40,
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .subtitle2
-                                        .override(
-                                          fontFamily: 'Montserrat',
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.normal,
-                                        ),
-                                    borderSide: BorderSide(
-                                      color: Colors.transparent,
-                                      width: 1,
-                                    ),
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                ),
-                              ),
                             ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 15, 16, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: FFButtonWidget(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, 'loading_confirmacion_cita');
+                            },
+                            text: 'En consultorio \$800',
+                            options: FFButtonOptions(
+                              width: 350,
+                              height: 45,
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              borderSide: BorderSide(
+                                color:
+                                    FlutterFlowTheme.of(context).secondaryText,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 30, 16, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: FlutterFlowCheckboxGroup(
+                            options: [
+                              'Acepto los Términos y Condiciones, la politica\nde Privacidad y el uso de mis datos.'
+                            ],
+                            onChanged: (val) =>
+                                setState(() => checkboxGroupValues = val),
+                            activeColor:
+                                FlutterFlowTheme.of(context).primaryColor,
+                            checkColor: Colors.white,
+                            checkboxBorderColor: Color(0xFF95A1AC),
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyText1.override(
+                                      fontFamily: 'Montserrat',
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.normal,
+                                    ),
+                            initialized: checkboxGroupValues != null,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 40),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              var confirmDialogResponse =
+                                  await showDialog<bool>(
+                                        context: context,
+                                        builder: (alertDialogContext) {
+                                          return AlertDialog(
+                                            title: Text('Confirmar cita'),
+                                            content: Text(
+                                                '¿Esta seguro que desea seleccionar ésta fecha para su cita?'),
+                                            actions: [
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, false),
+                                                child: Text('Cancelar'),
+                                              ),
+                                              TextButton(
+                                                onPressed: () => Navigator.pop(
+                                                    alertDialogContext, true),
+                                                child: Text('Aceptar'),
+                                              ),
+                                            ],
+                                          );
+                                        },
+                                      ) ??
+                                      false;
+                              if (confirmDialogResponse) {
+                                context.pushNamed('confirmacion_de_cita');
+                              } else {
+                                Navigator.pop(context);
+                              }
+                            },
+                            text: 'Confirmar',
+                            options: FFButtonOptions(
+                              width: 350,
+                              height: 40,
+                              color: FlutterFlowTheme.of(context).primaryColor,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .subtitle2
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1,
+                              ),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
                           ),
                         ),
                       ],

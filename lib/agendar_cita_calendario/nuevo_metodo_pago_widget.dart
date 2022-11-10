@@ -122,15 +122,17 @@ class _NuevoMetodoPagoWidgetState extends State<NuevoMetodoPagoWidget> {
                                   color: Color(0xFF7900FF),
                                   size: 24,
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: SelectionArea(
-                                      child: Text(
-                                    'Tarjeta de crédito o débito',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyText1,
-                                  )),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: SelectionArea(
+                                        child: Text(
+                                      'Tarjeta de crédito o débito',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    )),
+                                  ),
                                 ),
                               ],
                             ),
@@ -146,15 +148,17 @@ class _NuevoMetodoPagoWidgetState extends State<NuevoMetodoPagoWidget> {
                                   color: Color(0xFF7900FF),
                                   size: 24,
                                 ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      10, 0, 0, 0),
-                                  child: SelectionArea(
-                                      child: Text(
-                                    'Paypal',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyText1,
-                                  )),
+                                Expanded(
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        10, 0, 0, 0),
+                                    child: SelectionArea(
+                                        child: Text(
+                                      'Paypal',
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyText1,
+                                    )),
+                                  ),
                                 ),
                               ],
                             ),
