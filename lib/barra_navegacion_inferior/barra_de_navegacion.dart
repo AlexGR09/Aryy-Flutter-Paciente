@@ -1,9 +1,4 @@
-// ignore_for_file: unnecessary_late
-
-import '../index.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import '../next_page_tmp/transiciones.dart';
-import '../flutter_flow/flutter_flow_util.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';

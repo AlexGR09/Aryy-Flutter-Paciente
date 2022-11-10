@@ -23,10 +23,8 @@ class _AryyAppBarState extends State<AryyAppBar> {
               Colors.red, // FlutterFlowTheme.of(context).secondaryBackground,
           toolbarHeight: 80,
           elevation: 0,
-// thjios
           centerTitle: true,
           automaticallyImplyLeading: true,
-// thjios
           leading: widget.leading,
           title: widget.title,
           actions: [

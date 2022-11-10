@@ -20,11 +20,11 @@ class _ProximasCitasState extends State<ProximasCitas> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: GlobalKey<ScaffoldState>(),
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
           preferredSize: const Size(100, 80),
           child: AryyAppBar(
-            title: const DarkModeIcon(),
+//            title: const DarkModeIcon(),
             actions: Padding(
               padding: const EdgeInsetsDirectional.only(end: 10),
               child: ToggleIcon(
@@ -94,9 +94,15 @@ class _ProximasCitasState extends State<ProximasCitas> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
-                                        TarjetaProximaCita(),
-                                        TarjetaProximaCita(),
-                                        TarjetaProximaCita(),
+                                        TarjetaCita(
+                                          esProximaCita: true,
+                                        ),
+                                        TarjetaCita(
+                                          esProximaCita: true,
+                                        ),
+                                        TarjetaCita(
+                                          esProximaCita: true,
+                                        ),
                                       ],
                                     ),
                                   ]),
@@ -108,9 +114,9 @@ class _ProximasCitasState extends State<ProximasCitas> {
                                     Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: const [
-                                        TarjetaProximaCita(),
-                                        TarjetaProximaCita(),
-                                        TarjetaProximaCita(),
+                                        TarjetaCita(esProximaCita: false),
+                                        TarjetaCita(esProximaCita: false),
+                                        TarjetaCita(esProximaCita: false),
                                       ],
                                     ),
                                   ]),

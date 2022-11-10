@@ -3,14 +3,14 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../styles/my_icons.dart';
 import 'package:flutter/material.dart';
 
-class NavigationDrawer extends StatefulWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
+class BarraLateralWidget extends StatefulWidget {
+  const BarraLateralWidget({Key? key}) : super(key: key);
 
   @override
-  _NavigationDrawerState createState() => _NavigationDrawerState();
+  _BarraLateralWidgetState createState() => _BarraLateralWidgetState();
 }
 
-class _NavigationDrawerState extends State<NavigationDrawer> {
+class _BarraLateralWidgetState extends State<BarraLateralWidget> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override

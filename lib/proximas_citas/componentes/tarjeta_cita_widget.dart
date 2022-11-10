@@ -1,19 +1,20 @@
+import './menu_items.dart';
 import './datos_cita_widget.dart';
 import './detalles_doctor_widget.dart';
 import '../simulacionAPI/simulacion_proxcitas_api.dart';
-import '../../flutter_flow/flutter_flow_icon_button.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class TarjetaProximaCita extends StatefulWidget {
-  const TarjetaProximaCita({super.key});
+class TarjetaCita extends StatefulWidget {
+  const TarjetaCita({super.key, required this.esProximaCita});
+
+  final bool esProximaCita;
 
   @override
-  State<TarjetaProximaCita> createState() => _TarjetaProximaCitaState();
+  State<TarjetaCita> createState() => _TarjetaCitaState();
 }
 
-class _TarjetaProximaCitaState extends State<TarjetaProximaCita> {
+class _TarjetaCitaState extends State<TarjetaCita> {
   List<IconData> iconosDatosConsultorio = <IconData>[
     Icons.person_outline_sharp,
     Icons.home_work_outlined,
@@ -23,6 +24,9 @@ class _TarjetaProximaCitaState extends State<TarjetaProximaCita> {
 
   @override
   Widget build(BuildContext context) {
+    String titulo = widget.esProximaCita ? "Cancelar" : "Eliminar";
+    List<MenuItems> menuItems =
+        opcionesMenuTarjeta(esProximaCita: widget.esProximaCita);
     return Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(40, 10, 40, 20),
         child: Column(
@@ -30,7 +34,7 @@ class _TarjetaProximaCitaState extends State<TarjetaProximaCita> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
 //---------------------------  Informacion del Doctor  -----------------------------------------------------------------------------------------------------------------
-            const InformacionCitaDoctor(),
+            InformacionCitaDoctor(esProximaCita: widget.esProximaCita),
             Divider(
               height: 20,
               thickness: 1,
@@ -52,25 +56,47 @@ class _TarjetaProximaCitaState extends State<TarjetaProximaCita> {
                         fontWeight: FontWeight.w500,
                       ),
                 ),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30,
-                      borderWidth: 1,
-                      buttonSize: 60,
-                      icon: FaIcon(
-                        FontAwesomeIcons.edit,
-                        color: FlutterFlowTheme.of(context).primaryText,
-                        size: 20,
-                      ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
-                      },
-                    ),
-                  ],
-                ),
+//---------------------------  OptionList  -----------------------------------------------------------------------------------------------------------------
+                PopupMenuButton(itemBuilder: (context) {
+                  return menuItems
+                      .map((e) =>
+                          PopupMenuItem<int>(value: e.id, child: Text(e.texto)))
+                      .toList();
+                }, onSelected: (value) async {
+                  if (value == 0) {
+                    return;
+                  }
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('$titulo cita'),
+                            content: Text(
+                                '¿Está seguro que desea ${titulo.toLowerCase()} cita seleccionada?'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child: const Text('Aceptar'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: const Text('Cancelar'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  if (confirmDialogResponse) {
+                    print("confirmed");
+                  } else {
+                    print("canceled");
+                  }
+                }),
+                //   ],
+                // ),
               ],
             ),
 //---------------------------  Informacion del consultorio  -----------------------------------------------------------------------------------------------------------------

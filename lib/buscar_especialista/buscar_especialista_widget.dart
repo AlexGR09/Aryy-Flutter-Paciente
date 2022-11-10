@@ -1,7 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
-import '../home2/home2_widget.dart';
-import '../next_page_tmp/transiciones.dart';
 import './tipo_respuesta_api.dart';
 import './respuestaApi/respuestaApi.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
