@@ -37,44 +37,31 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
       appBar: PreferredSize(
           preferredSize: const Size(100, 80),
           child: AryyAppBar(
-              title: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    SvgPicture.asset(
-                      REGRESAR,
-                      width: 30,
-                      height: 30,
-                      fit: BoxFit.cover,
+              actions: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "iniciarsesion");
+                    },
+                    child: Text(
+                      'Inicar sesión',
+                      style: FlutterFlowTheme.of(context).bodyText1.override(
+                            fontFamily: 'Montserrat',
+                            color: Color(0xC586898C),
+                            fontWeight: FontWeight.normal,
+                          ),
                     ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-                    const Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                        child: DarkModeIcon()),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, "iniciarsesion");
-                        },
-                        child: Text(
-                          'Inicar sesión',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Montserrat',
-                                    color: Color(0xC586898C),
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                        ),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-              actions: const Text(''))),
+              ],
+            ),
+          ))),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
