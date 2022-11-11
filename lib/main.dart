@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "Registrarse",
+              initialRoute: "Perfil_inicio",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
               },
-              home: RegistrarseWidget());
+              home: BarraLateralPerfil1Widget());
         });
   }
 }

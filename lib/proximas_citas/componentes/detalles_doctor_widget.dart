@@ -59,17 +59,22 @@ class _InformacionCitaDoctorState extends State<InformacionCitaDoctor> {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Dr. Nombre Apellido',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyText1
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryColor,
-                                  fontSize: 23,
-                                  fontWeight: FontWeight.w500,
-                                ),
+                          Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                'Dr. Nombre Apellido',
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyText1
+                                    .override(
+                                      fontFamily: 'Montserrat',
+                                      color: FlutterFlowTheme.of(context)
+                                          .primaryColor,
+                                      fontSize: 23,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                              ))
+                            ],
                           ),
                           Text(
                             'Urología',
