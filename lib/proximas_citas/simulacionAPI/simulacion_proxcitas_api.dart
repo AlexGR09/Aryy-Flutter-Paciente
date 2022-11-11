@@ -7,6 +7,6 @@ class DatosConsultorioAPI {
 List<DatosConsultorioAPI> simulacionDatosConsultorio = <DatosConsultorioAPI>[
   DatosConsultorioAPI('Fulanito Detal', 'Consulta de primera vez: \$800'),
   DatosConsultorioAPI('Consultorio Principal', ''),
-  DatosConsultorioAPI('Lun, 5 diciembre 2022', ''),
+  DatosConsultorioAPI('Lun,5/diciembre/2022', ''),
   DatosConsultorioAPI('10:00 - 10:30 hrs', ''),
 ];

@@ -19,62 +19,48 @@ class _InformacionCitaDoctorState extends State<InformacionCitaDoctor> {
     return Padding(
         padding: const EdgeInsetsDirectional.only(top: 20, bottom: 15),
         child: Row(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 //---------------------------  Icono perfil doctor  -----------------------------------------------------------------------------------------------------------------
-            Column(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  width: 60,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).primaryColor,
-                    borderRadius: BorderRadius.circular(17),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsetsDirectional.all(2.5),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(15),
-                      child: Image.network(
-                        'https://picsum.photos/seed/86/123',
-                        width: 160,
-                        fit: BoxFit.cover,
-                      ),
+              Container(
+                width: 60,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(17),
+                ),
+                child: Padding(
+                  padding: const EdgeInsetsDirectional.all(2.5),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(15),
+                    child: Image.network(
+                      'https://picsum.photos/seed/86/123',
+                      width: 160,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
-              ],
-            ),
-//---------------------------  Nombre y especialidad  -----------------------------------------------------------------------------------------------------------------
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsetsDirectional.only(start: 10),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Column(
+              ),
+// //---------------------------  Nombre y especialidad  -----------------------------------------------------------------------------------------------------------------
+              Expanded(
+                  flex: 3,
+                  child: Padding(
+                      padding: const EdgeInsetsDirectional.only(start: 10),
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Row(
-                            children: [
-                              Expanded(
-                                  child: Text(
-                                'Dr. Nombre Apellido',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryColor,
-                                      fontSize: 23,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                              ))
-                            ],
+                          Text(
+                            'Dr. Nombre Apellido',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyText1
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryColor,
+                                  fontSize: 23,
+                                  fontWeight: FontWeight.w500,
+                                ),
                           ),
                           Text(
                             'Urología',
@@ -87,63 +73,62 @@ class _InformacionCitaDoctorState extends State<InformacionCitaDoctor> {
                                   fontSize: 20,
                                   fontWeight: FontWeight.w300,
                                 ),
-                          )
-                        ]),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                          ),
+                          if (!widget.esProximaCita)
+                            Padding(
+                                padding:
+                                    const EdgeInsetsDirectional.only(top: 10),
+                                child: Container(
+                                    width: 115,
+                                    height: 25,
+                                    decoration: BoxDecoration(
+                                      color: const Color.fromARGB(
+                                          255, 236, 249, 247),
+                                      borderRadius: BorderRadius.circular(15),
+                                      border: Border.all(
+                                        color: FlutterFlowTheme.of(context)
+                                            .secondaryColor,
+                                        width: 1,
+                                      ),
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        'ATENDIDA',
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyText1
+                                            .override(
+                                                fontFamily: 'Montserrat',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryColor,
+                                                fontWeight: FontWeight.normal,
+                                                fontSize: 14),
+                                      ),
+                                    )))
+                        ],
+                      ))),
+// //---------------------------  Puntuacion de reseñas  -----------------------------------------------------------------------------------------------------------------
+              Expanded(
+                  child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        if (!widget.esProximaCita)
-                          Container(
-                            width: 100,
-                            height: 24,
-                            decoration: BoxDecoration(
-                              color: const Color(0xFFE9F9F6),
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                color:
-                                    FlutterFlowTheme.of(context).secondaryColor,
-                                width: 2,
-                              ),
-                            ),
-                            child: Text(
-                              'Atentdida',
-                              textAlign: TextAlign.center,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyText1
-                                  .override(
-                                    fontFamily: 'Montserrat',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryColor,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                            ),
-                          ),
-                      ],
+                    RatingBar.builder(
+                      onRatingUpdate: (newValue) =>
+                          setState(() => ratingBarValue1 = newValue),
+                      itemBuilder: (context, index) => const Icon(
+                        Icons.star_rounded,
+                        color: Color(0xFFFFDC64),
+                      ),
+                      direction: Axis.horizontal,
+                      initialRating: ratingBarValue1 ??= 3,
+                      unratedColor: const Color(0xFF9E9E9E),
+                      itemCount: 1,
+                      itemSize: 26,
+                      glowColor: const Color(0xFFFFDC64),
                     ),
-                  ],
-                ),
-              ),
-            ),
-//---------------------------  Puntuacion de reseñas  -----------------------------------------------------------------------------------------------------------------
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                RatingBar.builder(
-                  onRatingUpdate: (newValue) =>
-                      setState(() => ratingBarValue1 = newValue),
-                  itemBuilder: (context, index) => const Icon(
-                    Icons.star_rounded,
-                    color: Color(0xFFFFDC64),
-                  ),
-                  direction: Axis.horizontal,
-                  initialRating: ratingBarValue1 ??= 3,
-                  unratedColor: const Color(0xFF9E9E9E),
-                  itemCount: 1,
-                  itemSize: 26,
-                  glowColor: const Color(0xFFFFDC64),
-                ),
+                  ])),
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 Text(
                   '5.0',
                   style: FlutterFlowTheme.of(context).bodyText1.override(
@@ -151,9 +136,7 @@ class _InformacionCitaDoctorState extends State<InformacionCitaDoctor> {
                       fontWeight: FontWeight.w500,
                       fontSize: 18),
                 ),
-              ],
-            ),
-          ],
-        ));
+              ])
+            ]));
   }
 }

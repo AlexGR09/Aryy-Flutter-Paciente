@@ -1,5 +1,5 @@
 import './menu_items.dart';
-import './datos_cita_widget.dart';
+import './detalles_consulta_widget.dart';
 import './detalles_doctor_widget.dart';
 import '../simulacionAPI/simulacion_proxcitas_api.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
@@ -95,31 +95,29 @@ class _TarjetaCitaState extends State<TarjetaCita> {
                     print("canceled");
                   }
                 }),
-                //   ],
-                // ),
               ],
             ),
 //---------------------------  Informacion del consultorio  -----------------------------------------------------------------------------------------------------------------
             Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.start, // content
-              children: [
-                Column(
-                  crossAxisAlignment:
-                      CrossAxisAlignment.start, // Text alignment
-                  children: [
-                    for (var i = 0;
-                        i < simulacionDatosConsultorio.length;
-                        i++) ...[
-                      DatosCita(
-                          titulo: simulacionDatosConsultorio[i].titulo,
-                          subTitulo: simulacionDatosConsultorio[i].subTitulo,
-                          icono: iconosDatosConsultorio[i]),
-                    ]
-                  ],
-                )
-              ],
-            ),
+                mainAxisSize: MainAxisSize.max,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(mainAxisSize: MainAxisSize.max,
+                        // asd
+                        children: [
+                          for (var i = 0;
+                              i < simulacionDatosConsultorio.length;
+                              i++) ...[
+                            InformacionCitaConsulta(
+                                titulo: simulacionDatosConsultorio[i].titulo,
+                                subTitulo:
+                                    simulacionDatosConsultorio[i].subTitulo,
+                                icono: iconosDatosConsultorio[i]),
+                          ]
+                        ]),
+                  )
+                ]),
           ],
         ));
   }

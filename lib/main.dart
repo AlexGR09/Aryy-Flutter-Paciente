@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "proximas_citas",
+              initialRoute: "home2_inicio",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -84,7 +84,7 @@ class MyApp extends StatelessWidget {
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
               },
-              home: ProximasCitas());
+              home: Home2Widget());
         });
   }
 }

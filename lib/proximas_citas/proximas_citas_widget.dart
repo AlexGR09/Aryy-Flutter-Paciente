@@ -1,7 +1,7 @@
-import '../barra_navegacion_inferior/barra_de_navegacion.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import './componentes/tarjeta_cita_widget.dart';
 import '../aryy_common_components/appbar/appbar_widget.dart';
-import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../flutter_flow/togleIcon.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
@@ -22,9 +22,34 @@ class _ProximasCitasState extends State<ProximasCitas> {
         key: GlobalKey<ScaffoldState>(),
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         appBar: PreferredSize(
-          preferredSize: const Size(100, 80),
+          preferredSize: const Size(100, 50),
           child: AryyAppBar(
-//            title: const DarkModeIcon(),
+            leading: Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+              child: FlutterFlowIconButton(
+                borderColor: Colors.transparent,
+                borderRadius: 30,
+                borderWidth: 1,
+                buttonSize: 60,
+                icon: Icon(
+                  Icons.arrow_back,
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  size: 30,
+                ),
+                onPressed: () async {
+                  Navigator.pushNamed(context, "home2_inicio");
+                },
+              ),
+            ),
+            title: Row(
+              children: [
+                Text('Citas',
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontWeight: FontWeight.w300,
+                        fontFamily: 'Montserrat',
+                        fontSize: 19))
+              ],
+            ),
             actions: Padding(
               padding: const EdgeInsetsDirectional.only(end: 10),
               child: ToggleIcon(
