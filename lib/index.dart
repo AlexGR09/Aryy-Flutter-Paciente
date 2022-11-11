@@ -38,5 +38,6 @@ export 'restablecer_contraseña/restablecer_contrasena.dart'
 export 'restablecer_contraseña/verificar_identidad.dart'
     show VerificarIdentidadWidget;
 export 'restablecer_contraseña/eres_tu.dart' show EresTuWidget;
-export './barra_lateral/perfil_inicio.dart' show BarraLateralPerfil1Widget;
+export './perfil_inicio/perfil_inicio_widget.dart'
+    show BarraLateralPerfil1Widget;
 export './proximas_citas/proximas_citas_widget.dart' show ProximasCitas;
