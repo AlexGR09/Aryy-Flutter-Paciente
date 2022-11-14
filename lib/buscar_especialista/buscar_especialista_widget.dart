@@ -48,7 +48,8 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
     var shouldSetState = false;
     apiResult = await GetBarraBusquedaCall.call(
       search: textEditingController!.text,
-      mod: 'searchmed',
+      //mod: 'searchmed',
+      mod: 'searchphy',
     );
     shouldSetState = true;
     // Conexión exitosa?

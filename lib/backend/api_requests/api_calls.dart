@@ -10,11 +10,12 @@ class GetBarraBusquedaCall {
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'GetBarraBusqueda',
-      apiUrl: 'http://localhost:8000/api/searchmed',
+      //apiUrl: 'http://localhost:8000/api/searchmed',
+      apiUrl: 'https://app.aryymd.com/api/searchphy',
       callType: ApiCallType.GET,
       headers: {},
       params: {
-        'search': search,
+        'searchphy': search,
         'mod': mod,
       },
       returnBody: true,
