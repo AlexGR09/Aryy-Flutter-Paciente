@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'dart:async';
-import '../flutter_flow/flutter_flow_theme.dart';
+import '../../../flutter_flow/flutter_flow_theme.dart';
 import 'confirmacion_de_cita_widget.dart';
 
 class Loading extends StatefulWidget {

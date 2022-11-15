@@ -1,7 +1,7 @@
-import '../simulacionAPI/simulacion_agendar_cita.dart';
+import '../../simulacionAPI/simulacion_agendar_cita.dart';
 import 'boton_elegir_horario.dart';
-import '../../flutter_flow/flutter_flow_icon_button.dart';
-import '../../flutter_flow/flutter_flow_theme.dart';
+import '../../../flutter_flow/flutter_flow_icon_button.dart';
+import '../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 enum TipodeEncabezado { diaSemana, fecha }

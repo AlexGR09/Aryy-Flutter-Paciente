@@ -1,13 +1,14 @@
 import 'dart:async';
 import 'package:aryy_front/barra_lateral/barra_lateral_favoritos/barra_lateral_favoritos_widget.dart';
 
-import '../../agendar_cita_calendario/agendar_cita_calendario_widget.dart';
-import '../../agendar_cita_calendario/agregar_tarjeta_widget.dart';
-import '../../agendar_cita_calendario/loading_widget.dart';
-import '../../agendar_cita_calendario/nuevo_metodo_pago_widget.dart';
-import '../../agendar_cita_calendario/para_mi.dart';
-import '../../agendar_cita_calendario/para_otra_persona.dart';
-import '../../agendar_cita_calendario/reservar_cita.dart';
+import '../../agendar_cita/ui/screens/agendar_cita_calendario_widget.dart';
+
+import '../../agendar_cita/ui/screens/agregar_tarjeta_widget.dart';
+import '../../agendar_cita/ui/screens/loading_widget.dart';
+import '../../agendar_cita/ui/screens/nuevo_metodo_pago_widget.dart';
+import '../../agendar_cita/ui/screens/para_mi.dart';
+import '../../agendar_cita/ui/screens/para_otra_persona.dart';
+import '../../agendar_cita/ui/screens/reservar_cita.dart';
 import '../../index.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';

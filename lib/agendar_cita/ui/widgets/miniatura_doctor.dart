@@ -1,4 +1,4 @@
-import '../../doctor/informacion_basica_widget.dart';
+import '../../../doctor/informacion_basica_widget.dart';
 import 'package:flutter/material.dart';
 
 class InformacionMiniaturaDoctorAgenda extends StatefulWidget {

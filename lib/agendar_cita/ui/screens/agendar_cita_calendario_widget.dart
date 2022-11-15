@@ -1,15 +1,15 @@
-import '../aryy_common_components/appbar/appbar_widget.dart';
-import 'componentes/vista_calendario.dart';
-import 'componentes/miniatura_doctor.dart';
-import '../flutter_flow/app_state.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/togleIcon.dart';
+import '../../../aryy_common_components/appbar/appbar_widget.dart';
+import '../widgets/vista_calendario.dart';
+import '../../../flutter_flow/app_state.dart';
+import '../../../flutter_flow/flutter_flow_icon_button.dart';
+import '../../../flutter_flow/flutter_flow_theme.dart';
+import '../../../flutter_flow/flutter_flow_widgets.dart';
+import '../../../flutter_flow/togleIcon.dart';
 import 'package:flutter/material.dart';
+import '../widgets/miniatura_doctor.dart';
 
 // Para pruebas y simulacion de api agendar_cita
-import 'simulacionAPI/simulacion_agendar_cita.dart';
+import '../../simulacionAPI/simulacion_agendar_cita.dart';
 
 class AgendarCita extends StatefulWidget {
   const AgendarCita({Key? key}) : super(key: key);

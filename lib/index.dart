@@ -48,17 +48,17 @@ export 'resultados_busqueda/resultados_busqueda_widget.dart'
     show ResultadosBusqueda;
 export 'resultados_busqueda_doctor/resultados_busqueda_doctor_widget.dart'
     show ResultadoBusquedaDoctor;
-export 'agendar_cita_calendario/agendar_cita_calendario_widget.dart'
+export 'agendar_cita/ui/screens/agendar_cita_calendario_widget.dart'
     show AgendarCita;
-export 'agendar_cita_calendario/agregar_tarjeta_widget.dart'
+export 'agendar_cita/ui/screens/agregar_tarjeta_widget.dart'
     show AgregarTarjetaWidget;
-export 'agendar_cita_calendario/loading_widget.dart' show Loading;
-export 'agendar_cita_calendario/nuevo_metodo_pago_widget.dart'
+export 'agendar_cita/ui/screens/loading_widget.dart' show Loading;
+export 'agendar_cita/ui/screens/nuevo_metodo_pago_widget.dart'
     show NuevoMetodoPagoWidget;
-export 'agendar_cita_calendario/para_mi.dart' show ParaMiWidget;
-export 'agendar_cita_calendario/para_otra_persona.dart'
+export 'agendar_cita/ui/screens/para_mi.dart' show ParaMiWidget;
+export 'agendar_cita/ui/screens/para_otra_persona.dart'
     show ParaOtraPersonaWidget;
-export 'agendar_cita_calendario/reservar_cita.dart' show ReservarCitaWidget;
+export 'agendar_cita/ui/screens/reservar_cita.dart' show ReservarCitaWidget;
 export 'cerca_de_mi/cerca_de_mi_widget.dart' show CercaDeMi;
 export 'launch_inicioapp/splash_screen.dart' show SplashScreen;
 export './vista_video/registrase_iniciarsesion.dart' show MenuFrame;
