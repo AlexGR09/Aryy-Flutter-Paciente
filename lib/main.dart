@@ -1,8 +1,10 @@
-import 'package:aryy_front/paciente/bloc/paciente_bloc.dart';
-
 import './index.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+
+import 'paciente_pruebaBloc/bloc/paciente_bloc.dart';
+import 'paciente_pruebaBloc/ui/screens/menu_screen.dart';
+import 'paciente_pruebaBloc/ui/screens/signin_screen.dart';
 
 void main() => runApp(MyApp());
 

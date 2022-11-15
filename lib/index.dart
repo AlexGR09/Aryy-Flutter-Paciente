@@ -63,5 +63,10 @@ export 'cerca_de_mi/cerca_de_mi_widget.dart' show CercaDeMi;
 export 'launch_inicioapp/splash_screen.dart' show SplashScreen;
 export './vista_video/registrase_iniciarsesion.dart' show MenuFrame;
 // Experimentos de nuevo stream provider
-export 'paciente/ui/screens/menu_screen.dart' show MenuScreen;
-export './paciente//ui/screens/sign_in_screen.dart' show SignInScreen;
+
+//ESTAS RUTAS SON LAS QUE ESTABAN MAL
+//export 'paciente/ui/screens/menu_screen.dart' show MenuScreen;
+//export './paciente//ui/screens/sign_in_screen.dart' show SignInScreen;
+
+export './paciente_pruebaBloc/ui/screens/menu_screen.dart' show MenuScreen;
+export './paciente_pruebaBloc/ui/screens/signin_screen.dart' show SignInScreen;
