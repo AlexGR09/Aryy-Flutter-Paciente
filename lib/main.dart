@@ -1,20 +1,8 @@
-import './index.dart';
-import 'agendar_cita_calendario/agendar_cita_calendario_widget.dart';
-import 'agendar_cita_calendario/agregar_tarjeta_widget.dart';
-import 'agendar_cita_calendario/loading_widget.dart';
-import 'agendar_cita_calendario/nuevo_metodo_pago_widget.dart';
-import 'agendar_cita_calendario/para_mi.dart';
-import 'agendar_cita_calendario/para_otra_persona.dart';
-import 'agendar_cita_calendario/reservar_cita.dart';
-import 'cerca_de_mi/cerca_de_mi_widget.dart';
-import 'launch_inicioapp/splash_screen.dart';
-import './vista_video/registrase_iniciarsesion.dart';
-import 'package:flutter/material.dart';
+import 'package:aryy_front/paciente/bloc/paciente_bloc.dart';
 
-import 'metodos_de_pago/metodos_de_pago_widget.dart';
-import 'registrarse_formulario/registrarse_formulario_widget.dart';
-import 'resultados_busqueda/resultados_busqueda_widget.dart';
-import 'resultados_busqueda_doctor/resultados_busqueda_doctor_widget.dart';
+import './index.dart';
+import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -83,6 +71,12 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
+                // Experimentos del nuevo bloc provider
+                // child: A quién se va a exponer
+                // bloc: Streamer
+                "menu_bloc": (_) => BlocProvider(
+                    bloc: PacienteBloc(), child: const MenuScreen()),
+                "singin_bloc": (_) => const SignInScreen(),
               },
               home: Home2Widget());
         });
