@@ -1,4 +1,4 @@
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+/*import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import '../../../flutter_flow/flutter_flow_widgets.dart';
@@ -57,4 +57,4 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
-}
+}*/

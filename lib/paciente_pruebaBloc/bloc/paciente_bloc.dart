@@ -1,4 +1,4 @@
-import '../repository/auth_repository.dart';
+/*import '../repository/auth_repository.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class PacienteBloc implements Bloc {
@@ -17,4 +17,4 @@ class PacienteBloc implements Bloc {
   void dispose() {
     // TODO: implement dispose
   }
-}
+}*/

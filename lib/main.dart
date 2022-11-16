@@ -1,6 +1,6 @@
 import './index.dart';
 import 'package:flutter/material.dart';
-import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+//import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 import 'agendar_cita/ui/screens/agendar_cita_calendario_widget.dart';
 import 'agendar_cita/ui/screens/agregar_tarjeta_widget.dart';
@@ -83,9 +83,9 @@ class MyApp extends StatelessWidget {
                 // Experimentos del nuevo bloc provider
                 // child: A quién se va a exponer
                 // bloc: Streamer
-                "menu_bloc": (_) => BlocProvider(
+                /*"menu_bloc": (_) => BlocProvider(
                     bloc: PacienteBloc(), child: const MenuScreen()),
-                "singin_bloc": (_) => const SignInScreen(),
+                "singin_bloc": (_) => const SignInScreen(),*/
               },
               home: Home2Widget());
         });

@@ -6,7 +6,7 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 class GetBarraBusquedaCall {
   static Future<ApiCallResponse> call({
     String? search = '',
-    String? mod = '',
+    String? value = '',
   }) {
     return ApiManager.instance.makeApiCall(
       callName: 'GetBarraBusqueda',
@@ -15,8 +15,8 @@ class GetBarraBusquedaCall {
       callType: ApiCallType.GET,
       headers: {},
       params: {
-        'searchphy': search,
-        'mod': mod,
+        'search': search,
+        'value': value,
       },
       returnBody: true,
     );

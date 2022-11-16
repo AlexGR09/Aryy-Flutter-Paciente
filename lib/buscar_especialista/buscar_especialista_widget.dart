@@ -47,27 +47,28 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
   void ConsumirAPIBuscador(TextEditingController? textEditingController) async {
     var shouldSetState = false;
     apiResult = await GetBarraBusquedaCall.call(
-      search: textEditingController!.text,
+      //search: textEditingController!.text,
       //mod: 'searchmed',
-      mod: 'searchphy',
+      value: "dr",
+      search: "physician",
     );
     shouldSetState = true;
     // Conexión exitosa?
     if ((apiResult?.succeeded ?? true)) {
       final resultado = getJsonField(apiResult?.jsonBody, r'''$[*]''').toList();
-      listaDeDatos = resultado[1];
-      if (resultado[12] > 0) {
+      listaDeDatos = resultado[0];
+      /*if (resultado[12] > 0) {
         modelo = resultado[16]["Modelo"][0].toString();
         // Los datos del médico vienen con un campo "drNombre" en vez de "nombre"
         switch (modelo) {
           case "Médico":
-            keyName = "drnombre";
+            keyName = "professional_name";
             break;
           default:
             keyName = "nombre";
             break;
         }
-      }
+      }*/
     }
     if (shouldSetState) setState(() {});
     return;
@@ -451,7 +452,7 @@ class _BuscarEspecialistaWidgetState extends State<BuscarEspecialistaWidget> {
                                             ),
                                           ),
                                           title: Text(
-                                              '${listaDeDatos[index][keyName].toString()}'),
+                                              '${listaDeDatos[index]["professional_name"].toString()}'),
                                           subtitle: Text('${modelo}'),
 //                                        selected: index == _selectedIndex,
                                         )),
