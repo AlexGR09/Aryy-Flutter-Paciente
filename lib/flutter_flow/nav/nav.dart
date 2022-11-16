@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:aryy_front/barra_lateral/barra_lateral_favoritos/barra_lateral_favoritos_widget.dart';
-
 import '../../agendar_cita/ui/screens/agendar_cita_calendario_widget.dart';
-
 import '../../agendar_cita/ui/screens/agregar_tarjeta_widget.dart';
 import '../../agendar_cita/ui/screens/loading_widget.dart';
 import '../../agendar_cita/ui/screens/nuevo_metodo_pago_widget.dart';
@@ -15,6 +13,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:go_router/go_router.dart';
 export 'package:go_router/go_router.dart';
 import '../../metodos_de_pago/metodos_de_pago_widget.dart';
+import '../../registrarse/ui/view/registrarse_widget.dart';
 import '../../registrarse_formulario/registrarse_formulario_widget.dart';
 import 'serialization_util.dart';
 export 'serialization_util.dart';

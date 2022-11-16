@@ -1,11 +1,11 @@
-import '../aryy_common_components/appbar/appbar_widget.dart';
-import '../aryy_common_components/formulario/button_widget.dart';
-import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
-import './componentes/button_registrarse_con.dart';
-import './componentes/input_password_widget.dart';
-import './componentes/input_text_widget.dart';
-import '../styles/my_icons.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
+import '../../../aryy_common_components/appbar/appbar_widget.dart';
+import '../../../aryy_common_components/formulario/button_widget.dart';
+import '../../../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../widgets/button_registrarse_con.dart';
+import '../widgets/input_password_widget.dart';
+import '../widgets/input_text_widget.dart';
+import '../../../styles/my_icons.dart';
+import '../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 

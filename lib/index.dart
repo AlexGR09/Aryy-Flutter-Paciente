@@ -1,11 +1,11 @@
 // Export pages
 
 export 'launch_inicioapp/home_page_widget.dart' show HomePageWidget;
-export 'registrarse/registrarse_widget.dart' show RegistrarseWidget;
+export 'registrarse/ui/view/registrarse_widget.dart' show RegistrarseWidget;
 export 'iniciarsesion/iniciarsesion_widget.dart' show IniciarsesionWidget;
 export 'configurar_pin_datosbiometricos/configurar_pin_datosbiometricos_widget.dart'
     show ConfigurarPinDatosbiometricosWidget;
-export 'registrarse/registrarse_formulario_widget.dart'
+export 'registrarse/ui/view/registrarse_formulario_widget.dart'
     show RegistrarseFormularioWidget;
 export 'sesion_huella_dactilar/sesion_huella_dactilar_widget.dart'
     show SesionHuellaDactilarWidget;
