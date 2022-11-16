@@ -1,9 +1,10 @@
-/*import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-
+import 'dart:async';
+import '../../bloc/paciente_bloc.dart';
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import '../../../flutter_flow/flutter_flow_widgets.dart';
-import '../../bloc/paciente_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import './menu_screen.dart';
 
 // - Monitorear la sesión del usuario
 
@@ -15,38 +16,42 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  // ionstancia del paciente
   late PacienteBloc pacienteBloc;
 
   @override
   Widget build(BuildContext context) {
-    // para poder utilizar el objeto paciente
-    pacienteBloc = BlocProvider.of(context);
-    return singInAryyUI();
+    pacienteBloc = BlocProvider.of<PacienteBloc>(context);
+    return _handleCurrentSession();
   }
 
-  // A que pantalla dirigir al usuario, según esté logeado
+  Widget _handleCurrentSession() {
+    return StreamBuilder(
+        stream: pacienteBloc.authStatus,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData || snapshot.hasError) {
+            return singInAryyUI();
+          }
+        });
+  }
+
   Widget singInAryyUI() {
     return Container(
       alignment: Alignment.center,
       color: Colors.red,
-      width: 100,
-      height: 100,
       child: FFButtonWidget(
         onPressed: () {
-          pacienteBloc.signIn();
-          Navigator.pushNamed(context, "MenuScreen");
+          Navigator.pushNamed(context, "menu_stream");
         },
         text: 'SignIn with Aryy',
         options: FFButtonOptions(
-          width: 130,
+          width: 200,
           height: 60,
           color: FlutterFlowTheme.of(context).primaryColor,
           textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                 fontFamily: 'Montserrat',
-                color: Colors.white,
-                fontSize: 20,
                 fontWeight: FontWeight.w500,
+                color: Colors.white,
+                fontSize: 15,
               ),
           borderSide: const BorderSide(
             color: Colors.transparent,
@@ -57,4 +62,4 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
-}*/
+}

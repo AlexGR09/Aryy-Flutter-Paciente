@@ -1,20 +1,20 @@
-/*import '../repository/auth_repository.dart';
+import '../repository/auth_repository.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class PacienteBloc implements Bloc {
-  // La conexión con la conexión de login de Aryy
-  final aryyAuth = AuthRepository();
+  final auth = AuthRepository();
 
-  // De acuerdo a la doña del video, el flujo de datos se maneja como en React,
+  // De acuerdo a la doña del video, el flujo de datos se maneja similar a React
   // ex: Firebase.onAuthStateChanged;
-  //
+  Stream<bool> get authStatus => AryyAuth.instance.onAuthStateChanged;
 
-  Future signIn() async {
-    aryyAuth.signIn();
+  Future<String> signIn() async {
+    await Future.delayed(const Duration(seconds: 2)); // Retraso simulado
+    auth.signInWithAryy();
   }
 
   @override
   void dispose() {
     // TODO: implement dispose
   }
-}*/
+}
