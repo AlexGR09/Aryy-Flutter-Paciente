@@ -1,17 +1,7 @@
 import './index.dart';
 import 'package:flutter/material.dart';
 //import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'agendar_cita/ui/screens/agendar_cita_calendario_widget.dart';
-import 'agendar_cita/ui/screens/agregar_tarjeta_widget.dart';
-import 'agendar_cita/ui/screens/loading_widget.dart';
-import 'agendar_cita/ui/screens/nuevo_metodo_pago_widget.dart';
-import 'agendar_cita/ui/screens/para_mi.dart';
-import 'agendar_cita/ui/screens/para_otra_persona.dart';
-import 'agendar_cita/ui/screens/reservar_cita.dart';
-import 'paciente_pruebaBloc/bloc/paciente_bloc.dart';
-import 'paciente_pruebaBloc/ui/screens/menu_screen.dart';
-import 'paciente_pruebaBloc/ui/screens/signin_screen.dart';
-import 'registrarse/ui/view/registrarse_widget.dart';
+/**/
 
 void main() => runApp(MyApp());
 
@@ -28,7 +18,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "home2_inicio",
+              initialRoute: "iniciarsesion",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
