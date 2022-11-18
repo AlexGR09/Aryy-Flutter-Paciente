@@ -1,42 +1,40 @@
+import 'dart:async';
+
 // Todos los datos de la conexionexiones con cualquier api:
 //  - API de Aryy
 //  - Google
 
-import 'dart:async';
+class AuthUser {
+  final String uid;
+  final String email;
+  AuthUser({required this.uid, required this.email});
+}
 
 class AuthRepository {
-  Future<String> signInWithAryy() async {
+  // Conexión en segundo plano para autenticar al paciente
+  Future<void> signInWithAryy() async {
     AryyAuth.instance.logIn();
-    return "logged in";
   }
 
-  Future<String> signOutWithAryy() async {
+  Future<void> signOutWithAryy() async {
     AryyAuth.instance.logOut();
-    return "logged out";
   }
 
-  Future<String> signInWithGoogle() async {
-    AryyAuth.instance.logIn();
-    return "logged in";
-  }
-
-  Future<String> signOutWithGoogle() async {
-    AryyAuth.instance.logIn();
-    return "logged out";
-  }
+  // Future<> signInWithGoogle() async {
+  // Future<> signOutWithGoogle() async {
 }
 
 // Simulación de autenticación con AryyAPI
 class AryyAuth {
   static AryyAuth get instance => _instance;
   static final AryyAuth _instance = AryyAuth._privateConstructor();
-  AryyAuth._privateConstructor();
-
-  late bool _isUserLogged;
-  //
+  late bool _isUserLogged = false;
   late Stream<bool> streamAryyAuth;
-  Stream<bool> get onAuthStateChanged {
-    return streamAryyAuth;
+  Stream<bool> get onAuthStateChanged => streamAryyAuth;
+
+  AryyAuth._privateConstructor() {
+    streamAryyAuth = Stream.fromFuture(_onAuthStateChanged());
+    print("consturctor aryyAuth");
   }
 
   AryyAuth() {
@@ -44,10 +42,10 @@ class AryyAuth {
   }
 
   Future<bool> _onAuthStateChanged() async {
-    await Future.delayed(const Duration(seconds: 1)); // Retraso simulado
     return _isUserLogged;
   }
 
+  // simple autenticacion solo para experimentar sin api
   void logIn() {
     _isUserLogged = true;
   }

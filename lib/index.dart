@@ -1,11 +1,11 @@
 // Export pages
 
 export 'launch_inicioapp/home_page_widget.dart' show HomePageWidget;
-export 'registrarse/ui/view/registrarse_widget.dart' show RegistrarseWidget;
+export 'registrarse/registrarse_widget.dart' show RegistrarseWidget;
 export 'iniciarsesion/iniciarsesion_widget.dart' show IniciarsesionWidget;
 export 'configurar_pin_datosbiometricos/configurar_pin_datosbiometricos_widget.dart'
     show ConfigurarPinDatosbiometricosWidget;
-export 'registrarse/ui/view/registrarse_formulario_widget.dart'
+export 'registrarse/registrarse_formulario_widget.dart'
     show RegistrarseFormularioWidget;
 export 'sesion_huella_dactilar/sesion_huella_dactilar_widget.dart'
     show SesionHuellaDactilarWidget;
@@ -62,11 +62,11 @@ export 'agendar_cita/ui/screens/reservar_cita.dart' show ReservarCitaWidget;
 export 'cerca_de_mi/cerca_de_mi_widget.dart' show CercaDeMi;
 export 'launch_inicioapp/splash_screen.dart' show SplashScreen;
 export './vista_video/registrase_iniciarsesion.dart' show MenuFrame;
-// Experimentos de nuevo stream provider
 
 //ESTAS RUTAS SON LAS QUE ESTABAN MAL
 //export 'paciente/ui/screens/menu_screen.dart' show MenuScreen;
 //export './paciente//ui/screens/sign_in_screen.dart' show SignInScreen;
 
+// Experimentos de nuevo stream provider
 export './paciente_pruebaBloc/ui/screens/menu_screen.dart' show MenuScreen;
 export './paciente_pruebaBloc/ui/screens/signin_screen.dart' show SignInScreen;

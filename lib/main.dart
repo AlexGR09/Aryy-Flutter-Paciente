@@ -1,17 +1,8 @@
 import './index.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-//import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'agendar_cita/ui/screens/agendar_cita_calendario_widget.dart';
-import 'agendar_cita/ui/screens/agregar_tarjeta_widget.dart';
-import 'agendar_cita/ui/screens/loading_widget.dart';
-import 'agendar_cita/ui/screens/nuevo_metodo_pago_widget.dart';
-import 'agendar_cita/ui/screens/para_mi.dart';
-import 'agendar_cita/ui/screens/para_otra_persona.dart';
-import 'agendar_cita/ui/screens/reservar_cita.dart';
-import 'paciente_pruebaBloc/bloc/paciente_bloc.dart';
-import 'paciente_pruebaBloc/ui/screens/menu_screen.dart';
-import 'paciente_pruebaBloc/ui/screens/signin_screen.dart';
-import 'registrarse/ui/view/registrarse_widget.dart';
+// flutter stream for bloc
+import './paciente_pruebaBloc/bloc/paciente_bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -80,12 +71,10 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
-                // Experimentos del nuevo bloc provider
-                // child: A quién se va a exponer
-                // bloc: Streamer
-                /*"menu_bloc": (_) => BlocProvider(
-                    bloc: PacienteBloc(), child: const MenuScreen()),
-                "singin_bloc": (_) => const SignInScreen(),*/
+                // BlocProvider: Flutter widget which provides a bloc to its children
+                "singin_bloc": (context) => BlocProvider(
+                    create: (_) => PacienteBloc(), child: const SignInScreen()),
+                "menu_stream": (_) => MenuScreen(),
               },
               home: Home2Widget());
         });
