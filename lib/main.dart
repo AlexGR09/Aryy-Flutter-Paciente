@@ -1,7 +1,8 @@
 import './index.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-//import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-/**/
+// flutter stream for bloc
+import './paciente_pruebaBloc/bloc/paciente_bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -70,12 +71,10 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
-                // Experimentos del nuevo bloc provider
-                // child: A quién se va a exponer
-                // bloc: Streamer
-                /*"menu_bloc": (_) => BlocProvider(
-                    bloc: PacienteBloc(), child: const MenuScreen()),
-                "singin_bloc": (_) => const SignInScreen(),*/
+                // BlocProvider: Flutter widget which provides a bloc to its children
+                "singin_bloc": (context) => BlocProvider(
+                    create: (_) => PacienteBloc(), child: const SignInScreen()),
+                "menu_stream": (_) => MenuScreen(),
               },
               home: Home2Widget());
         });

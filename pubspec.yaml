@@ -65,7 +65,10 @@ dependencies:
   google_maps_flutter_web: ^0.4.0+1
   logger: ^1.1.0
   dio: ^4.0.6
-  #generic_bloc_provider: ^1.0.8
+  # generic_bloc_provider: ^2.1.1 -> Esta dependencia ya no funciona en las
+  # nuevas versiones de flutter, ahora está integrado en
+  bloc: ^8.0.1
+  flutter_bloc: ^8.1.1 
 
 dev_dependencies:
   flutter_test:

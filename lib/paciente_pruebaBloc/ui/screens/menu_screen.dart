@@ -13,10 +13,13 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 100,
-      color: Colors.white,
-      child: const Text("Welcome!"),
-    );
+        width: 100,
+        height: 100,
+        color: Colors.white,
+        child: Row(
+          children: const [
+            Text("Welcome!"),
+          ],
+        ));
   }
 }
