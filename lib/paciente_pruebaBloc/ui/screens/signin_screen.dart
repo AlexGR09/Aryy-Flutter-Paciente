@@ -18,6 +18,7 @@ class SignInScreen extends StatefulWidget {
 class _SignInScreenState extends State<SignInScreen> {
   // testing bloc
   late PacienteBloc pacienteBloc;
+  late String sessionStateText;
 
   @override
   Widget build(BuildContext context) {
@@ -27,36 +28,14 @@ class _SignInScreenState extends State<SignInScreen> {
   }
 
   Widget _handleCurrentSession() {
-    return BlocBuilder<PacienteBloc, int>(
-      // state represent the same AryyChangeEvent data type
+    // it can also be BlocBuilder<PacienteBloc, Future<bool>>(
+    return BlocBuilder<PacienteBloc, bool>(
+      // state the same AryyChangeEvent data type
       builder: ((context, state) {
-        print("handleSession");
+        sessionStateText = state ? "Active" : "Ended";
         return singInAryyUI();
       }),
     );
-
-    // Usage of Flutter.StreamBuilder (listener)
-    // return StreamBuilder<bool>(
-    //     stream: pacienteBloc.authStatus,
-    //     // builder es la respuesta del stream
-    //     builder: (BuildContext context, AsyncSnapshot snapshot) {
-    //       if (snapshot.connectionState == ConnectionState.waiting) {
-    //         return CircularProgressIndicator();
-    //       } else if (snapshot.connectionState == ConnectionState.active ||
-    //           snapshot.connectionState == ConnectionState.done) {
-    //         if (snapshot.hasError) {
-    //           print(snapshot.error);
-    //           return const Text('Errors');
-    //         } else if (snapshot.hasData) {
-    //           print("snapshotdata:${snapshot.data.toString()}");
-    //           return snapshot.data ? MenuScreen() : singInAryyUI();
-    //         } else {
-    //           return const Text('Empty data');
-    //         }
-    //       } else {
-    //         return Text('State: ${snapshot.connectionState}');
-    //       }
-    //     });
   }
 
   Widget singInAryyUI() {
@@ -69,10 +48,7 @@ class _SignInScreenState extends State<SignInScreen> {
           children: [
             FFButtonWidget(
               onPressed: () {
-//                pacienteBloc.add(pacienteBloc.signIn());
-                print("onPressed");
-                context.read<PacienteBloc>().add(const AryyChangeEvent(1));
-                //pacienteBloc.signIn().then((String result) => print('$result'));
+                pacienteBloc.add(const LoginEvent());
               },
               text: 'SignIn with Aryy',
               options: FFButtonOptions(
@@ -94,9 +70,8 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             FFButtonWidget(
               onPressed: () {
-                /*pacienteBloc
-                    .singOut()
-                    .then((String result) => print('$result'));*/
+                pacienteBloc.add(const LogoutEvent());
+                // context.read<PacienteBloc>().add(const AryyChangeEvent(false));
               },
               text: 'SignedOut with Aryy',
               options: FFButtonOptions(
@@ -120,7 +95,7 @@ class _SignInScreenState extends State<SignInScreen> {
               onPressed: () {
                 //Navigator.pushNamed(context, "singin_bloc");
               },
-              text: 'Menu',
+              text: sessionStateText,
               options: FFButtonOptions(
                 width: 200,
                 height: 60,

@@ -1,49 +1,28 @@
 import 'dart:async';
 import '../repository/auth_repository.dart';
-
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-
+import 'package:bloc/bloc.dart';
 part './paciente_event.dart';
 
-// PacienteEvent: Any state can be received, int: status
-class PacienteBloc extends Bloc<PacienteEvent, int> {
-  // Bloc's inital state
-  PacienteBloc() : super(0) {
-    // Handle incoming <AryyChangeEvents> streams
-    on<AryyChangeEvent>((event, emit) {
-      // broadcast a new state from event received
+// Nota: De acuerdo a la doña del video, el flujo de datos se maneja similar a React
+
+// Any state will be received with status<int>
+//class PacienteBloc extends Bloc<PacienteEvent, bool> {
+class PacienteBloc extends Bloc<AuthEvent, bool> {
+  // AuthRepository : AryyAuth simulation
+  final auth = AuthRepository();
+  // ex: Firebase.onAuthStateChanged; Future<dataType>
+//  bool get authStatus => AryyAuth.instance.onAuthStateChanged;
+  // Bloc's inital state by default
+  PacienteBloc() : super(false) {
+    // Handle incoming <AuthEvents> streams
+    on<AuthEvent>((event, emit) {
+      event.isSessionActive ? auth.signInWithAryy() : auth.signOutWithAryy();
+      // Then, broadcast a new state from the event received
       // event: AryyChangeEvent
       // emit: broadcast new state
-      print("onEvent");
-      emit(event.newIndexEvent);
-    });
-  }
-}
-
-abstract class AuthEvent {}
-
-class LoginEvent extends AuthEvent {}
-
-class LogoutEvent extends AuthEvent {}
-
-abstract class AuthState {}
-
-class UnAuthenticatedState extends AuthState {}
-
-class AuthenticatedState extends AuthState {}
-
-class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  // To emit a new state, you need to handle triggered events.
-  // To do this, you will have to register an event handler using the on <Event>
-  // API inside the constructor body as follows
-  AuthBloc() : super(UnAuthenticatedState()) {
-    on<LoginEvent>((event, emit) {
-      emit(AuthenticatedState());
-    });
-
-    on<LogoutEvent>((event, emit) {
-      emit(UnAuthenticatedState());
+      // The argument type 'Stream<bool>' can't be assigned to the parameter type 'bool'.
+      AryyAuth.instance.onAuthStateChanged.then((value) => emit(value));
     });
   }
 }
@@ -63,24 +42,7 @@ class PacienteBlocOld extends Bloc {
     on<LoginEvent>((event, emit) {});
     on<LogoutEvent>((event, emit) {});
     on((event, emit) {
-      print("event is happening?");
+      print("emit or event?");
     });
-  }
-
-  // La conexión con el repositorio de autentificacion
-  final auth = AuthRepository();
-
-  // De acuerdo a la doña del video, el flujo de datos se maneja similar a React
-  // ex: Firebase.onAuthStateChanged;
-  Stream<bool> get authStatus => AryyAuth.instance.onAuthStateChanged;
-
-  Future<String> signIn() async {
-    auth.signInWithAryy();
-    return "logged in in Bloc";
-  }
-
-  Future<String> singOut() async {
-    auth.signOutWithAryy();
-    return "logged out in Bloc";
   }
 }

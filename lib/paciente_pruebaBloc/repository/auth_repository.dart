@@ -11,7 +11,7 @@ class AuthUser {
 }
 
 class AuthRepository {
-  // Conexión en segundo plano para autenticar al paciente
+  // Background conection for user auth
   Future<void> signInWithAryy() async {
     AryyAuth.instance.logIn();
   }
@@ -24,28 +24,26 @@ class AuthRepository {
   // Future<> signOutWithGoogle() async {
 }
 
-// Simulación de autenticación con AryyAPI
+// Simulación de autenticación: AryyAPI
 class AryyAuth {
   static AryyAuth get instance => _instance;
   static final AryyAuth _instance = AryyAuth._privateConstructor();
+  // AryyAPI response simulation:
   late bool _isUserLogged = false;
-  late Stream<bool> streamAryyAuth;
-  Stream<bool> get onAuthStateChanged => streamAryyAuth;
-
-  AryyAuth._privateConstructor() {
-    streamAryyAuth = Stream.fromFuture(_onAuthStateChanged());
-    print("consturctor aryyAuth");
+  // simple getter for testing, it can also be Future<bool>
+  Future<bool> get onAuthStateChanged async {
+    bool stringFuture = await _onAuthStateChanged();
+    return stringFuture;
   }
 
-  AryyAuth() {
-    streamAryyAuth = Stream.fromFuture(_onAuthStateChanged());
-  }
-
-  Future<bool> _onAuthStateChanged() async {
-    return _isUserLogged;
-  }
+  AryyAuth() {}
+  AryyAuth._privateConstructor() {}
 
   // simple autenticacion solo para experimentar sin api
+  Future<bool> _onAuthStateChanged() async {
+    return Future.value(_isUserLogged);
+  }
+
   void logIn() {
     _isUserLogged = true;
   }
