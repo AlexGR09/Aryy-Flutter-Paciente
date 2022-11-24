@@ -1,4 +1,4 @@
-import 'input_widget.dart';
+import './input_widget.dart';
 import '../../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,4 @@
-import 'input_widget.dart';
+import './input_widget.dart';
 import 'package:flutter/material.dart';
 
 class InputTextWidget extends StatefulWidget {

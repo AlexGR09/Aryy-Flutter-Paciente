@@ -1,7 +1,7 @@
+import '../widgets/button_registrarse_con.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/widgets/button_widget.dart';
-import '../widgets/button_registrarse_con.dart';
 import '../../_aryy_common_components/widgets/appbar/widgets/input_password_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/widgets/input_text_widget.dart';
 import '../../styles/my_icons.dart';
