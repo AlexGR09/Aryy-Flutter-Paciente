@@ -1,6 +1,6 @@
 import 'package:aryy_front/styles/my_icons.dart';
 
-import '../../../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import '../../../flutter_flow/flutter_flow_radio_button.dart';
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import '../../../flutter_flow/flutter_flow_util.dart';

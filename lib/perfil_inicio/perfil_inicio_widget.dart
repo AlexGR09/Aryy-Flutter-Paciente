@@ -1,4 +1,4 @@
-import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import './componentes/column_historial.dart';
 import './simulacion_API/simulacionAPI_perfil_inicio.dart';
 import '../styles/my_icons.dart';

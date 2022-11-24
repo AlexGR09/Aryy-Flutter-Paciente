@@ -19,14 +19,14 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "singin_bloc",
+              initialRoute: "bienvenida",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
               themeMode: currentMode,
               routes: {
                 "splash": (_) => SplashScreen(),
-                "bienvenida": (_) => HomePageWidget(),
+                "bienvenida": (_) => const HomePageWidget(),
                 "iniciarsesion": (_) => IniciarsesionWidget(),
                 "Registrarse": (_) => RegistrarseWidget(),
                 "registrarse_formulario": (_) => RegistrarseFormularioWidget(),
@@ -76,7 +76,7 @@ class MyApp extends StatelessWidget {
                     create: (_) => PacienteBloc(), child: const SignInScreen()),
                 "menu_stream": (_) => MenuScreen(),
               },
-              home: SignInScreen());
+              home: HomePageWidget());
         });
   }
 }

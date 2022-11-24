@@ -1,5 +1,5 @@
+import '../../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
 
 class AryyAppBar extends StatefulWidget {
   const AryyAppBar(
@@ -19,12 +19,11 @@ class _AryyAppBarState extends State<AryyAppBar> {
     return PreferredSize(
         preferredSize: const Size(100, 80),
         child: AppBar(
-          backgroundColor:
-              Colors.red, // FlutterFlowTheme.of(context).secondaryBackground,
+          backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+          automaticallyImplyLeading: true,
+          centerTitle: true,
           toolbarHeight: 80,
           elevation: 0,
-          centerTitle: true,
-          automaticallyImplyLeading: true,
           leading: widget.leading,
           title: widget.title,
           actions: [

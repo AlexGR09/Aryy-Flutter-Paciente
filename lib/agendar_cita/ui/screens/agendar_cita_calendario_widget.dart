@@ -1,4 +1,4 @@
-import '../../../aryy_common_components/appbar/appbar_widget.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
 import '../widgets/vista_calendario.dart';
 import '../../../flutter_flow/app_state.dart';
 import '../../../flutter_flow/flutter_flow_icon_button.dart';

@@ -1,6 +1,8 @@
-import '../../flutter_flow/flutter_flow_theme.dart';
-import '../../flutter_flow/flutter_flow_widgets.dart';
+import '../../../../flutter_flow/flutter_flow_theme.dart';
+import '../../../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+
+// Botón de formularios color: primary color
 
 class BotonFormulario extends StatefulWidget {
   const BotonFormulario(

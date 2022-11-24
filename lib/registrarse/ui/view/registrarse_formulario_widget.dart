@@ -1,5 +1,5 @@
-import '../../../aryy_common_components/appbar/appbar_widget.dart';
-import '../../../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import '../../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import '../../../flutter_flow/flutter_flow_widgets.dart';
@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
 
-import '../widgets/input_password_widget.dart';
-import '../widgets/input_text_widget.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/input_password_widget.dart';
+import '../../../_aryy_common_components/widgets/appbar/widgets/input_text_widget.dart';
 
 class RegistrarseFormularioWidget extends StatefulWidget {
   const RegistrarseFormularioWidget({Key? key}) : super(key: key);

@@ -1,11 +1,11 @@
-import '../../../aryy_common_components/appbar/appbar_widget.dart';
-import '../../../aryy_common_components/formulario/button_widget.dart';
-import '../../../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/widgets/button_widget.dart';
 import '../widgets/button_registrarse_con.dart';
-import '../widgets/input_password_widget.dart';
-import '../widgets/input_text_widget.dart';
-import '../../../styles/my_icons.dart';
-import '../../../flutter_flow/flutter_flow_theme.dart';
+import '../../_aryy_common_components/widgets/appbar/widgets/input_password_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/widgets/input_text_widget.dart';
+import '../../styles/my_icons.dart';
+import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -34,34 +34,11 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
-      appBar: PreferredSize(
-          preferredSize: const Size(100, 80),
+      appBar: const PreferredSize(
+          preferredSize: Size(100, 80),
           child: AryyAppBar(
-              actions: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(22, 0, 0, 0),
-            child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 30, 0),
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, "iniciarsesion");
-                    },
-                    child: Text(
-                      'Inicar sesión',
-                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Montserrat',
-                            color: Color(0xC586898C),
-                            fontWeight: FontWeight.normal,
-                          ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ))),
+              actions: AryyAppbarAction(
+                  routeName: 'iniciarsesion', text: "Iniciar Sesión"))),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
@@ -125,12 +102,12 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                             context: context,
                             builder: (alertDialogContext) {
                               return AlertDialog(
-                                content: Text('Datos guardados'),
+                                content: const Text('Datos guardados'),
                                 actions: [
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
+                                    child: const Text('Ok'),
                                   ),
                                 ],
                               );

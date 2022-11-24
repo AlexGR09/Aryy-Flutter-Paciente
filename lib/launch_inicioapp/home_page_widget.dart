@@ -1,10 +1,11 @@
-import 'package:aryy_front/aryy_common_components/modo_oscuro/modo_oscuro.dart';
-import 'package:aryy_front/styles/my_icons.dart';
-import '../aryy_common_components/appbar/appbar_widget.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../_aryy_common_components/widgets/appbar/action_widget.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
+import '../flutter_flow/flutter_flow_theme.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
+import '../styles/my_icons.dart';
 
 class HomePageWidget extends StatefulWidget {
   const HomePageWidget({Key? key}) : super(key: key);
@@ -20,30 +21,13 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: PreferredSize(
-          preferredSize: const Size(100, 80),
+      appBar: const PreferredSize(
+          preferredSize: Size(100, 80),
           child: AryyAppBar(
-            title: const DarkModeSwitch(),
-            actions: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0, 30, 30, 0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "registrarse_iniciosesion");
-                },
-                child: Text(
-                  'Omitir',
-                  style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Montserrat',
-                        color: const Color(0xC5B4B4B4),
-                      ),
-                ),
-              ),
-            ),
-          )),
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
+              title: DarkModeSwitch(),
+              actions: AryyAppbarAction(
+                  routeName: "registrarse_iniciosesion", text: "Omitir"))),
 //--------------------------- PRIMER PAGE VIEW -----------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(

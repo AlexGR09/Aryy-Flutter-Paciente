@@ -1,5 +1,5 @@
 import './componentes/tarjeta_cita_widget.dart';
-import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';

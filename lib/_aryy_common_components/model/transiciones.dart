@@ -1,4 +1,4 @@
-import '../flutter_flow/flutter_flow_util.dart';
+import '../../flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/widgets.dart';
 
 void cargarWidgetConTransicion(BuildContext context, StatefulWidget vistaWidget,

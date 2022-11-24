@@ -13,7 +13,7 @@ import 'package:page_transition/page_transition.dart';
 import 'package:go_router/go_router.dart';
 export 'package:go_router/go_router.dart';
 import '../../metodos_de_pago/metodos_de_pago_widget.dart';
-import '../../registrarse/ui/view/registrarse_widget.dart';
+import '../../acceso_aplicacion/screens/registrarse_widget.dart';
 import '../../registrarse/ui/view/registrarse_formulario_widget.dart';
 import 'serialization_util.dart';
 export 'serialization_util.dart';

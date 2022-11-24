@@ -1,5 +1,6 @@
-import '../aryy_common_components/appbar/appbar_widget.dart';
-import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
+import '../_aryy_common_components/widgets/appbar/action_widget.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
@@ -42,63 +43,32 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
       appBar: PreferredSize(
           preferredSize: const Size(100, 80),
           child: AryyAppBar(
-              title: Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 20, 0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(
-                            context, "registrarse_iniciosesion");
-                      },
-                      child: SvgPicture.asset(
-                        REGRESAR,
-                        width: 30,
-                        height: 30,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-                    const Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                        child: DarkModeIcon()),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
-                      child: InkWell(
-                        onTap: () {
-                          Navigator.pushNamed(context, "Registrarse");
-                        },
-                        child: Text(
-                          'Registrarme',
-                          style:
-                              FlutterFlowTheme.of(context).bodyText1.override(
-                                    fontFamily: 'Montserrat',
-                                    color: const Color(0xC586898C),
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+            leading: InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, "registrarse_iniciosesion");
+              },
+              child: SvgPicture.asset(
+                REGRESAR,
+                width: 30,
+                height: 30,
+                fit: BoxFit.cover,
               ),
-              actions: const Text(''))),
-//--------------------------------------------------------------------------------------------------------------------------------------------
-
+            ),
+//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
+            title: const DarkModeIcon(),
+            actions: const AryyAppbarAction(
+                routeName: "Registrarse", text: "Registrarme"),
+          )),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
           child: Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(
+            padding: const EdgeInsetsDirectional.fromSTEB(
                 0, 60, 0, 0), //ELEMENTOS MÁS CENTRADOS DENTRO DE LA COLUMNA
             child: SingleChildScrollView(
               child: Column(
                 mainAxisSize: MainAxisSize.max,
-                //mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding:
@@ -124,7 +94,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                       children: [
                         Column(
                           mainAxisSize: MainAxisSize.max,
-                          //mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Material(
                               color: Colors.transparent,
@@ -148,7 +117,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                   borderRadius: BorderRadius.circular(20),
                                 ),
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
                                       15, 0, 0, 0),
                                   child: TextFormField(
                                     controller: textController1,
@@ -164,42 +133,43 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                             fontWeight: FontWeight.normal,
                                             color: Color(0xFFCCCCCC),
                                           ),
-                                      enabledBorder: UnderlineInputBorder(
+                                      enabledBorder: const UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1,
                                         ),
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
-                                      focusedBorder: UnderlineInputBorder(
+                                      focusedBorder: const UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1,
                                         ),
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
-                                      errorBorder: UnderlineInputBorder(
+                                      errorBorder: const UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1,
                                         ),
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
                                         ),
                                       ),
-                                      focusedErrorBorder: UnderlineInputBorder(
+                                      focusedErrorBorder:
+                                          const UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: Color(0x00000000),
                                           width: 1,
                                         ),
-                                        borderRadius: const BorderRadius.only(
+                                        borderRadius: BorderRadius.only(
                                           topLeft: Radius.circular(4.0),
                                           topRight: Radius.circular(4.0),
                                         ),
@@ -218,8 +188,8 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                               ),
                             ),
                             Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  0, 20, 0, 0),
                               child: Material(
                                 color: Colors.transparent,
                                 elevation: 2,
@@ -248,8 +218,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                                     child: TextFormField(
                                       controller: textController2,
                                       autofocus: true,
-                                      //obscureText: false,
-
                                       //------- CONTRASEÑA INVISIBLE --------------//
                                       obscureText: !passwordVisibility,
                                       decoration: InputDecoration(

@@ -18,6 +18,7 @@ class PacienteBloc extends Bloc<AuthEvent, bool> {
     // Handle incoming <AuthEvents> streams
     on<AuthEvent>((event, emit) {
       event.isSessionActive ? auth.signInWithAryy() : auth.signOutWithAryy();
+      print("receiving event.isSession=${event.isSessionActive}");
       // Then, broadcast a new state from the event received
       // event: AryyChangeEvent
       // emit: broadcast new state

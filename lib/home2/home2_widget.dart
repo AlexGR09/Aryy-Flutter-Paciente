@@ -1,7 +1,7 @@
 import './componentes/accion.dart';
 import './componentes/puntaje_paciente.dart';
-import '../aryy_common_components/modo_oscuro/modo_oscuro.dart';
-import '../aryy_common_components/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
+import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
 import '../barra_lateral/barra_lateral_widget.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
 import '../styles/my_icons.dart';

@@ -1,8 +1,9 @@
 // Export pages
 
 export 'launch_inicioapp/home_page_widget.dart' show HomePageWidget;
-export 'registrarse/ui/view/registrarse_widget.dart' show RegistrarseWidget;
-export 'iniciarsesion/iniciarsesion_widget.dart' show IniciarsesionWidget;
+export 'acceso_aplicacion/screens/registrarse_widget.dart'
+    show RegistrarseWidget;
+export 'acceso_aplicacion/iniciarsesion_widget.dart' show IniciarsesionWidget;
 export 'configurar_pin_datosbiometricos/configurar_pin_datosbiometricos_widget.dart'
     show ConfigurarPinDatosbiometricosWidget;
 export 'registrarse/ui/view/registrarse_formulario_widget.dart'

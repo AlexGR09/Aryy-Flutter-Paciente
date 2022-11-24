@@ -1,4 +1,4 @@
-import '../../../aryy_common_components/clasificacion.dart';
+import '../../../_aryy_common_components/repository/categoria_medica.dart';
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import '../simulacion_API/simulacionAPI_perfil_inicio.dart';
 import 'package:flutter/material.dart';
