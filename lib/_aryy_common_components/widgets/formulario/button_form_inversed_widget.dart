@@ -2,20 +2,20 @@ import '../../../../flutter_flow/flutter_flow_theme.dart';
 import '../../../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 
-// Botón de formularios color: primary color
+// Botón de formularios inversos
 
-class BotonFormulario extends StatefulWidget {
-  const BotonFormulario(
+class BotonFormularioInverso extends StatefulWidget {
+  const BotonFormularioInverso(
       {super.key, required this.text, required this.onPressed});
 
   final String text;
   final VoidCallback onPressed;
 
   @override
-  State<BotonFormulario> createState() => _BotonFormularioState();
+  State<BotonFormularioInverso> createState() => _BotonFormularioInversoState();
 }
 
-class _BotonFormularioState extends State<BotonFormulario> {
+class _BotonFormularioInversoState extends State<BotonFormularioInverso> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -26,10 +26,10 @@ class _BotonFormularioState extends State<BotonFormulario> {
         options: FFButtonOptions(
           width: 300,
           height: 55,
-          color: FlutterFlowTheme.of(context).primaryColor,
+          color: Colors.white,
           textStyle: FlutterFlowTheme.of(context).subtitle2.override(
                 fontFamily: 'Montserrat',
-                color: Colors.white,
+                color: FlutterFlowTheme.of(context).primaryColor,
                 fontWeight: FontWeight.w500,
               ),
           borderSide: const BorderSide(

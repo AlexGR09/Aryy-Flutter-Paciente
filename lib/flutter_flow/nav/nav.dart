@@ -33,12 +33,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, _) => HomePageWidget(),
+      errorBuilder: (context, _) => BienvenidaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => HomePageWidget(),
+          builder: (context, _) => BienvenidaWidget(),
           routes: [
             //-----------------------------------------------------------------------------------------------
             //--------------------------------- INICIO, REGISTRO Y VERIFICACION ----------------------------
@@ -47,7 +47,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             FFRoute(
               name: 'HomePage',
               path: 'homePage',
-              builder: (context, params) => HomePageWidget(),
+              builder: (context, params) => BienvenidaWidget(),
             ),
             FFRoute(
               name: 'Registrarse',

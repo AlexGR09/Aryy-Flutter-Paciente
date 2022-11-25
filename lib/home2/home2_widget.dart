@@ -1,10 +1,10 @@
 import './componentes/accion.dart';
 import './componentes/puntaje_paciente.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
+import '../styles/my_icons.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../barra_lateral/barra_lateral_widget.dart';
 import '../barra_navegacion_inferior/barra_de_navegacion.dart';
-import '../styles/my_icons.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

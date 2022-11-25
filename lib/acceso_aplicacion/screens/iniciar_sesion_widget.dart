@@ -1,9 +1,11 @@
-import '../_aryy_common_components/widgets/appbar/action_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
-import '../styles/my_icons.dart';
-import '../flutter_flow/flutter_flow_theme.dart';
-import '../flutter_flow/flutter_flow_widgets.dart';
+import '../../styles/my_icons.dart';
+import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
+import '../../flutter_flow/flutter_flow_theme.dart';
+import '../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -15,11 +17,13 @@ class IniciarsesionWidget extends StatefulWidget {
 }
 
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
-  TextEditingController? textController1;
+  TextEditingController textController1 = TextEditingController();
   TextEditingController? textController2;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   late bool passwordVisibility;
+
+  onChange(String password) {}
 
   @override
   void initState() {
@@ -40,24 +44,13 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      appBar: PreferredSize(
-          preferredSize: const Size(100, 80),
+      appBar: const PreferredSize(
+          preferredSize: Size(100, 80),
           child: AryyAppBar(
-            leading: InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, "registrarse_iniciosesion");
-              },
-              child: SvgPicture.asset(
-                REGRESAR,
-                width: 30,
-                height: 30,
-                fit: BoxFit.cover,
-              ),
-            ),
-//---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
-            title: const DarkModeIcon(),
-            actions: const AryyAppbarAction(
-                routeName: "Registrarse", text: "Registrarme"),
+//---------------------------  Solo para pruebas de responsive)
+            title: DarkModeIcon(),
+            actions:
+                AryyAppbarAction(routeName: "Registrarse", text: "Registrarme"),
           )),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
       body: SafeArea(
@@ -95,6 +88,13 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                         Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
+                            const InputTextWidget(
+                                hintText: 'Ingrese un usuario'),
+                            InputPasswordWidget(
+                              textController: textController1,
+                              hintText: 'Ingrese una contraseña',
+                              onChangeFunction: onChange,
+                            ),
                             Material(
                               color: Colors.transparent,
                               elevation: 2,

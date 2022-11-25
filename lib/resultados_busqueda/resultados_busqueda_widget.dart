@@ -1,5 +1,5 @@
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import './componentes/barra_busqueda.dart';
 import './componentes/botones_filtro_busqueda_widget.dart';
 import './componentes/miniatura_doctor.dart';

@@ -1,11 +1,11 @@
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
+import './informacion_consultorio.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../flutter_flow/togleIcon.dart';
-import 'informacion_consultorio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 

@@ -1,7 +1,7 @@
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
+import '../styles/my_icons.dart';
 import './componentes/column_historial.dart';
 import './simulacion_API/simulacionAPI_perfil_inicio.dart';
-import '../styles/my_icons.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';

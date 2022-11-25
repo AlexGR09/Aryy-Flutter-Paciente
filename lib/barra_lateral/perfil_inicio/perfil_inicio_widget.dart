@@ -1,13 +1,10 @@
-import '../../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
+import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../flutter_flow/flutter_flow_widgets.dart';
 import '../../styles/my_icons.dart';
 import './simulacion_API/simulacionAPI_perfil_inicio.dart';
-//import '../next_page_tmp/switch_modo_oscuro.dart';
 import 'package:flutter/material.dart';
-
 import 'componentes/column_historial.dart';
-import 'componentes/row_historial.dart';
 
 class BarraLateralPerfil1Widget extends StatefulWidget {
   const BarraLateralPerfil1Widget({Key? key}) : super(key: key);
@@ -29,10 +26,10 @@ class _BarraLateralPerfil1WidgetState extends State<BarraLateralPerfil1Widget> {
           backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
           automaticallyImplyLeading: true,
           toolbarHeight: 0,
-          actions: [
+          actions: const [
 //---------------------------  Alternar entre modo oscuro (solo para pruebas de responsive)  -----------------------------------------------------------------------------------------------------------------
             Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
+                padding: EdgeInsetsDirectional.fromSTEB(0, 0, 6, 0),
                 child: DarkModeIcon()),
 //--------------------------------------------------------------------------------------------------------------------------------------------
           ],

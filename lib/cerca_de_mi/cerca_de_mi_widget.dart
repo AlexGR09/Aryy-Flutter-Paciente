@@ -1,6 +1,6 @@
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import '../google_maps/google_maps_widget.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../resultados_busqueda/componentes/botones_filtro_busqueda_widget.dart';
 import '../flutter_flow/flutter_flow_google_map.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';

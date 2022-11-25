@@ -1,4 +1,4 @@
-import 'package:aryy_front/launch_inicioapp/home_page_widget.dart';
+import 'package:aryy_front/acceso_aplicacion/screens/bienvenida_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -19,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
         const Duration(seconds: 3),
         () => Navigator.pushReplacement(context,
-            MaterialPageRoute(builder: (context) => HomePageWidget())));
+            MaterialPageRoute(builder: (context) => BienvenidaWidget())));
   }
 
   @override

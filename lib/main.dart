@@ -19,16 +19,18 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "bienvenida",
+              initialRoute: "iniciarsesion",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
               themeMode: currentMode,
               routes: {
                 "splash": (_) => SplashScreen(),
-                "bienvenida": (_) => const HomePageWidget(),
-                "iniciarsesion": (_) => IniciarsesionWidget(),
-                "Registrarse": (_) => RegistrarseWidget(),
+                "bienvenida": (_) => const BienvenidaWidget(),
+                "registrarse_iniciosesion": (_) => RegistroInicioSesion(),
+                "iniciarsesion": (_) => const IniciarsesionWidget(),
+                // pendiente
+                "registrarse": (_) => RegistrarseWidget(),
                 "registrarse_formulario": (_) => RegistrarseFormularioWidget(),
                 "home2_inicio": (_) => Home2Widget(),
                 "buscar_especialista": (_) => BuscarEspecialistaWidget(),
@@ -56,9 +58,6 @@ class MyApp extends StatelessWidget {
                 "configurar_pin_datos": (_) =>
                     ConfigurarPinDatosbiometricosWidget(),
                 "nueva_ubicacion": (_) => NuevaUbicacionWidget(),
-                "registrarse_iniciosesion": (_) =>
-                    MenuFrame(), //VISTA CON VIDEO DE FONDO
-
                 //--------------------------------------------------------------------------
                 //-------------------- AGENDAR CITA ---------------------------------------
                 //-------------------------------------------------------------------------
@@ -76,7 +75,7 @@ class MyApp extends StatelessWidget {
                     create: (_) => PacienteBloc(), child: const SignInScreen()),
                 "menu_stream": (_) => MenuScreen(),
               },
-              home: HomePageWidget());
+              home: IniciarsesionWidget());
         });
   }
 }

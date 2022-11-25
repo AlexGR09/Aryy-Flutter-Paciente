@@ -1,6 +1,6 @@
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../_aryy_common_components/widgets/appbar/widgets/modo_oscuro.dart';
 import '../styles/my_icons.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';

@@ -1,9 +1,9 @@
 import '../widgets/button_registrarse_con.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
-import '../../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import '../../_aryy_common_components/widgets/appbar/widgets/button_widget.dart';
-import '../../_aryy_common_components/widgets/appbar/widgets/input_password_widget.dart';
-import '../../_aryy_common_components/widgets/appbar/widgets/input_text_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
@@ -97,7 +97,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     children: [
                       BotonFormulario(
                         text: 'Registrarme',
-                        onPressedFunction: () async {
+                        onPressed: () async {
                           await showDialog(
                             context: context,
                             builder: (alertDialogContext) {

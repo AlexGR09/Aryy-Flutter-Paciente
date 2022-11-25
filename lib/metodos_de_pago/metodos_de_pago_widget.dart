@@ -1,6 +1,6 @@
-import '../_aryy_common_components/widgets/appbar/widgets/appbar_widget.dart';
-import 'componentes/boton_metodo_de_pago.dart';
-import 'componentes/opciones_de_pago.dart';
+import './componentes/boton_metodo_de_pago.dart';
+import './componentes/opciones_de_pago.dart';
+import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../flutter_flow/app_state.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
