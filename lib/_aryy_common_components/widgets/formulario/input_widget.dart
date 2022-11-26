@@ -34,7 +34,7 @@ class _InputWidgetState extends State<InputWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(0, 22, 0, 0),
+      padding: const EdgeInsetsDirectional.only(bottom: 22),
       child: Material(
         color: Colors.transparent,
         elevation: 1,

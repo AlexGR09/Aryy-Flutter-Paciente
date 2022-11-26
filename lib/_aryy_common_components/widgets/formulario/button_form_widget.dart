@@ -19,7 +19,7 @@ class _BotonFormularioState extends State<BotonFormulario> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsetsDirectional.only(bottom: 20),
+      padding: const EdgeInsetsDirectional.only(bottom: 20, top: 20),
       child: FFButtonWidget(
         onPressed: widget.onPressed,
         text: widget.text,

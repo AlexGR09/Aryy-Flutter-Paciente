@@ -34,13 +34,13 @@ class _RegistrarseFormularioWidgetState
   TextEditingController textController2 = TextEditingController();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  onPasswordChange(String password) {
-    if (password.length < 8) return WarningType.passwordLength;
-    if (textController1.text != textController2.text) {
-      return WarningType.passwordMatch;
-    }
-    return WarningType.none;
-  }
+  // onPasswordChange(String password) {
+  //   if (password.length < 8) return WarningType.passwordLength;
+  //   if (textController1.text != textController2.text) {
+  //     return WarningType.passwordMatch;
+  //   }
+  //   return WarningType.none;
+  // }
 
   @override
   void initState() {
@@ -177,16 +177,16 @@ class _RegistrarseFormularioWidgetState
                                   hintText: 'Apellido paterno'),
                               const InputTextWidget(
                                   hintText: 'Apellido materno'),
-                              InputPasswordWidget(
-                                textController: textController1,
-                                hintText: 'Ingrese una contraseña',
-                                onChangeFunction: onPasswordChange,
-                              ),
-                              InputPasswordWidget(
-                                textController: textController2,
-                                hintText: 'Confirme su contraseña',
-                                onChangeFunction: onPasswordChange,
-                              )
+                              // InputPasswordWidget(
+                              //   textController: textController1,
+                              //   hintText: 'Ingrese una contraseña',
+                              //   onChangeFunction: onPasswordChange,
+                              // ),
+                              // InputPasswordWidget(
+                              //   textController: textController2,
+                              //   hintText: 'Confirme su contraseña',
+                              //   onChangeFunction: onPasswordChange,
+                              // )
                             ],
                           ),
                         ],

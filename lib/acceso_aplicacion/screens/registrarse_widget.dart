@@ -1,10 +1,9 @@
-import '../widgets/button_registrarse_con.dart';
+import '../../styles/my_icons.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
-import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,13 +21,13 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
 
   bool isPasswordLongEnough = true;
 
-  onPasswordChange(String password) {
-    if (password.length < 8) return WarningType.passwordLength;
-    if (textController1.text != textController2.text) {
-      return WarningType.passwordMatch;
-    }
-    return WarningType.none;
-  }
+  // onPasswordChange(String password) {
+  //   if (password.length < 8) return WarningType.passwordLength;
+  //   if (textController1.text != textController2.text) {
+  //     return WarningType.passwordMatch;
+  //   }
+  //   return WarningType.none;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -73,16 +72,16 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                         children: [
                           const InputTextWidget(hintText: 'Ingrese un usuario'),
                           const InputTextWidget(hintText: 'Ingrese un correo'),
-                          InputPasswordWidget(
-                            textController: textController1,
-                            hintText: 'Ingrese una contraseña',
-                            onChangeFunction: onPasswordChange,
-                          ),
-                          InputPasswordWidget(
-                            textController: textController2,
-                            hintText: 'Confirme su contraseña',
-                            onChangeFunction: onPasswordChange,
-                          )
+                          // InputPasswordWidget(
+                          //   textController: textController1,
+                          //   hintText: 'Ingrese una contraseña',
+                          //   onChangeFunction: onPasswordChange,
+                          // ),
+                          // InputPasswordWidget(
+                          //   textController: textController2,
+                          //   hintText: 'Confirme su contraseña',
+                          //   onChangeFunction: onPasswordChange,
+                          // )
                         ],
                       ),
                     ],
@@ -155,14 +154,14 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceAround,
                               children: const [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0, 0, 40, 0),
-                                  child: RegistarseConButton(
-                                    iconName: GOOGLE,
-                                  ),
-                                ),
-                                RegistarseConButton(iconName: FACEBOOK),
+                                // Padding(
+                                //   padding: EdgeInsetsDirectional.fromSTEB(
+                                //       0, 0, 40, 0),
+                                //   child: RegistarseConButton(
+                                //     iconName: GOOGLE,
+                                //   ),
+                                // ),
+                                // RegistarseConButton(iconName: FACEBOOK),
                               ],
                             ),
                           ),
