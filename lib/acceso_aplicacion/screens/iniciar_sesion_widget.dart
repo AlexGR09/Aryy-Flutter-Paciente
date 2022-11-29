@@ -1,3 +1,5 @@
+import '../bloc/login.dart';
+import '../bloc/login_bloc.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
 import '../../styles/my_icons.dart';
@@ -10,8 +12,8 @@ import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class IniciarsesionWidget extends StatefulWidget {
   const IniciarsesionWidget({Key? key}) : super(key: key);
@@ -21,25 +23,43 @@ class IniciarsesionWidget extends StatefulWidget {
 }
 
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
-  TextEditingController textController1 = TextEditingController();
-  TextEditingController? textController2;
+  TextEditingController emailTextController = TextEditingController();
+  TextEditingController passwordTextController = TextEditingController();
+  late LoginBloc loginBloc;
+  // Si pone mal la contraseña, mostrar el icono? o siempre visible?
+  final bool isForgotyouPasswordVisible = false;
 
   @override
   void initState() {
     super.initState();
-    textController1 = TextEditingController();
-    textController2 = TextEditingController();
   }
 
   @override
   void dispose() {
-    textController1?.dispose();
-    textController2?.dispose();
+    emailTextController.dispose();
+    passwordTextController.dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+    // para poder utilizar el objeto paciente
+    loginBloc = BlocProvider.of<LoginBloc>(context);
+    return _handleCurrentSession();
+  }
+
+  Widget _handleCurrentSession() {
+    // it can also be BlocBuilder<PacienteBloc, Future<bool>>(
+    return BlocBuilder<LoginBloc, bool>(
+      // state the same AryyChangeEvent data type
+      builder: ((context, state) {
+        var sessionStateText = state ? "Active" : "Ended";
+        return singInAryyUI();
+      }),
+    );
+  }
+
+  Widget singInAryyUI() {
     WarningLabel warningLabel = WarningLabel(
         text: "¿Olvidaste tu contraseña?",
         color: FlutterFlowTheme.of(context).primaryColor,
@@ -69,18 +89,21 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                   const AryyLogo(paddingTop: 30, paddingBottom: 40),
                   const InputTextWidget(hintText: 'Ingrese un usuario'),
                   InputPasswordWidget(
-                    textController: textController1,
+                    textController: emailTextController,
                     hintText: 'Ingrese una contraseña',
                     onChange: () {
-                      print(textController1.text);
+                      print(emailTextController.text);
                     },
                     warningLabel: warningLabel,
-                    isWarningVisible: true,
+                    isWarningVisible: isForgotyouPasswordVisible,
                   ),
                   BotonFormulario(
                       text: "Iniciar sesión",
                       onPressed: () {
-                        Navigator.pushNamed(context, "home2_inicio");
+                        LoginPaciente(
+                            emailTextController: emailTextController,
+                            passwordTextController: passwordTextController);
+                        // Navigator.pushNamed(context, "home2_inicio");
                       }),
                   const Divisor(text: "O inicia con"),
                   const BotonAutentificarCon(
