@@ -1,5 +1,5 @@
 import './input_widget.dart';
-import '../../model/password_warning.dart';
+import '../../model/warning.dart';
 import '../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -15,14 +15,12 @@ class InputPasswordWidget extends StatefulWidget {
       this.textController,
       required this.hintText,
       required this.onChange,
-      required this.warningLabel,
-      required this.isWarningVisible});
+      required this.warningLabel});
 
   final String hintText;
   final VoidCallback onChange;
   final TextEditingController? textController;
   final WarningLabel warningLabel;
-  final bool isWarningVisible;
 
   @override
   State<InputPasswordWidget> createState() => _InputPasswordWidgetState();
@@ -50,8 +48,6 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
   //   });
   //}
 
-  void WarningText() {}
-
   @override
   Widget build(BuildContext context) {
     return InputWidget(
@@ -73,29 +69,27 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
         borderColor: isWarningLabelVisible
             ? widget.warningLabel.color
             : Colors.transparent,
-        appendComponent: widget.isWarningVisible
-            ? Padding(
-                padding: const EdgeInsets.only(top: 4),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(widget.warningLabel.text,
-                        style: FlutterFlowTheme.of(context).bodyText1.override(
-                            fontFamily: 'Montserrat',
-                            color: widget.warningLabel.color,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 14)),
-                    Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
-                      child: Icon(
-                        widget.warningLabel.icon,
-                        size: 15,
+        appendComponent: Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Text(widget.warningLabel.text,
+                    style: FlutterFlowTheme.of(context).bodyText1.override(
+                        fontFamily: 'Montserrat',
                         color: widget.warningLabel.color,
-                      ),
-                    )
-                  ],
-                ))
-            : Row());
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14)),
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(start: 10),
+                  child: Icon(
+                    widget.warningLabel.icon,
+                    size: 15,
+                    color: widget.warningLabel.color,
+                  ),
+                )
+              ],
+            )));
   }
 }

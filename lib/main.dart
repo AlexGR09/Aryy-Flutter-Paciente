@@ -1,8 +1,7 @@
 import './index.dart';
+import './acceso_aplicacion/bloc/login_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-// flutter stream for bloc
-import './paciente_pruebaBloc/bloc/paciente_bloc.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,7 +27,9 @@ class MyApp extends StatelessWidget {
                 "splash": (_) => SplashScreen(),
                 "bienvenida": (_) => const BienvenidaWidget(),
                 "registrarse_iniciosesion": (_) => RegistroInicioSesion(),
-                "iniciarsesion": (_) => const IniciarsesionWidget(),
+                "iniciarsesion": (context) => BlocProvider(
+                    create: (_) => LoginBloc(),
+                    child: const IniciarsesionWidget()),
                 // pendiente
                 "registrarse": (_) => RegistrarseWidget(),
                 "registrarse_formulario": (_) => RegistrarseFormularioWidget(),
@@ -70,9 +71,6 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
-                // BlocProvider: Flutter widget which provides a bloc to its children
-                "singin_bloc": (context) => BlocProvider(
-                    create: (_) => PacienteBloc(), child: const SignInScreen()),
                 "menu_stream": (_) => MenuScreen(),
               },
               home: IniciarsesionWidget());

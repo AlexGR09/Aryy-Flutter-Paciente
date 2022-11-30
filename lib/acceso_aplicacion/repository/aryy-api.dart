@@ -3,13 +3,8 @@ import '../../_aryy_common_components/repository/api/api_manager.dart';
 export '../../_aryy_common_components/repository/api/api_manager.dart'
     show ApiCallResponse;
 
-class ApiLogin {
-  static Future<ApiCallResponse> call({String? email, String? password}) {
-    Map<String, String> body = <String, String>{
-      'email': 'max@gmail.com', // email
-      'password': 'password' // password
-    };
-
+class AryyApi {
+  static Future<ApiCallResponse> login({String? email, String? password}) {
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
       apiUrl: 'https://app.aryymd.com/api/v1/login',
@@ -19,7 +14,11 @@ class ApiLogin {
         'Accept': 'application/json',
       },
       params: {},
-      body: json.encode(body),
+      body: '''
+{
+  "email": "max@gmail.com",
+  "password": "password"
+}''',
       bodyType: BodyType.JSON,
       returnBody: true,
       cache: false,

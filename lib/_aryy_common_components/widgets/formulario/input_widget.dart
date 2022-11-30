@@ -64,7 +64,10 @@ class _InputWidgetState extends State<InputWidget> {
                 obscureText: !widget.isOscureTextVisible,
                 autofocus: true,
                 decoration: InputDecoration(
-                  suffixIcon: widget.suffixIcon,
+                  suffixIcon: Padding(
+                    padding: const EdgeInsets.only(right: 5),
+                    child: widget.suffixIcon,
+                  ),
                   hintText: widget.hintText,
                   hintStyle: FlutterFlowTheme.of(context).bodyText2.override(
                       fontFamily: 'Montserrat',
