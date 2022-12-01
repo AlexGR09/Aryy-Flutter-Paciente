@@ -23,9 +23,10 @@ class AryyChangeEvent extends AuthEvent {
 class LoginEvent extends AuthEvent {
   LoginEvent({String? email, String? password}) {
     final _authRepository = AryyAuthRepository();
-    _authRepository.loginAryy();
-    super.isSessionActive = true;
-
+    _authRepository.loginWithAryy().then((value) {
+      super.isSessionActive = value?.name != null;
+      print("issessionActive: ${super.isSessionActive}");
+    });
     // Short but incorrect path:
     // AryyAuth.instance
     //     .login(email: email, password: password)
@@ -33,8 +34,10 @@ class LoginEvent extends AuthEvent {
   }
 }
 
-class LoginStatusEvent extends AuthEvent {
-  LoginStatusEvent() {}
+class SessionStatusEvent extends AuthEvent {
+  SessionStatusEvent() {
+    print("2. StatusEvent");
+  }
 }
 
 // class LogoutEvent extends AuthEvent {

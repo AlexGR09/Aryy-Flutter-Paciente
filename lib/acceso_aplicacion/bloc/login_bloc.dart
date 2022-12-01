@@ -16,7 +16,6 @@ class LoginBloc extends Bloc<AuthEvent, bool> {
   LoginBloc() : super(false) {
     // Handle incoming <AuthEvents> streams
     on<AuthEvent>((event, emit) async {
-      print("LoginBloc event, emit: ${event.isSessionActive}");
       //event.isSessionActive ? auth.loginWithAryy() : auth.logoutWithAryy();
       // Then, broadcast a new state from the event received
       // event: AryyChangeEvent

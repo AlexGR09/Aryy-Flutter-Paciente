@@ -7,8 +7,12 @@ import 'aryy_auth_api.dart';
 class AryyAuthRepository {
   // Aryy auth connection
   final AryyAuthAPI _aryyAuthAPI = AryyAuthAPI();
-  void loginAryy() async {
-    _aryyAuthAPI.login("max", "password");
+  Future<AryyUser?> loginWithAryy() async {
+    return await _aryyAuthAPI
+        .loginWithCredentials("max", "password")
+        .then((aryyUser) {
+      return aryyUser;
+    });
   }
 
   // i.e.

@@ -49,11 +49,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
     return _handleCurrentSession();
   }
 
-  void _verifyUserSessionStatus() async {
-    await Future<void>.delayed(const Duration(seconds: 3));
-    loginBloc.add(LoginStatusEvent());
-  }
-
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<LoginBloc, Future<bool>> if async
     return BlocBuilder<LoginBloc, bool>(
@@ -61,9 +56,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
       builder: ((context, state) {
         if (state) {
           return Home2Widget();
-          // Navigator.pushNamed(context, "home2_inicio"); - no funciona la redireccion
         } else {
-          _verifyUserSessionStatus();
           isForgotyouPasswordVisible = true; // add alert - pending
         }
         return singInAryyUI();
