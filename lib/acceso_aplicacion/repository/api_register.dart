@@ -8,7 +8,7 @@ class Api {
       {String? email, String? password, String? password_comfirmation}) {
     return ApiManager.instance.makeApiCall(
       callName: 'Login',
-      apiUrl: 'https://app.aryymd.com/api/v1/login',
+      apiUrl: 'https://app.aryymd.com/api/v1/register',
       callType: ApiCallType.POST,
       headers: {
         'Content-Type': 'application/json',
