@@ -10,20 +10,20 @@ part './paciente_event.dart';
 //class PacienteBloc extends Bloc<PacienteEvent, bool> {
 class PacienteBloc extends Bloc<AuthEvent, bool> {
   // AuthRepository : AryyAuth simulation
-  final auth = AuthRepository();
+//  final auth = AuthRepository();
   // ex: Firebase.onAuthStateChanged; Future<dataType>
 //  bool get authStatus => AryyAuth.instance.onAuthStateChanged;
   // Bloc's inital state by default
   PacienteBloc() : super(false) {
     // Handle incoming <AuthEvents> streams
     on<AuthEvent>((event, emit) {
-      event.isSessionActive ? auth.signInWithAryy() : auth.signOutWithAryy();
-      print("receiving event.isSession=${event.isSessionActive}");
+//      event.isSessionActive ? auth.signInWithAryy() : auth.signOutWithAryy();
+//      print("receiving event.isSession=${event.isSessionActive}");
       // Then, broadcast a new state from the event received
       // event: AryyChangeEvent
       // emit: broadcast new state
       // The argument type 'Stream<bool>' can't be assigned to the parameter type 'bool'.
-      AryyAuth.instance.onAuthStateChanged.then((value) => emit(value));
+//      AryyAuth.instance.onAuthStateChanged.then((value) => emit(value));
     });
   }
 }

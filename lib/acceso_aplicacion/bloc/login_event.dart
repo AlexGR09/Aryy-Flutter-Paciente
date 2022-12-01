@@ -22,9 +22,13 @@ class AryyChangeEvent extends AuthEvent {
 
 class LoginEvent extends AuthEvent {
   LoginEvent({String? email, String? password}) {
-    AryyAuth.instance
-        .login(email: email, password: password)
-        .then((value) => super.isSessionActive = value);
+    final _authRepository = AryyAuthRepository();
+    _authRepository.loginAryy();
+
+    // AryyAuth.instance
+    //     .login(email: email, password: password)
+    //     .then((value) => super.isSessionActive = value);
+
     // Para controlar todos los inicios de sesión después usaremos: AuthRepository
     // auth.loginWithAryy(email, password);
   }

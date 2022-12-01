@@ -3,6 +3,8 @@ import '../../_aryy_common_components/repository/api/api_manager.dart';
 export '../../_aryy_common_components/repository/api/api_manager.dart'
     show ApiCallResponse;
 
+// 1. All Aryy Api connection
+
 class AryyApi {
   static Future<ApiCallResponse> login({String? email, String? password}) {
     return ApiManager.instance.makeApiCall(
