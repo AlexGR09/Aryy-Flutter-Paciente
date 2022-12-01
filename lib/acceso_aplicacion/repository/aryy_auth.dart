@@ -8,16 +8,21 @@ import '../../flutter_flow/flutter_flow_util.dart';
 class AryyAuth {
   static AryyAuth get instance => _instance;
   static final AryyAuth _instance = AryyAuth._privateConstructor();
-  late String _accessToken;
+  late AryyUser _aryyUser;
+  late String _accessToken = "";
   String get AccessToken => _accessToken;
 
   AryyAuth() {}
   AryyAuth._privateConstructor() {}
 
+  // simple getter for testing, it can also be Future<bool>
+  // simple getter for testing, it can also be Future<bool>
+  Future<bool> get onAuthStateChanged async =>
+      await Future.value(_accessToken != "");
+
   // Sign in using Aryy user credentials
-  Future<AryyUser> loginWithCredentials(
-      {String? email, String? password}) async {
-    return AryyUser.fromJson(
+  void loginWithCredentials({String? email, String? password}) async {
+    _aryyUser = AryyUser.fromJson(
         json: await AryyApi.login(
       email: email,
       password: password,
@@ -31,10 +36,7 @@ class AryyAuth {
         var data = resultado[0];
         return resultado[0];
       }
-      return
-          // empty ary user?
-          getJsonField(connection.jsonBody, r'''$[*]''').toList();
-      // empty?
+      return getJsonField(connection.jsonBody, r'''$[*]''').toList();
       ;
     }));
   }

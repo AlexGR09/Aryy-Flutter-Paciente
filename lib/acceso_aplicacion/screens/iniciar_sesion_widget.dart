@@ -1,3 +1,5 @@
+import 'package:aryy_front/index.dart';
+
 import '../bloc/login_bloc.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
@@ -47,7 +49,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
     return _handleCurrentSession();
   }
 
-  void _veryUserLoginStatus() async {
+  void _verifyUserSessionStatus() async {
     await Future<void>.delayed(const Duration(seconds: 3));
     loginBloc.add(LoginStatusEvent());
   }
@@ -57,11 +59,12 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
     return BlocBuilder<LoginBloc, bool>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
-        if (!state) {
-          _veryUserLoginStatus();
-          isForgotyouPasswordVisible = true; // add alert - pending
-        } else {
+        if (state) {
+          return Home2Widget();
           // Navigator.pushNamed(context, "home2_inicio"); - no funciona la redireccion
+        } else {
+          _verifyUserSessionStatus();
+          isForgotyouPasswordVisible = true; // add alert - pending
         }
         return singInAryyUI();
       }),

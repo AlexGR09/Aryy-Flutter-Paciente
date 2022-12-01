@@ -7,12 +7,12 @@ import 'aryy_auth_api.dart';
 class AryyAuthRepository {
   // Aryy auth connection
   final AryyAuthAPI _aryyAuthAPI = AryyAuthAPI();
-  Future<AryyUser> loginAryy() async {
-    return await _aryyAuthAPI.login("max", "password");
+  void loginAryy() async {
+    _aryyAuthAPI.login("max", "password");
   }
 
   // i.e.
-  Future<AryyUser?> loginFirebase() => _aryyAuthAPI.login("max", "password");
-  Future<AryyUser?> loginFacebook() => _aryyAuthAPI.login("max", "password");
-  Future<AryyUser?> loginGoogle() => _aryyAuthAPI.login("max", "password");
+  // Future<AryyUser?> loginFirebase() => _aryyAuthAPI.login("max", "password");
+  // Future<AryyUser?> loginFacebook() => _aryyAuthAPI.login("max", "password");
+  // Future<AryyUser?> loginGoogle() => _aryyAuthAPI.login("max", "password");
 }

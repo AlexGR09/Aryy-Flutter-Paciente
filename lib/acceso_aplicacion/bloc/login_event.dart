@@ -24,17 +24,18 @@ class LoginEvent extends AuthEvent {
   LoginEvent({String? email, String? password}) {
     final _authRepository = AryyAuthRepository();
     _authRepository.loginAryy();
+    super.isSessionActive = true;
 
+    // Short but incorrect path:
     // AryyAuth.instance
     //     .login(email: email, password: password)
     //     .then((value) => super.isSessionActive = value);
-
-    // Para controlar todos los inicios de sesión después usaremos: AuthRepository
-    // auth.loginWithAryy(email, password);
   }
 }
 
-class LoginStatusEvent extends AuthEvent {}
+class LoginStatusEvent extends AuthEvent {
+  LoginStatusEvent() {}
+}
 
 // class LogoutEvent extends AuthEvent {
 //   const LogoutEvent() : super(isSessionActive: false);
