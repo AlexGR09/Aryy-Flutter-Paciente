@@ -3,7 +3,7 @@ import '../../_aryy_common_components/repository/api/api_manager.dart';
 export '../../_aryy_common_components/repository/api/api_manager.dart'
     show ApiCallResponse;
 
-// 1. All Aryy Api connection
+// 1. All Aryy Api connection!
 
 class AryyApi {
   static Future<ApiCallResponse> login({String? email, String? password}) {
@@ -20,6 +20,31 @@ class AryyApi {
 {
   "email": "max@gmail.com",
   "password": "password"
+}''',
+      bodyType: BodyType.JSON,
+      returnBody: true,
+      cache: false,
+    );
+  }
+
+  static Future<ApiCallResponse> singin(
+      {String? email, String? password, String? passwordConfirmation}) {
+    return ApiManager.instance.makeApiCall(
+      callName: 'Signin',
+      apiUrl: 'https://app.aryymd.com/api/v1/register',
+      callType: ApiCallType.POST,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      params: {},
+      body: '''
+{
+  "email": "max@gmail.com",
+  "password": "password"
+  "password_confirmation" : "password",
+  type_user" : "Patient"
+  
 }''',
       bodyType: BodyType.JSON,
       returnBody: true,

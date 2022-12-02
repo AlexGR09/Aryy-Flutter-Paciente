@@ -14,6 +14,7 @@ class BotonAutentificarCon extends StatefulWidget {
 }
 
 class _BotonAutentificarConState extends State<BotonAutentificarCon> {
+  double extraMargin = 0;
   String capitalize(String s) =>
       s[0].toUpperCase() + s.substring(1).toLowerCase();
 
@@ -22,7 +23,11 @@ class _BotonAutentificarConState extends State<BotonAutentificarCon> {
     // iconName = 'Assets/icons/registro_sesion/icon_google.svg'
     String assetString = widget.assetName.split('ICON_')[1]; // google.svg
     assetString = assetString.split('.')[0]; // google
-    double extraMargin = assetString.length < 8 ? 30 : 10;
+    extraMargin = widget.isLabelVisible == true
+        ? assetString.length < 8
+            ? 30
+            : 10
+        : 0;
     return Padding(
         padding: const EdgeInsets.only(top: 0, bottom: 20),
         child: Row(

@@ -1,12 +1,17 @@
-import '../../styles/my_icons.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
+import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import '../widgets/boton_autenticar_con.dart';
+import '../widgets/divisor_widget.dart';
+import '../widgets/warning_helper_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class RegistrarseWidget extends StatefulWidget {
   const RegistrarseWidget({Key? key}) : super(key: key);
@@ -16,8 +21,8 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  TextEditingController textController1 = TextEditingController();
-  TextEditingController textController2 = TextEditingController();
+  TextEditingController emailTextEditingController = TextEditingController();
+  TextEditingController emailConfirmationTEController = TextEditingController();
 
   bool isPasswordLongEnough = true;
 
@@ -46,127 +51,65 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        ARYY_LOGO_MORADO,
-                        width: 180,
-                        fit: BoxFit.cover,
-                      ),
-                    ],
-                  ),
-                ),
-//---------------------------  Input text: usuario, correo, contraseña  -----------------------------------------------------------------------------------------------------------------
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(22, 40, 22, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          const InputTextWidget(hintText: 'Ingrese un usuario'),
-                          const InputTextWidget(hintText: 'Ingrese un correo'),
-                          // InputPasswordWidget(
-                          //   textController: textController1,
-                          //   hintText: 'Ingrese una contraseña',
-                          //   onChangeFunction: onPasswordChange,
-                          // ),
-                          // InputPasswordWidget(
-                          //   textController: textController2,
-                          //   hintText: 'Confirme su contraseña',
-                          //   onChangeFunction: onPasswordChange,
-                          // )
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-//---------------------------  Registrase btn  -----------------------------------------------------------------------------------------------------------------
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0, 40, 0, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      BotonFormulario(
-                        text: 'Registrarme',
-                        onPressed: () async {
-                          await showDialog(
-                            context: context,
-                            builder: (alertDialogContext) {
-                              return AlertDialog(
-                                content: const Text('Datos guardados'),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () =>
-                                        Navigator.pop(alertDialogContext),
-                                    child: const Text('Ok'),
-                                  ),
-                                ],
-                              );
-                            },
-                          );
-                          //context.pushNamed('Registrarse_formulario'); //NO ME SIRVE POR EL MOMENTO
-                          Navigator.pushNamed(
-                              context, "registrarse_formulario");
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-//---------------------------  Registrase con redes sociales btn  -----------------------------------------------------------------------------------------------------------------
-                Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(22, 30, 22, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'O regístrate con',
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText1
-                                    .override(
-                                      fontFamily: 'Montserrat',
-                                      color: const Color(0xFFCCCCCC),
-                                      fontWeight: FontWeight.w500,
-                                    ),
+                const AryyLogo(paddingTop: 85, paddingBottom: 50),
+                const InputTextWidget(hintText: 'Ingrese un correo'),
+                InputPasswordWidget(
+                    textController: emailTextEditingController,
+                    hintText: 'Ingrese una contraseña',
+                    onChange: () {
+                      print(emailTextEditingController.text);
+                    },
+                    warningLabel: const WarningHelper(
+                        text: "Al menos 8 caractéres",
+                        color: Colors.orange,
+                        icon: Icons.error)),
+                InputPasswordWidget(
+                    textController: emailConfirmationTEController,
+                    hintText: 'Confirme su contraseña',
+                    onChange: () {
+                      print(emailConfirmationTEController.text);
+                    },
+                    warningLabel: const WarningHelper(
+                        text: "Los campos no coinciden",
+                        color: Colors.red,
+                        icon: Icons.warning)),
+                BotonFormulario(
+                    text: "Registrarme",
+                    onPressed: () async {
+                      await showDialog(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            content: const Text('Datos guardados'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext),
+                                child: const Text('Ok'),
                               ),
                             ],
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0, 20, 0, 0),
-                            child: Row(
-                              mainAxisSize: MainAxisSize.max,
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              children: const [
-                                // Padding(
-                                //   padding: EdgeInsetsDirectional.fromSTEB(
-                                //       0, 0, 40, 0),
-                                //   child: RegistarseConButton(
-                                //     iconName: GOOGLE,
-                                //   ),
-                                // ),
-                                // RegistarseConButton(iconName: FACEBOOK),
-                              ],
-                            ),
-                          ),
-                        ],
+                          );
+                        },
+                      );
+                      // Navigator.pushNamed(context, "registrarse_formulario");
+                    }),
+                const Divisor(text: "O inicia con"),
+                Padding(
+                  padding: const EdgeInsetsDirectional.only(top: 10),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: const [
+                      Text(""),
+                      BotonAutentificarCon(
+                        assetName: GOOGLE,
+                        isLabelVisible: false,
                       ),
+                      BotonAutentificarCon(
+                        assetName: FACEBOOK,
+                        isLabelVisible: false,
+                      ),
+                      Text("")
                     ],
                   ),
                 ),

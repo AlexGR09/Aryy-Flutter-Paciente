@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "iniciarsesion",
+              initialRoute: "registrarse",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
                 "iniciarsesion": (context) => BlocProvider(
                     create: (_) => LoginBloc(),
                     child: const IniciarsesionWidget()),
-                // pendiente
                 "registrarse": (_) => RegistrarseWidget(),
+                // pendiente
                 "registrarse_formulario": (_) => RegistrarseFormularioWidget(),
                 "home2_inicio": (_) => Home2Widget(),
                 "buscar_especialista": (_) => BuscarEspecialistaWidget(),
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
                 "proximas_citas": (_) => ProximasCitas(),
                 "menu_stream": (_) => MenuScreen(),
               },
-              home: IniciarsesionWidget());
+              home: RegistrarseWidget());
         });
   }
 }

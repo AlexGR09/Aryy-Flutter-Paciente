@@ -1,9 +1,4 @@
 import 'package:aryy_front/index.dart';
-import '../bloc/login_bloc.dart';
-import '../widgets/boton_autenticar_con.dart';
-import '../widgets/divisor_widget.dart';
-import '../../styles/my_icons.dart';
-import '../../_aryy_common_components/model/warning.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
@@ -12,6 +7,11 @@ import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import '../../styles/my_icons.dart';
+import '../bloc/login_bloc.dart';
+import '../widgets/boton_autenticar_con.dart';
+import '../widgets/divisor_widget.dart';
+import '../widgets/warning_helper_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -75,10 +75,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   }
 
   Widget singInAryyUI() {
-    WarningLabel warningLabel = WarningLabel(
-        text: "¿Olvidaste tu contraseña?",
-        color: FlutterFlowTheme.of(context).primaryColor,
-        icon: Icons.error);
     // () { Navigator.pushNamed(context, "verificar_identidad"); }
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
@@ -102,14 +98,17 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   const AryyLogo(paddingTop: 30, paddingBottom: 40),
-                  const InputTextWidget(hintText: 'Ingrese un usuario'),
+                  const InputTextWidget(hintText: 'Ingrese un correo'),
                   InputPasswordWidget(
                       textController: emailTextController,
                       hintText: 'Ingrese una contraseña',
                       onChange: () {
                         print(emailTextController.text);
                       },
-                      warningLabel: warningLabel),
+                      warningLabel: WarningHelper(
+                          text: "¿Olvidaste tu contraseña?",
+                          color: FlutterFlowTheme.of(context).primaryColor,
+                          icon: Icons.error)),
                   BotonFormulario(
                       text: "Iniciar sesión",
                       onPressed: () {

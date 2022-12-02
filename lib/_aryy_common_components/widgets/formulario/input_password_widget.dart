@@ -1,6 +1,4 @@
 import './input_widget.dart';
-import '../../model/warning.dart';
-import '../../../flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 
 // enum WarningType {
@@ -20,7 +18,7 @@ class InputPasswordWidget extends StatefulWidget {
   final String hintText;
   final VoidCallback onChange;
   final TextEditingController? textController;
-  final WarningLabel warningLabel;
+  final Widget warningLabel;
 
   @override
   State<InputPasswordWidget> createState() => _InputPasswordWidgetState();
@@ -51,45 +49,22 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
   @override
   Widget build(BuildContext context) {
     return InputWidget(
-        textController: widget.textController,
-        hintText: widget.hintText,
-        inputTextType: TextInputType.visiblePassword,
-        onChangeFunction: widget.onChange,
-        isOscureTextVisible: isPasswordVisible,
-        suffixIcon: IconButton(
-          onPressed: () {
-            // setState(() {
-            //   isPasswordVisible = !isPasswordVisible;
-            // });
-          },
-          icon:
-              Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off),
-          splashRadius: 10,
-        ),
-        borderColor: isWarningLabelVisible
-            ? widget.warningLabel.color
-            : Colors.transparent,
-        appendComponent: Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(widget.warningLabel.text,
-                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                        fontFamily: 'Montserrat',
-                        color: widget.warningLabel.color,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14)),
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 10),
-                  child: Icon(
-                    widget.warningLabel.icon,
-                    size: 15,
-                    color: widget.warningLabel.color,
-                  ),
-                )
-              ],
-            )));
+      textController: widget.textController,
+      hintText: widget.hintText,
+      inputTextType: TextInputType.visiblePassword,
+      onChangeFunction: widget.onChange,
+      isOscureTextVisible: isPasswordVisible,
+      suffixIcon: IconButton(
+        onPressed: () {
+          // setState(() {
+          //   isPasswordVisible = !isPasswordVisible;
+          // });
+        },
+        icon: Icon(isPasswordVisible ? Icons.visibility : Icons.visibility_off),
+        splashRadius: 10,
+      ),
+      appendComponent: widget.warningLabel,
+      borderColor: Colors.transparent,
+    );
   }
 }
