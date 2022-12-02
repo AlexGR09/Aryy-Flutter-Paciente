@@ -5,40 +5,29 @@ part of './login_bloc.dart';
 abstract class AuthEvent extends Equatable {
   // AuthRepository will manage all Aryy authentication options
   // final auth = AuthRepository();
-  bool isSessionActive = false;
+  Authentication authentication = Authentication.uninitialized;
   @override
   // isSessionActive will be identified in broadcasted events
-  List<Object> get props => [isSessionActive];
+  List<Object> get props => [authentication];
 }
 
 // Events  only support the same type of event, therefore it inherences from LoginEvent
-class AryyChangeEvent extends AuthEvent {
-  // override props (the ones from abstract class) in order to identiy event classes
-//  const AryyChangeEvent() : super(isSessionActive: false);
-  @override
-  // isSessionActive will be identified in broadcasted events
-  List<Object> get props => [isSessionActive];
-}
-
 class LoginEvent extends AuthEvent {
-  LoginEvent({String? email, String? password}) {
-    final _authRepository = AryyAuthRepository();
-    _authRepository.loginWithAryy().then((value) {
-      super.isSessionActive = value?.name != null;
-      print("issessionActive: ${super.isSessionActive}");
+  LoginEvent({required String email, required String password}) {
+    // override props (the ones from abstract class) in order to identiy event classes
+    AryyAuthRepository()
+        .loginWithAryy(email: email, password: password)
+        .then((user) {
+      if (user?.name != null) {
+        super.authentication = Authentication.authenticated;
+      } else {
+        super.authentication = Authentication.unauthenticated;
+      }
     });
-    // Short but incorrect path:
-    // AryyAuth.instance
-    //     .login(email: email, password: password)
-    //     .then((value) => super.isSessionActive = value);
   }
 }
 
-class SessionStatusEvent extends AuthEvent {
-  SessionStatusEvent() {
-    print("2. StatusEvent");
-  }
-}
+class AuthenticationStatusEvent extends AuthEvent {}
 
 // class LogoutEvent extends AuthEvent {
 //   const LogoutEvent() : super(isSessionActive: false);

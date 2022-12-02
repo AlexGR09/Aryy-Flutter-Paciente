@@ -7,23 +7,25 @@ part './login_event.dart';
 
 // Nota: De acuerdo a la doña del video, el flujo de datos se maneja similar a React
 
+enum Authentication {
+  uninitialized,
+  unauthenticated,
+  authenticated,
+  loading,
+}
+
 // Any state will be received with status<int>
-class LoginBloc extends Bloc<AuthEvent, bool> {
+class LoginBloc extends Bloc<AuthEvent, Authentication> {
   // AuthRepository: All Aryy authentication options
 
   // ex: Firebase.onAuthStateChanged; Future<dataType>
   // LoginBloc's inital state by default will be set as false (ie. new user opens the app)
-  LoginBloc() : super(false) {
-    // Handle incoming <AuthEvents> streams
+  LoginBloc() : super(Authentication.uninitialized) {
+    // Handle incoming <AuthEvents> streams. emit: broadcast new state
     on<AuthEvent>((event, emit) async {
-      //event.isSessionActive ? auth.loginWithAryy() : auth.logoutWithAryy();
       // Then, broadcast a new state from the event received
-      // event: AryyChangeEvent
-      // emit: broadcast new state
+      emit(await AryyAuth.instance.onAuthStateChanged);
       // The argument type 'Stream<bool>' can't be assigned to the parameter type 'bool'.
-      AryyAuth.instance.onAuthStateChanged.then((value) {
-        emit(event.isSessionActive);
-      });
     });
   }
 }

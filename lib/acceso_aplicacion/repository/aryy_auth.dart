@@ -1,4 +1,5 @@
 import 'dart:async';
+import '../bloc/login_bloc.dart';
 import '../model/aryyUser.dart';
 
 // 2. Aryy api authentications
@@ -13,6 +14,10 @@ class AryyAuth {
   AryyAuth._privateConstructor() {}
 
   // simple getter for testing, it can also be Future<bool>
-  Future<bool> get onAuthStateChanged async =>
-      await Future.value(AccessToken != "");
+  Future<Authentication> get onAuthStateChanged async {
+    if (await Future.value(AccessToken != "")) {
+      return Authentication.authenticated;
+    }
+    return Authentication.unauthenticated;
+  }
 }

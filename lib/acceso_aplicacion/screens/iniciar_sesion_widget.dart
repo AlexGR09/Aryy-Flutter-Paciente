@@ -1,5 +1,4 @@
 import 'package:aryy_front/index.dart';
-
 import '../bloc/login_bloc.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
@@ -49,16 +48,27 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
     return _handleCurrentSession();
   }
 
+  void _verifyUserSessionStatus() async {
+    await Future<void>.delayed(const Duration(seconds: 1));
+    loginBloc.add(AuthenticationStatusEvent());
+  }
+
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<LoginBloc, Future<bool>> if async
-    return BlocBuilder<LoginBloc, bool>(
+    return BlocBuilder<LoginBloc, Authentication>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
-        if (state) {
-          return Home2Widget();
-        } else {
-          isForgotyouPasswordVisible = true; // add alert - pending
+        switch (state) {
+          case Authentication.authenticated:
+            return const Home2Widget();
+          case Authentication.unauthenticated:
+            _verifyUserSessionStatus();
+            break;
+          case Authentication.uninitialized:
+            break;
+          default:
         }
+        //   isForgotyouPasswordVisible = true; // add alert - pending
         return singInAryyUI();
       }),
     );
@@ -106,7 +116,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                         loginBloc.add(LoginEvent(
                             email: emailTextController.text,
                             password: passwordTextController.text));
-                        //Navigator.pushNamed(context, "home2_inicio");
                       }),
                   const Divisor(text: "O inicia con"),
                   const BotonAutentificarCon(

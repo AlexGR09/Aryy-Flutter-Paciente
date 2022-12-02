@@ -7,7 +7,7 @@ import 'aryy_auth.dart';
 
 class AryyAuthAPI {
   Future<AryyUser?> loginWithCredentials(
-      String? email, String? password) async {
+      {required String email, required String password}) async {
     return await AryyApi.login(
       email: email,
       password: password,
