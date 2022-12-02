@@ -1,5 +1,3 @@
-import 'package:flutter_svg/svg.dart';
-
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
@@ -21,18 +19,36 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  TextEditingController emailTextEditingController = TextEditingController();
-  TextEditingController emailConfirmationTEController = TextEditingController();
+  TextEditingController passwordTextController = TextEditingController();
+  TextEditingController passwordConfirmationTextController =
+      TextEditingController();
 
+  late WarningHelper passwordWarning = clearWarning;
+  late WarningHelper passwordConfirmationWarning = clearWarning;
   bool isPasswordLongEnough = true;
 
-  // onPasswordChange(String password) {
-  //   if (password.length < 8) return WarningType.passwordLength;
-  //   if (textController1.text != textController2.text) {
-  //     return WarningType.passwordMatch;
-  //   }
-  //   return WarningType.none;
-  // }
+  WarningHelper verifyPasswordLongitude(String password) {
+    return password.length < 8 ? passwordLengthWarning : clearWarning;
+  }
+
+  WarningHelper veryPasswordMatch() {
+    return passwordTextController.text !=
+            passwordConfirmationTextController.text
+        ? passwordMatchWarning
+        : clearWarning;
+  }
+
+  onPasswordChange(String password) async {
+    passwordTextController.text = password;
+    passwordWarning = verifyPasswordLongitude(password);
+    passwordWarning = veryPasswordMatch();
+  }
+
+  onPasswordConfirmationChange(String password) async {
+    passwordConfirmationTextController.text = password;
+    passwordConfirmationWarning = verifyPasswordLongitude(password);
+    passwordConfirmationWarning = veryPasswordMatch();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,27 +68,21 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const AryyLogo(paddingTop: 85, paddingBottom: 50),
+//---------------------------  Correo  -----------------------------------------------------------------------------------------------------------------
                 const InputTextWidget(hintText: 'Ingrese un correo'),
+//---------------------------  Contraseña  -----------------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
-                    textController: emailTextEditingController,
+                    textEditingController: passwordConfirmationTextController,
                     hintText: 'Ingrese una contraseña',
-                    onChange: () {
-                      print(emailTextEditingController.text);
-                    },
-                    warningLabel: const WarningHelper(
-                        text: "Al menos 8 caractéres",
-                        color: Colors.orange,
-                        icon: Icons.error)),
+                    onChange: onPasswordChange,
+                    warningLabel: passwordWarning),
+//---------------------------  Confirmación Contraseña  -----------------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
-                    textController: emailConfirmationTEController,
+                    textEditingController: passwordConfirmationTextController,
                     hintText: 'Confirme su contraseña',
-                    onChange: () {
-                      print(emailConfirmationTEController.text);
-                    },
-                    warningLabel: const WarningHelper(
-                        text: "Los campos no coinciden",
-                        color: Colors.red,
-                        icon: Icons.warning)),
+                    onChange: onPasswordConfirmationChange,
+                    warningLabel: passwordWarning),
+//---------------------------  Registrarse boton  -----------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                     text: "Registrarme",
                     onPressed: () async {
@@ -94,6 +104,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                       // Navigator.pushNamed(context, "registrarse_formulario");
                     }),
                 const Divisor(text: "O inicia con"),
+//---------------------------  Autenticación con Redes Sociales  -----------------------------------------------------------------------------------------------------------------
                 Padding(
                   padding: const EdgeInsetsDirectional.only(top: 10),
                   child: Row(

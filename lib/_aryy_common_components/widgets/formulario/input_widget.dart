@@ -20,7 +20,7 @@ class InputWidget extends StatefulWidget {
   final String hintText;
   final Widget suffixIcon;
   final Widget appendComponent;
-  final Function onChangeFunction;
+  final void Function(String) onChangeFunction;
   final Color borderColor;
 
   @override
@@ -59,8 +59,11 @@ class _InputWidgetState extends State<InputWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
             child: Wrap(children: [
               TextFormField(
-                onChanged: (password) => widget.onChangeFunction(password),
                 controller: widget.textController,
+                onChanged: (password) {
+                  print("passwordTyped: ${password}");
+                  return widget.onChangeFunction(password);
+                },
                 obscureText: !widget.isOscureTextVisible,
                 autofocus: true,
                 decoration: InputDecoration(

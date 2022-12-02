@@ -100,15 +100,12 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                   const AryyLogo(paddingTop: 30, paddingBottom: 40),
                   const InputTextWidget(hintText: 'Ingrese un correo'),
                   InputPasswordWidget(
-                      textController: emailTextController,
+                      textEditingController: emailTextController,
                       hintText: 'Ingrese una contraseña',
-                      onChange: () {
+                      onChange: (String password) {
                         print(emailTextController.text);
                       },
-                      warningLabel: WarningHelper(
-                          text: "¿Olvidaste tu contraseña?",
-                          color: FlutterFlowTheme.of(context).primaryColor,
-                          icon: Icons.error)),
+                      warningLabel: clearWarning),
                   BotonFormulario(
                       text: "Iniciar sesión",
                       onPressed: () {
