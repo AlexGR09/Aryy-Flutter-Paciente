@@ -1,20 +1,13 @@
-// import '../../acceso_aplicacion/bloc/aryy-auth.dart';
+import '../model/authentication.dart';
+import 'package:equatable/equatable.dart';
 
-// // Todos los datos de la conexionexiones con cualquier api:
-// // - API de Aryy
-// // - Google
-// // - Facebook
-
-// class AuthRepository {
-//   Future<void> loginWithAryy(String email, String password) async {
-//     AryyAuth.instance.login(email: email, password: password);
-//   }
-
-//   Future<void> logoutWithAryy() async {
-//     AryyAuth.instance.logOut();
-//   }
-//   // Future<> signInWithGoogle() async {
-//   // Future<> signOutWithGoogle() async {
-//   // Future<> loginWithFacebook() async {
-//   // Future<> loginWithGoogle() async {
-// }
+// It helps to rebuild/notify UI components in response to a state change.
+// Since Equatable is part of bloc system, you can use Equatable anywhere that a bloc is required when working with thsi arch
+abstract class AuthEvent extends Equatable {
+  // AuthRepository will manage all Aryy authentication options
+  // final auth = AuthRepository();
+  Authentication authentication = Authentication.uninitialized;
+  @override
+  // isSessionActive will be identified in broadcasted events
+  List<Object> get props => [authentication];
+}

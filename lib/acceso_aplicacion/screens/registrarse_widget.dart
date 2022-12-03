@@ -1,3 +1,4 @@
+import '../../_aryy_common_components/model/authentication.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
@@ -6,9 +7,11 @@ import '../../_aryy_common_components/widgets/formulario/input_password_widget.d
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import '../bloc/signin_bloc.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
 import '../widgets/warning_helper_widget.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
 class RegistrarseWidget extends StatefulWidget {
@@ -19,10 +22,13 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
+  TextEditingController emailTextController = TextEditingController();
   TextEditingController passwordTextController = TextEditingController();
   TextEditingController passwordConfirmationTextController =
       TextEditingController();
+  late SigninBloc signinBloc;
 
+// -- Cambiar esto  a flutter bloc
   late WarningHelper passwordWarning = clearWarning;
   late WarningHelper passwordConfirmationWarning = clearWarning;
   bool isPasswordLongEnough = true;
@@ -49,9 +55,34 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     passwordConfirmationWarning = verifyPasswordLongitude(password);
     passwordConfirmationWarning = veryPasswordMatch();
   }
+  // -- Cambiar esto  a flutter bloc
 
   @override
   Widget build(BuildContext context) {
+    signinBloc = BlocProvider.of<SigninBloc>(context);
+    return _handleCurrentSession();
+  }
+
+  Widget _handleCurrentSession() {
+    // it can also be BlocBuilder<signinBloc, Future<bool>> if async
+    return BlocBuilder<SigninBloc, Authentication>(
+      // state the same AryyChangeEvent data type
+      builder: ((context, state) {
+        switch (state) {
+          case Authentication.authenticated:
+            break;
+          case Authentication.unauthenticated:
+            break;
+          case Authentication.uninitialized:
+            break;
+          default:
+        }
+        return signinScreen();
+      }),
+    );
+  }
+
+  Widget signinScreen() {
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
       appBar: const PreferredSize(
@@ -85,6 +116,16 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
 //---------------------------  Registrarse boton  -----------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                     text: "Registrarme",
+                    onPressed: () async {
+                      signinBloc.add(SigninEvent(
+                          email: emailTextController.text,
+                          password: passwordTextController.text,
+                          passwordConfirmation:
+                              passwordConfirmationTextController.text));
+                      // Navigator.pushNamed(context, "registrarse_formulario");
+                    }),
+                BotonFormulario(
+                    text: "Registrarme Animación",
                     onPressed: () async {
                       await showDialog(
                         context: context,

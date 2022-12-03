@@ -1,5 +1,5 @@
 import 'dart:async';
-import '../bloc/login_bloc.dart';
+import '../../_aryy_common_components/model/authentication.dart';
 import '../model/aryyUser.dart';
 
 // 2. Aryy api authentications

@@ -28,7 +28,9 @@ class AryyApi {
   }
 
   static Future<ApiCallResponse> singin(
-      {String? email, String? password, String? passwordConfirmation}) {
+      {required String email,
+      required String password,
+      required String passwordConfirmation}) {
     return ApiManager.instance.makeApiCall(
       callName: 'Signin',
       apiUrl: 'https://app.aryymd.com/api/v1/register',

@@ -1,6 +1,5 @@
-import 'package:aryy_front/expediente/screens/informacion_basica_widget.dart';
-
 import './index.dart';
+import './acceso_aplicacion/bloc/signin_bloc.dart';
 import './acceso_aplicacion/bloc/login_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +31,9 @@ class MyApp extends StatelessWidget {
                 "iniciarsesion": (context) => BlocProvider(
                     create: (_) => LoginBloc(),
                     child: const IniciarsesionWidget()),
-                "registrarse": (_) => RegistrarseWidget(),
+                "registrarse": (context) => BlocProvider(
+                    create: (_) => SigninBloc(),
+                    child: const RegistrarseWidget()),
                 // pendiente
                 "registrarse_formulario": (_) => RegistrarseFormularioWidget(),
                 "home2_inicio": (_) => Home2Widget(),
@@ -73,14 +74,13 @@ class MyApp extends StatelessWidget {
                 "agregar_tarjeta": (_) => AgregarTarjetaWidget(),
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
-                "menu_stream": (_) => MenuScreen(),
-
                 //---------------------------------------------------------------
                 //--------------------------- EXPEDIENTE-------------------------
                 //---------------------------------------------------------------
-                "informacion_basica": ((context) => InformacionBasicaWidget()),
+                "informacion_basica": ((context) =>
+                    const InformacionBasicaWidget()),
               },
-              home: RegistrarseWidget());
+              home: InformacionBasicaWidget());
         });
   }
 }

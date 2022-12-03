@@ -1,4 +1,5 @@
 import 'package:aryy_front/index.dart';
+import '../../_aryy_common_components/model/authentication.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
@@ -43,7 +44,6 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // para poder utilizar el objeto paciente
     loginBloc = BlocProvider.of<LoginBloc>(context);
     return _handleCurrentSession();
   }
@@ -69,12 +69,12 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
           default:
         }
         //   isForgotyouPasswordVisible = true; // add alert - pending
-        return singInAryyUI();
+        return loginScreen();
       }),
     );
   }
 
-  Widget singInAryyUI() {
+  Widget loginScreen() {
     // () { Navigator.pushNamed(context, "verificar_identidad"); }
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
@@ -105,8 +105,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                       onChange: (String password) {
                         print(emailTextController.text);
                       },
+                      // Mostrar mensaje de "Olvidaste tu contraseña?"
                       warningLabel: clearWarning),
                   BotonFormulario(
+                      // Mostrar mensaje de bienvenida de aryy api
+                      // Mostar ese icono de "cargando" después de hacer click aqui también
                       text: "Iniciar sesión",
                       onPressed: () {
                         loginBloc.add(LoginEvent(

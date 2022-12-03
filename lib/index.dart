@@ -65,6 +65,5 @@ export 'cerca_de_mi/cerca_de_mi_widget.dart' show CercaDeMi;
 export 'launch_inicioapp/splash_screen.dart' show SplashScreen;
 export 'acceso_aplicacion/screens/registrarse_iniciarsesion_widget.dart'
     show RegistroInicioSesion;
-// Experimentos de nuevo stream provider
-export './paciente_pruebaBloc/ui/screens/menu_screen.dart' show MenuScreen;
-export './paciente_pruebaBloc/ui/screens/signin_screen.dart' show SignInScreen;
+export 'expediente/screens/informacion_basica_widget.dart'
+    show InformacionBasicaWidget;
