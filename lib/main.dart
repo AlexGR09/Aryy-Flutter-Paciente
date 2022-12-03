@@ -1,3 +1,5 @@
+import 'package:aryy_front/expediente/screens/informacion_basica_widget.dart';
+
 import './index.dart';
 import './acceso_aplicacion/bloc/login_bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "registrarse",
+              initialRoute: "informacion_basica",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -72,6 +74,11 @@ class MyApp extends StatelessWidget {
                 "nuevo_metodo_pago": (_) => NuevoMetodoPagoWidget(),
                 "proximas_citas": (_) => ProximasCitas(),
                 "menu_stream": (_) => MenuScreen(),
+
+                //---------------------------------------------------------------
+                //--------------------------- EXPEDIENTE-------------------------
+                //---------------------------------------------------------------
+                "informacion_basica": ((context) => InformacionBasicaWidget()),
               },
               home: RegistrarseWidget());
         });
