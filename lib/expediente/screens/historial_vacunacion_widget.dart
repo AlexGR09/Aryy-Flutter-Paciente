@@ -3,8 +3,7 @@ import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
-import '../widgets/select_title_widget.dart';
-import '../widgets/radio_button_input_text_widget.dart';
+import '../widgets/input_text_widget.dart';
 import 'package:flutter/material.dart';
 
 class HistorialVacunacionWidget extends StatefulWidget {
@@ -56,31 +55,22 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
                     title: 'Historial de vacunación',
                     description:
                         'Comparte información sobre tu historial de vacunación, y crea una cartilla de vacunación digital.'),
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 16, top: 20),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const SelectTitle(text: "Vacuna"),
-                            const RadioButtonInputText(
-                                hintText: 'Escribe aquí'),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                const InputTextMedicalRecord(
+                  title: "Vacuna",
+                  hintText: "Escribe aqui",
                 ),
-                const SelectTitle(text: "Dosis"),
-                const RadioButtonInputText(hintText: 'Escribe aquí'),
-                const SelectTitle(text: "Número de lote"),
-                const RadioButtonInputText(hintText: 'Escribe aquí'),
-                const SelectTitle(text: "Fecha de aplicación"),
-                const RadioButtonInputText(hintText: 'Escribe aquí'),
+                const InputTextMedicalRecord(
+                  title: "Dosis",
+                  hintText: "Escribe aqui",
+                ),
+                const InputTextMedicalRecord(
+                  title: "Número de lote",
+                  hintText: "Escribe aqui",
+                ),
+                const InputTextMedicalRecord(
+                  title: "Fecha de aplicación",
+                  hintText: "Escribe aqui",
+                ),
                 BotonFormulario(
                     text: "Guardar",
                     onPressed: () {
