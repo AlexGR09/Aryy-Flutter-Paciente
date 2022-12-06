@@ -36,7 +36,7 @@ class _SelectOptionsState extends State<SelectOptions> {
                     fontWeight: FontWeight.normal,
                   ),
               hintText: widget.hintText,
-              fillColor: Colors.white,
+              fillColor: FlutterFlowTheme.of(context).secondaryBackground,
               elevation: 2,
               borderColor: Colors.transparent,
               borderWidth: 0,
