@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "informacion_basica",
+              initialRoute: "menu_expediente",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -79,8 +79,9 @@ class MyApp extends StatelessWidget {
                 //---------------------------------------------------------------
                 "informacion_basica": ((context) =>
                     const InformacionBasicaWidget()),
+                "menu_expediente": (_) => MenuExpedienteWidget(),
               },
-              home: InformacionBasicaWidget());
+              home: MenuExpedienteWidget());
         });
   }
 }
