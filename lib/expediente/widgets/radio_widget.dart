@@ -19,6 +19,7 @@ class RadioButtonWidget extends StatefulWidget {
 }
 
 class _RadioButtonWidgetState extends State<RadioButtonWidget> {
+  late bool isRadioButtonTrue = false;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,8 +35,13 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
                 SelectTitle(text: widget.title),
                 RadioButton(
                   options: widget.options,
+                  // - If the radio button 'yes' option is selected, then show the input text
+                  showInputTextFunction: (value) => setState(() {
+                    isRadioButtonTrue = value;
+                  }),
                 ),
-                RadioButtonInputText(hintText: widget.hintText)
+                if (isRadioButtonTrue)
+                  RadioButtonInputText(hintText: widget.hintText)
               ],
             ),
           ),
