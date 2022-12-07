@@ -1,6 +1,6 @@
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
-import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
 import '../widgets/input_text_widget.dart';
@@ -71,11 +71,11 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
                   title: "Fecha de aplicación",
                   hintText: "Escribe aqui",
                 ),
-                BotonFormulario(
-                    text: "Guardar",
+                BotonFormularioExpandido(
+                    text: 'Guardar',
                     onPressed: () {
                       print('Button pressed ...');
-                    })
+                    }),
               ],
             ),
           ),
