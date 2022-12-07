@@ -99,11 +99,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             //---------------------------------------------------------------------------------------------------------------
             //------------------------ BARRA LATERAL ------------------------------------------------------------------------
             //---------------------------------------------------------------------------------------------------------------
-            FFRoute(
-              name: 'Barra_lateral_perfil',
-              path: 'barraLateralPerfil',
-              builder: (context, params) => BarraLateralPerfilWidget(),
-            ),
+            // FFRoute(
+            //   name: 'Barra_lateral_perfil',
+            //   path: 'barraLateralPerfil',
+            //   builder: (context, params) => BarraLateralPerfilWidget(),
+            // ),
             /*FFRoute(
               name: 'Barra_lateral_favoritos',
               path: 'barraLateralFavoritos',

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "antecedentes_patologicos",
+              initialRoute: "antecedentes_heredofamiliares",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
 
                 //OPCIONES DE BARRA LATERAL
                 "Perfil_inicio": (_) => BarraLateralPerfil1Widget(),
-                "barra_perfil": (_) => BarraLateralPerfilWidget(),
+//                "barra_perfil": (_) => BarraLateralPerfilWidget(),
                 "barra_ayuda": (_) => BarraLateralAyudaWidget(),
                 "barra_configuraciones": (_) =>
                     BarraLateralConfiguracionesWidget(),
@@ -83,8 +83,10 @@ class MyApp extends StatelessWidget {
                 "historial_vacunacion": (_) => HistorialVacunacionWidget(),
                 "antecedentes_patologicos": (_) =>
                     AntecedentesPatologicosWidget(),
+                "antecedentes_heredofamiliares": (_) =>
+                    AntecHeredofamiliaresWidget(),
               },
-              home: AntecedentesPatologicosWidget());
+              home: AntecHeredofamiliaresWidget());
         });
   }
 }

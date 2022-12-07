@@ -1,3 +1,5 @@
+import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
+import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/flutter_flow_radio_button.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
@@ -5,6 +7,8 @@ import '../../flutter_flow/flutter_flow_util.dart';
 import '../../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/description_text_widget.dart';
 
 class AntecedentesNoPatologicosWidget extends StatefulWidget {
   const AntecedentesNoPatologicosWidget({Key? key}) : super(key: key);
@@ -65,27 +69,19 @@ class _AntecedentesNoPatologicosWidgetState
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primaryColor,
-        automaticallyImplyLeading: false,
-        leading: Icon(
-          Icons.arrow_back,
-          color: FlutterFlowTheme.of(context).primaryText,
-          size: 24,
-        ),
-        title: Text(
-          'Antecedentes no patológicos',
-          style: FlutterFlowTheme.of(context).title2.override(
-                fontFamily: 'Montserrat',
-                color: FlutterFlowTheme.of(context).primaryText,
-                fontSize: 18,
-                fontWeight: FontWeight.normal,
+      appBar: PreferredSize(
+          preferredSize: const Size(100, 80),
+          child: AryyAppBar(
+              title: Text(
+                'Antecedentes no patológicos',
+                style: FlutterFlowTheme.of(context).title2.override(
+                      fontFamily: 'Montserrat',
+                      color: FlutterFlowTheme.of(context).primaryText,
+                      fontSize: 18,
+                      fontWeight: FontWeight.normal,
+                    ),
               ),
-        ),
-        actions: [],
-        centerTitle: false,
-        elevation: 2,
-      ),
+              actions: const DarkModeIcon())),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -93,47 +89,10 @@ class _AntecedentesNoPatologicosWidgetState
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 40, 16, 0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Antecedentes no patologicos',
-                              style: FlutterFlowTheme.of(context)
-                                  .subtitle2
-                                  .override(
-                                    fontFamily: 'Poppins',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryColor,
-                                  ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                              child: Text(
-                                'Agregar informacion sibre los habitos de actividad fisica y de sueño, asi como de alimentación.',
-                                textAlign: TextAlign.justify,
-                                style: FlutterFlowTheme.of(context)
-                                    .bodyText2
-                                    .override(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.normal,
-                                    ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+                const DescriptionText(
+                    title: 'Antecedentes no patologicos',
+                    description:
+                        'Agregar informacion sibre los habitos de actividad fisica y de sueño, asi como de alimentación.'),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 0),
                   child: Row(
