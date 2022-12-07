@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
               title: 'Aryy - Prueba',
-              initialRoute: "antecedentes_heredofamiliares",
+              initialRoute: "antecedentes_no_patologicos",
               // Pruebas responsivas y modo oscuro
               theme: ThemeData.light(),
               darkTheme: ThemeData.dark(),
@@ -85,8 +85,10 @@ class MyApp extends StatelessWidget {
                     AntecedentesPatologicosWidget(),
                 "antecedentes_heredofamiliares": (_) =>
                     AntecHeredofamiliaresWidget(),
+                "antecedentes_no_patologicos": (_) =>
+                    AntecedentesNoPatologicosWidget()
               },
-              home: AntecHeredofamiliaresWidget());
+              home: AntecedentesNoPatologicosWidget());
         });
   }
 }

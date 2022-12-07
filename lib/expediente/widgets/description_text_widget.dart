@@ -27,7 +27,7 @@ class _DescriptionTextState extends State<DescriptionText> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Mi expediente médico',
+                  widget.title,
                   style: FlutterFlowTheme.of(context).subtitle2.override(
                         fontFamily: 'Montserrat',
                         color: FlutterFlowTheme.of(context).primaryColor,
@@ -36,7 +36,7 @@ class _DescriptionTextState extends State<DescriptionText> {
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Text(
-                    'Agrega datos sobre ti, sobre diagnosticos, enfermedades y tratamientos para tener esa información siempre a mano.',
+                    widget.description,
                     textAlign: TextAlign.justify,
                     style: FlutterFlowTheme.of(context).bodyText2.override(
                           fontFamily: 'Montserrat',
