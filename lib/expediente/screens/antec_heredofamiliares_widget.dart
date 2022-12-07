@@ -4,7 +4,7 @@ import '../../_aryy_common_components/widgets/formulario/button_form_expanded_wi
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
 import '../widgets/radio_button_select_widget.dart';
-import '../widgets/radio_widget.dart';
+import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
 import 'package:flutter/material.dart';
 
 class AntecHeredofamiliaresWidget extends StatefulWidget {
@@ -82,10 +82,15 @@ class _AntecHeredofamiliaresWidgetState
                   selectHintText: 'Selecciona quién en tu familia',
                   title: 'Cardiopatías',
                 ),
-                const RadioButtonWidget(
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Qué tipo de presión arterial alta/baja tiene?',
-                    hintText: '¿Que otro tipo de presión artereal tiene?',
-                    options: ['Otro', 'Hipertensión', 'Hipotensión']),
+                    inputTextHintText:
+                        '¿Que otro tipo de presión artereal tiene?',
+                    radioButtonOptions: [
+                      'Otro',
+                      'Hipertensión',
+                      'Hipotensión'
+                    ]),
                 RadioButtonSelectOption(
                   radioOptions: const ['Si', 'No'],
                   selectOptions: ejemplodeFigma,

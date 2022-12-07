@@ -1,24 +1,26 @@
-import './radio_button_input_text_widget.dart';
 import './radio_button_widget.dart';
 import './select_title_widget.dart';
+import './select_options_widget.dart';
 import 'package:flutter/material.dart';
 
-class RadioButtonWidget extends StatefulWidget {
-  const RadioButtonWidget(
+class RadioButtonWithSelectTriggerWidget extends StatefulWidget {
+  const RadioButtonWithSelectTriggerWidget(
       {super.key,
       required this.title,
-      required this.hintText,
-      required this.options});
+      required this.selectHintText,
+      required this.selectOptions});
 
   final String title;
-  final String hintText;
-  final List<String> options;
+  final String selectHintText;
+  final List<String> selectOptions;
 
   @override
-  State<RadioButtonWidget> createState() => _RadioButtonWidgetState();
+  State<RadioButtonWithSelectTriggerWidget> createState() =>
+      _RadioButtonWithSelectTriggerWidgetState();
 }
 
-class _RadioButtonWidgetState extends State<RadioButtonWidget> {
+class _RadioButtonWithSelectTriggerWidgetState
+    extends State<RadioButtonWithSelectTriggerWidget> {
   late bool isRadioButtonTrue = false;
   @override
   Widget build(BuildContext context) {
@@ -34,14 +36,16 @@ class _RadioButtonWidgetState extends State<RadioButtonWidget> {
               children: [
                 SelectTitle(text: widget.title),
                 RadioButton(
-                  options: widget.options,
+                  options: widget.selectOptions,
                   // - If the radio button 'yes' option is selected, then show the input text
                   showInputTextFunction: (value) => setState(() {
                     isRadioButtonTrue = value;
                   }),
                 ),
                 if (isRadioButtonTrue)
-                  RadioButtonInputText(hintText: widget.hintText)
+                  SelectOptions(
+                      hintText: widget.selectHintText,
+                      options: widget.selectOptions)
               ],
             ),
           ),

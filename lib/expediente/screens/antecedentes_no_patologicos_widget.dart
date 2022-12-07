@@ -1,15 +1,14 @@
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
-import '../../flutter_flow/flutter_flow_drop_down.dart';
-import '../../flutter_flow/flutter_flow_radio_button.dart';
+import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
-import '../../flutter_flow/flutter_flow_util.dart';
-import '../../flutter_flow/flutter_flow_widgets.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../widgets/description_text_widget.dart';
 import '../widgets/radio_button_select_widget.dart';
+import '../widgets/radio_button_simple_widget.dart';
+import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
+import '../widgets/radio_button_with_select_trigger_widget.dart';
+import '../widgets/select_widget.dart';
+import 'package:flutter/material.dart';
 
 class AntecedentesNoPatologicosWidget extends StatefulWidget {
   const AntecedentesNoPatologicosWidget({Key? key}) : super(key: key);
@@ -64,41 +63,60 @@ class _AntecedentesNoPatologicosWidgetState
                   radioOptions: ['Si', 'No'],
                   selectOptions: ['Opción 1', 'Opción 2'],
                   inputTextHintText: 'Escribe qué tipo',
-                  selectHintText: 'Cuántos días a la semana',
+                  selectHintText: '¿Cuántos días a la semana?',
                   title: 'Actividad fisica',
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(16, 20, 16, 20),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Expanded(
-                        child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
-                          text: 'Button',
-                          options: FFButtonOptions(
-                            width: 130,
-                            height: 45,
-                            color: FlutterFlowTheme.of(context).primaryColor,
-                            textStyle:
-                                FlutterFlowTheme.of(context).subtitle2.override(
-                                      fontFamily: 'Poppins',
-                                      color: Colors.white,
-                                    ),
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1,
-                            ),
-                            borderRadius: BorderRadius.circular(8),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                const SelectWidget(
+                    title: 'Horas de sueño',
+                    hintText: 'Seleccione un rango',
+                    options: ['Opción 1', 'Opción 2']),
+                const RadioButtonSimple(
+                  title: '¿Sueña siempre que duerme?',
+                  options: ['Si', 'No', 'No sé'],
                 ),
+                const RadioButtonSimple(
+                  title: '¿Siente que descansa al dormir?',
+                  options: ['Si', 'A veces', 'No'],
+                ),
+                const RadioButtonSelectOption(
+                  radioOptions: ['Si', 'No'],
+                  selectOptions: ['Opción 1', 'Opción 2'],
+                  inputTextHintText: 'Escribe qué tipo',
+                  selectHintText: '¿Cuántos cigarros al día?',
+                  title: 'Tabaquismo',
+                ),
+                const RadioButtonSelectOption(
+                  radioOptions: ['Si', 'No'],
+                  selectOptions: ['Opción 1', 'Opción 2'],
+                  inputTextHintText: 'Escribe qué tipo',
+                  selectHintText: 'Frecuecnia semanal',
+                  title: 'Alcoholismo',
+                ),
+                const RadioButtonWithInputTextTriggerWidget(
+                  title: "Uso de otras sustancias",
+                  radioButtonOptions: ['Si', 'No'],
+                  inputTextHintText: "Escribe cuál(es)",
+                ),
+                const RadioButtonWithSelectTriggerWidget(
+                  title: 'Dieta especial',
+                  selectOptions: ['Si', 'No'],
+                  selectHintText: 'Seleccione el tipo de dieta',
+                ),
+                const RadioButtonWithInputTextTriggerWidget(
+                  title: "Medicamento actual",
+                  radioButtonOptions: ['Si', 'No'],
+                  inputTextHintText: "Escribe cuál(es)",
+                ),
+                const RadioButtonWithInputTextTriggerWidget(
+                  title: "Medicamento anterior",
+                  radioButtonOptions: ['Si', 'No'],
+                  inputTextHintText: "Escribe cuál(es)",
+                ),
+                BotonFormularioExpandido(
+                    text: 'Guardar',
+                    onPressed: () {
+                      print('Button pressed ...');
+                    }),
               ],
             ),
           ),

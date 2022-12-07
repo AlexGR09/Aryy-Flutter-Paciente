@@ -3,7 +3,7 @@ import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
-import '../widgets/radio_widget.dart';
+import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
 import 'package:flutter/material.dart';
 
 class AntecedentesPatologicosWidget extends StatefulWidget {
@@ -55,63 +55,70 @@ class _AntecedentesPatologicosWidgetState
                     title: 'Antecedentes patologicos',
                     description:
                         'Agrega información sobre cualquier intervencion o padecimiento previo que hayas tenido.'),
-                const RadioButtonWidget(
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alguna cirugía previa?',
-                    hintText: 'Escribe que cirugia(s)',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: 'Escribe que cirugia(s)',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alguna transfusión?',
-                    hintText: 'Selecciona un tipo',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: 'Selecciona un tipo',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes diabetes?',
-                    hintText: '¿Que tipo de diabetes?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de diabetes?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes cardiopatías?',
-                    hintText: '¿Que tipo de cardiopatías?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de cardiopatías?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Qué tipo de presión arterial alta/baja tiene?',
-                    hintText: '¿Que otro tipo de presión artereal tiene?',
-                    options: ['Otro', 'Hipertensión', 'Hipotensión']),
-                const RadioButtonWidget(
+                    inputTextHintText:
+                        '¿Que otro tipo de presión artereal tiene?',
+                    radioButtonOptions: [
+                      'Otro',
+                      'Hipertensión',
+                      'Hipotensión'
+                    ]),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes enfermedades tiroideas?',
-                    hintText: 'Escribe el padecimiento',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: 'Escribe el padecimiento',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes cáncer?',
-                    hintText: '¿Que tipo de cancer?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de cancer?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes enfermedades de la sangre?',
-                    hintText: '¿Que tipo enfermedad en la sangre padece?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText:
+                        '¿Que tipo enfermedad en la sangre padece?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes cálculos renales?',
-                    hintText: '¿Que tipo cálculos renales padece?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo cálculos renales padece?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Ha sufrido de hepatitis?',
-                    hintText: '¿Que tipo de hepatitis?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de hepatitis?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Ha sufrido de algún traumatísmo?',
-                    hintText: '¿Que tipo de traumatísmo?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de traumatísmo?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Ha sufrido de patologías respiratorias?',
-                    hintText: '¿Que tipo de patologías respiratorias?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: '¿Que tipo de patologías respiratorias?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: 'Ha sufrido de alguna patología gastrointestinal?',
-                    hintText: '¿Que tipo de patología gastrointestinal?',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText:
+                        '¿Que tipo de patología gastrointestinal?',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title:
                         'Ha sufrido de alguna enfermedades de transmision sexual?',
-                    hintText: '¿Que tipo de nfermedades de transmision sexual?',
-                    options: ['Si', 'No']),
+                    inputTextHintText: '¿Que tipo de nfermedades de transmision sexual?',
+                    radioButtonOptions: ['Si', 'No']),
                 BotonFormularioExpandido(
                     text: 'Guardar',
                     onPressed: () {

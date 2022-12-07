@@ -3,7 +3,7 @@ import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
-import '../widgets/radio_widget.dart';
+import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
 import '../widgets/select_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -68,18 +68,18 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
                     title: '¿Cuanto pesas actualmente?',
                     hintText: 'Escribe aqui',
                     options: ['Option 1']),
-                const RadioButtonWidget(
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alergias alimentarias?',
-                    hintText: 'Ejemplo: cacahuate, fresas',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: 'Ejemplo: cacahuate, fresas',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alergias a algun farmaco?',
-                    hintText: 'Ejemplo: naproxeno, ibuprofeno',
-                    options: ['Si', 'No']),
-                const RadioButtonWidget(
+                    inputTextHintText: 'Ejemplo: naproxeno, ibuprofeno',
+                    radioButtonOptions: ['Si', 'No']),
+                const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alergias a factores ambientales?',
-                    hintText: 'Ejemplo: polen, polvo',
-                    options: ['Si', 'No']),
+                    inputTextHintText: 'Ejemplo: polen, polvo',
+                    radioButtonOptions: ['Si', 'No']),
                 BotonFormularioExpandido(
                     text: 'Guardar',
                     onPressed: () {
