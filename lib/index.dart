@@ -67,3 +67,15 @@ export 'acceso_aplicacion/screens/registrarse_iniciarsesion_widget.dart'
     show RegistroInicioSesion;
 export 'expediente/screens/informacion_basica_widget.dart'
     show InformacionBasicaWidget;
+export 'expediente/screens/menu_expediente_widget.dart'
+    show MenuExpedienteWidget;
+export 'expediente/screens/informacion_basica_widget.dart'
+    show InformacionBasicaWidget;
+export 'expediente/screens/antecedentes_no_patologicos_widget.dart'
+    show AntecedentesNoPatologicosWidget;
+export 'expediente/screens/antecedentes_patologicos_widget.dart'
+    show AntecedentesPatologicosWidget;
+export 'expediente/screens/antec_heredofamiliares_widget.dart'
+    show AntecHeredofamiliaresWidget;
+export 'expediente/screens/historial_vacunacion_widget.dart'
+    show HistorialVacunacionWidget;
