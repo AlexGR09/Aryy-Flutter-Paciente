@@ -13,7 +13,7 @@ export 'sesion_huella_dactilar/sesion_huella_dactilar_widget.dart'
     show SesionHuellaDactilarWidget;
 export 'codigo_verificacion/codigo_verificacion_widget.dart'
     show CodigoVerificacionWidget;
-export './barra_lateral/barra_lateral_perfil/barra_lateral_perfil_widget.dart'
+export 'editar_perfil/barra_lateral_perfil_widget.dart'
     show BarraLateralPerfilWidget;
 export './barra_lateral/barra_lateral_favoritos/barra_lateral_favoritos_widget.dart'
     show BarraLateralFavoritosWidget;
