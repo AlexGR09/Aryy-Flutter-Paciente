@@ -99,7 +99,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const AryyLogo(paddingTop: 85, paddingBottom: 50),
-//---------------------------  Correo  -----------------------------------------------------------------------------------------------------------------
+//---------------------------  Correo  ---------------------------------------------------------------------------------------------------------------------
                 const InputTextWidget(hintText: 'Ingrese un correo'),
 //---------------------------  Contraseña  -----------------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
@@ -107,13 +107,13 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     hintText: 'Ingrese una contraseña',
                     onChange: onPasswordChange,
                     warningLabel: passwordWarning),
-//---------------------------  Confirmación Contraseña  -----------------------------------------------------------------------------------------------------------------
+//---------------------------  Confirmación Contraseña  ------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
                     textEditingController: passwordConfirmationTextController,
                     hintText: 'Confirme su contraseña',
                     onChange: onPasswordConfirmationChange,
                     warningLabel: passwordWarning),
-//---------------------------  Registrarse boton  -----------------------------------------------------------------------------------------------------------------
+//---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                     text: "Registrarme",
                     onPressed: () async {
@@ -122,6 +122,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                           password: passwordTextController.text,
                           passwordConfirmation:
                               passwordConfirmationTextController.text));
+                      Navigator.pushNamed(context, "home2_inicio");
                       // Navigator.pushNamed(context, "registrarse_formulario");
                     }),
                 BotonFormulario(

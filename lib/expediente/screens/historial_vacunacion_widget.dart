@@ -1,3 +1,7 @@
+import 'dart:async';
+
+import 'package:aryy_front/expediente/repository/expediente_service.dart';
+
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
@@ -5,6 +9,9 @@ import '../../flutter_flow/flutter_flow_theme.dart';
 import '../widgets/description_text_widget.dart';
 import '../widgets/input_text_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+import 'messaje_response.dart';
 
 class HistorialVacunacionWidget extends StatefulWidget {
   const HistorialVacunacionWidget({Key? key}) : super(key: key);
@@ -15,8 +22,17 @@ class HistorialVacunacionWidget extends StatefulWidget {
 }
 
 class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
+  late InputTextMedicalRecord controllerVaccine;
+  late InputTextMedicalRecord controllerDose;
+  late InputTextMedicalRecord controllerLoteNumber;
+  late InputTextMedicalRecord controllerAplicationDate;
+
   @override
   void initState() {
+    /*controllerVaccine = new InputTextMedicalRecord();
+    controllerDose = new InputTextMedicalRecord();
+    controllerLoteNumber = new InputTextMedicalRecord();
+    controllerAplicationDate = new InputTextMedicalRecord();*/
     super.initState();
   }
 
@@ -24,6 +40,11 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
   void dispose() {
     super.dispose();
   }
+
+  String vaccine = '';
+  String dose = '';
+  String lote_number = '';
+  String aplication_date = '';
 
   @override
   Widget build(BuildContext context) {
@@ -71,11 +92,29 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
                   title: "Fecha de aplicación",
                   hintText: "Escribe aqui",
                 ),
+
+                //-------- segunda opcion ---------------------------
                 BotonFormularioExpandido(
-                    text: 'Guardar',
-                    onPressed: () {
-                      print('Button pressed ...');
-                    }),
+                    text: "Guardar",
+                    onPressed: () async {
+                      if (vaccine.isNotEmpty &&
+                          dose.isNotEmpty &&
+                          lote_number.isNotEmpty &&
+                          aplication_date.isNotEmpty) {
+                        var respuesta = await ExpedienteService()
+                            .postVacunacion(controllerVaccine.title, dose,
+                                lote_number, aplication_date);
+                      }
+                    }
+                    /*onPressed: () {
+                      if (vaccine.isNotEmpty &&
+                          dose.isNotEmpty &&
+                          lote_number.isNotEmpty &&
+                          aplication_date.isNotEmpty) {
+                            var respuesta = await ExpedienteService().postVacunacion(vaccine, dose, lote_number, aplication_date);
+                      } 
+                    }*/
+                    )
               ],
             ),
           ),
