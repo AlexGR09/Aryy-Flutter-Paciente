@@ -1,3 +1,5 @@
+import 'package:aryy_front/expediente/repository/informacion_basica.dart';
+
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
@@ -16,6 +18,13 @@ class InformacionBasicaWidget extends StatefulWidget {
 }
 
 class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
+  TextEditingController food_allergyTextController = TextEditingController();
+  TextEditingController drug_allergyTextController = TextEditingController();
+  TextEditingController enviromental_allergyTextController =
+      TextEditingController();
+  TextEditingController weightTextController = TextEditingController();
+  TextEditingController heightTextController = TextEditingController();
+  TextEditingController blood_typeTextController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -23,8 +32,22 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
 
   @override
   void dispose() {
+    food_allergyTextController.dispose();
+    drug_allergyTextController.dispose();
+    enviromental_allergyTextController.dispose();
+    weightTextController.dispose();
+    heightTextController.dispose();
+    blood_typeTextController.dispose();
+
     super.dispose();
   }
+
+  String food_allergy = '';
+  String drug_allergy = '';
+  String enviromental_allergy = '';
+  String weight = '';
+  String height = '';
+  String blood_type = '';
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +105,22 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
                     radioButtonOptions: ['Si', 'No']),
                 BotonFormularioExpandido(
                     text: 'Guardar',
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      if (food_allergy.isNotEmpty &&
+                          drug_allergy.isNotEmpty &&
+                          enviromental_allergy.isNotEmpty &&
+                          weight.isNotEmpty &&
+                          height.isNotEmpty &&
+                          blood_type.isNotEmpty) {
+                        var respuesta = await InformacionBasicaService()
+                            .postInfoBasica(
+                                food_allergy,
+                                drug_allergy,
+                                enviromental_allergy,
+                                weight,
+                                height,
+                                blood_type);
+                      }
                     }),
               ],
             ),

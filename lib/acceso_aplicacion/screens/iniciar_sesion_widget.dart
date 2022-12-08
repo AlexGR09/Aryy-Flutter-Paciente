@@ -115,6 +115,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                         loginBloc.add(LoginEvent(
                             email: emailTextController.text,
                             password: passwordTextController.text));
+                        Navigator.pushNamed(context, "home2_inicio");
                       }),
                   const Divisor(text: "O inicia con"),
                   const BotonAutentificarCon(

@@ -4,10 +4,14 @@ import 'package:flutter/material.dart';
 
 class InputTextMedicalRecord extends StatefulWidget {
   const InputTextMedicalRecord(
-      {super.key, required this.title, required this.hintText});
+      {super.key,
+      required this.title,
+      required this.hintText,
+      required this.textEditingController});
 
   final String title;
   final String hintText;
+  final TextEditingController textEditingController;
 
   @override
   State<InputTextMedicalRecord> createState() => _InputTextMedicalRecordState();
