@@ -38,7 +38,6 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
     weightTextController.dispose();
     heightTextController.dispose();
     blood_typeTextController.dispose();
-
     super.dispose();
   }
 

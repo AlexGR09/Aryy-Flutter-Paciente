@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'dart:convert';
+import 'dart:html';
 
 import 'package:aryy_front/_aryy_common_components/widgets/formulario/input_password_widget.dart';
 import 'package:aryy_front/acceso_aplicacion/widgets/warning_helper_widget.dart';
@@ -15,22 +17,62 @@ import 'package:http/http.dart' as http;
 
 import 'messaje_response.dart';
 
-class HistorialVacunacionWidget extends StatefulWidget {
-  const HistorialVacunacionWidget({Key? key}) : super(key: key);
+Future<Post> fetchPost() async {
+  print('fetchPost called');
+  const url =
+      ('https://app.aryymd.com/api/v1/patient/medical_history/vaccination_history');
+  final uri = Uri.parse(url);
+  final response = await http.post(uri);
+  final body = response.body;
+  final json = jsonDecode(body);
 
-  @override
-  _HistorialVacunacionWidgetState createState() =>
-      _HistorialVacunacionWidgetState();
+  if (response.statusCode == 200) {
+    // Si la llamada al servidor fue exitosa, analiza el JSON
+    return Post.fromJson(json.decode(response.body));
+  } else {
+    // Si la llamada no fue exitosa, lanza un error.
+    throw Exception('Failed to load post');
+  }
 }
 
-class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
+class Post {
+  final String vaccine;
+  final String dose;
+  final String lote_number;
+  final String aplication_date;
+
+  Post(
+      {required this.vaccine,
+      required this.dose,
+      required this.lote_number,
+      required this.aplication_date});
+
+  factory Post.fromJson(Map<String, dynamic> json) {
+    return Post(
+      vaccine: json['vaccine'],
+      dose: json['dose'],
+      lote_number: json['lote_number'],
+      aplication_date: json['aplication_date'],
+    );
+  }
+}
+
+class VacunacionPruebaWidget extends StatefulWidget {
+  const VacunacionPruebaWidget({Key? key}) : super(key: key);
+
+  @override
+  _VacunacionPruebaWidgetState createState() => _VacunacionPruebaWidgetState();
+}
+
+class _VacunacionPruebaWidgetState extends State<VacunacionPruebaWidget> {
   TextEditingController vacunaTextController = TextEditingController();
   TextEditingController dosisTextController = TextEditingController();
   TextEditingController num_loteTextController = TextEditingController();
   TextEditingController fech_aplicacionTextController = TextEditingController();
-
+  late Future<Post> post;
   @override
   void initState() {
+    post = fetchPost();
     super.initState();
   }
 
@@ -50,6 +92,7 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final Future<Post> post;
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -103,42 +146,23 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
                   hintText: "Escribe aqui",
                 ),
 //------------------------------ Boton guardar -------------------------------------------------
-                BotonFormularioExpandido(
-                    text: "Guardar",
-                    onPressed: () async {
-                      print("presionando");
-                      var respuesta = await ExpedienteService.postVacunacion(
-                        vaccine: "vacuna",
-                        dose: "dosis",
-                        lote_number: "numero de lote",
-                        aplication_date: "fecha de vacunacion",
-                      ).then((response) {
-                        if (response.statusCode == 200) {
-                          print(response.jsonBody);
-                        }
-                        print('Response status: ${response.statusCode}');
-                        print('Response body: ${response.jsonBody}');
-                      });
-                      /*if (vaccine.isNotEmpty &&
+                /*BotonFormularioExpandido(
+                  text: "Guardar",
+                  onPressed: () async {
+                      if (vaccine.isNotEmpty &&
                           dose.isNotEmpty &&
                           lote_number.isNotEmpty &&
                           aplication_date.isNotEmpty) {
-                        var respuesta = await ExpedienteService.postVacunacion(
-                          vaccine: "vacuna",
-                          dose: "dosis",
-                          lote_number: "numero de lote",
-                          aplication_date: "fecha de vacunacion",
-                        )
-                            /*.postVacunacion(
+                        var respuesta = await ExpedienteService()
+                            .postVacunacion(
                                 vacunaTextController.text,
                                 dosisTextController.text,
                                 num_loteTextController.text,
-                                fech_aplicacionTextController.text)*/
-                            .then((value) => print("value: {$value}"));
-                        //Navigator.pushNamed(context, "menu_expediente");
-                      }*/
+                                fech_aplicacionTextController.text);
+                        Navigator.pushNamed(context, "menu_expediente");
+                      }
                     }
-                    /*onPressed: () {
+                  /*onPressed: () {
                       if (vaccine.isNotEmpty &&
                           dose.isNotEmpty &&
                           lote_number.isNotEmpty &&
@@ -146,7 +170,7 @@ class _HistorialVacunacionWidgetState extends State<HistorialVacunacionWidget> {
                             var respuesta = await ExpedienteService().postVacunacion(vaccine, dose, lote_number, aplication_date);
                       } 
                     }*/
-                    )
+                )*/
               ],
             ),
           ),
