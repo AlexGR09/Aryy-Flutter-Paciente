@@ -1,3 +1,4 @@
+import 'package:aryy_front/expediente/repository/expediente_service.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
@@ -25,6 +26,20 @@ class _AntecedentesPatologicosWidgetState
   void dispose() {
     super.dispose();
   }
+
+  String previous_surgeries = '';
+  String blood_transfusions = '';
+  String diabetes = '';
+  String heart_diseases = '';
+  String blood_pressure = '';
+  String thyroid_diseases = '';
+  String cancer = '';
+  String kidney_stones = '';
+  String hepatitis = '';
+  String trauma = '';
+  String respiratory_diseases = '';
+  String ets = '';
+  String gastrointestinal_pathologies = '';
 
   @override
   Widget build(BuildContext context) {
@@ -121,8 +136,30 @@ class _AntecedentesPatologicosWidgetState
                     radioButtonOptions: ['Si', 'No']),
                 BotonFormularioExpandido(
                     text: 'Guardar',
-                    onPressed: () {
-                      print('Button pressed ...');
+                    onPressed: () async {
+                      print("presionando");
+                      var respuesta = await ExpedienteService.postAntPatolog(
+                        previous_surgeries: "previous_surgeries",
+                        blood_transfusions: "blood_transfusions",
+                        diabetes: "diabetes",
+                        heart_diseases: "heart_diseases",
+                        blood_pressure: "blood_pressure",
+                        thyroid_diseases: "thyroid_diseases",
+                        cancer: "cancer",
+                        kidney_stones: "kidney_stones",
+                        hepatitis: "hepatitis",
+                        trauma: "trauma",
+                        respiratory_diseases: "respiratory_diseases",
+                        ets: "ets",
+                        gastrointestinal_pathologies:
+                            "gastrointestinal_pathologies",
+                      ).then((response) {
+                        if (response.statusCode == 200) {
+                          print(response.jsonBody);
+                        }
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.jsonBody}');
+                      });
                     }),
               ],
             ),

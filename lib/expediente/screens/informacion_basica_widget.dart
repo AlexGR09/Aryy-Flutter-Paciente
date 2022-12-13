@@ -1,5 +1,4 @@
-import 'package:aryy_front/expediente/repository/informacion_basica.dart';
-
+import 'package:aryy_front/expediente/repository/expediente_service.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
@@ -105,21 +104,21 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
                 BotonFormularioExpandido(
                     text: 'Guardar',
                     onPressed: () async {
-                      if (food_allergy.isNotEmpty &&
-                          drug_allergy.isNotEmpty &&
-                          enviromental_allergy.isNotEmpty &&
-                          weight.isNotEmpty &&
-                          height.isNotEmpty &&
-                          blood_type.isNotEmpty) {
-                        var respuesta = await InformacionBasicaService()
-                            .postInfoBasica(
-                                food_allergy,
-                                drug_allergy,
-                                enviromental_allergy,
-                                weight,
-                                height,
-                                blood_type);
-                      }
+                      print("presionando");
+                      var respuesta = await ExpedienteService.postInfoBasica(
+                        food_allergy: "food_allergy",
+                        drug_allergy: "drug_allergy",
+                        enviromental_allergy: "enviromental_allergy",
+                        weight: "weight",
+                        height: "height",
+                        blood_type: "blood_type",
+                      ).then((response) {
+                        if (response.statusCode == 200) {
+                          print(response.jsonBody);
+                        }
+                        print('Response status: ${response.statusCode}');
+                        print('Response body: ${response.jsonBody}');
+                      });
                     }),
               ],
             ),
