@@ -1,8 +1,8 @@
-import 'package:aryy_front/expediente/repository/expediente_service.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import '../repository/expediente_service.dart';
 import '../widgets/description_text_widget.dart';
 import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
 import 'package:flutter/material.dart';

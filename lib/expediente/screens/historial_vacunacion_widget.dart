@@ -1,19 +1,11 @@
-import 'dart:async';
-
-import 'package:aryy_front/_aryy_common_components/widgets/formulario/input_password_widget.dart';
-import 'package:aryy_front/acceso_aplicacion/widgets/warning_helper_widget.dart';
-import 'package:aryy_front/expediente/repository/expediente_service.dart';
-
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
+import '../repository/expediente_service.dart';
 import '../widgets/description_text_widget.dart';
 import '../widgets/input_text_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-
-import 'messaje_response.dart';
 
 class HistorialVacunacionWidget extends StatefulWidget {
   const HistorialVacunacionWidget({Key? key}) : super(key: key);
