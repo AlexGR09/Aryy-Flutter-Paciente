@@ -1,5 +1,5 @@
 import '../../flutter_flow/flutter_flow_util.dart';
-import '../model/aryyUser.dart';
+import '../model/aryy_user.dart';
 import './aryy_api.dart';
 import 'aryy_auth.dart';
 

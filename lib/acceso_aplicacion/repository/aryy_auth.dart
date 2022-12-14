@@ -1,6 +1,6 @@
 import 'dart:async';
-import '../../_aryy_common_components/model/authentication.dart';
-import '../model/aryyUser.dart';
+import '../../_aryy_common_components/model/authentication_states.dart';
+import '../model/aryy_user.dart';
 
 // 2. Aryy api authentications
 
