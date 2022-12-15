@@ -1,3 +1,5 @@
+//import '../_aryy_common_components/repository/api/api_manager.dart';
+import '../backend/api_requests/api_calls.dart';
 import '../styles/my_icons.dart';
 import '../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
@@ -1028,7 +1030,72 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            FlutterFlowDropDown(
+                                            FutureBuilder<ApiCallResponse>(
+                                              future: CountryCall.call(),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child: SizedBox(
+                                                      width: 50,
+                                                      height: 50,
+                                                      child:
+                                                          CircularProgressIndicator(
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primaryColor,
+                                                      ),
+                                                    ),
+                                                  );
+                                                }
+                                                final dropDownCountryResponse =
+                                                    snapshot.data!;
+                                                return FlutterFlowDropDown<
+                                                    String>(
+                                                  options:
+                                                      (CountryCall.countryname(
+                                                    dropDownCountryResponse
+                                                        .jsonBody,
+                                                  ) as List)
+                                                          .map<String>((s) =>
+                                                              s.toString())
+                                                          .toList()
+                                                          .map((e) => e)
+                                                          .toList()
+                                                          .toList(),
+                                                  onChanged: (val) => setState(
+                                                      () =>
+                                                          dropDownValue3 = val),
+                                                  width: 300,
+                                                  height: 40,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily: 'Poppins',
+                                                        color:
+                                                            Color(0xFF4F565F),
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w300,
+                                                      ),
+                                                  hintText: 'Pais',
+                                                  fillColor: Colors.white,
+                                                  elevation: 2,
+                                                  borderColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .lineColor,
+                                                  borderWidth: 0,
+                                                  borderRadius: 20,
+                                                  margin: EdgeInsetsDirectional
+                                                      .fromSTEB(12, 4, 12, 4),
+                                                  hidesUnderline: true,
+                                                );
+                                              },
+                                            ),
+                                            /*FlutterFlowDropDown(
                                               options: ['Option 1'],
                                               onChanged: (val) => setState(
                                                   () => dropDownValue3 = val),
@@ -1057,12 +1124,80 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                               margin: EdgeInsetsDirectional
                                                   .fromSTEB(12, 4, 12, 4),
                                               hidesUnderline: true,
-                                            ),
+                                            ),*/
                                             Padding(
                                               padding:
                                                   const EdgeInsetsDirectional
                                                       .fromSTEB(0, 15, 0, 0),
-                                              child: FlutterFlowDropDown(
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: StatesCall.call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50,
+                                                        height: 50,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownStatesResponse =
+                                                      snapshot.data!;
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    options:
+                                                        (StatesCall.statename(
+                                                      dropDownStatesResponse
+                                                          .jsonBody,
+                                                    ) as List)
+                                                            .map<String>((s) =>
+                                                                s.toString())
+                                                            .toList()
+                                                            .map((e) => e)
+                                                            .toList()
+                                                            .toList(),
+                                                    onChanged: (val) =>
+                                                        setState(() =>
+                                                            dropDownValue4 =
+                                                                val),
+                                                    width: 300,
+                                                    height: 40,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF4F565F),
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w300,
+                                                        ),
+                                                    hintText: 'Estado',
+                                                    fillColor: Colors.white,
+                                                    elevation: 2,
+                                                    borderColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .lineColor,
+                                                    borderWidth: 0,
+                                                    borderRadius: 20,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                12, 4, 12, 4),
+                                                    hidesUnderline: true,
+                                                  );
+                                                },
+                                              ),
+                                              /*child: FlutterFlowDropDown(
                                                 options: ['Option 1'],
                                                 onChanged: (val) => setState(
                                                     () => dropDownValue4 = val),
@@ -1093,43 +1228,79 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                 margin: EdgeInsetsDirectional
                                                     .fromSTEB(12, 4, 12, 4),
                                                 hidesUnderline: true,
-                                              ),
+                                              ),*/
                                             ),
                                             Padding(
                                               padding:
                                                   const EdgeInsetsDirectional
                                                       .fromSTEB(0, 15, 0, 0),
-                                              child: FlutterFlowDropDown(
-                                                options: ['Option 1'],
-                                                onChanged: (val) => setState(
-                                                    () => dropDownValue5 = val),
-                                                width: 300,
-                                                height: 45,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
+                                              child: FutureBuilder<
+                                                  ApiCallResponse>(
+                                                future: CitiesCall.call(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child: SizedBox(
+                                                        width: 50,
+                                                        height: 50,
+                                                        child:
+                                                            CircularProgressIndicator(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryColor,
+                                                        ),
+                                                      ),
+                                                    );
+                                                  }
+                                                  final dropDownStatesResponse =
+                                                      snapshot.data!;
+                                                  return FlutterFlowDropDown<
+                                                      String>(
+                                                    options:
+                                                        (CitiesCall.statename(
+                                                      dropDownStatesResponse
+                                                          .jsonBody,
+                                                    ) as List)
+                                                            .map<String>((s) =>
+                                                                s.toString())
+                                                            .toList()
+                                                            .map((e) => e)
+                                                            .toList()
+                                                            .toList(),
+                                                    onChanged: (val) =>
+                                                        setState(() =>
+                                                            dropDownValue5 =
+                                                                val),
+                                                    width: 300,
+                                                    height: 40,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
                                                         .bodyText1
                                                         .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color: const Color(
-                                                              0xFF999999),
+                                                          fontFamily: 'Poppins',
+                                                          color:
+                                                              Color(0xFF4F565F),
                                                           fontSize: 12,
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
-                                                hintText: 'Ciudad o municipio',
-                                                fillColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                elevation: 2,
-                                                borderColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .lineColor,
-                                                borderWidth: 0,
-                                                borderRadius: 20,
-                                                margin: EdgeInsetsDirectional
-                                                    .fromSTEB(12, 4, 12, 4),
-                                                hidesUnderline: true,
+                                                    hintText: 'Estado',
+                                                    fillColor: Colors.white,
+                                                    elevation: 2,
+                                                    borderColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .lineColor,
+                                                    borderWidth: 0,
+                                                    borderRadius: 20,
+                                                    margin:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                12, 4, 12, 4),
+                                                    hidesUnderline: true,
+                                                  );
+                                                },
                                               ),
                                             ),
                                           ],
@@ -1208,7 +1379,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                         color: FlutterFlowTheme
                                                                 .of(context)
                                                             .secondaryBackground,
-                                                        boxShadow: [
+                                                        /*boxShadow: [
                                                           BoxShadow(
                                                             blurRadius: 4,
                                                             color: Color(
@@ -1216,7 +1387,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                             offset:
                                                                 Offset(0, 2),
                                                           )
-                                                        ],
+                                                        ],*/
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(20),

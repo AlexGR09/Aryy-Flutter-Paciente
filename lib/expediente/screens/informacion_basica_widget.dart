@@ -1,4 +1,6 @@
 import 'package:aryy_front/expediente/repository/expediente_service.dart';
+import 'package:aryy_front/expediente/widgets/change_button.dart';
+import 'package:aryy_front/expediente/widgets/input_text_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
@@ -81,14 +83,24 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
                     title: '¿Cual es tu grupo sanguineo?',
                     hintText: 'Selecciona tu tipo sanguineo',
                     options: ['Option 1']),
-                const SelectWidget(
+                InputTextMedicalRecord(
+                  textEditingController: heightTextController,
+                  title: "¿Cuanto mides?",
+                  hintText: 'Escribe aquí',
+                ),
+                InputTextMedicalRecord(
+                  textEditingController: weightTextController,
+                  title: "¿Cuanto pesas?",
+                  hintText: 'Escribe aquí',
+                ),
+                /*const SelectWidget(
                     title: '¿Cuanto mides?',
                     hintText: 'Escribe aqui',
-                    options: ['Option 1']),
-                const SelectWidget(
+                    options: ['Option 1']),*/
+                /*const SelectWidget(
                     title: '¿Cuanto pesas actualmente?',
                     hintText: 'Escribe aqui',
-                    options: ['Option 1']),
+                    options: ['Option 1']),*/
                 const RadioButtonWithInputTextTriggerWidget(
                     title: '¿Tienes alergias alimentarias?',
                     inputTextHintText: 'Ejemplo: cacahuate, fresas',
