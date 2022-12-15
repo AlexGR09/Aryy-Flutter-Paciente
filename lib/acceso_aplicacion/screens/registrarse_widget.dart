@@ -1,4 +1,4 @@
-import '../../_aryy_common_components/model/authentication.dart';
+import '../../_aryy_common_components/model/authentication_states.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
@@ -7,7 +7,7 @@ import '../../_aryy_common_components/widgets/formulario/input_password_widget.d
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
-import '../bloc/signin_bloc.dart';
+import '../bloc/authentication_bloc.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
 import '../widgets/warning_helper_widget.dart';
@@ -26,7 +26,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   TextEditingController passwordTextController = TextEditingController();
   TextEditingController passwordConfirmationTextController =
       TextEditingController();
-  late SigninBloc signinBloc;
+  late AuthenticationBloc signinBloc;
 
 // -- Cambiar esto  a flutter bloc
   late WarningHelper passwordWarning = clearWarning;
@@ -59,13 +59,13 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
 
   @override
   Widget build(BuildContext context) {
-    signinBloc = BlocProvider.of<SigninBloc>(context);
+    signinBloc = BlocProvider.of<AuthenticationBloc>(context);
     return _handleCurrentSession();
   }
 
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<signinBloc, Future<bool>> if async
-    return BlocBuilder<SigninBloc, Authentication>(
+    return BlocBuilder<AuthenticationBloc, Authentication>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
         switch (state) {
@@ -117,11 +117,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 BotonFormulario(
                     text: "Registrarme",
                     onPressed: () async {
-                      signinBloc.add(SigninEvent(
-                          email: emailTextController.text,
-                          password: passwordTextController.text,
-                          passwordConfirmation:
-                              passwordConfirmationTextController.text));
+                      signinBloc.add(SigninEvent());
                       Navigator.pushNamed(context, "home2_inicio");
                       // Navigator.pushNamed(context, "registrarse_formulario");
                     }),

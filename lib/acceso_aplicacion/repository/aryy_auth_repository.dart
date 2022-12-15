@@ -1,4 +1,4 @@
-import '../model/aryyUser.dart';
+import '../model/aryy_user.dart';
 import './aryy_auth_api.dart';
 
 // 4. All authentication repositories management
