@@ -4,6 +4,8 @@ import './_aryy_common_components/model/authentication_states.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'editar_perfil/barra_lateral_perfil_widget.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
@@ -41,7 +43,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "iniciarsesion",
+                initialRoute: "barra_perfil",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
@@ -86,7 +88,7 @@ class _MyAppState extends State<MyApp> {
 
                   //OPCIONES DE BARRA LATERAL
                   "Perfil_inicio": (_) => BarraLateralPerfil1Widget(),
-//                "barra_perfil": (_) => BarraLateralPerfilWidget(),
+                  "barra_perfil": (_) => BarraLateralPerfilWidget(),
                   "barra_ayuda": (_) => BarraLateralAyudaWidget(),
                   "barra_configuraciones": (_) =>
                       BarraLateralConfiguracionesWidget(),

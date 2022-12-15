@@ -1258,7 +1258,7 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                   return FlutterFlowDropDown<
                                                       String>(
                                                     options:
-                                                        (CitiesCall.statename(
+                                                        (CitiesCall.citiesname(
                                                       dropDownStatesResponse
                                                           .jsonBody,
                                                     ) as List)
@@ -1285,7 +1285,8 @@ class _BarraLateralPerfilWidgetState extends State<BarraLateralPerfilWidget> {
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
-                                                    hintText: 'Estado',
+                                                    hintText:
+                                                        'Ciudad o municipio',
                                                     fillColor: Colors.white,
                                                     elevation: 2,
                                                     borderColor:

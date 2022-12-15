@@ -77,7 +77,7 @@ class CitiesCall {
     );
   }
 
-  static dynamic statename(dynamic response) => getJsonField(
+  static dynamic citiesname(dynamic response) => getJsonField(
         response,
         r'''$..data..name''',
         true,
