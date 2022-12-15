@@ -1,7 +1,3 @@
-import 'package:aryy_front/acceso_aplicacion/bloc/login_states.dart';
-import 'package:aryy_front/acceso_aplicacion/repository/aryy_user_repository.dart';
-import 'package:aryy_front/index.dart';
-import '../../_aryy_common_components/model/authentication_states.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
@@ -11,8 +7,9 @@ import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../styles/my_icons.dart';
-import '../bloc/authentication_bloc.dart';
 import '../bloc/login_bloc.dart';
+import '../bloc/login_states.dart';
+import '../repository/aryy_user_repository.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
 import '../widgets/warning_helper_widget.dart';
@@ -31,17 +28,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   TextEditingController passwordTextController = TextEditingController();
   // Si pone mal la contraseña, mostrar el icono? o siempre visible?
   late bool isForgotyouPasswordVisible = false;
-  late AuthenticationBloc _authenticationBloc;
-  late LoginBloc _loginBloc;
+//  late LoginBloc _loginBloc;
   late AryyUserRepository _userRepository;
 
   @override
   void initState() {
-    _authenticationBloc = BlocProvider.of<AuthenticationBloc>(context);
-    _loginBloc = LoginBloc(
-//      userRepository: _userRepository,
-      authenticationBloc: _authenticationBloc,
-    );
     super.initState();
   }
 
@@ -49,12 +40,13 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   void dispose() {
     emailTextController.dispose();
     passwordTextController.dispose();
-    _loginBloc.close();
+//    _loginBloc.close();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
+//    _loginBloc = BlocProvider.of<LoginBloc>(context);
     return _handleCurrentSession();
   }
 
@@ -66,22 +58,22 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<LoginBloc, Future<bool>> if async
     // return BlocBuilder<AuthenticationBloc, Authentication>(
-    return BlocBuilder<LoginBloc, LoginState>(
-        bloc: _loginBloc,
-        // state the same AryyChangeEvent data type
-        builder: (BuildContext context, LoginState state) {
-          //   isForgotyouPasswordVisible = true; // add alert - pending
-          switch (state) {
-            case LoginState.loading:
-              print('loading');
-              break;
-            case LoginState.failure:
-              print("show failure");
-              break;
-            default:
-          }
-          return loginScreen();
-        });
+    // return BlocBuilder<LoginBloc, LoginState>(
+    //     bloc: _loginBloc,
+    //     // state the same AryyChangeEvent data type
+    //     builder: (BuildContext context, LoginState state) {
+    //       //   isForgotyouPasswordVisible = true; // add alert - pending
+    //       switch (state) {
+    //         case LoginState.loading:
+    //           print('loading');
+    //           break;
+    //         case LoginState.failure:
+    //           print("show failure");
+    //           break;
+    //         default:
+    //       }
+    //     });
+    return loginScreen();
   }
 
   Widget loginScreen() {

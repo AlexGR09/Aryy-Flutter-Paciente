@@ -7,11 +7,10 @@ part './authentication_event.dart';
 
 // Any state will be received with status<int>
 class AuthenticationBloc extends Bloc<AuthEvent, Authentication> {
-  final AryyUserRepository userRepository;
+//  final AryyUserRepository userRepository;
   // LoginBloc's inital state by default will be set as false (ie. new user opens the app)
   // ex: Firebase.onAuthStateChanged; Future<dataType>
-  AuthenticationBloc(this.userRepository)
-      : super(Authentication.uninitialized) {
+  AuthenticationBloc() : super(Authentication.uninitialized) {
     // Handle incoming <AuthEvents> streams. emit: broadcast new state
     on<AuthEvent>((event, emit) async {
       // Then, broadcast a new state from the event received
@@ -25,21 +24,21 @@ class AuthenticationBloc extends Bloc<AuthEvent, Authentication> {
       Authentication authentication, AuthEvent event) async* {
     // determine whether or not a user is logged in.
     if (event is AppStarted) {
-      final bool hasToken = await userRepository.hasToken();
-      yield hasToken
+      // final bool hasToken = await userRepository.hasToken();
+      yield true
           ? Authentication.authenticated
           : Authentication.unauthenticated;
     }
 
     if (event is LoggedIn) {
       yield Authentication.loading;
-      await userRepository.persistToken(event.token);
+//      await userRepository.persistToken(event.token);
       yield Authentication.authenticated;
     }
 
     if (event is LoggedOut) {
       yield Authentication.loading;
-      await userRepository.deleteToken();
+//      await userRepository.deleteToken();
       yield Authentication.unauthenticated;
     }
   }

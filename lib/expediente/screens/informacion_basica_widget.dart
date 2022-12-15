@@ -4,6 +4,7 @@ import '../../_aryy_common_components/widgets/formulario/button_form_expanded_wi
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../repository/expediente_service.dart';
 import '../widgets/description_text_widget.dart';
+import '../widgets/input_text_widget.dart';
 import '../widgets/radio_button_with_inputtext_trigger_widget.dart';
 import '../widgets/select_widget.dart';
 import 'package:flutter/material.dart';
