@@ -1,4 +1,4 @@
-class UserRepository {
+class AryyUserRepository {
   Future<String> authenticate({
     required String username,
     required String password,
