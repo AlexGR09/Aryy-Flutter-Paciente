@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'editar_perfil/barra_lateral_perfil_widget.dart';
+import 'expediente/screens/vacunacionprueba2.dart';
 
 void main() => runApp(const MyApp());
 
@@ -43,7 +44,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "barra_perfil",
+                initialRoute: "historial_vacunacion2",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
@@ -120,6 +121,7 @@ class _MyAppState extends State<MyApp> {
                       const InformacionBasicaWidget()),
                   "menu_expediente": (_) => MenuExpedienteWidget(),
                   "historial_vacunacion": (_) => HistorialVacunacionWidget(),
+                  "historial_vacunacion2": (_) => HistorialVacunacion2Widget(),
                   "antecedentes_patologicos": (_) =>
                       AntecedentesPatologicosWidget(),
                   "antecedentes_heredofamiliares": (_) =>
