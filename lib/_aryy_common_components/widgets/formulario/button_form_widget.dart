@@ -6,8 +6,12 @@ import 'package:flutter/material.dart';
 
 class BotonFormulario extends StatefulWidget {
   const BotonFormulario(
-      {super.key, required this.text, required this.onPressed});
+      {super.key,
+      required this.text,
+      required this.onPressed,
+      required this.isLoading});
 
+  final bool isLoading;
   final String text;
   final VoidCallback onPressed;
 
@@ -21,8 +25,19 @@ class _BotonFormularioState extends State<BotonFormulario> {
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 20, top: 20),
       child: FFButtonWidget(
+        icon: widget.isLoading
+            ? Container(
+                width: 24,
+                height: 24,
+                padding: const EdgeInsets.all(2.0),
+                child: const CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 3,
+                ),
+              )
+            : null,
         onPressed: widget.onPressed,
-        text: widget.text,
+        text: widget.isLoading ? '' : widget.text,
         options: FFButtonOptions(
           width: 300,
           height: 55,

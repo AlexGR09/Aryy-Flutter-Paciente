@@ -1,34 +1,31 @@
 class AryyUser {
   final int id;
-  final String name;
-  final String lastName;
+  final String fullName;
   final String gender;
   final String birthday;
   final int countryCode;
-  final int phoneNumber;
+  final String phoneNumber;
   final String email;
-  final String photo;
+  final String profilePicture;
   AryyUser(
       {required this.id,
-      required this.name,
-      required this.lastName,
+      required this.fullName,
       required this.gender,
       required this.birthday,
       required this.countryCode,
       required this.phoneNumber,
       required this.email,
-      required this.photo});
+      required this.profilePicture});
   factory AryyUser.fromJson({required Map<String, dynamic> json}) {
     return AryyUser(
-      id: json['id'],
-      name: json['name'],
-      lastName: json['lastName'],
+      id: json['user_id'],
+      fullName: json['full_name'],
       gender: json['gender'],
       birthday: json['birthday'],
-      countryCode: json['countryCode'],
-      phoneNumber: json['phoneNumber'],
+      countryCode: json['country_code'],
+      phoneNumber: json['phone_number'],
       email: json['email'],
-      photo: json['photo'],
+      profilePicture: json['profile_photo'],
     );
   }
 }

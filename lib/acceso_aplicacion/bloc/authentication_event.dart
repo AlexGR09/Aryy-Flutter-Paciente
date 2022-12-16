@@ -22,3 +22,8 @@ class LoggedOut extends AuthEvent {
   @override
   String toString() => 'LoggedOut';
 }
+
+class AuthenticationStatusChanged extends AuthEvent {
+  final Authentication status;
+  AuthenticationStatusChanged(this.status);
+}

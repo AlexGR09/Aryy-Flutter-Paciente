@@ -1,3 +1,4 @@
+import 'package:aryy_front/index.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
@@ -8,8 +9,7 @@ import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../styles/my_icons.dart';
 import '../bloc/login_bloc.dart';
-import '../bloc/login_states.dart';
-import '../repository/aryy_user_repository.dart';
+import '../bloc/login_state.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
 import '../widgets/warning_helper_widget.dart';
@@ -28,8 +28,9 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   TextEditingController passwordTextController = TextEditingController();
   // Si pone mal la contraseña, mostrar el icono? o siempre visible?
   late bool isForgotyouPasswordVisible = false;
-//  late LoginBloc _loginBloc;
-  late AryyUserRepository _userRepository;
+  late LoginBloc _loginBloc;
+  late bool _isLoading = false;
+//  late AryyUserRepository _userRepository;
 
   @override
   void initState() {
@@ -46,34 +47,37 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
 
   @override
   Widget build(BuildContext context) {
-//    _loginBloc = BlocProvider.of<LoginBloc>(context);
+    _loginBloc = BlocProvider.of<LoginBloc>(context);
     return _handleCurrentSession();
   }
 
   void _verifyUserSessionStatus() async {
-    await Future<void>.delayed(const Duration(seconds: 1));
-//    loginBloc.add(AuthenticationStatusEvent());
+    await Future.delayed(const Duration(milliseconds: 1300),
+        () => _loginBloc.add(LoginStatusChangedEvent()));
   }
 
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<LoginBloc, Future<bool>> if async
-    // return BlocBuilder<AuthenticationBloc, Authentication>(
-    // return BlocBuilder<LoginBloc, LoginState>(
-    //     bloc: _loginBloc,
-    //     // state the same AryyChangeEvent data type
-    //     builder: (BuildContext context, LoginState state) {
-    //       //   isForgotyouPasswordVisible = true; // add alert - pending
-    //       switch (state) {
-    //         case LoginState.loading:
-    //           print('loading');
-    //           break;
-    //         case LoginState.failure:
-    //           print("show failure");
-    //           break;
-    //         default:
-    //       }
-    //     });
-    return loginScreen();
+    return BlocListener<LoginBloc, LoginState>(listener: ((context, state) {
+      print("listener-BlocListener, state: ${state}");
+    }), child: BlocBuilder<LoginBloc, LoginState>(
+      builder: ((context, state) {
+        print("builder-BlocBuilder, state: ${state}");
+        switch (state) {
+          case LoginState.loading:
+            _isLoading = true;
+            _verifyUserSessionStatus();
+            break;
+          case LoginState.success:
+            return const Home2Widget();
+          case LoginState.failure:
+            //       //   isForgotyouPasswordVisible = true; // add alert - pending
+            break;
+          default:
+        }
+        return loginScreen();
+      }),
+    ));
   }
 
   Widget loginScreen() {
@@ -110,34 +114,14 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                       // Mostrar mensaje de "Olvidaste tu contraseña?"
                       warningLabel: clearWarning),
                   BotonFormulario(
-                      // Mostrar mensaje de bienvenida de aryy api
-                      // Mostar ese icono de "cargando" después de hacer click aqui también
-                      text: "Iniciar sesión",
-                      onPressed: () async {
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              content: const Text('Datos guardados'),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: const Text('Ok'),
-                                ),
-                              ],
-                            );
-                          },
-                        );
-                      }
-                      // Logout -> authenticationBloc.dispatch(LoggedOut());
-                      // onPressed: () {
-                      //   loginBloc.add(LoginEvent(
-                      //       email: emailTextController.text,
-                      //       password: passwordTextController.text));
-                      //   Navigator.pushNamed(context, "home2_inicio");
-                      // }
-                      ),
+                    text: "Iniciar sesión",
+                    onPressed: () async {
+                      _loginBloc
+                          .add(LoginButtonPressed(email: '', password: ''));
+                    },
+                    isLoading: _isLoading,
+                    // Logout -> authenticationBloc.dispatch(LoggedOut());
+                  ),
                   const Divisor(text: "O inicia con"),
                   const BotonAutentificarCon(
                     assetName: GOOGLE,

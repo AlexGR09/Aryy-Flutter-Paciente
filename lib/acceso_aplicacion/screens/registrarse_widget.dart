@@ -1,4 +1,4 @@
-import '../../_aryy_common_components/model/authentication_states.dart';
+import '../../_aryy_common_components/model/authentication_state.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
@@ -115,32 +115,36 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     warningLabel: passwordWarning),
 //---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
-                    text: "Registrarme",
-                    onPressed: () async {
-                      signinBloc.add(SigninEvent());
-                      Navigator.pushNamed(context, "home2_inicio");
-                      // Navigator.pushNamed(context, "registrarse_formulario");
-                    }),
+                  text: "Registrarme",
+                  onPressed: () async {
+                    signinBloc.add(SigninEvent());
+                    Navigator.pushNamed(context, "home2_inicio");
+                    // Navigator.pushNamed(context, "registrarse_formulario");
+                  },
+                  isLoading: false,
+                ),
                 BotonFormulario(
-                    text: "Registrarme Animación",
-                    onPressed: () async {
-                      await showDialog(
-                        context: context,
-                        builder: (alertDialogContext) {
-                          return AlertDialog(
-                            content: const Text('Datos guardados'),
-                            actions: [
-                              TextButton(
-                                onPressed: () =>
-                                    Navigator.pop(alertDialogContext),
-                                child: const Text('Ok'),
-                              ),
-                            ],
-                          );
-                        },
-                      );
-                      // Navigator.pushNamed(context, "registrarse_formulario");
-                    }),
+                  text: "Registrarme Animación",
+                  onPressed: () async {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          content: const Text('Datos guardados'),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('Ok'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                    // Navigator.pushNamed(context, "registrarse_formulario");
+                  },
+                  isLoading: false,
+                ),
                 const Divisor(text: "O inicia con"),
 //---------------------------  Autenticación con Redes Sociales  -----------------------------------------------------------------------------------------------------------------
                 Padding(
