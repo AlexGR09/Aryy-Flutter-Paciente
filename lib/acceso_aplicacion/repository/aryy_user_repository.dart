@@ -1,4 +1,8 @@
+import '../model/aryy_user.dart';
+
 class AryyUserRepository {
+  late AryyUser _aryyUser;
+
   Future<String> authenticate({
     required String username,
     required String password,

@@ -1,10 +1,10 @@
 import './index.dart';
+import './_aryy_common_components/model/authentication_state.dart';
 import './acceso_aplicacion/bloc/authentication_bloc.dart';
-import './_aryy_common_components/model/authentication_states.dart';
+import './acceso_aplicacion/bloc/login_bloc.dart';
+import './editar_perfil/barra_lateral_perfil_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'editar_perfil/barra_lateral_perfil_widget.dart';
 
 void main() => runApp(const MyApp());
 
@@ -43,12 +43,18 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "barra_perfil",
+                initialRoute: "iniciarsesion",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
                 themeMode: currentMode,
-                home: SplashScreen(),
+                home: BlocListener<AuthenticationBloc, Authentication>(
+                  listener: (context, state) {
+                    IniciarsesionWidget();
+                  },
+                  child: IniciarsesionWidget(),
+                ),
+
                 // BlocBuilder<AuthenticationBloc, Authentication>(
                 //   bloc: _authenticationBloc,
                 //   builder: (BuildContext context, Authentication auth) {
@@ -68,7 +74,9 @@ class _MyAppState extends State<MyApp> {
                   "splash": (_) => SplashScreen(),
                   "bienvenida": (_) => const BienvenidaWidget(),
                   "registrarse_iniciosesion": (_) => RegistroInicioSesion(),
-                  "iniciarsesion": (context) => const IniciarsesionWidget(),
+                  "iniciarsesion": (context) => BlocProvider(
+                      create: (context) => LoginBloc(),
+                      child: const IniciarsesionWidget()),
                   "registrarse": (context) => BlocProvider(
                       create: (_) => AuthenticationBloc(),
                       child: const RegistrarseWidget()),

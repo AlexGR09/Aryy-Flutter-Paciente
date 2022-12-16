@@ -29,9 +29,11 @@ class RegistroInicioSesion extends StatelessWidget {
                 children: [
                   const AryyLogo(paddingTop: 500, paddingBottom: 30),
                   BotonFormulario(
-                      text: "Registrarse",
-                      onPressed: () =>
-                          {Navigator.pushNamed(context, "registrarse")}),
+                    text: "Registrarse",
+                    onPressed: () =>
+                        {Navigator.pushNamed(context, "registrarse")},
+                    isLoading: false,
+                  ),
                   BotonFormularioInverso(
                       text: "Iniciar sesión",
                       onPressed: () =>

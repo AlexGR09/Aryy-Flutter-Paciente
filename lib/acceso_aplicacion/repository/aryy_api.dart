@@ -1,4 +1,3 @@
-import 'dart:convert';
 import '../../_aryy_common_components/repository/api/api_manager.dart';
 export '../../_aryy_common_components/repository/api/api_manager.dart'
     show ApiCallResponse;
@@ -18,7 +17,7 @@ class AryyApi {
       params: {},
       body: '''
 {
-  "email": "josei@gmail.com",
+  "email": "max@gmail.com",
   "password": "password"
 }''',
       bodyType: BodyType.JSON,

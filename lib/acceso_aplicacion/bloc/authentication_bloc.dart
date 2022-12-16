@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import '../../_aryy_common_components/bloc/auth.dart';
-import '../../_aryy_common_components/model/authentication_states.dart';
-import '../repository/aryy_user_repository.dart';
+import '../../_aryy_common_components/model/authentication_state.dart';
 part './authentication_event.dart';
 
 // Any state will be received with status<int>
 class AuthenticationBloc extends Bloc<AuthEvent, Authentication> {
+  late StreamSubscription<Authentication> _authenticationStatusSubscription;
 //  final AryyUserRepository userRepository;
   // LoginBloc's inital state by default will be set as false (ie. new user opens the app)
   // ex: Firebase.onAuthStateChanged; Future<dataType>
@@ -17,6 +17,36 @@ class AuthenticationBloc extends Bloc<AuthEvent, Authentication> {
       // The argument type 'Stream<bool>' can't be assigned to the parameter type 'bool'.
 //      emit(await AryyAuth.instance.onAuthStateChanged);
     });
+
+    on<AuthenticationStatusChanged>(
+      (event, emit) {
+        switch (event.status) {
+          case Authentication.unauthenticated:
+            break;
+          // return emit(const AuthenticationState.unauthenticated());
+          case Authentication.authenticated:
+            // final user = await _tryGetUser();
+            break;
+          case Authentication.uninitialized:
+            // TODO: Handle this case.
+            break;
+          case Authentication.loading:
+            // TODO: Handle this case.
+            break;
+        }
+      },
+    );
+
+    _authenticationStatusSubscription =
+        status.listen((event) => add(AuthenticationStatusChanged(event)));
+  }
+
+  final _controller = StreamController<Authentication>();
+
+  Stream<Authentication> get status async* {
+    await Future<void>.delayed(const Duration(seconds: 1));
+    yield Authentication.unauthenticated;
+    yield* _controller.stream;
   }
 
   // converts the incoming events into states the are consumed by the screen layer.
@@ -41,5 +71,13 @@ class AuthenticationBloc extends Bloc<AuthEvent, Authentication> {
 //      await userRepository.deleteToken();
       yield Authentication.unauthenticated;
     }
+  }
+
+  // controller can be closed when it is no longer needed.
+  @override
+  Future<void> close() {
+    _authenticationStatusSubscription.cancel();
+    _controller.close();
+    return super.close();
   }
 }

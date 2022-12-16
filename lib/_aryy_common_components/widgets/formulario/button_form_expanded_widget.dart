@@ -26,6 +26,7 @@ class _BotonFormularioExpandidoState extends State<BotonFormularioExpandido> {
             child: BotonFormulario(
               text: widget.text,
               onPressed: widget.onPressed,
+              isLoading: false,
             ),
           ),
         ],

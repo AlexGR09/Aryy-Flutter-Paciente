@@ -1,5 +1,6 @@
 import 'dart:async';
-import '../../_aryy_common_components/model/authentication_states.dart';
+import '../../_aryy_common_components/model/authentication_state.dart';
+import '../bloc/login_state.dart';
 import '../model/aryy_user.dart';
 
 // 2. Aryy api authentications
@@ -7,6 +8,7 @@ import '../model/aryy_user.dart';
 class AryyAuth {
   static AryyAuth get instance => _instance;
   static final AryyAuth _instance = AryyAuth._privateConstructor();
+  late LoginState loginStatus = LoginState.initial;
   late AryyUser _aryyUser;
   late String AccessToken = "";
 
