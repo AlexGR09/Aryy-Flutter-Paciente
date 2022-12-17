@@ -1,3 +1,5 @@
+import 'package:aryy_front/expediente/screens/antecedentes_patologicos2.dart';
+
 import './index.dart';
 import './_aryy_common_components/model/authentication_state.dart';
 import './acceso_aplicacion/bloc/authentication_bloc.dart';
@@ -44,7 +46,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "barra_perfil",
+                initialRoute: "informacion_basica",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
@@ -129,13 +131,16 @@ class _MyAppState extends State<MyApp> {
                       const InformacionBasicaWidget()),
                   "menu_expediente": (_) => MenuExpedienteWidget(),
                   "historial_vacunacion": (_) => HistorialVacunacionWidget(),
-                  "historial_vacunacion2": (_) => HistorialVacunacion2Widget(),
+                  "historial_vacunacion2": (_) =>
+                      HistorialVacunacion2Widget(), //VISTA DE PRUEBA API
                   "antecedentes_patologicos": (_) =>
                       AntecedentesPatologicosWidget(),
                   "antecedentes_heredofamiliares": (_) =>
                       AntecHeredofamiliaresWidget(),
                   "antecedentes_no_patologicos": (_) =>
-                      AntecedentesNoPatologicosWidget()
+                      AntecedentesNoPatologicosWidget(),
+                  "antecedentes_patologicos2": ((context) =>
+                      const AntecedentesPatologicos2Widget()) //VISTA DE PRUEBA API
                 },
               );
             }));

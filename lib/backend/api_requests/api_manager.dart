@@ -18,6 +18,7 @@ enum BodyType {
   JSON,
   TEXT,
   X_WWW_FORM_URL_ENCODED,
+  MULTIPART,
 }
 
 class ApiCallRecord extends Equatable {
@@ -152,6 +153,10 @@ class ApiManager {
       case BodyType.X_WWW_FORM_URL_ENCODED:
         contentType = 'application/x-www-form-urlencoded';
         postBody = toStringMap(params ?? {});
+        break;
+      case BodyType.MULTIPART:
+        contentType = 'multipart/form-data';
+        postBody = params;
         break;
       case BodyType.NONE:
       case null:

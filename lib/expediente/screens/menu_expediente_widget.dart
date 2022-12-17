@@ -1,3 +1,7 @@
+import 'package:aryy_front/backend/api_requests/api_calls.dart';
+import 'package:aryy_front/expediente/screens/antecedentes_patologicos2.dart';
+import 'package:aryy_front/expediente/screens/vacunacionprueba2.dart';
+
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
@@ -53,7 +57,7 @@ class _MenuExpedienteWidgetState extends State<MenuExpedienteWidget> {
                 ButtonMedicalRecord(
                     title: 'Antecedentes patológicos',
                     icon: FontAwesomeIcons.tablets,
-                    materialPage: AntecedentesPatologicosWidget()),
+                    materialPage: AntecedentesPatologicos2Widget()),
                 ButtonMedicalRecord(
                     title: 'Antecedentes no patológicos',
                     icon: FontAwesomeIcons.tablets,
@@ -65,7 +69,7 @@ class _MenuExpedienteWidgetState extends State<MenuExpedienteWidget> {
                 ButtonMedicalRecord(
                     title: 'Historial de vacunación',
                     icon: FontAwesomeIcons.tablets,
-                    materialPage: HistorialVacunacionWidget()),
+                    materialPage: HistorialVacunacion2Widget()),
               ],
             ),
           ),
