@@ -215,6 +215,7 @@ class PostApiHistory {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'Authorization': 'Bearer 3|55nOqfa8DFth45g7S7GKHiTQBuKrTyTXP7AKZ5Xb',
       },
       params: {},
       body: '''
