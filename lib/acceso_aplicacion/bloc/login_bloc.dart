@@ -6,14 +6,14 @@ import '../repository/aryy_auth_repository.dart';
 import './login_state.dart';
 part './login_event.dart';
 
-class LoginBloc extends Bloc<LoginEvent, LoginState> {
+class LoginBloc extends Bloc<LoginAuthEvent, LoginState> {
   // AryyUserRepository helps to authenticate a user given a username and password
 //  final AryyUserRepository userRepository;
   // In addition, AuthenticationBloc updates the AuthenticationState when a user has entered valid credentials
 //  final LoginBloc authenticationBloc;
   late LoginState loginState;
   LoginBloc() : super(LoginState.initial) {
-    on<LoginEvent>(((event, emit) => emit(event.loginState)));
+    on<LoginAuthEvent>(((event, emit) => emit(event.loginState)));
     on<LoginStatusChangedEvent>(
         ((event, emit) => emit(AryyAuth.instance.loginStatus)));
   }
@@ -25,9 +25,9 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   @override
   Stream<LoginState> mapEventToState(
     LoginState currentState,
-    LoginEvent event,
+    LoginAuthEvent event,
   ) async* {
-    if (event is LoginButtonPressed) {
+    if (event is LoginEvent) {
       yield LoginState.loading;
 
 //       try {

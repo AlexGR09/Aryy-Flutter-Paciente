@@ -25,6 +25,7 @@ class RadioButtonSelectOption extends StatefulWidget {
 }
 
 class _RadioButtonSelectOptionState extends State<RadioButtonSelectOption> {
+  final TextEditingController _textEditingController = TextEditingController();
   late bool isRadioButtonTrue = false;
   @override
   Widget build(BuildContext context) {
@@ -58,6 +59,7 @@ class _RadioButtonSelectOptionState extends State<RadioButtonSelectOption> {
                         Expanded(
                             child: InputTextWidget(
                           hintText: widget.inputTextHintText,
+                          textEditingController: _textEditingController,
                         ))
                       ]))
               ],

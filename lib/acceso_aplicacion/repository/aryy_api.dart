@@ -17,8 +17,8 @@ class AryyApi {
       params: {},
       body: '''
 {
-  "email": "max@gmail.com",
-  "password": "password"
+  "email": "$email",
+  "password": "$password"
 }''',
       bodyType: BodyType.JSON,
       returnBody: true,

@@ -1,29 +1,29 @@
 part of './login_bloc.dart';
 
-abstract class LoginEvent extends Equatable {
-  LoginEvent(this.loginState, [List props = const []]) : super() {}
+abstract class LoginAuthEvent extends Equatable {
+  LoginAuthEvent(this.loginState, [List props = const []]) : super() {}
   late LoginState loginState;
   @override
   List<Object> get props => [loginState];
 }
 
-class LoginStatusChangedEvent extends LoginEvent {
-  LoginStatusChangedEvent() : super(AryyAuth.instance.loginStatus);
+class LoginStatusChangedEvent extends LoginAuthEvent {
+  LoginStatusChangedEvent() : super(AryyAuth.instance.loginStatus) {}
 }
 
-class LoginSuccess extends LoginEvent {
-  LoginSuccess() : super(LoginState.success);
+class LoginSuccessEvent extends LoginAuthEvent {
+  LoginSuccessEvent() : super(LoginState.success);
 }
 
-class LoginFailure extends LoginEvent {
-  LoginFailure() : super(LoginState.failure);
+class LoginFailureEvent extends LoginAuthEvent {
+  LoginFailureEvent() : super(LoginState.failure);
 }
 
-class LoginButtonPressed extends LoginEvent {
+class LoginEvent extends LoginAuthEvent {
   final String email;
   final String password;
 
-  LoginButtonPressed({
+  LoginEvent({
     required this.email,
     required this.password,
   }) : super(LoginState.initial) {
@@ -31,11 +31,8 @@ class LoginButtonPressed extends LoginEvent {
     AryyAuthRepository()
         .loginWithAryy(email: email, password: password)
         .then((user) {
-      if (user?.fullName != null) {
-        AryyAuth.instance.loginStatus = LoginState.success;
-      } else {
-        AryyAuth.instance.loginStatus = LoginState.failure;
-      }
+      AryyAuth.instance.loginStatus =
+          user?.id != null ? LoginState.success : LoginState.failure;
     });
   }
 

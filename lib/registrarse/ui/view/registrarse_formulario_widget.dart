@@ -172,11 +172,11 @@ class _RegistrarseFormularioWidgetState
                           Column(
                             mainAxisSize: MainAxisSize.max,
                             children: [
-                              const InputTextWidget(hintText: 'Nombres (s)'),
-                              const InputTextWidget(
-                                  hintText: 'Apellido paterno'),
-                              const InputTextWidget(
-                                  hintText: 'Apellido materno'),
+                              // const InputTextWidget(hintText: 'Nombres (s)'),
+                              // const InputTextWidget(
+                              //     hintText: 'Apellido paterno'),
+                              // const InputTextWidget(
+                              //     hintText: 'Apellido materno'),
                               // InputPasswordWidget(
                               //   textController: textController1,
                               //   hintText: 'Ingrese una contraseña',

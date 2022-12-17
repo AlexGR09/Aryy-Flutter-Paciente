@@ -3,7 +3,7 @@ class AryyUser {
   final String fullName;
   final String gender;
   final String birthday;
-  final int countryCode;
+  final String countryCode;
   final String phoneNumber;
   final String email;
   final String profilePicture;

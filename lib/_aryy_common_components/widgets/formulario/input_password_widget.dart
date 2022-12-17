@@ -8,17 +8,18 @@ import 'package:flutter/material.dart';
 // }
 
 class InputPasswordWidget extends StatefulWidget {
-  const InputPasswordWidget(
-      {super.key,
-      required this.hintText,
-      required this.onChange,
-      required this.warningLabel,
-      required this.textEditingController});
+  const InputPasswordWidget({
+    super.key,
+    required this.hintText,
+    required this.onChange,
+    required this.warningLabel,
+    required this.textEditingController,
+  });
 
   final String hintText;
+  final Widget warningLabel;
   final Function(String) onChange;
   final TextEditingController textEditingController;
-  final Widget warningLabel;
 
   @override
   State<InputPasswordWidget> createState() => _InputPasswordWidgetState();
@@ -30,10 +31,11 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
   @override
   Widget build(BuildContext context) {
     return InputWidget(
+      textController: widget.textEditingController,
       hintText: widget.hintText,
-      inputTextType: TextInputType.visiblePassword,
       onChangeFunction: widget.onChange,
       isOscureTextVisible: isPasswordVisible,
+      inputTextType: TextInputType.visiblePassword,
       suffixIcon: IconButton(
         onPressed: () {
           setState(() {
@@ -44,7 +46,6 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
         splashRadius: 10,
       ),
       appendComponent: widget.warningLabel,
-      borderColor: Colors.transparent,
     );
   }
 }

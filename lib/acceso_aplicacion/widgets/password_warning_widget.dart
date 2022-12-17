@@ -1,34 +1,18 @@
 import 'package:flutter/material.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 
-const WarningHelper clearWarning = WarningHelper(
-  "",
-  Icons.check,
-  Colors.white,
-);
-const WarningHelper passwordMatchWarning = WarningHelper(
-  "Al menos 8 caractéres",
-  Icons.error,
-  Colors.orange,
-);
-const WarningHelper passwordLengthWarning = WarningHelper(
-  "Los campos no coinciden",
-  Icons.warning,
-  Colors.red,
-);
-
-class WarningHelper extends StatefulWidget {
-  const WarningHelper(this.text, this.icon, this.color);
+class PasswordWarning extends StatefulWidget {
+  const PasswordWarning(this.text, this.icon, this.color);
 
   final String text;
   final IconData icon;
   final Color color;
 
   @override
-  State<WarningHelper> createState() => _WarningHelperState();
+  State<PasswordWarning> createState() => _PasswordWarningState();
 }
 
-class _WarningHelperState extends State<WarningHelper> {
+class _PasswordWarningState extends State<PasswordWarning> {
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -6,12 +6,11 @@ class InputWidget extends StatefulWidget {
     super.key,
     this.textController,
     required this.hintText,
-    required this.inputTextType,
-    required this.isOscureTextVisible,
-    required this.appendComponent,
     required this.suffixIcon,
+    required this.inputTextType,
+    required this.appendComponent,
     required this.onChangeFunction,
-    required this.borderColor,
+    required this.isOscureTextVisible,
   });
 
   final TextEditingController? textController;
@@ -21,7 +20,6 @@ class InputWidget extends StatefulWidget {
   final Widget suffixIcon;
   final Widget appendComponent;
   final void Function(String) onChangeFunction;
-  final Color borderColor;
 
   @override
   State<InputWidget> createState() => _InputWidgetState();
@@ -46,11 +44,11 @@ class _InputWidgetState extends State<InputWidget> {
           height: 45,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                 blurRadius: 2,
-                color: widget.borderColor,
-                offset: const Offset(0, 0),
+                color: Colors.transparent,
+                offset: Offset(0, 0),
               )
             ],
             borderRadius: BorderRadius.circular(20),
@@ -60,9 +58,9 @@ class _InputWidgetState extends State<InputWidget> {
             child: Wrap(children: [
               TextFormField(
                 controller: widget.textController,
-                onChanged: (password) {
-                  print("passwordTyped: ${password}");
-                  return widget.onChangeFunction(password);
+                onChanged: (text) {
+                  print("typed: ${text}");
+                  return widget.onChangeFunction(text);
                 },
                 obscureText: !widget.isOscureTextVisible,
                 autofocus: true,

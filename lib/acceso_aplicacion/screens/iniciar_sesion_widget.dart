@@ -10,9 +10,9 @@ import '../../flutter_flow/flutter_flow_theme.dart';
 import '../../styles/my_icons.dart';
 import '../bloc/login_bloc.dart';
 import '../bloc/login_state.dart';
+import '../model/warning_label.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
-import '../widgets/warning_helper_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -26,11 +26,8 @@ class IniciarsesionWidget extends StatefulWidget {
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   TextEditingController emailTextController = TextEditingController();
   TextEditingController passwordTextController = TextEditingController();
-  // Si pone mal la contraseña, mostrar el icono? o siempre visible?
-  late bool isForgotyouPasswordVisible = false;
+  late LoginState _loginState = LoginState.initial;
   late LoginBloc _loginBloc;
-  late bool _isLoading = false;
-//  late AryyUserRepository _userRepository;
 
   @override
   void initState() {
@@ -41,7 +38,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   void dispose() {
     emailTextController.dispose();
     passwordTextController.dispose();
-//    _loginBloc.close();
+    _loginBloc.close();
     super.dispose();
   }
 
@@ -57,34 +54,48 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
   }
 
   Widget _handleCurrentSession() {
-    // it can also be BlocBuilder<LoginBloc, Future<bool>> if async
-    return BlocListener<LoginBloc, LoginState>(listener: ((context, state) {
-      print("listener-BlocListener, state: ${state}");
-    }), child: BlocBuilder<LoginBloc, LoginState>(
-      builder: ((context, state) {
-        print("builder-BlocBuilder, state: ${state}");
-        switch (state) {
-          case LoginState.loading:
-            _isLoading = true;
-            _verifyUserSessionStatus();
-            break;
-          case LoginState.success:
-            return const Home2Widget();
-          case LoginState.failure:
-            //       //   isForgotyouPasswordVisible = true; // add alert - pending
-            break;
-          default:
-        }
-        return loginScreen();
-      }),
-    ));
+    // it can also be BlocBuilder<LoginBloc, Future<bool>> if async is needed
+    return BlocListener<LoginBloc, LoginState>(
+        listener: ((context, state) {}),
+        child: BlocBuilder<LoginBloc, LoginState>(
+          builder: ((context, state) {
+            _loginState = state;
+            switch (state) {
+              case LoginState.loading:
+                _verifyUserSessionStatus();
+                break;
+              case LoginState.success:
+                return const Home2Widget();
+              default:
+            }
+            return loginScreen();
+          }),
+        ));
   }
 
   Widget loginScreen() {
     // () { Navigator.pushNamed(context, "verificar_identidad"); }
+    if (_loginState == LoginState.failure) {
+      Future.delayed(
+          Duration.zero,
+          () => showDialog(
+                context: context,
+                builder: (alertDialogContext) {
+                  return AlertDialog(
+                    content: const Text('Datos incorrectos, intente de nuevo.'),
+                    actions: [
+                      TextButton(
+                        onPressed: () => Navigator.pop(alertDialogContext),
+                        child: const Text('Ok'),
+                      ),
+                    ],
+                  );
+                },
+              ));
+    }
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
-//---------------------------  Appbar
+//---------------------------  Appbar    ---------------------------
       appBar: const PreferredSize(
           preferredSize: Size(100, 80),
           child: AryyAppBar(
@@ -93,7 +104,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                 AryyAppbarAction(routeName: "Registrarse", text: "Registrarme"),
           )),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
-//---------------------------  Body
+//---------------------------  Body    ---------------------------
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -104,22 +115,27 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                 mainAxisSize: MainAxisSize.max,
                 children: [
                   const AryyLogo(paddingTop: 30, paddingBottom: 40),
-                  const InputTextWidget(hintText: 'Ingrese un correo'),
+//---------------------------  Input texts    ---------------------------
+                  InputTextWidget(
+                    hintText: 'Ingrese un correo',
+                    textEditingController: emailTextController,
+                  ),
                   InputPasswordWidget(
-                      textEditingController: emailTextController,
                       hintText: 'Ingrese una contraseña',
-                      onChange: (String password) {
-                        print(emailTextController.text);
-                      },
+                      textEditingController: passwordTextController,
+                      onChange: (String password) {},
                       // Mostrar mensaje de "Olvidaste tu contraseña?"
-                      warningLabel: clearWarning),
+                      warningLabel: _loginState == LoginState.failure
+                          ? forgotYourPassword
+                          : clearWarning),
                   BotonFormulario(
                     text: "Iniciar sesión",
                     onPressed: () async {
-                      _loginBloc
-                          .add(LoginButtonPressed(email: '', password: ''));
+                      _loginBloc.add(LoginEvent(
+                          email: emailTextController.text,
+                          password: passwordTextController.text));
                     },
-                    isLoading: _isLoading,
+                    isLoading: _loginState == LoginState.loading,
                     // Logout -> authenticationBloc.dispatch(LoggedOut());
                   ),
                   const Divisor(text: "O inicia con"),
