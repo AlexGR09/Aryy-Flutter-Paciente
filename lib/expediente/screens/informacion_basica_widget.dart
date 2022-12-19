@@ -1,6 +1,8 @@
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/modo_oscuro.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_expanded_widget.dart';
+import '../../backend/api_requests/api_calls.dart';
+import '../../flutter_flow/flutter_flow_drop_down.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../repository/expediente_service.dart';
 import '../widgets/description_text_widget.dart';
@@ -18,6 +20,7 @@ class InformacionBasicaWidget extends StatefulWidget {
 }
 
 class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
+  String? tipoSangreValue;
   TextEditingController food_allergyTextController = TextEditingController();
   TextEditingController drug_allergyTextController = TextEditingController();
   TextEditingController enviromental_allergyTextController =
@@ -78,10 +81,69 @@ class _InformacionBasicaWidgetState extends State<InformacionBasicaWidget> {
                     title: 'Informacion basica y alergias',
                     description:
                         'Agregar datos sobre las alergias que puedas\npadecer para tener esta informacion\nsiempre a la mano.'),
-                const SelectWidget(
+                /*const SelectWidget(
                     title: '¿Cual es tu grupo sanguineo?',
                     hintText: 'Selecciona tu tipo sanguineo',
-                    options: ['Option 1']),
+                    options: ['Option 1']),*/
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Expanded(
+                        child: FutureBuilder<ApiCallResponse>(
+                          future: TiposangreCall.call(),
+                          builder: (context, snapshot) {
+                            // Customize what your widget looks like when it's loading.
+                            if (!snapshot.hasData) {
+                              return Center(
+                                child: SizedBox(
+                                  width: 50,
+                                  height: 50,
+                                  child: CircularProgressIndicator(
+                                    color: FlutterFlowTheme.of(context)
+                                        .primaryColor,
+                                  ),
+                                ),
+                              );
+                            }
+                            final tipoSangreTiposangreResponse = snapshot.data!;
+                            return FlutterFlowDropDown<String>(
+                              options: (TiposangreCall.nombre(
+                                tipoSangreTiposangreResponse.jsonBody,
+                              ) as List)
+                                  .map<String>((s) => s.toString())
+                                  .toList()
+                                  .toList(),
+                              onChanged: (val) =>
+                                  setState(() => tipoSangreValue = val),
+                              width: 180,
+                              height: 45,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyText1
+                                  .override(
+                                    fontFamily: 'Montserrat',
+                                    color: FlutterFlowTheme.of(context)
+                                        .secondaryText,
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              hintText: 'Selecciona tu tipo sanguineo',
+                              fillColor: Colors.white,
+                              elevation: 2,
+                              borderColor: Colors.transparent,
+                              borderWidth: 0,
+                              borderRadius: 15,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  15, 15, 15, 15),
+                              hidesUnderline: true,
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 InputTextMedicalRecord(
                   textEditingController: heightTextController,
                   title: "¿Cuanto mides?",

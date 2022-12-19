@@ -209,10 +209,11 @@ class ExpedienteService {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'Authorization': 'Bearer 7|a8oxt4P0AMzwfPHpvWtdmtCGHLm2k7t23mGW1Ecx',
       },
       params: {},
       body: '''
-{     'bearer_token': 14|rO7zNLwD6TzA4BOLbNjXp9kI81TNwCcaAhtT1R98,
+{     
       'vaccine': vaccine,
       'dose': dose,
       'lote_number': lote_number,
