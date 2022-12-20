@@ -1,14 +1,14 @@
 part of './login_bloc.dart';
 
 abstract class LoginAuthEvent extends Equatable {
-  LoginAuthEvent(this.loginState, [List props = const []]) : super() {}
+  LoginAuthEvent(this.loginState, [List props = const []]) : super();
   late LoginState loginState;
   @override
   List<Object> get props => [loginState];
 }
 
 class LoginStatusChangedEvent extends LoginAuthEvent {
-  LoginStatusChangedEvent() : super(AryyAuth.instance.loginStatus) {}
+  LoginStatusChangedEvent() : super(AryyAuth.instance.loginStatus);
 }
 
 class LoginSuccessEvent extends LoginAuthEvent {
@@ -20,12 +20,9 @@ class LoginFailureEvent extends LoginAuthEvent {
 }
 
 class LoginEvent extends LoginAuthEvent {
-  final String email;
-  final String password;
-
   LoginEvent({
-    required this.email,
-    required this.password,
+    required String email,
+    required String password,
   }) : super(LoginState.initial) {
     super.loginState = AryyAuth.instance.loginStatus = LoginState.loading;
     AryyAuthRepository()
@@ -35,11 +32,9 @@ class LoginEvent extends LoginAuthEvent {
           user?.id != null ? LoginState.success : LoginState.failure;
     });
   }
-
-  @override
-  List<Object> get props => [email, password];
-
-  @override
-  String toString() =>
-      'LoginButtonPressed { username: $email, password: $password }';
+  // @override
+  // List<Object> get props => [email, password];
+  // @override
+  // String toString() =>
+  //     'LoginButtonPressed { username: $email, password: $password }';
 }

@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../repository/aryy_auth.dart';
@@ -7,11 +6,8 @@ import './login_state.dart';
 part './login_event.dart';
 
 class LoginBloc extends Bloc<LoginAuthEvent, LoginState> {
-  // AryyUserRepository helps to authenticate a user given a username and password
-//  final AryyUserRepository userRepository;
   // In addition, AuthenticationBloc updates the AuthenticationState when a user has entered valid credentials
 //  final LoginBloc authenticationBloc;
-  late LoginState loginState;
   LoginBloc() : super(LoginState.initial) {
     on<LoginAuthEvent>(((event, emit) => emit(event.loginState)));
     on<LoginStatusChangedEvent>(
@@ -20,28 +16,5 @@ class LoginBloc extends Bloc<LoginAuthEvent, LoginState> {
 
   void logOut() {
 //    _controller.add(Authentication.unauthenticated);
-  }
-
-  @override
-  Stream<LoginState> mapEventToState(
-    LoginState currentState,
-    LoginAuthEvent event,
-  ) async* {
-    if (event is LoginEvent) {
-      yield LoginState.loading;
-
-//       try {
-//         final token = await userRepository.authenticate(
-//           username: event.username,
-//           password: event.password,
-//         );
-
-//         authenticationBloc.add(LoggedIn(token: token));
-//         yield LoginState.initial;
-//       } catch (error) {
-//         yield LoginState.failure;
-// //         error.toString();
-//       }
-    }
   }
 }
