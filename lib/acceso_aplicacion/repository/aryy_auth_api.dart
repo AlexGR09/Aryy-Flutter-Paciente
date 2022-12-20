@@ -26,15 +26,19 @@ class AryyAuthAPI {
   }
 
   // - Sign in
-  Future<AryyUser?> signinWithCredentials(
+  Future<AryyUser?> signinWithCredentialsUser(
       {required String email,
       required String password,
-      required String passwordConfirmation}) async {
-    return await AryyApi.singin(
-      email: email,
-      password: password,
-      passwordConfirmation: passwordConfirmation,
-    ).then((connection) {
+      required String passwordConfirmation,
+      required String countryCode,
+      required int phoneNumber}) async {
+    return await AryyApi.singinUser(
+            email: email,
+            password: password,
+            passwordConfirmation: passwordConfirmation,
+            countryCode: '',
+            phoneNumber: 0)
+        .then((connection) {
       if (connection.succeeded) {
         final resultado =
             getJsonField(connection.jsonBody, r'''$[*]''').toList();
