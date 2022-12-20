@@ -4,6 +4,7 @@ import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
+import '../../index.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
 import '../bloc/signin_bloc.dart';
@@ -23,13 +24,13 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _passwordTextController = TextEditingController();
-  TextEditingController _passwordConfirmationTextController =
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
+  final TextEditingController _passwordConfirmationTextController =
       TextEditingController();
+  late PasswordWarning _passwordWarning = clearWarning;
   late SigninState _signinState = SigninState.initial;
   late SigninBloc _signinBloc;
-  late PasswordWarning _passwordWarning;
 
   @override
   void initState() {
@@ -45,6 +46,11 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     super.dispose();
   }
 
+  void _verifyUserSessionStatus() async {
+    await Future.delayed(const Duration(milliseconds: 1300),
+        () => _signinBloc.add(LoginStatusChangedEvent()));
+  }
+
   @override
   Widget build(BuildContext context) {
     _signinBloc = BlocProvider.of<SigninBloc>(context);
@@ -56,7 +62,8 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     return BlocBuilder<SigninBloc, SigninState>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
-        switch (state) {
+        _signinState = state;
+        switch (_signinState) {
           case SigninState.passwordMismatch:
             _passwordWarning = passwordMatchWarning;
             break;
@@ -67,7 +74,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
           case SigninState.failure:
             break;
           case SigninState.success:
-            break;
+            return const Home2Widget();
           case SigninState.loading:
             break;
           default:
@@ -103,24 +110,33 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 InputPasswordWidget(
                     textEditingController: _passwordTextController,
                     hintText: 'Ingrese una contraseña',
-                    onChange: _signinBloc.onPasswordChange,
-                    warningLabel: clearWarning),
+                    onChange:
+                        (String password) {}, // _signinBloc.onPasswordChange,
+                    warningLabel: _signinState == SigninState.clear
+                        ? clearWarning
+                        : _passwordWarning),
 //---------------------------  Confirmación Contraseña  ------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
                     textEditingController: _passwordConfirmationTextController,
                     hintText: 'Confirme su contraseña',
-                    onChange: _signinBloc.onPasswordConfirmationChange,
-                    warningLabel: clearWarning),
+                    onChange: (String
+                        password) {}, // _signinBloc.onPasswordConfirmationChange,
+                    warningLabel: _signinState == SigninState.clear
+                        ? clearWarning
+                        : _passwordWarning),
 //---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                   text: "Registrarme",
                   onPressed: () async {
-                    _signinBloc.add(SigninEvent());
+                    _signinBloc.add(SigninEvent(
+                        email: _emailTextController.text,
+                        password: _passwordTextController.text,
+                        passwordConfirmation:
+                            _passwordConfirmationTextController.text));
                     // old:
-                    // Navigator.pushNamed(context, "home2_inicio");
                     // Navigator.pushNamed(context, "registrarse_formulario");
                   },
-                  isLoading: false,
+                  isLoading: _signinState == SigninState.loading,
                 ),
                 const Divisor(text: "O inicia con"),
 //---------------------------  Autenticación con Redes Sociales  -----------------------------------------------------------------------------------------------------------------

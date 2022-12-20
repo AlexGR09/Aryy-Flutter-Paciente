@@ -8,6 +8,7 @@ import '../model/aryy_user.dart';
 class AryyAuth {
   static AryyAuth get instance => _instance;
   static final AryyAuth _instance = AryyAuth._privateConstructor();
+  late Authentication auth = Authentication.uninitialized;
   late LoginState loginStatus = LoginState.initial;
   late AryyUser _aryyUser;
   late String AccessToken = "";
@@ -18,7 +19,7 @@ class AryyAuth {
   // simple getter for testing, it can also be Future<bool>
   Future<Authentication> get onAuthStateChanged async {
     if (await Future.value(AccessToken != "")) {
-      return Authentication.authenticated;
+      return auth = Authentication.authenticated;
     }
     return Authentication.unauthenticated;
   }

@@ -5,7 +5,8 @@ import './signin_state.dart';
 part './signin_event.dart';
 
 class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
-  late String _passwordTC, _passwordConfirmationTC;
+  late String _passwordTC = "";
+  late String _passwordConfirmationTC = "";
   // In addition, AuthenticationBloc updates the AuthenticationState when a user has entered valid credentials
 //  final AuthenticationBloc authenticationBloc;
   SigninBloc() : super(SigninState.initial) {
@@ -47,8 +48,4 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
       add(signinAuthEvent);
     }
   }
-
-  //   late WarningHelper passwordWarning = clearWarning;
-//   late WarningHelper passwordConfirmationWarning = clearWarning;
-//   bool isPasswordLongEnough = true;
 }

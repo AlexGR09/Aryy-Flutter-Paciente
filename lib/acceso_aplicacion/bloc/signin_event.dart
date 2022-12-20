@@ -7,9 +7,10 @@ abstract class SigninAuthEvent extends Equatable {
   List<Object> get props => [signinState];
 }
 
-// class LoginStatusChangedEvent extends SigninAuthEvent {
-//   LoginStatusChangedEvent() : super(AryyAuth.instance.loginStatus) {}
-// }
+class LoginStatusChangedEvent extends SigninAuthEvent {
+  //LoginStatusChangedEvent() : super(AryyAuth.instance.auth);
+  LoginStatusChangedEvent() : super(SigninState.clear);
+}
 
 class ClearEvent extends SigninAuthEvent {
   ClearEvent() : super(SigninState.clear);
