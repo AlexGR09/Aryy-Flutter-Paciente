@@ -29,6 +29,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   final TextEditingController _passwordConfirmationTextController =
       TextEditingController();
   late PasswordWarning _passwordWarning = clearWarning;
+  late PasswordWarning _passwordConfirmationWarning = clearWarning;
   late SigninState _signinState = SigninState.initial;
   late SigninBloc _signinBloc;
 
@@ -110,20 +111,20 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 InputPasswordWidget(
                     textEditingController: _passwordTextController,
                     hintText: 'Ingrese una contraseña',
-                    onChange:
-                        (String password) {}, // _signinBloc.onPasswordChange,
-                    warningLabel: _signinState == SigninState.clear
-                        ? clearWarning
-                        : _passwordWarning),
+                    onChange: (String password) {
+                      setState(() {
+                        _passwordWarning = _signinBloc.verifyPasswordlength(
+                            password: _passwordTextController.text);
+                      });
+                    }, // _signinBloc.onPasswordChange,
+                    warningLabel: _passwordWarning),
 //---------------------------  Confirmación Contraseña  ------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
                     textEditingController: _passwordConfirmationTextController,
                     hintText: 'Confirme su contraseña',
                     onChange: (String
                         password) {}, // _signinBloc.onPasswordConfirmationChange,
-                    warningLabel: _signinState == SigninState.clear
-                        ? clearWarning
-                        : _passwordWarning),
+                    warningLabel: clearWarning),
 //---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                   text: "Registrarme",

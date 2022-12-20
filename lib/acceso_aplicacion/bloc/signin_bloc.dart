@@ -1,5 +1,7 @@
+import 'package:aryy_front/acceso_aplicacion/widgets/password_warning_widget.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import '../model/warning_label.dart';
 import '../repository/aryy_auth_repository.dart';
 import './signin_state.dart';
 part './signin_event.dart';
@@ -16,18 +18,14 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
   }
 
   onPasswordChange(String password) {
-    verifyPasswordlength(
-        password: password, signinAuthEvent: PasswordNotLongEnoughEvent());
+    verifyPasswordlength(password: password);
     if (password.isNotEmpty) {
       _passwordTC = password;
-      veryPasswordMatch();
     }
   }
 
   onPasswordConfirmationChange(String password) {
-    verifyPasswordlength(
-        password: password,
-        signinAuthEvent: PasswordConfirmationNotLongEnoughEvent());
+    verifyPasswordlength(password: password);
     if (password.isNotEmpty) {
       _passwordConfirmationTC = password;
       veryPasswordMatch();
@@ -42,10 +40,10 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
     }
   }
 
-  void verifyPasswordlength(
-      {required String password, required SigninAuthEvent signinAuthEvent}) {
+  PasswordWarning verifyPasswordlength({required String password}) {
     if (password.length < 8) {
-      add(signinAuthEvent);
+      return passwordLengthWarning;
     }
+    return clearWarning;
   }
 }

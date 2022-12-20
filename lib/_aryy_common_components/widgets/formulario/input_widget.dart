@@ -57,6 +57,7 @@ class _InputWidgetState extends State<InputWidget> {
             padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 0, 0),
             child: Wrap(children: [
               TextFormField(
+                key: Key(widget.textController.toString()),
                 controller: widget.textController,
                 onChanged: (text) {
                   print("typed: ${text}");
