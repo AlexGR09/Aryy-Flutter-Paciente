@@ -1,4 +1,3 @@
-import '../../_aryy_common_components/model/authentication_state.dart';
 import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
@@ -7,10 +6,12 @@ import '../../_aryy_common_components/widgets/formulario/input_password_widget.d
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
 import '../../styles/my_icons.dart';
 import '../../flutter_flow/flutter_flow_theme.dart';
-import '../bloc/authentication_bloc.dart';
+import '../bloc/signin_bloc.dart';
+import '../bloc/signin_state.dart';
 import '../model/warning_label.dart';
 import '../widgets/boton_autenticar_con.dart';
 import '../widgets/divisor_widget.dart';
+import '../widgets/password_warning_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
 
@@ -22,58 +23,52 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  TextEditingController emailTextController = TextEditingController();
-  TextEditingController passwordTextController = TextEditingController();
-  TextEditingController passwordConfirmationTextController =
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
+  TextEditingController _passwordConfirmationTextController =
       TextEditingController();
-  late AuthenticationBloc signinBloc;
+  late SigninState _signinState = SigninState.initial;
+  late SigninBloc _signinBloc;
+  late PasswordWarning _passwordWarning;
 
-// // -- Cambiar esto  a flutter bloc
-//   late WarningHelper passwordWarning = clearWarning;
-//   late WarningHelper passwordConfirmationWarning = clearWarning;
-//   bool isPasswordLongEnough = true;
-
-//   WarningHelper verifyPasswordLongitude(String password) {
-//     return password.length < 8 ? passwordLengthWarning : clearWarning;
-//   }
-
-//   WarningHelper veryPasswordMatch() {
-//     return passwordTextController.text !=
-//             passwordConfirmationTextController.text
-//         ? passwordMatchWarning
-//         : clearWarning;
-//   }
-
-  onPasswordChange(String password) async {
-    passwordTextController.text = password;
-    // passwordWarning = verifyPasswordLongitude(password);
-    // passwordWarning = veryPasswordMatch();
+  @override
+  void initState() {
+    super.initState();
   }
 
-  onPasswordConfirmationChange(String password) async {
-    passwordConfirmationTextController.text = password;
-    // passwordConfirmationWarning = verifyPasswordLongitude(password);
-    // passwordConfirmationWarning = veryPasswordMatch();
+  @override
+  void dispose() {
+    _emailTextController.dispose();
+    _passwordTextController.dispose();
+    _passwordConfirmationTextController.dispose();
+    _signinBloc.close();
+    super.dispose();
   }
-  // -- Cambiar esto  a flutter bloc
 
   @override
   Widget build(BuildContext context) {
-    signinBloc = BlocProvider.of<AuthenticationBloc>(context);
+    _signinBloc = BlocProvider.of<SigninBloc>(context);
     return _handleCurrentSession();
   }
 
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<signinBloc, Future<bool>> if async
-    return BlocBuilder<AuthenticationBloc, Authentication>(
+    return BlocBuilder<SigninBloc, SigninState>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
         switch (state) {
-          case Authentication.authenticated:
+          case SigninState.passwordMismatch:
+            _passwordWarning = passwordMatchWarning;
             break;
-          case Authentication.unauthenticated:
+          case SigninState.passwordNolongEnough:
+          case SigninState.passwordConfirmationNolongEnough:
+            _passwordWarning = passwordLengthWarning;
             break;
-          case Authentication.uninitialized:
+          case SigninState.failure:
+            break;
+          case SigninState.success:
+            break;
+          case SigninState.loading:
             break;
           default:
         }
@@ -101,49 +96,28 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 const AryyLogo(paddingTop: 85, paddingBottom: 50),
 //---------------------------  Correo  ---------------------------------------------------------------------------------------------------------------------
                 InputTextWidget(
-                  hintText: 'Ingrese un correo',
-                  textEditingController: emailTextController,
+                  hintText: 'Ingrese correo o celular',
+                  textEditingController: _emailTextController,
                 ),
 //---------------------------  Contraseña  -----------------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
-                    textEditingController: passwordConfirmationTextController,
+                    textEditingController: _passwordTextController,
                     hintText: 'Ingrese una contraseña',
-                    onChange: onPasswordChange,
+                    onChange: _signinBloc.onPasswordChange,
                     warningLabel: clearWarning),
 //---------------------------  Confirmación Contraseña  ------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
-                    textEditingController: passwordConfirmationTextController,
+                    textEditingController: _passwordConfirmationTextController,
                     hintText: 'Confirme su contraseña',
-                    onChange: onPasswordConfirmationChange,
+                    onChange: _signinBloc.onPasswordConfirmationChange,
                     warningLabel: clearWarning),
 //---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                   text: "Registrarme",
                   onPressed: () async {
-                    signinBloc.add(SigninEvent());
-                    Navigator.pushNamed(context, "home2_inicio");
-                    // Navigator.pushNamed(context, "registrarse_formulario");
-                  },
-                  isLoading: false,
-                ),
-                BotonFormulario(
-                  text: "Registrarme Animación",
-                  onPressed: () async {
-                    await showDialog(
-                      context: context,
-                      builder: (alertDialogContext) {
-                        return AlertDialog(
-                          content: const Text('Datos guardados'),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: const Text('Ok'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
+                    _signinBloc.add(SigninEvent());
+                    // old:
+                    // Navigator.pushNamed(context, "home2_inicio");
                     // Navigator.pushNamed(context, "registrarse_formulario");
                   },
                   isLoading: false,

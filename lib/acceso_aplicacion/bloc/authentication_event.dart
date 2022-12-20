@@ -1,7 +1,5 @@
 part of './authentication_bloc.dart';
 
-class SigninEvent extends AuthEvent {}
-
 // Custom
 
 class AppStarted extends AuthEvent {

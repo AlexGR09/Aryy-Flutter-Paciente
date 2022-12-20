@@ -24,8 +24,8 @@ class IniciarsesionWidget extends StatefulWidget {
 }
 
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
-  TextEditingController emailTextController = TextEditingController();
-  TextEditingController passwordTextController = TextEditingController();
+  TextEditingController _emailTextController = TextEditingController();
+  TextEditingController _passwordTextController = TextEditingController();
   late LoginState _loginState = LoginState.initial;
   late LoginBloc _loginBloc;
 
@@ -36,8 +36,8 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
 
   @override
   void dispose() {
-    emailTextController.dispose();
-    passwordTextController.dispose();
+    _emailTextController.dispose();
+    _passwordTextController.dispose();
     _loginBloc.close();
     super.dispose();
   }
@@ -118,11 +118,11 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
 //---------------------------  Input texts    ---------------------------
                   InputTextWidget(
                     hintText: 'Ingrese un correo',
-                    textEditingController: emailTextController,
+                    textEditingController: _emailTextController,
                   ),
                   InputPasswordWidget(
                       hintText: 'Ingrese una contraseña',
-                      textEditingController: passwordTextController,
+                      textEditingController: _passwordTextController,
                       onChange: (String password) {},
                       // Mostrar mensaje de "Olvidaste tu contraseña?"
                       warningLabel: _loginState == LoginState.failure
@@ -132,8 +132,8 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                     text: "Iniciar sesión",
                     onPressed: () async {
                       _loginBloc.add(LoginEvent(
-                          email: emailTextController.text,
-                          password: passwordTextController.text));
+                          email: _emailTextController.text,
+                          password: _passwordTextController.text));
                     },
                     isLoading: _loginState == LoginState.loading,
                     // Logout -> authenticationBloc.dispatch(LoggedOut());
