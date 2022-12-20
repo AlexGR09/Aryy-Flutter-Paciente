@@ -51,6 +51,9 @@ class _BarraDeNavegacionState extends State<BarraDeNavegacion> {
               case 2:
                 Navigator.pushNamed(context, "buscar_especialista");
                 break;
+              case 3:
+                Navigator.pushNamed(context, "menu_expediente");
+                break;
             }
           }
           deltaIndex = index;

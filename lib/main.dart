@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "informacion_basica",
+                initialRoute: "splash",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
