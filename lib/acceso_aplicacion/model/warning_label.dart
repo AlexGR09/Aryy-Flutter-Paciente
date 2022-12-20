@@ -6,12 +6,12 @@ const PasswordWarning clearWarning = PasswordWarning(
   Icons.check,
   Colors.white,
 );
-const PasswordWarning passwordMatchWarning = PasswordWarning(
+const PasswordWarning passwordLengthWarning = PasswordWarning(
   "Al menos 8 caractéres",
   Icons.error,
   Colors.orange,
 );
-const PasswordWarning passwordLengthWarning = PasswordWarning(
+const PasswordWarning passwordMatchWarning = PasswordWarning(
   "Los campos no coinciden",
   Icons.warning,
   Colors.red,

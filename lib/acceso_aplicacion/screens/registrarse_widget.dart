@@ -24,18 +24,19 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  final TextEditingController _emailTextController = TextEditingController();
-  final TextEditingController _passwordTextController = TextEditingController();
-  final TextEditingController _passwordConfirmationTextController =
-      TextEditingController();
+  late TextEditingController _emailTextController;
+  late TextEditingController _passwordTextController;
+  late TextEditingController _passwordConfirmationTextController;
   late PasswordWarning _passwordWarning = clearWarning;
-  late PasswordWarning _passwordConfirmationWarning = clearWarning;
   late SigninState _signinState = SigninState.initial;
   late SigninBloc _signinBloc;
 
   @override
   void initState() {
     super.initState();
+    _emailTextController = TextEditingController();
+    _passwordTextController = TextEditingController();
+    _passwordConfirmationTextController = TextEditingController();
   }
 
   @override
