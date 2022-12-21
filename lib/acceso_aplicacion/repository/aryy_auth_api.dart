@@ -1,5 +1,6 @@
 import '../../flutter_flow/flutter_flow_util.dart';
 import '../model/aryy_user.dart';
+import '../model/aryy_user_signin.dart';
 import './aryy_api.dart';
 import 'aryy_auth.dart';
 
@@ -26,7 +27,7 @@ class AryyAuthAPI {
   }
 
   // - Sign in
-  Future<AryyUser?> signinWithCredentialsUser(
+  Future<AryyUserSignedin?> signinWithCredentialsUser(
       {required String email,
       required String password,
       required String passwordConfirmation,
@@ -42,11 +43,10 @@ class AryyAuthAPI {
       if (connection.succeeded) {
         final resultado =
             getJsonField(connection.jsonBody, r'''$[*]''').toList();
-//        AryyAuth.instance.AccessToken = resultado[2];
-        // para pruebas temporales:
-//        print("accesstoken: ${AryyAuth.instance.AccessToken}");
+        AryyAuth.instance.AccessToken = resultado[2];
+        print("accesstoken: ${AryyAuth.instance.AccessToken}");
         var casa = 1;
-        return AryyUser.fromJson(json: resultado[0]);
+        return AryyUserSignedin.fromJson(json: resultado[0]);
       }
       return null;
     });

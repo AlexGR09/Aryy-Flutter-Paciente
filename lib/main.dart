@@ -1,3 +1,4 @@
+import 'package:aryy_front/acceso_aplicacion/bloc/signin_bloc.dart';
 import 'package:aryy_front/expediente/screens/antecedentes_patologicos2.dart';
 
 import './index.dart';
@@ -46,7 +47,7 @@ class _MyAppState extends State<MyApp> {
               return MaterialApp(
                 debugShowCheckedModeBanner: false,
                 title: 'Aryy - Prueba',
-                initialRoute: "splash",
+                initialRoute: "iniciarsesion",
                 // Pruebas responsivas y modo oscuro
                 theme: ThemeData.light(),
                 darkTheme: ThemeData.dark(),
@@ -81,7 +82,7 @@ class _MyAppState extends State<MyApp> {
                       create: (context) => LoginBloc(),
                       child: const IniciarsesionWidget()),
                   "registrarse": (context) => BlocProvider(
-                      create: (_) => AuthenticationBloc(),
+                      create: (_) => SigninBloc(),
                       child: const RegistrarseWidget()),
                   // pendiente
                   "registrarse_formulario": (_) =>

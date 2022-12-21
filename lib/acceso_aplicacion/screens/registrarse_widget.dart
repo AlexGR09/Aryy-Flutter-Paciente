@@ -65,6 +65,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     return BlocBuilder<SigninBloc, SigninState>(
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
+        _passwordWarning = _passwordConfirmationWarning = clearWarning;
         _signinState = state;
         print("receiving state: $_signinState");
         switch (_signinState) {
@@ -78,11 +79,12 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
           case SigninState.passwordConfirmationNolongEnough:
             _passwordConfirmationWarning = passwordLengthWarning;
             break;
-          case SigninState.failure:
-            break;
           case SigninState.success:
             return const Home2Widget();
           case SigninState.loading:
+            _verifyUserSessionStatus();
+            break;
+          case SigninState.failure:
             break;
           default:
         }
@@ -131,17 +133,32 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 BotonFormulario(
                   text: "Registrarme",
                   onPressed: () async {
-                    if (_signinBloc.veryPasswordMatch(
+                    _signinBloc.signin(
+                        emailphonenumber: _emailTextController.text,
                         password: _passwordTextController.text,
                         passwordConfirmation:
-                            _passwordConfirmationTextController.text)) {
-                      _signinBloc.add(PasswordMismatchEvent());
-                    }
-                    _signinBloc.add(SigninEvent(
-                        email: _emailTextController.text,
-                        password: _passwordTextController.text,
-                        passwordConfirmation:
-                            _passwordConfirmationTextController.text));
+                            _passwordConfirmationTextController.text);
+                    // if (_signinBloc.verifyPasswogirdlength(
+                    //     password: _passwordTextController.text)) {
+                    //   print("no long enough");
+                    // } else {
+                    //   print("long enough");
+                    // }
+                    // if (_signinBloc.veryPasswordMatch(
+                    //     password: _passwordTextController.text,
+                    //     passwordConfirmation:
+                    //         _passwordConfirmationTextController.text)) {
+                    //   print("Yes they do not match");
+                    //   _signinBloc.add(PasswordMismatchEvent());
+                    // } else {
+                    //   print("false, they match");
+                    // }
+                    // print("after return");
+                    // _signinBloc.add(SigninEvent(
+                    //     email: _emailTextController.text,
+                    //     password: _passwordTextController.text,
+                    //     passwordConfirmation:
+                    //         _passwordConfirmationTextController.text));
                     // old:
                     // Navigator.pushNamed(context, "registrarse_formulario");
                   },

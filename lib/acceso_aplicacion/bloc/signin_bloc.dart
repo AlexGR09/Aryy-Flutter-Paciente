@@ -1,7 +1,6 @@
-import 'package:aryy_front/acceso_aplicacion/widgets/password_warning_widget.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import '../model/warning_label.dart';
+import '../repository/aryy_auth_repository.dart';
 import './signin_state.dart';
 part './signin_event.dart';
 
@@ -17,14 +16,23 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
     //     ((event, emit) => emit(AryyAuth.instance.loginStatus)));
   }
 
-  onPasswordChange(String password) {
-    verifyPasswordlength(password: password);
-    if (password.isNotEmpty) {}
-  }
-
-  onPasswordConfirmationChange(String password) {
-    verifyPasswordlength(password: password);
-    if (password.isNotEmpty) {}
+  void signin(
+      {required String emailphonenumber,
+      required String password,
+      required String passwordConfirmation}) {
+    if (verifyPasswogirdlength(password: password)) {
+      add(PasswordNotLongEnoughEvent());
+    } else if (verifyPasswogirdlength(password: passwordConfirmation)) {
+      add(PasswordConfirmationNotLongEnoughEvent());
+    } else if (veryPasswordMatch(
+        password: password, passwordConfirmation: passwordConfirmation)) {
+      add(PasswordMismatchEvent());
+    } else {
+      add(SigninEvent(
+          email: emailphonenumber,
+          password: password,
+          passwordConfirmation: passwordConfirmation));
+    }
   }
 
   bool veryPasswordMatch(
@@ -32,10 +40,9 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
     return password != passwordConfirmation;
   }
 
-  PasswordWarning verifyPasswordlength({required String password}) {
-    if (password.length < 8) {
-      return passwordLengthWarning;
-    }
-    return clearWarning;
+  // Temp here, since bloc doesn't properly work for now
+  bool verifyPasswogirdlength({required String password}) {
+    final RegExp nameExp = RegExp("^\\w{8,15}\$");
+    return !nameExp.hasMatch(password);
   }
 }

@@ -12,18 +12,12 @@ class LoginStatusChangedEvent extends SigninAuthEvent {
   LoginStatusChangedEvent() : super(SigninState.clear);
 }
 
-class ClearEvent extends SigninAuthEvent {
-  ClearEvent() : super(SigninState.clear);
-}
-
 class PasswordMismatchEvent extends SigninAuthEvent {
   PasswordMismatchEvent() : super(SigninState.passwordMismatch);
 }
 
 class PasswordNotLongEnoughEvent extends SigninAuthEvent {
-  PasswordNotLongEnoughEvent() : super(SigninState.passwordNolongEnough) {
-    print("PasswordNotLongEnoughEvent");
-  }
+  PasswordNotLongEnoughEvent() : super(SigninState.passwordNolongEnough);
 }
 
 class PasswordConfirmationNotLongEnoughEvent extends SigninAuthEvent {
@@ -36,30 +30,15 @@ class SigninEvent extends SigninAuthEvent {
       {required String email,
       required String password,
       required String passwordConfirmation})
-      : super(SigninState.initial) {
-    print("SigninEvent");
-    // Temp here, since bloc doesn't properly work for now
-    final RegExp nameExp = RegExp("^\\w{8,15}\$");
-    if (nameExp.hasMatch(password)) {
-      print("inside hasMatch password");
-      PasswordNotLongEnoughEvent();
-    }
-    if (nameExp.hasMatch(passwordConfirmation)) {
-      print("inside hasMatch password confirmation");
-      PasswordConfirmationNotLongEnoughEvent();
-    }
-
-    if (password != passwordConfirmation) {
-      PasswordMismatchEvent();
-    }
+      : super(SigninState.loading) {
 //    super.signinState = AryyAuth.instance.loginStatus = LoginState.loading;
-    // AryyAuthRepository()
-    //     .signinWithAryy(
-    //         email: email,
-    //         password: password,
-    //         passwordConfirmation: passwordConfirmation)
-    //     .then((user) {
-    //   // AryyAuth.instance.loginStatus = user?.id != null ? LoginState.success : LoginState.failure;
-    // });
+    AryyAuthRepository()
+        .signUserinWithAryy(
+            email: email,
+            password: password,
+            passwordConfirmation: passwordConfirmation)
+        .then((user) {
+      // AryyAuth.instance.loginStatus = user?.id != null ? LoginState.success : LoginState.failure;
+    });
   }
 }

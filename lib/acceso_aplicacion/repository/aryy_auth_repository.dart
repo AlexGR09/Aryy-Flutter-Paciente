@@ -1,3 +1,5 @@
+import 'package:aryy_front/acceso_aplicacion/model/aryy_user_signin.dart';
+
 import '../model/aryy_user.dart';
 import './aryy_auth_api.dart';
 
@@ -21,7 +23,7 @@ class AryyAuthRepository {
   // Future< loginWithGoogle() >
 
   // == Sign in
-  Future<AryyUser?> signinWithAryy(
+  Future<AryyUserSignedin?> signUserinWithAryy(
       {required String email,
       required String password,
       required String passwordConfirmation}) async {

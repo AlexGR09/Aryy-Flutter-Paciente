@@ -44,7 +44,7 @@ class AryyApi {
       params: {},
       body: '''
 {
-  "email": "max@gmail.com",
+  "email": "max2@gmail.com",
   "password": "password"
   "password_confirmation" : "password",
   "country_code" : "+52",
