@@ -63,7 +63,6 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<signinBloc, Future<bool>> if async
     return BlocBuilder<SigninBloc, SigninState>(
-      // state the same AryyChangeEvent data type
       builder: ((context, state) {
         _passwordWarning = _passwordConfirmationWarning = clearWarning;
         _signinState = state;
@@ -138,28 +137,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                         password: _passwordTextController.text,
                         passwordConfirmation:
                             _passwordConfirmationTextController.text);
-                    // if (_signinBloc.verifyPasswogirdlength(
-                    //     password: _passwordTextController.text)) {
-                    //   print("no long enough");
-                    // } else {
-                    //   print("long enough");
-                    // }
-                    // if (_signinBloc.veryPasswordMatch(
-                    //     password: _passwordTextController.text,
-                    //     passwordConfirmation:
-                    //         _passwordConfirmationTextController.text)) {
-                    //   print("Yes they do not match");
-                    //   _signinBloc.add(PasswordMismatchEvent());
-                    // } else {
-                    //   print("false, they match");
-                    // }
-                    // print("after return");
-                    // _signinBloc.add(SigninEvent(
-                    //     email: _emailTextController.text,
-                    //     password: _passwordTextController.text,
-                    //     passwordConfirmation:
-                    //         _passwordConfirmationTextController.text));
-                    // old:
+
                     // Navigator.pushNamed(context, "registrarse_formulario");
                   },
                   isLoading: _signinState == SigninState.loading,

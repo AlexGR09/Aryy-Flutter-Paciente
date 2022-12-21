@@ -18,8 +18,6 @@ class AryyAuthAPI {
         final resultado =
             getJsonField(connection.jsonBody, r'''$[*]''').toList();
         AryyAuth.instance.AccessToken = resultado[2];
-        // para pruebas temporales:
-        print("accesstoken: ${AryyAuth.instance.AccessToken}");
         return AryyUser.fromJson(json: resultado[0]);
       }
       return null;
@@ -27,7 +25,7 @@ class AryyAuthAPI {
   }
 
   // - Sign in
-  Future<AryyUserSignedin?> signinWithCredentialsUser(
+  Future<AryyUserSignedin?> signUserinWithCredentials(
       {required String email,
       required String password,
       required String passwordConfirmation,
@@ -45,7 +43,6 @@ class AryyAuthAPI {
             getJsonField(connection.jsonBody, r'''$[*]''').toList();
         AryyAuth.instance.AccessToken = resultado[2];
         print("accesstoken: ${AryyAuth.instance.AccessToken}");
-        var casa = 1;
         return AryyUserSignedin.fromJson(json: resultado[0]);
       }
       return null;

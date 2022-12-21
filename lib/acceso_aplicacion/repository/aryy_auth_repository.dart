@@ -28,7 +28,7 @@ class AryyAuthRepository {
       required String password,
       required String passwordConfirmation}) async {
     return await _aryyAuthAPI
-        .signinWithCredentialsUser(
+        .signUserinWithCredentials(
             email: email,
             password: password,
             passwordConfirmation: passwordConfirmation,
