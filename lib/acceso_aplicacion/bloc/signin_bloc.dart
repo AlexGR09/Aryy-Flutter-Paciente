@@ -2,42 +2,34 @@ import 'package:aryy_front/acceso_aplicacion/widgets/password_warning_widget.dar
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import '../model/warning_label.dart';
-import '../repository/aryy_auth_repository.dart';
 import './signin_state.dart';
 part './signin_event.dart';
 
 class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
-  late String _passwordTC = "";
-  late String _passwordConfirmationTC = "";
   // In addition, AuthenticationBloc updates the AuthenticationState when a user has entered valid credentials
 //  final AuthenticationBloc authenticationBloc;
   SigninBloc() : super(SigninState.initial) {
-    on<SigninAuthEvent>(((event, emit) => emit(event.signinState)));
+    on<SigninAuthEvent>(((event, emit) {
+      print("Emit: ${event.signinState}");
+      emit(event.signinState);
+    }));
     // on<LoginStatusChangedEvent>(
     //     ((event, emit) => emit(AryyAuth.instance.loginStatus)));
   }
 
   onPasswordChange(String password) {
     verifyPasswordlength(password: password);
-    if (password.isNotEmpty) {
-      _passwordTC = password;
-    }
+    if (password.isNotEmpty) {}
   }
 
   onPasswordConfirmationChange(String password) {
     verifyPasswordlength(password: password);
-    if (password.isNotEmpty) {
-      _passwordConfirmationTC = password;
-      veryPasswordMatch();
-    }
+    if (password.isNotEmpty) {}
   }
 
-  void veryPasswordMatch() {
-    if (_passwordTC != _passwordConfirmationTC) {
-      add(PasswordMismatchEvent());
-    } else {
-      add(ClearEvent());
-    }
+  bool veryPasswordMatch(
+      {required String password, required String passwordConfirmation}) {
+    return password != passwordConfirmation;
   }
 
   PasswordWarning verifyPasswordlength({required String password}) {

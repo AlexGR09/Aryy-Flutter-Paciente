@@ -28,6 +28,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   late TextEditingController _passwordTextController;
   late TextEditingController _passwordConfirmationTextController;
   late PasswordWarning _passwordWarning = clearWarning;
+  late PasswordWarning _passwordConfirmationWarning = clearWarning;
   late SigninState _signinState = SigninState.initial;
   late SigninBloc _signinBloc;
 
@@ -65,13 +66,17 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
       // state the same AryyChangeEvent data type
       builder: ((context, state) {
         _signinState = state;
+        print("receiving state: $_signinState");
         switch (_signinState) {
           case SigninState.passwordMismatch:
-            _passwordWarning = passwordMatchWarning;
+            _passwordWarning =
+                _passwordConfirmationWarning = passwordMatchWarning;
             break;
           case SigninState.passwordNolongEnough:
-          case SigninState.passwordConfirmationNolongEnough:
             _passwordWarning = passwordLengthWarning;
+            break;
+          case SigninState.passwordConfirmationNolongEnough:
+            _passwordConfirmationWarning = passwordLengthWarning;
             break;
           case SigninState.failure:
             break;
@@ -112,12 +117,8 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                 InputPasswordWidget(
                     textEditingController: _passwordTextController,
                     hintText: 'Ingrese una contraseña',
-                    onChange: (String password) {
-                      setState(() {
-                        _passwordWarning = _signinBloc.verifyPasswordlength(
-                            password: _passwordTextController.text);
-                      });
-                    }, // _signinBloc.onPasswordChange,
+                    onChange:
+                        (String password) {}, // _signinBloc.onPasswordChange,
                     warningLabel: _passwordWarning),
 //---------------------------  Confirmación Contraseña  ------------------------------------------------------------------------------------------------------
                 InputPasswordWidget(
@@ -125,11 +126,17 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
                     hintText: 'Confirme su contraseña',
                     onChange: (String
                         password) {}, // _signinBloc.onPasswordConfirmationChange,
-                    warningLabel: clearWarning),
+                    warningLabel: _passwordConfirmationWarning),
 //---------------------------  Registrarse boton  ------------------------------------------------------------------------------------------------------------
                 BotonFormulario(
                   text: "Registrarme",
                   onPressed: () async {
+                    if (_signinBloc.veryPasswordMatch(
+                        password: _passwordTextController.text,
+                        passwordConfirmation:
+                            _passwordConfirmationTextController.text)) {
+                      _signinBloc.add(PasswordMismatchEvent());
+                    }
                     _signinBloc.add(SigninEvent(
                         email: _emailTextController.text,
                         password: _passwordTextController.text,
