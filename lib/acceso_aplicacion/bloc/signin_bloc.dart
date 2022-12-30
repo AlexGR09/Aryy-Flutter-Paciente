@@ -42,7 +42,7 @@ class SigninBloc extends Bloc<SigninAuthEvent, SigninState> {
 
   // Temp here, since bloc doesn't properly work for now
   bool verifyPasswogirdlength({required String password}) {
-    final RegExp nameExp = RegExp("^\\w{8,15}\$");
+    final RegExp nameExp = RegExp("^\\w{8}\$");
     return !nameExp.hasMatch(password);
   }
 }

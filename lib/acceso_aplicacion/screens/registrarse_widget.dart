@@ -2,6 +2,7 @@ import '../../_aryy_common_components/widgets/aryy/aryy_logo_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/action_widget.dart';
 import '../../_aryy_common_components/widgets/appbar/appbar_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/button_form_widget.dart';
+import '../../_aryy_common_components/widgets/formulario/input_number_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_password_widget.dart';
 import '../../_aryy_common_components/widgets/formulario/input_text_widget.dart';
 import '../../index.dart';
@@ -24,11 +25,12 @@ class RegistrarseWidget extends StatefulWidget {
 }
 
 class _RegistrarseWidgetState extends State<RegistrarseWidget> {
-  late TextEditingController _emailTextController;
-  late TextEditingController _passwordTextController;
-  late TextEditingController _passwordConfirmationTextController;
-  late PasswordWarning _passwordWarning = clearWarning;
   late PasswordWarning _passwordConfirmationWarning = clearWarning;
+  late TextEditingController _passwordConfirmationTextController;
+  late TextEditingController _phoneNumberTextController;
+  late TextEditingController _passwordTextController;
+  late TextEditingController _emailTextController;
+  late PasswordWarning _passwordWarning = clearWarning;
   late SigninState _signinState = SigninState.initial;
   late SigninBloc _signinBloc;
 
@@ -37,6 +39,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
     super.initState();
     _emailTextController = TextEditingController();
     _passwordTextController = TextEditingController();
+    _phoneNumberTextController = TextEditingController();
     _passwordConfirmationTextController = TextEditingController();
   }
 
@@ -44,6 +47,7 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
   void dispose() {
     _emailTextController.dispose();
     _passwordTextController.dispose();
+    _phoneNumberTextController.dispose();
     _passwordConfirmationTextController.dispose();
     _signinBloc.close();
     super.dispose();
@@ -62,34 +66,36 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
 
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<signinBloc, Future<bool>> if async
-    return BlocBuilder<SigninBloc, SigninState>(
+    return BlocListener<SigninBloc, SigninState>(listener: ((context, state) {
+      _passwordWarning = _passwordConfirmationWarning = clearWarning;
+      _signinState = state;
+      print("receiving state: $_signinState");
+      switch (_signinState) {
+        case SigninState.passwordMismatch:
+          _passwordWarning =
+              _passwordConfirmationWarning = passwordMatchWarning;
+          break;
+        case SigninState.passwordNolongEnough:
+          _passwordWarning = passwordLengthWarning;
+          break;
+        case SigninState.passwordConfirmationNolongEnough:
+          _passwordConfirmationWarning = passwordLengthWarning;
+          break;
+        case SigninState.loading:
+          _verifyUserSessionStatus();
+          break;
+        case SigninState.failure:
+          break;
+        default:
+      }
+    }), child: BlocBuilder<SigninBloc, SigninState>(
       builder: ((context, state) {
-        _passwordWarning = _passwordConfirmationWarning = clearWarning;
-        _signinState = state;
-        print("receiving state: $_signinState");
-        switch (_signinState) {
-          case SigninState.passwordMismatch:
-            _passwordWarning =
-                _passwordConfirmationWarning = passwordMatchWarning;
-            break;
-          case SigninState.passwordNolongEnough:
-            _passwordWarning = passwordLengthWarning;
-            break;
-          case SigninState.passwordConfirmationNolongEnough:
-            _passwordConfirmationWarning = passwordLengthWarning;
-            break;
-          case SigninState.success:
-            return const Home2Widget();
-          case SigninState.loading:
-            _verifyUserSessionStatus();
-            break;
-          case SigninState.failure:
-            break;
-          default:
+        if (state == SigninState.success) {
+          return const Home2Widget();
         }
         return signinScreen();
       }),
-    );
+    ));
   }
 
   Widget signinScreen() {
@@ -109,9 +115,14 @@ class _RegistrarseWidgetState extends State<RegistrarseWidget> {
               mainAxisSize: MainAxisSize.max,
               children: [
                 const AryyLogo(paddingTop: 85, paddingBottom: 50),
+//---------------------------  Número de teléfono  ---------------------------------------------------------------------------------------------------------------------
+                InputNumberWidget(
+                  hintText: "Número de teléfono",
+                  textEditingController: _phoneNumberTextController,
+                ),
 //---------------------------  Correo  ---------------------------------------------------------------------------------------------------------------------
                 InputTextWidget(
-                  hintText: 'Ingrese correo o celular',
+                  hintText: 'Ingrese un correo',
                   textEditingController: _emailTextController,
                 ),
 //---------------------------  Contraseña  -----------------------------------------------------------------------------------------------------------------

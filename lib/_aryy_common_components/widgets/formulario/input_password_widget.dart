@@ -1,4 +1,4 @@
-import './input_widget.dart';
+import 'input_custom_widget.dart';
 import 'package:flutter/material.dart';
 
 // enum WarningType {
@@ -30,7 +30,7 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return InputWidget(
+    return InputCustomWidget(
       textController: widget.textEditingController,
       hintText: widget.hintText,
       onChangeFunction: widget.onChange,
@@ -46,6 +46,7 @@ class _InputPasswordWidgetState extends State<InputPasswordWidget> {
         splashRadius: 10,
       ),
       appendComponent: widget.warningLabel,
+      regExp: "[a-zA-Z0-9!@#\$&()-`.+,/]",
     );
   }
 }

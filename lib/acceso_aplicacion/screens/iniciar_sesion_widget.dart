@@ -24,8 +24,8 @@ class IniciarsesionWidget extends StatefulWidget {
 }
 
 class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
-  TextEditingController _emailTextController = TextEditingController();
-  TextEditingController _passwordTextController = TextEditingController();
+  final TextEditingController _emailTextController = TextEditingController();
+  final TextEditingController _passwordTextController = TextEditingController();
   late LoginState _loginState = LoginState.initial;
   late LoginBloc _loginBloc;
 
@@ -55,44 +55,45 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
 
   Widget _handleCurrentSession() {
     // it can also be BlocBuilder<LoginBloc, Future<bool>> if async is needed
-    return BlocListener<LoginBloc, LoginState>(
-        listener: ((context, state) {}),
-        child: BlocBuilder<LoginBloc, LoginState>(
-          builder: ((context, state) {
-            _loginState = state;
-            switch (state) {
-              case LoginState.loading:
-                _verifyUserSessionStatus();
-                break;
-              case LoginState.success:
-                return const Home2Widget();
-              default:
-            }
-            return loginScreen();
-          }),
-        ));
+    return BlocListener<LoginBloc, LoginState>(listener: ((context, state) {
+      switch (state) {
+        case LoginState.loading:
+          _verifyUserSessionStatus();
+          break;
+        case LoginState.failure:
+          Future.delayed(
+              Duration.zero,
+              () => showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        content:
+                            const Text('Datos incorrectos, intente de nuevo.'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: const Text('Ok'),
+                          ),
+                        ],
+                      );
+                    },
+                  ));
+          break;
+        default:
+      }
+    }), child: BlocBuilder<LoginBloc, LoginState>(
+      builder: ((context, state) {
+        _loginState = state;
+        if (_loginState == LoginState.success) {
+          return const Home2Widget();
+        }
+        return loginScreen();
+      }),
+    ));
   }
 
   Widget loginScreen() {
     // () { Navigator.pushNamed(context, "verificar_identidad"); }
-    if (_loginState == LoginState.failure) {
-      Future.delayed(
-          Duration.zero,
-          () => showDialog(
-                context: context,
-                builder: (alertDialogContext) {
-                  return AlertDialog(
-                    content: const Text('Datos incorrectos, intente de nuevo.'),
-                    actions: [
-                      TextButton(
-                        onPressed: () => Navigator.pop(alertDialogContext),
-                        child: const Text('Ok'),
-                      ),
-                    ],
-                  );
-                },
-              ));
-    }
     return Scaffold(
       key: GlobalKey<ScaffoldState>(),
 //---------------------------  Appbar    ---------------------------
@@ -101,7 +102,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
           child: AryyAppBar(
             title: DarkModeIcon(),
             actions:
-                AryyAppbarAction(routeName: "Registrarse", text: "Registrarme"),
+                AryyAppbarAction(routeName: "registrarse", text: "Registrarme"),
           )),
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
 //---------------------------  Body    ---------------------------
@@ -125,9 +126,7 @@ class _IniciarsesionWidgetState extends State<IniciarsesionWidget> {
                       textEditingController: _passwordTextController,
                       onChange: (String password) {},
                       // Mostrar mensaje de "Olvidaste tu contraseña?"
-                      warningLabel: _loginState == LoginState.failure
-                          ? forgotYourPassword
-                          : clearWarning),
+                      warningLabel: forgotYourPassword),
                   BotonFormulario(
                     text: "Iniciar sesión",
                     onPressed: () async {
